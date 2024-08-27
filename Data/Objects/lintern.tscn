@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp1ec7mgwi7xw"]
+
+[ext_resource type="Texture2D" uid="uid://coyxy2ey3wlw7" path="res://Assets/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/torch_2.png" id="1_4r756"]
+
+[sub_resource type="Gradient" id="Gradient_tnwlx"]
+offsets = PackedFloat32Array(0, 0.427711, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.572289, 0.572289, 0.572289, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x5e7t"]
+gradient = SubResource("Gradient_tnwlx")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.838, 0.162)
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_4r756")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(2.209, 1.8)
+color = Color(1, 0.978292, 0.445147, 1)
+energy = 3.02
+texture = SubResource("GradientTexture2D_x5e7t")

@@ -1,0 +1,12 @@
+[gd_resource type="StyleBoxTexture" load_steps=3 format=3 uid="uid://uxnfh6cf674a"]
+
+[ext_resource type="Texture2D" uid="uid://cxyiwu0xowrwt" path="res://Assets/Cryo's Mini GUI/GUI/GUI_1x.png" id="1_umhod"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s70yn"]
+atlas = ExtResource("1_umhod")
+region = Rect2(96, 0, 24, 24)
+margin = Rect2(6, 0, 20, 0)
+
+[resource]
+resource_local_to_scene = true
+texture = SubResource("AtlasTexture_s70yn")

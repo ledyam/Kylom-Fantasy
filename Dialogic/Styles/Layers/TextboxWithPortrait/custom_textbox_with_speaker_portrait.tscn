@@ -1,0 +1,219 @@
+[gd_scene load_steps=15 format=3 uid="uid://by6waso0mjpjp"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Character/node_portrait_container.gd" id="1_4jxq7"]
+[ext_resource type="Script" path="res://Dialogic/Styles/Layers/TextboxWithPortrait/speaker_portrait_textbox_layer.gd" id="1_7jt4d"]
+[ext_resource type="Texture2D" uid="uid://cwgx6ra48nu08" path="res://Assets/Cryo's Mini GUI/GUI/GUI_2x.png" id="2_daex2"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="2_y0h34"]
+[ext_resource type="Texture2D" uid="uid://cxyiwu0xowrwt" path="res://Assets/Cryo's Mini GUI/GUI/GUI_1x.png" id="3_7vv7x"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_11puy"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_next_indicator.gd" id="8_xgk1u"]
+[ext_resource type="Texture2D" uid="uid://b0rpqfg4fhebk" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/next.svg" id="9_6cjpc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sho15"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmg1w"]
+bg_color = Color(0.826607, 0.49835, 0.448005, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsvm5"]
+atlas = ExtResource("3_7vv7x")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxq1w"]
+atlas = ExtResource("3_7vv7x")
+region = Rect2(102, 6, 12, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udrmn"]
+atlas = ExtResource("2_daex2")
+region = Rect2(224, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3jenp"]
+texture = SubResource("AtlasTexture_udrmn")
+
+[node name="TextboxWithSpeakerPortrait" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 16.0
+offset_right = 1.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_7jt4d")
+box_panel = "res://Dialogic/Styles/Layers/TextboxWithPortrait/default_stylebox.tres"
+portrait_bg_modulate = Color(0, 0, 0, 0.968627)
+
+[node name="Anchor" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Anchor"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -151.0
+offset_right = 251.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sho15")
+
+[node name="HBox" type="HBoxContainer" parent="Anchor/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="PortraitPanel" type="Panel" parent="Anchor/Panel/HBox"]
+unique_name_in_owner = true
+clip_children = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.46
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dmg1w")
+
+[node name="PortraitBackgroundColor" type="ColorRect" parent="Anchor/Panel/HBox/PortraitPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.000191083
+anchor_right = 0.999312
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogicNode_PortraitContainer" type="Control" parent="Anchor/Panel/HBox/PortraitPanel/PortraitBackgroundColor"]
+z_index = 1
+layout_mode = 1
+anchor_left = 0.171935
+anchor_top = 0.188119
+anchor_right = 0.841313
+anchor_bottom = 0.871287
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_4jxq7")
+mode = 1
+container_ids = PackedStringArray("1")
+debug_character_portrait = "speaker"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="Anchor/Panel/HBox/PortraitPanel"]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.00637
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_lsvm5")
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogicNode_NameLabel" type="Label" parent="Anchor/Panel/HBox/PortraitPanel"]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 2
+anchor_left = 0.254777
+anchor_top = 0.90099
+anchor_right = 0.738854
+anchor_bottom = 1.0198
+offset_right = -3.05176e-05
+theme_override_font_sizes/font_size = 8
+text = "Name"
+horizontal_alignment = 1
+script = ExtResource("2_y0h34")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Anchor/Panel/HBox/PortraitPanel"]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.140127
+anchor_top = 0.128713
+anchor_right = 0.853503
+anchor_bottom = 0.841584
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_qxq1w")
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelRect" type="Panel" parent="Anchor/Panel/HBox"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_3jenp")
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogicNode_DialogText" type="RichTextLabel" parent="Anchor/Panel/HBox/PanelRect" node_paths=PackedStringArray("textbox_root")]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.142857
+anchor_top = 0.19802
+anchor_right = 0.862974
+anchor_bottom = 0.891089
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 11
+bbcode_enabled = true
+text = "Some text"
+scroll_following = true
+script = ExtResource("3_11puy")
+textbox_root = NodePath("../../..")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Anchor/Panel/HBox/PanelRect"]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_qxq1w")
+
+[node name="NextIndicator" type="Control" parent="Anchor/Panel/HBox/PanelRect"]
+unique_name_in_owner = true
+modulate = Color(0.721569, 0.435294, 0.313726, 1)
+layout_mode = 1
+anchor_left = 0.912
+anchor_top = 0.812
+anchor_right = 0.913
+anchor_bottom = 0.812
+offset_left = 0.18399
+offset_top = -0.012001
+offset_right = -0.159027
+offset_bottom = -0.012001
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 2
+script = ExtResource("8_xgk1u")
+show_on_questions = true
+animation = 1
+texture = ExtResource("9_6cjpc")
+texture_size = Vector2(12, 12)
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_anchors_ = true

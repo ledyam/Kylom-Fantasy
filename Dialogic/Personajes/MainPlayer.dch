@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "MainWithPortraits"
+},
+"default_portrait": "happy",
+"description": "",
+"display_name": "Marcus",
+"mirror": false,
+"nicknames": ["MainPlayer"],
+"offset": Vector2(0, 0),
+"portraits": {
+"happy": {
+"export_overrides": {
+"image": "\"res://Assets/Free 39 Portraits Pixel Art/1 Portraits/Icons_01.png\""
+},
+"mirror": true,
+"offset": Vector2(0, 0),
+"scale": 1.0,
+"scene": ""
+}
+},
+"scale": 1.0
+}

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwdvunglqc0ic"
+path="res://.godot/imported/Basic Rpg Intro Track (RPG).wav-53298b6471cf40348e0d6299a8aae4ed.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Basic Rpg Intro Track (RPG).wav"
+dest_files=["res://.godot/imported/Basic Rpg Intro Track (RPG).wav-53298b6471cf40348e0d6299a8aae4ed.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

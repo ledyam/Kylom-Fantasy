@@ -1,0 +1,13 @@
+set {MOVERSE} = false
+MainPlayer: Espera......
+[wait time="0.6"]
+[music path="res://Assets/Sounds/Monster roar (Rpg).wav" fade="0.0" volume="1.0"]
+[wait time="1.7"]
+character: Escuchaste eso??...
+MainPlayer: Si .........
+set {MOVERSE} = true
+character: Que hacemos aqui 	
+MainPlayer: Nada especial
+MainPlayer: Candela
+character: Si
+MainPlayer: a ya 

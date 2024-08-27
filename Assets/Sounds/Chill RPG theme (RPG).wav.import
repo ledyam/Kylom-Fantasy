@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d2dye16vcegka"
+path="res://.godot/imported/Chill RPG theme (RPG).wav-2d251d2b12316c42c2f67eef76fbbf80.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Chill RPG theme (RPG).wav"
+dest_files=["res://.godot/imported/Chill RPG theme (RPG).wav-2d251d2b12316c42c2f67eef76fbbf80.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

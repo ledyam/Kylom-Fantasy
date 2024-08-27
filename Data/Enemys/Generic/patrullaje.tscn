@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcyomv3f2203e"]
+
+[ext_resource type="Script" path="res://Data/Enemys/Generic/patrullaje.gd" id="1_iq7yq"]
+
+[node name="Patrullaje" type="Node2D"]
+script = ExtResource("1_iq7yq")
+group_name = "Patrullaje"

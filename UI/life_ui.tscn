@@ -1,0 +1,136 @@
+[gd_scene load_steps=11 format=3 uid="uid://p0jmnaqahkh5"]
+
+[ext_resource type="Texture2D" uid="uid://o11ldgwjajya" path="res://Assets/Rocky Roads2/Objects/heart.png" id="1_1ohjt"]
+[ext_resource type="Script" path="res://UI/grid_container.gd" id="2_rbnbt"]
+[ext_resource type="Texture2D" uid="uid://bft1l4yfvtcax" path="res://Assets/Rocky Roads2/FX/wind.png" id="3_50lfc"]
+[ext_resource type="Texture2D" uid="uid://bo0lwj6bx5acp" path="res://Assets/Rocky Roads2/FX/shine.png" id="4_20it4"]
+[ext_resource type="Texture2D" uid="uid://c8l28b3lyaic2" path="res://Assets/Rocky Roads2/Objects/flag.png" id="5_thbkp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvrs3"]
+bg_color = Color(1, 0.176471, 0.223529, 0.388235)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_color = Color(0, 0, 0, 0.87451)
+shadow_size = 3
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fior"]
+bg_color = Color(0.733333, 0.196078, 0.286275, 0.596078)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.878431)
+shadow_size = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxjjj"]
+atlas = ExtResource("3_50lfc")
+region = Rect2(168, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iqkj"]
+atlas = ExtResource("4_20it4")
+region = Rect2(32, 1, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd5x1"]
+atlas = ExtResource("5_thbkp")
+region = Rect2(39, 0, 19, 21)
+
+[node name="Player UI" type="Control"]
+physics_interpolation_mode = 1
+show_behind_parent = true
+layout_mode = 3
+anchor_right = 0.996534
+anchor_bottom = 0.99994
+offset_right = 438.253
+offset_bottom = 190.02
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.596452, 0.641471)
+size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel de Vida" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.0153846
+anchor_top = 0.0529412
+anchor_right = 0.176923
+anchor_bottom = 0.161765
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_qvrs3")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Panel de Vida"]
+position = Vector2(23, 18)
+rotation = 0.000475689
+scale = Vector2(1.90091, 1.56987)
+texture = ExtResource("1_1ohjt")
+hframes = 3
+frame = 2
+
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer/Panel de Vida"]
+position = Vector2(55, 18)
+rotation = 0.000475689
+scale = Vector2(1.90091, 1.56987)
+texture = ExtResource("1_1ohjt")
+hframes = 3
+frame = 2
+
+[node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer/Panel de Vida"]
+position = Vector2(86, 17)
+rotation = 0.000475689
+scale = Vector2(1.90091, 1.56987)
+texture = ExtResource("1_1ohjt")
+hframes = 3
+frame = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.32
+anchor_top = 0.941176
+anchor_right = 0.660149
+anchor_bottom = 0.993643
+offset_right = -0.0967712
+offset_bottom = 1.16135
+rotation = -0.00525381
+theme_override_styles/panel = SubResource("StyleBoxFlat_6fior")
+metadata/_edit_use_anchors_ = true
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0769231
+anchor_top = 0.157895
+anchor_right = 0.962292
+anchor_bottom = 0.847443
+offset_right = 166.334
+offset_bottom = 15.8986
+scale = Vector2(0.540515, 0.451773)
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 0
+columns = 5
+script = ExtResource("2_rbnbt")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button1" type="Button" parent="CanvasLayer/Panel/GridContainer"]
+layout_mode = 2
+theme_override_icons/icon = SubResource("AtlasTexture_nxjjj")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+
+[node name="Button2" type="Button" parent="CanvasLayer/Panel/GridContainer"]
+layout_mode = 2
+shortcut_feedback = false
+shortcut_in_tooltip = false
+icon = SubResource("AtlasTexture_6iqkj")
+
+[node name="Button3" type="Button" parent="CanvasLayer/Panel/GridContainer"]
+layout_mode = 2
+shortcut_feedback = false
+shortcut_in_tooltip = false
+icon = SubResource("AtlasTexture_sd5x1")
+
+[connection signal="pressed" from="CanvasLayer/Panel/GridContainer/Button1" to="CanvasLayer/Panel/GridContainer" method="_on_button_1_pressed"]

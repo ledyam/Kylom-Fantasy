@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b223r25mfsiut"]
+
+[ext_resource type="PackedScene" uid="uid://bnp7gvxym3f6c" path="res://Data/Enemys/Skeleton/skeleton.tscn" id="1_w30ab"]
+
+[node name="Test" type="Node2D"]
+
+[node name="Skeleton" parent="." instance=ExtResource("1_w30ab")]

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=5 format=3 uid="uid://d3qqu1an53kr7"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_03spy"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="3_vq2qi"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="5_6qlke"]
+
+[sub_resource type="Resource" id="Resource_olocm"]
+script = ExtResource("2_03spy")
+scene = ExtResource("3_vq2qi")
+overrides = {}
+
+[resource]
+script = ExtResource("5_6qlke")
+name = "New_File"
+base_overrides = {}
+layers = Array[ExtResource("2_03spy")]([SubResource("Resource_olocm")])
+metadata/_latest_layer = -1
