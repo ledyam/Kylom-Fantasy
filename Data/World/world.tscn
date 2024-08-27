@@ -313,7 +313,7 @@ script = ExtResource("1_ec2xn")
 
 [node name="Player" parent="." instance=ExtResource("2_0wl5i")]
 z_index = 1
-position = Vector2(62, -17)
+position = Vector2(1.01488, -15.4171)
 scale = Vector2(0.5, 0.5)
 collision_mask = 10
 
