@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://e5lce68hncd6"]
 
-[ext_resource type="Texture2D" uid="uid://v7k0htmskde2" path="res://Assets/pixel-art-house.png" id="1_8eenj"]
+[ext_resource type="Texture2D" uid="uid://v7k0htmskde2" path="res://Assets/Tiles/pixel-art-house.png" id="1_8eenj"]
 
 [node name="house" type="Node2D"]
 

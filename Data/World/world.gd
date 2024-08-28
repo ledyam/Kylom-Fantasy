@@ -5,10 +5,12 @@ extends Node2D
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 var aux : Array
 var skeleton = load("res://Data/Enemys/Skeleton/skeleton.tscn")
+@onready var ciclo_day_night: AnimationPlayer = $"Ciclo Day_Night"
 
 
 func _ready() -> void:
 	audio.play()
+	ciclo_day_night.play("Ciclo General")
 
 
 

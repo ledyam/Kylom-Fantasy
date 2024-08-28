@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://p0jmnaqahkh5"]
 
-[ext_resource type="Texture2D" uid="uid://o11ldgwjajya" path="res://Assets/Rocky Roads2/Objects/heart.png" id="1_1ohjt"]
+[ext_resource type="Texture2D" uid="uid://o11ldgwjajya" path="res://Assets/Tiles/Rocky Roads2/Objects/heart.png" id="1_1ohjt"]
 [ext_resource type="Script" path="res://UI/grid_container.gd" id="2_rbnbt"]
-[ext_resource type="Texture2D" uid="uid://bft1l4yfvtcax" path="res://Assets/Rocky Roads2/FX/wind.png" id="3_50lfc"]
-[ext_resource type="Texture2D" uid="uid://bo0lwj6bx5acp" path="res://Assets/Rocky Roads2/FX/shine.png" id="4_20it4"]
-[ext_resource type="Texture2D" uid="uid://c8l28b3lyaic2" path="res://Assets/Rocky Roads2/Objects/flag.png" id="5_thbkp"]
+[ext_resource type="Texture2D" uid="uid://bft1l4yfvtcax" path="res://Assets/Tiles/Rocky Roads2/FX/wind.png" id="3_50lfc"]
+[ext_resource type="Texture2D" uid="uid://bo0lwj6bx5acp" path="res://Assets/Tiles/Rocky Roads2/FX/shine.png" id="4_20it4"]
+[ext_resource type="Texture2D" uid="uid://c8l28b3lyaic2" path="res://Assets/Tiles/Rocky Roads2/Objects/flag.png" id="5_thbkp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvrs3"]
 bg_color = Color(1, 0.176471, 0.223529, 0.388235)

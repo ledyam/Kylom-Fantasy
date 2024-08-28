@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp1ec7mgwi7xw"]
+[gd_scene load_steps=5 format=3 uid="uid://dp1ec7mgwi7xw"]
 
-[ext_resource type="Texture2D" uid="uid://coyxy2ey3wlw7" path="res://Assets/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/torch_2.png" id="1_4r756"]
+[ext_resource type="Texture2D" uid="uid://coyxy2ey3wlw7" path="res://Assets/Tiles/Dungeon Asset Pack/items and trap_animation/torch/torch_2.png" id="1_b0bfc"]
+[ext_resource type="Script" path="res://Data/Objects/lintern.gd" id="2_7me7i"]
 
 [sub_resource type="Gradient" id="Gradient_tnwlx"]
 offsets = PackedFloat32Array(0, 0.427711, 1)
@@ -9,15 +10,17 @@ colors = PackedColorArray(1, 1, 1, 1, 0.572289, 0.572289, 0.572289, 1, 0, 0, 0, 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_x5e7t"]
 gradient = SubResource("Gradient_tnwlx")
 fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.81407, 0.0954774)
+fill_from = Vector2(0.487437, 0.502513)
+fill_to = Vector2(0.819095, 0.135678)
 
 [node name="Sprite2D" type="Sprite2D"]
-texture = ExtResource("1_4r756")
+texture = ExtResource("1_b0bfc")
+script = ExtResource("2_7me7i")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-2.27374e-13, -4)
+position = Vector2(-1.42109e-14, -3)
 scale = Vector2(0.682625, 0.61875)
+enabled = false
 color = Color(1, 0.978292, 0.445147, 1)
 energy = 2.35
 texture = SubResource("GradientTexture2D_x5e7t")
