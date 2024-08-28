@@ -10,13 +10,14 @@ colors = PackedColorArray(1, 1, 1, 1, 0.572289, 0.572289, 0.572289, 1, 0, 0, 0, 
 gradient = SubResource("Gradient_tnwlx")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.838, 0.162)
+fill_to = Vector2(0.81407, 0.0954774)
 
 [node name="Sprite2D" type="Sprite2D"]
 texture = ExtResource("1_4r756")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-scale = Vector2(2.209, 1.8)
+position = Vector2(-2.27374e-13, -4)
+scale = Vector2(0.682625, 0.61875)
 color = Color(1, 0.978292, 0.445147, 1)
-energy = 3.02
+energy = 2.35
 texture = SubResource("GradientTexture2D_x5e7t")
