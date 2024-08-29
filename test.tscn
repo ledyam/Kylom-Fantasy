@@ -1,24 +1,43 @@
-[gd_scene load_steps=13 format=3 uid="uid://dgu1kbek0guyh"]
+[gd_scene load_steps=20 format=3 uid="uid://dgu1kbek0guyh"]
 
+[ext_resource type="Script" path="res://test.gd" id="1_71qt7"]
 [ext_resource type="Texture2D" uid="uid://dap6v3bn0l4a0" path="res://Assets/Tiles/GUI/GUI/GUI_4x.png" id="1_untod"]
+[ext_resource type="Texture2D" uid="uid://cheiqx3f6j47l" path="res://Assets/Tiles/GUI/GUI/GUI_4xBlackpng.png" id="2_l8ie7"]
 [ext_resource type="FontFile" uid="uid://refuf5j5hr24" path="res://Assets/Fonts/PixelOperator8.ttf" id="2_si0hx"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0bjqm"]
-atlas = ExtResource("1_untod")
-region = Rect2(288, 0, 96, 96)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilqx1"]
+atlas = ExtResource("2_l8ie7")
+region = Rect2(100, 4, 88, 88)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bw3bl"]
-texture = SubResource("AtlasTexture_0bjqm")
+texture = SubResource("AtlasTexture_ilqx1")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfvx3"]
-bg_color = Color(0.190226, 0.6, 0.229086, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_637hk"]
+atlas = ExtResource("2_l8ie7")
+region = Rect2(0, 94, 32, 34)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ouhv"]
-atlas = ExtResource("1_untod")
-region = Rect2(192, 97, 100, 35)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p6mju"]
+texture = SubResource("AtlasTexture_637hk")
+
+[sub_resource type="LabelSettings" id="LabelSettings_neusm"]
+font = ExtResource("2_si0hx")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_qgbhl"]
+font = ExtResource("2_si0hx")
+font_size = 8
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx2mj"]
+atlas = ExtResource("2_l8ie7")
+region = Rect2(292, 100, 90, 24)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i42la"]
-texture = SubResource("AtlasTexture_5ouhv")
+texture = SubResource("AtlasTexture_hx2mj")
+region_rect = Rect2(0, 0, 88, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1e2yd"]
+atlas = ExtResource("2_l8ie7")
+region = Rect2(405, 26, 40, 41)
 
 [sub_resource type="LabelSettings" id="LabelSettings_s7glv"]
 font = ExtResource("2_si0hx")
@@ -32,8 +51,13 @@ font_size = 8
 font = ExtResource("2_si0hx")
 font_size = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m73vv"]
-bg_color = Color(0.123132, 0.113289, 0.6, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_13pft"]
+atlas = ExtResource("1_untod")
+region = Rect2(0, 95, 32, 33)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2f0br"]
+content_margin_bottom = 14.0
+texture = SubResource("AtlasTexture_13pft")
 
 [sub_resource type="LabelSettings" id="LabelSettings_udjss"]
 font = ExtResource("2_si0hx")
@@ -42,43 +66,88 @@ font_size = 8
 [node name="Diurn" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_71qt7")
 
 [node name="Ciclo_UI" type="CanvasLayer" parent="."]
 
 [node name="Container" type="Panel" parent="Ciclo_UI"]
 offset_left = 9.0
-offset_top = 8.0
+offset_top = 7.0
 offset_right = 113.0
-offset_bottom = 88.0
+offset_bottom = 87.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_bw3bl")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Ciclo_UI/Container"]
 z_index = -1
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.0384615
+anchor_top = 0.0375
+anchor_right = 0.971154
+anchor_bottom = 0.9625
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="Ciclo_UI/Container/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_kfvx3")
+theme_override_styles/panel = SubResource("StyleBoxTexture_p6mju")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Ciclo_UI/Container/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.124
+anchor_top = 0.166667
+anchor_right = 0.876289
+anchor_bottom = 0.885
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 2.0
+offset_bottom = 2.0
+theme_override_constants/separation = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Mouth" type="Label" parent="Ciclo_UI/Container/VBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "October"
+label_settings = SubResource("LabelSettings_neusm")
+
+[node name="Day" type="Label" parent="Ciclo_UI/Container/VBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "31"
+label_settings = SubResource("LabelSettings_qgbhl")
 
 [node name="Interface_Hour_Day" type="Panel" parent="Ciclo_UI/Container/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_i42la")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Ciclo_UI/Container/VBoxContainer/Interface_Hour_Day"]
-clip_contents = true
+[node name="TextureRect" type="TextureRect" parent="Ciclo_UI/Container/VBoxContainer/Interface_Hour_Day"]
+modulate = Color(0.44599, 0.585779, 0.984375, 1)
+z_index = -1
 layout_mode = 0
-offset_left = 28.0
-offset_top = 3.0
-offset_right = 72.0
-offset_bottom = 17.0
+anchor_right = 0.989691
+anchor_bottom = 1.0
+texture = SubResource("AtlasTexture_1e2yd")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Ciclo_UI/Container/VBoxContainer/Interface_Hour_Day"]
+z_index = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -17.0
+offset_top = 2.0
+offset_right = 27.0
+offset_bottom = 16.0
+grow_horizontal = 2
+scale = Vector2(0.8, 0.76)
 theme_override_constants/separation = 0
 
 [node name="Hour" type="Label" parent="Ciclo_UI/Container/VBoxContainer/Interface_Hour_Day/HBoxContainer"]
@@ -99,17 +168,19 @@ horizontal_alignment = 1
 
 [node name="Week_day" type="Label" parent="Ciclo_UI/Container/VBoxContainer/Interface_Hour_Day"]
 layout_mode = 1
-anchors_preset = 12
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 13.0
-offset_top = -43.0
-offset_right = -17.0
-offset_bottom = -30.0
+offset_left = -17.5
+offset_top = -9.0
+offset_right = 30.5
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "LUNESTO"
+scale = Vector2(0.76, 0.759999)
+text = "Lunesto"
 label_settings = SubResource("LabelSettings_4daqd")
 horizontal_alignment = 1
 vertical_alignment = 2
@@ -117,18 +188,19 @@ vertical_alignment = 2
 [node name="Current_Ubication" type="Panel" parent="Ciclo_UI/Container/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_m73vv")
+theme_override_styles/panel = SubResource("StyleBoxTexture_2f0br")
 
 [node name="Label" type="Label" parent="Ciclo_UI/Container/VBoxContainer/Current_Ubication"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.125
-anchor_top = 0.111
-anchor_right = 0.885
-anchor_bottom = 0.5
-offset_left = 1.0
-offset_top = 2.003
-offset_right = 35.96
-offset_bottom = 8.5
+z_index = 2
+layout_mode = 0
+offset_left = 19.0
+offset_top = 9.0
+offset_right = 95.0
+offset_bottom = 17.0
+scale = Vector2(0.744, 0.8)
 text = "Dumb Corner"
 label_settings = SubResource("LabelSettings_udjss")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]

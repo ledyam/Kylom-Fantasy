@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-Global="*res://Data/Global/GLOBAL.gd"
+CurrentZone="*res://Data/Global/GLOBAL.gd"
 
 [dialogic]
 
