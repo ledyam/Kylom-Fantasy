@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://dc1ttabgya1wf"]
+[gd_scene load_steps=125 format=3 uid="uid://dc1ttabgya1wf"]
 
 [ext_resource type="Texture2D" uid="uid://drs8axg2b5fng" path="res://Assets/Tiles/Cute_Fantasy_Free/Player/Player.png" id="1_iedd1"]
 [ext_resource type="Script" path="res://Data/Player/player.gd" id="1_t574o"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Componentes/Movimiento Rectilineo Uniforme 2d/mru2d.gd" id="8_eb17p"]
 [ext_resource type="AudioStream" uid="uid://beclep87ndefs" path="res://Assets/Sounds/Sword Slash (Rpg).wav" id="9_hdu75"]
 [ext_resource type="Script" path="res://Data/Player/PlayerStates/player_atack.gd" id="10_laalb"]
+[ext_resource type="AudioStream" uid="uid://gbppvr8uv4ki" path="res://Assets/Sounds/Leap (Gj3).wav" id="11_lvs54"]
 [ext_resource type="PackedScene" uid="uid://p0jmnaqahkh5" path="res://UI/life_ui.tscn" id="12_0yp4y"]
 [ext_resource type="PackedScene" uid="uid://ewo22t74u83d" path="res://UI/Ciclo Dia_Noche/Diurn.tscn" id="12_vyx4a"]
 
@@ -1347,6 +1348,26 @@ region = Rect2(0, 480, 48, 48)
 atlas = ExtResource("2_3gqcc")
 region = Rect2(48, 480, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4j850"]
+atlas = ExtResource("1_iedd1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgubr"]
+atlas = ExtResource("1_iedd1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kyj4"]
+atlas = ExtResource("1_iedd1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jg5nk"]
+atlas = ExtResource("1_iedd1")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tqil"]
+atlas = ExtResource("1_iedd1")
+region = Rect2(128, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_b1j8g"]
 animations = [{
 "frames": [{
@@ -1700,6 +1721,44 @@ animations = [{
 "loop": true,
 "name": &"Player_water_up",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4j850")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgubr")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kyj4")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jg5nk")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tqil")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4j850")
+}],
+"loop": false,
+"name": &"Recibir_Da",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_656gv"]
@@ -1790,6 +1849,9 @@ one_shot = true
 [node name="Attack_sounds" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_hdu75")
 
+[node name="Leap(gj3)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_lvs54")
+
 [node name="Player UI" parent="." instance=ExtResource("12_0yp4y")]
 offset_left = -67.0
 offset_right = 328.0
@@ -1797,6 +1859,7 @@ offset_bottom = 190.0
 
 [node name="Diurn" parent="." instance=ExtResource("12_vyx4a")]
 
+[connection signal="Quitar_corazon" from="." to="Player UI" method="_on_player_quitar_corazon"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/PlayerAtack" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="hit_box" to="." method="_on_hit_box_body_entered"]
 [connection signal="body_exited" from="hit_box" to="." method="_on_hit_box_body_exited"]

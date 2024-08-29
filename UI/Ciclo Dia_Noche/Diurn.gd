@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 	else :
 		minute_label.text =  str(minute)
 
-	day_label.text = str(day);
+	day_label.text = str(day) + "th";
 	pass
 
 
@@ -58,4 +58,8 @@ func CicloTime():
 	
 		
 	minute += 30
+	pass # Replace with function body.
+
+
+func _on_player_quitar_corazon() -> void:
 	pass # Replace with function body.

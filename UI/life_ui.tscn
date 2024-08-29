@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://p0jmnaqahkh5"]
+[gd_scene load_steps=12 format=3 uid="uid://p0jmnaqahkh5"]
 
+[ext_resource type="Script" path="res://UI/life_ui.gd" id="1_ebjgg"]
 [ext_resource type="Texture2D" uid="uid://cheiqx3f6j47l" path="res://Assets/Tiles/GUI/GUI/GUI_4xBlackpng.png" id="1_o345i"]
 [ext_resource type="Texture2D" uid="uid://brqpiealu1x1j" path="res://Assets/Tiles/Rocky Roads2/UI/hearts.png" id="1_y5rcd"]
+[ext_resource type="Texture2D" uid="uid://bqjfwakgmvips" path="res://Assets/Tiles/Portraits/1 Portraits/Icons_32.png" id="3_oo7et"]
+[ext_resource type="PackedScene" uid="uid://ewo22t74u83d" path="res://UI/Ciclo Dia_Noche/Diurn.tscn" id="3_s54qh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_acal5"]
 atlas = ExtResource("1_o345i")
@@ -12,7 +15,18 @@ texture = SubResource("AtlasTexture_acal5")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dgf1x"]
 atlas = ExtResource("1_y5rcd")
-region = Rect2(0, 2, 14, 13)
+region = Rect2(0, 2, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1js4s"]
+atlas = ExtResource("1_o345i")
+region = Rect2(212, 148, 56, 56)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dwqk1"]
+texture = SubResource("AtlasTexture_1js4s")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7le1"]
+atlas = ExtResource("1_o345i")
+region = Rect2(35, 39, 36, 30)
 
 [node name="Player UI" type="Control"]
 physics_interpolation_mode = 1
@@ -25,6 +39,7 @@ offset_right = -92.9
 grow_horizontal = 2
 scale = Vector2(0.596452, 0.641471)
 size_flags_horizontal = 4
+script = ExtResource("1_ebjgg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -32,20 +47,20 @@ size_flags_horizontal = 4
 anchors_preset = -1
 anchor_left = 0.291
 anchor_right = 0.291
-offset_left = -81.15
-offset_top = 12.0
-offset_right = 24.85
-offset_bottom = 47.0
+offset_left = -36.15
+offset_top = 21.0
+offset_right = 68.85
+offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ykjkh")
 
 [node name="HBoxContainer" type="GridContainer" parent="CanvasLayer/Panel de Vida"]
 layout_mode = 2
-offset_left = 13.0
-offset_top = 10.0
-offset_right = 91.0
-offset_bottom = 24.0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 89.0
+offset_bottom = 17.0
 theme_override_constants/v_separation = 0
 columns = 4
 
@@ -76,3 +91,49 @@ size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_dgf1x")
 expand_mode = 2
 stretch_mode = 2
+
+[node name="Portrait" type="Panel" parent="CanvasLayer"]
+z_index = -1
+texture_filter = 1
+offset_left = 116.0
+offset_top = 11.0
+offset_right = 156.0
+offset_bottom = 51.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dwqk1")
+
+[node name="BackGround" type="TextureRect" parent="CanvasLayer/Portrait"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 12.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_o7le1")
+expand_mode = 2
+
+[node name="Player" type="TextureRect" parent="CanvasLayer/Portrait"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -11.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_oo7et")
+expand_mode = 3
+flip_h = true
+
+[node name="Diurn" parent="." instance=ExtResource("3_s54qh")]

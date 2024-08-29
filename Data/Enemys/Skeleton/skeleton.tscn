@@ -372,13 +372,13 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ns77y"]
 radius = 3.0
-height = 20.0
+height = 10.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rpbbb"]
-radius = 81.0987
+radius = 47.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8m7f7"]
-radius = 10.7703
+radius = 6.0
 
 [node name="Skeleton" type="CharacterBody2D" node_paths=PackedStringArray("Patrullaje")]
 collision_layer = 2
@@ -387,10 +387,9 @@ script = ExtResource("1_dsiug")
 Patrullaje = NodePath("Patrullaje")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 0.5)
-scale = Vector2(1, 1.03125)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_xo01h")
-animation = &"Skeleton_walk_up"
+animation = &"Skeleton_idle"
 autoplay = "Skeleton_idle"
 
 [node name="StateMachine" type="Node" parent="."]
@@ -410,7 +409,6 @@ script = ExtResource("6_dmp4f")
 script = ExtResource("7_legk2")
 
 [node name="Collision_Body" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_ns77y")
 
 [node name="Area_Vigilancia" type="Area2D" parent="."]
@@ -422,7 +420,6 @@ debug_color = Color(0.976471, 0.117647, 0.117647, 0.419608)
 [node name="hit_box" type="Area2D" parent="."]
 
 [node name="Collision_Damage" type="CollisionShape2D" parent="hit_box"]
-position = Vector2(-1, -2)
 shape = SubResource("CircleShape2D_8m7f7")
 debug_color = Color(0.546289, 0.466808, 0.107568, 0.42)
 

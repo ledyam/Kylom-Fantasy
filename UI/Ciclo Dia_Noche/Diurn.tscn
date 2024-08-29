@@ -136,28 +136,25 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_p6mju")
 [node name="HBoxContainer" type="HBoxContainer" parent="Ciclo_UI/Container/VBoxContainer/Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.124
-anchor_top = 0.166667
-anchor_right = 0.876289
-anchor_bottom = 0.885
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 2.0
-offset_bottom = 2.0
-theme_override_constants/separation = 4
+anchor_left = 0.164948
+anchor_top = 0.25
+anchor_right = 0.845361
+anchor_bottom = 0.833333
 metadata/_edit_use_anchors_ = true
 
 [node name="Mouth" type="Label" parent="Ciclo_UI/Container/VBoxContainer/Panel/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
 text = "October"
 label_settings = SubResource("LabelSettings_neusm")
 
 [node name="Day" type="Label" parent="Ciclo_UI/Container/VBoxContainer/Panel/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-text = "31"
+size_flags_horizontal = 6
+text = "1"
 label_settings = SubResource("LabelSettings_qgbhl")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Interface_Hour_Day" type="Panel" parent="Ciclo_UI/Container/VBoxContainer"]
 layout_mode = 2
