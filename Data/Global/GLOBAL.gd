@@ -1,12 +1,12 @@
 extends Node
 
-var NodesMarker2D : Array 
+var zonee : String 
 # Called when the node enters the scene tree for the first time.
 
-func ObtenerNodos(aux):
-	NodesMarker2D.append(aux)
+func SetZone(zone : String):
+	zonee = zone 
 	
 	
-func GetNodes():
-	return NodesMarker2D
+func GetZone():
+	return zonee
 	

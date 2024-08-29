@@ -1,7 +1,7 @@
 [gd_scene load_steps=58 format=3 uid="uid://bnp7gvxym3f6c"]
 
 [ext_resource type="Script" path="res://Data/Enemys/Skeleton/skeleton.gd" id="1_dsiug"]
-[ext_resource type="Texture2D" uid="uid://defjht5fstxht" path="res://Assets/Cute_Fantasy_Free/Enemies/Skeleton.png" id="2_kt7i0"]
+[ext_resource type="Texture2D" uid="uid://defjht5fstxht" path="res://Assets/Tiles/Cute_Fantasy_Free/Enemies/Skeleton.png" id="2_kt7i0"]
 [ext_resource type="Script" path="res://Data/Enemys/Skeleton/Scripts/enemy_idle_state.gd" id="3_tqpl3"]
 [ext_resource type="Script" path="res://Data/Enemys/Skeleton/Scripts/state_machine_enemy.gd" id="3_wyt0r"]
 [ext_resource type="Script" path="res://Data/Enemys/Skeleton/Scripts/enemy_walk_state.gd" id="5_ilnip"]
