@@ -541,7 +541,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kxvlf"]
 size = Vector2(115.208, 64.4623)
 
-[node name="Farm" type="Node2D"]
+[node name="World" type="Node2D"]
 script = ExtResource("1_ec2xn")
 
 [node name="Player" parent="." instance=ExtResource("2_0wl5i")]
@@ -603,5 +603,20 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(603.396, -298.231)
 shape = SubResource("RectangleShape2D_kxvlf")
+
+[node name="Marker2D" type="Marker2D" parent="." groups=["FirstEnemy"]]
+position = Vector2(285.424, -9.86397)
+
+[node name="Marker2D2" type="Marker2D" parent="." groups=["FirstEnemy"]]
+position = Vector2(282.246, -115.81)
+
+[node name="Marker2D3" type="Marker2D" parent="." groups=["FirstEnemy"]]
+position = Vector2(374.419, -129.583)
+
+[node name="Marker2D4" type="Marker2D" parent="." groups=["FirstEnemy"]]
+position = Vector2(366.473, -60.1885)
+
+[node name="Marker2D5" type="Marker2D" parent="." groups=["FirstEnemy"]]
+position = Vector2(207.024, -81.9075)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

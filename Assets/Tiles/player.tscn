@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=3 uid="uid://dc1ttabgya1wf"]
+[gd_scene load_steps=119 format=3 uid="uid://dc1ttabgya1wf"]
 
 [ext_resource type="Texture2D" uid="uid://drs8axg2b5fng" path="res://Assets/Tiles/Cute_Fantasy_Free/Player/Player.png" id="1_iedd1"]
 [ext_resource type="Script" path="res://Data/Player/player.gd" id="1_t574o"]
@@ -10,7 +10,8 @@
 [ext_resource type="Script" path="res://Componentes/Movimiento Rectilineo Uniforme 2d/mru2d.gd" id="8_eb17p"]
 [ext_resource type="AudioStream" uid="uid://beclep87ndefs" path="res://Assets/Sounds/Sword Slash (Rpg).wav" id="9_hdu75"]
 [ext_resource type="Script" path="res://Data/Player/PlayerStates/player_atack.gd" id="10_laalb"]
-[ext_resource type="PackedScene" uid="uid://dgu1kbek0guyh" path="res://test.tscn" id="11_wc28w"]
+[ext_resource type="PackedScene" uid="uid://p0jmnaqahkh5" path="res://UI/life_ui.tscn" id="12_0yp4y"]
+[ext_resource type="PackedScene" uid="uid://ewo22t74u83d" path="res://UI/Ciclo Dia_Noche/Diurn.tscn" id="12_vyx4a"]
 
 [sub_resource type="Animation" id="Animation_gimq3"]
 length = 0.4
@@ -393,11 +394,11 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Damage/CollisionPolygon2D:disabled")
+tracks/2/path = NodePath("Damage_box/CollisionPolygon2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.110537, 0.223122),
+"times": PackedFloat32Array(0, 0.1, 0.223122),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -405,7 +406,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Damage/CollisionPolygon2D:position")
+tracks/3/path = NodePath("Damage_box/CollisionPolygon2D:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -417,7 +418,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Damage/CollisionPolygon2D:shape:size")
+tracks/4/path = NodePath("Damage_box/CollisionPolygon2D:shape:size")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -469,7 +470,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Damage/CollisionPolygon2D:disabled")
+tracks/3/path = NodePath("Damage_box/CollisionPolygon2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -481,7 +482,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Damage/CollisionPolygon2D:position")
+tracks/4/path = NodePath("Damage_box/CollisionPolygon2D:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -493,7 +494,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Damage/CollisionPolygon2D:shape:size")
+tracks/5/path = NodePath("Damage_box/CollisionPolygon2D:shape:size")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -545,7 +546,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Damage/CollisionPolygon2D:disabled")
+tracks/3/path = NodePath("Damage_box/CollisionPolygon2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -557,7 +558,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Damage/CollisionPolygon2D:position")
+tracks/4/path = NodePath("Damage_box/CollisionPolygon2D:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -569,7 +570,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Damage/CollisionPolygon2D:shape:size")
+tracks/5/path = NodePath("Damage_box/CollisionPolygon2D:shape:size")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -608,7 +609,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Damage/CollisionPolygon2D:disabled")
+tracks/2/path = NodePath("Damage_box/CollisionPolygon2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -620,7 +621,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Damage/CollisionPolygon2D:position")
+tracks/3/path = NodePath("Damage_box/CollisionPolygon2D:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -632,7 +633,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Damage/CollisionPolygon2D:shape:size")
+tracks/4/path = NodePath("Damage_box/CollisionPolygon2D:shape:size")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -1001,7 +1002,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Damage/CollisionPolygon2D:disabled")
+tracks/2/path = NodePath("Damage_box/CollisionPolygon2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -1013,7 +1014,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Damage/CollisionPolygon2D:position")
+tracks/3/path = NodePath("Damage_box/CollisionPolygon2D:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -1025,7 +1026,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Damage/CollisionPolygon2D:shape:size")
+tracks/4/path = NodePath("Damage_box/CollisionPolygon2D:shape:size")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -1761,17 +1762,15 @@ script = ExtResource("7_vmpfd")
 script = ExtResource("8_eb17p")
 character = NodePath("..")
 
-[node name="Damage" type="Area2D" parent="."]
-visible = false
+[node name="Damage_box" type="Area2D" parent="."]
 collision_mask = 2
 
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Damage"]
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Damage_box"]
 position = Vector2(0.500005, 13)
 shape = SubResource("RectangleShape2D_7dgov")
 disabled = true
 
 [node name="hit_box" type="Area2D" parent="."]
-visible = false
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box"]
@@ -1791,7 +1790,12 @@ one_shot = true
 [node name="Attack_sounds" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_hdu75")
 
-[node name="Diurn" parent="." instance=ExtResource("11_wc28w")]
+[node name="Player UI" parent="." instance=ExtResource("12_0yp4y")]
+offset_left = -67.0
+offset_right = 328.0
+offset_bottom = 190.0
+
+[node name="Diurn" parent="." instance=ExtResource("12_vyx4a")]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/PlayerAtack" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="hit_box" to="." method="_on_hit_box_body_entered"]
