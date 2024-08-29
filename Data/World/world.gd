@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	pass
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
-	CurrentZone.SetZone("Forrest")
+	CurrentZone.SetZone("Forest")
 	pass # Replace with function body.
 	
 func EnabledMusicDia():

@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://p0jmnaqahkh5"]
+[gd_scene load_steps=6 format=3 uid="uid://p0jmnaqahkh5"]
 
 [ext_resource type="Texture2D" uid="uid://cheiqx3f6j47l" path="res://Assets/Tiles/GUI/GUI/GUI_4xBlackpng.png" id="1_o345i"]
 [ext_resource type="Texture2D" uid="uid://brqpiealu1x1j" path="res://Assets/Tiles/Rocky Roads2/UI/hearts.png" id="1_y5rcd"]
-[ext_resource type="PackedScene" uid="uid://cgi3biqntvg2s" path="res://UI/Ciclo Dia_Noche/Day_Night.tscn" id="3_v04dq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_acal5"]
 atlas = ExtResource("1_o345i")
@@ -77,6 +76,3 @@ size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_dgf1x")
 expand_mode = 2
 stretch_mode = 2
-
-[node name="Diurn" parent="." instance=ExtResource("3_v04dq")]
-visible = false
