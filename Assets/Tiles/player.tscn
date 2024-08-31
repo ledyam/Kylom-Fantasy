@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=3 uid="uid://dc1ttabgya1wf"]
+[gd_scene load_steps=127 format=3 uid="uid://dc1ttabgya1wf"]
 
 [ext_resource type="Texture2D" uid="uid://drs8axg2b5fng" path="res://Assets/Tiles/Cute_Fantasy_Free/Player/Player.png" id="1_iedd1"]
 [ext_resource type="Script" path="res://Data/Player/player.gd" id="1_t574o"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://gbppvr8uv4ki" path="res://Assets/Sounds/Leap (Gj3).wav" id="11_lvs54"]
 [ext_resource type="PackedScene" uid="uid://p0jmnaqahkh5" path="res://UI/life_ui.tscn" id="12_0yp4y"]
 [ext_resource type="PackedScene" uid="uid://ewo22t74u83d" path="res://UI/Ciclo Dia_Noche/Diurn.tscn" id="12_vyx4a"]
+[ext_resource type="FontFile" uid="uid://refuf5j5hr24" path="res://Assets/Fonts/PixelOperator8.ttf" id="14_b5q2w"]
 
 [sub_resource type="Animation" id="Animation_gimq3"]
 length = 0.4
@@ -1771,8 +1772,13 @@ size = Vector2(11, 20)
 [sub_resource type="CircleShape2D" id="CircleShape2D_okugr"]
 radius = 9.05539
 
+[sub_resource type="LabelSettings" id="LabelSettings_fe2im"]
+font = ExtResource("14_b5q2w")
+font_size = 8
+
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 2
+scale = Vector2(0.7, 0.7)
+collision_mask = 14
 script = ExtResource("1_t574o")
 
 [node name="AnimationPlayerActions" type="AnimationPlayer" parent="."]
@@ -1858,6 +1864,23 @@ offset_right = 328.0
 offset_bottom = 190.0
 
 [node name="Diurn" parent="." instance=ExtResource("12_vyx4a")]
+
+[node name="Level" type="Label" parent="."]
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -19.0
+offset_right = 51.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+text = "Marcus Lv.1"
+label_settings = SubResource("LabelSettings_fe2im")
 
 [connection signal="Quitar_corazon" from="." to="Player UI" method="_on_player_quitar_corazon"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/PlayerAtack" method="_on_animated_sprite_2d_animation_finished"]

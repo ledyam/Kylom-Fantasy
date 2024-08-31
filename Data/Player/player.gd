@@ -52,7 +52,7 @@ const animations : Dictionary = {
 
 func Recibir_damage():
 	if recibir_damage and cda:
-		emit_signal("Quitar_corazon")
+		Quitar_corazon.emit()
 		vida -= 100
 		print ("100 puntos de daño recibido")
 		cda = false 
@@ -60,7 +60,7 @@ func Recibir_damage():
 
 
 func _physics_process(delta: float) -> void:
-	if vida > 0 :
+	if vida > 0  :
 		if recibir_damage:
 			Recibir_damage()
 		move_and_slide()
@@ -82,7 +82,7 @@ func _on_hit_box_body_entered(body: Node2D) -> void:
 		recibir_damage = true
 		cda = true
 		knockback = (self.global_position - body.position).normalized() 
-		velocity = knockback * 12
+		velocity = knockback * 20
 		leap_gj_3_.play()
 	
 	
@@ -97,5 +97,6 @@ func _on_hit_box_body_exited(body: Node2D) -> void:
 
 func _on_cd_timeout() -> void:
 	cda = true
+	recibir_damage = false
 	velocity = Vector2.ZERO
 	pass # Replace with function body.

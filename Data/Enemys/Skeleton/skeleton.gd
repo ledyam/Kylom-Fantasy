@@ -32,7 +32,7 @@ func _on_area_2d_body_exited(_body: Node2D) -> void:
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area.name == "Damage_box" and !dead :
-		emit_signal("Take_Damage")
+		Take_Damage.emit()
 		
 
 
