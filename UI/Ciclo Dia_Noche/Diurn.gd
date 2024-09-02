@@ -1,4 +1,5 @@
 extends Control
+
 @onready var month: Label = $Ciclo_UI/Container/VBoxContainer/Panel/HBoxContainer/Mouth
 @onready var day_label: Label = $Ciclo_UI/Container/VBoxContainer/Panel/HBoxContainer/Day
 @onready var hour_label: Label = $Ciclo_UI/Container/VBoxContainer/Interface_Hour_Day/HBoxContainer/Hour
@@ -6,8 +7,6 @@ extends Control
 @onready var current_ubication: Label = $Ciclo_UI/Container/VBoxContainer/Current_Ubication/Current_Ubication
 @onready var week_day: Label = $Ciclo_UI/Container/VBoxContainer/Interface_Hour_Day/Week_day
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
-
 
 
 var wd = 0
@@ -21,9 +20,12 @@ const WEEK_DAY : Array[String] = ["Lunce","Martos","Mordiem", "Jumne", "Vershios
 func _ready() -> void:
 	animation_player.play("Contador")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
+	#Toma la Zona donde se encuentra el Player
 	current_ubication.text = CurrentZone.GetZone()
+	
+	#Asignación del Tiempo y Fecha en Interfaz 
 	month.text = MONTH[day_cont]
 	week_day.text = WEEK_DAY[wd]
 	if hour < 10 :
@@ -40,6 +42,8 @@ func _process(delta: float) -> void:
 
 
 func CicloTime():
+	
+	#Time Ingame
 	if minute == 30  :
 		hour += 1
 		minute = 0
@@ -54,12 +58,4 @@ func CicloTime():
 	if day == 30:
 		day_cont +=1
 		
-		
-	
-		
 	minute += 30
-	pass # Replace with function body.
-
-
-func _on_player_quitar_corazon() -> void:
-	pass # Replace with function body.

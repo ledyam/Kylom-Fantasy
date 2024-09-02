@@ -1,5 +1,6 @@
 extends PlayerState
-@onready var finish_animation: Timer = $"../../Finish_animation"
+@onready var finish_animation: Timer =  $"../../Timers/Finish_animation"
+
 
 
 

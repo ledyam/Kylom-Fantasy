@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=4 uid="uid://cu1bngt73ivne"]
 
 [ext_resource type="Script" path="res://Data/World/world.gd" id="1_ec2xn"]
-[ext_resource type="PackedScene" uid="uid://dc1ttabgya1wf" path="res://Data/Player/player.tscn" id="2_0wl5i"]
+[ext_resource type="PackedScene" uid="uid://dc1ttabgya1wf" path="res://Assets/Tiles/player.tscn" id="2_0wl5i"]
 [ext_resource type="AudioStream" uid="uid://d2dye16vcegka" path="res://Assets/Sounds/Chill RPG theme (RPG).wav" id="3_8g8vj"]
 [ext_resource type="Texture2D" uid="uid://b2ik5cjyff4jb" path="res://Assets/Tiles/Cute_Fantasy_Free/Tiles/Grass_Middle.png" id="4_e62o6"]
 [ext_resource type="Texture2D" uid="uid://biwurickdk73q" path="res://Assets/Tiles/Cute_Fantasy_Free/Tiles/Path_Middle.png" id="5_ttf6r"]
