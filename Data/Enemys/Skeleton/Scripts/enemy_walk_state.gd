@@ -4,9 +4,9 @@ extends EnemyState
 func enter():
 	print ("State >>>>WALK<<<<")
 	
-func physics_process(delta: float) -> void:
+func physics_process(_delta: float) -> void:
 
-	if (enemy.on_area and enemy.vida > 0):
+	if (enemy.on_area and enemy.life > 0):
 		enemy.velocity = Vector2.ZERO
 		if enemy.player.position < enemy.position :
 			enemy.anim_enemy.flip_h = true

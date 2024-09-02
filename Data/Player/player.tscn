@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://dc1ttabgya1wf"]
+[gd_scene load_steps=126 format=3 uid="uid://dc1ttabgya1wf"]
 
 [ext_resource type="Texture2D" uid="uid://drs8axg2b5fng" path="res://Assets/Tiles/Cute_Fantasy_Free/Player/Player.png" id="1_iedd1"]
 [ext_resource type="Script" path="res://Data/Player/player.gd" id="1_t574o"]
@@ -10,8 +10,10 @@
 [ext_resource type="Script" path="res://Componentes/Movimiento Rectilineo Uniforme 2d/mru2d.gd" id="8_eb17p"]
 [ext_resource type="AudioStream" uid="uid://beclep87ndefs" path="res://Assets/Sounds/Sword Slash (Rpg).wav" id="9_hdu75"]
 [ext_resource type="Script" path="res://Data/Player/PlayerStates/player_atack.gd" id="10_laalb"]
+[ext_resource type="AudioStream" uid="uid://gbppvr8uv4ki" path="res://Assets/Sounds/Leap (Gj3).wav" id="11_lvs54"]
 [ext_resource type="PackedScene" uid="uid://p0jmnaqahkh5" path="res://UI/life_ui.tscn" id="12_0yp4y"]
 [ext_resource type="PackedScene" uid="uid://ewo22t74u83d" path="res://UI/Ciclo Dia_Noche/Diurn.tscn" id="12_vyx4a"]
+[ext_resource type="PackedScene" uid="uid://oe8ee4f7bqeh" path="res://UI/Indicadores/indicador_level.tscn" id="14_omp1r"]
 
 [sub_resource type="Animation" id="Animation_gimq3"]
 length = 0.4
@@ -1347,6 +1349,26 @@ region = Rect2(0, 480, 48, 48)
 atlas = ExtResource("2_3gqcc")
 region = Rect2(48, 480, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4j850"]
+atlas = ExtResource("1_iedd1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgubr"]
+atlas = ExtResource("1_iedd1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kyj4"]
+atlas = ExtResource("1_iedd1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jg5nk"]
+atlas = ExtResource("1_iedd1")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tqil"]
+atlas = ExtResource("1_iedd1")
+region = Rect2(128, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_b1j8g"]
 animations = [{
 "frames": [{
@@ -1700,6 +1722,44 @@ animations = [{
 "loop": true,
 "name": &"Player_water_up",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4j850")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgubr")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kyj4")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jg5nk")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tqil")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4j850")
+}],
+"loop": false,
+"name": &"Recibir_Da",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_656gv"]
@@ -1712,8 +1772,9 @@ size = Vector2(11, 20)
 [sub_resource type="CircleShape2D" id="CircleShape2D_okugr"]
 radius = 9.05539
 
-[node name="Player" type="CharacterBody2D"]
-collision_mask = 2
+[node name="Marcus" type="CharacterBody2D"]
+scale = Vector2(0.7, 0.7)
+collision_mask = 14
 script = ExtResource("1_t574o")
 
 [node name="AnimationPlayerActions" type="AnimationPlayer" parent="."]
@@ -1728,7 +1789,7 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(0, 1.42857)
 sprite_frames = SubResource("SpriteFrames_b1j8g")
 animation = &"Player_attack_up"
 flip_h = true
@@ -1762,6 +1823,27 @@ script = ExtResource("7_vmpfd")
 script = ExtResource("8_eb17p")
 character = NodePath("..")
 
+[node name="Timers" type="Node" parent="."]
+
+[node name="CD" type="Timer" parent="Timers"]
+
+[node name="Tiempo_de_muerte" type="Timer" parent="Timers"]
+wait_time = 2.996
+
+[node name="Finish_animation" type="Timer" parent="Timers"]
+process_callback = 0
+wait_time = 0.71
+one_shot = true
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Attack_sounds" type="AudioStreamPlayer2D" parent="Sounds"]
+scale = Vector2(0.7, 0.7)
+stream = ExtResource("9_hdu75")
+
+[node name="Leap(gj3)" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("11_lvs54")
+
 [node name="Damage_box" type="Area2D" parent="."]
 collision_mask = 2
 
@@ -1777,19 +1859,6 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_okugr")
 debug_color = Color(0.970136, 0.126886, 0.303562, 0.42)
 
-[node name="CD" type="Timer" parent="."]
-
-[node name="Tiempo_de_muerte" type="Timer" parent="."]
-wait_time = 2.996
-
-[node name="Finish_animation" type="Timer" parent="."]
-process_callback = 0
-wait_time = 0.71
-one_shot = true
-
-[node name="Attack_sounds" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_hdu75")
-
 [node name="Player UI" parent="." instance=ExtResource("12_0yp4y")]
 offset_left = -67.0
 offset_right = 328.0
@@ -1797,9 +1866,19 @@ offset_bottom = 190.0
 
 [node name="Diurn" parent="." instance=ExtResource("12_vyx4a")]
 
+[node name="Indicador_nombre_level" parent="." instance=ExtResource("14_omp1r")]
+anchors_preset = 0
+offset_left = -40.0
+offset_top = -18.5714
+offset_right = 35.0
+offset_bottom = 4.42857
+text = "Marcus Lv.#"
+
+[connection signal="Lose_Life" from="." to="Player UI" method="_on_player_lose_life"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/PlayerAtack" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timers/CD" to="." method="_on_cd_timeout"]
+[connection signal="timeout" from="Timers/Tiempo_de_muerte" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timers/Finish_animation" to="StateMachine/PlayerAtack" method="_on_finish_animation_timeout"]
+[connection signal="body_entered" from="Damage_box" to="." method="_on_damage_box_body_entered"]
 [connection signal="body_entered" from="hit_box" to="." method="_on_hit_box_body_entered"]
 [connection signal="body_exited" from="hit_box" to="." method="_on_hit_box_body_exited"]
-[connection signal="timeout" from="CD" to="." method="_on_cd_timeout"]
-[connection signal="timeout" from="Tiempo_de_muerte" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Finish_animation" to="StateMachine/PlayerAtack" method="_on_finish_animation_timeout"]

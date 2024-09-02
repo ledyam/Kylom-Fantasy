@@ -16,7 +16,7 @@ func _ready() -> void:
 
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Morir"):
 		var ske = skeleton.instantiate()
 		ske.global_position = Vector2(randf_range(50,400), randf_range(-50 , 50))
@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	pass
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
-	CurrentZone.SetZone("Forrest")
+	CurrentZone.SetZone("Forest")
 	pass # Replace with function body.
 	
 func EnabledMusicDia():

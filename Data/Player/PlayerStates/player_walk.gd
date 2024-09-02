@@ -5,7 +5,7 @@ func enter():
 	
 
 func physics_process(_delta):
-	if Dialogic.VAR.MOVERSE:
+	if player.can_move:
 		Mover()
 	else :
 		state_machine.change_to(player.states._idle)
@@ -31,9 +31,3 @@ func Mover ():
 	player.mru_2d.direction_2d = input_direction
 	player.mru_2d.move()
 	
-
-func input(event: InputEvent) -> void:
-	
-	if event.is_action_pressed("Atacar") and event.is_action_pressed("ui_right"):
-		player.animated_sprite_2d.play(player.animations._attack)
-		

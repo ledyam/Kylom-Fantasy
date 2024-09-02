@@ -13,7 +13,7 @@ func physics_process(_delta: float) -> void:
 	if enemy.on_area : 
 		state_machine.change_to("EnemyWalk")
 		
-	if enemy.vida <= 0 :
+	if enemy.life <= 0 :
 		state_machine.change_to("EnemyDead") 
 
 

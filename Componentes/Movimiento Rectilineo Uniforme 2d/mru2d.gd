@@ -27,5 +27,5 @@ func get_velocity() -> Vector2:
 	
 func move():
 	character.velocity = get_velocity()
-	character.move_and_slide()
+
 	pass
