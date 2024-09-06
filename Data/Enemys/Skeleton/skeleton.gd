@@ -1,6 +1,7 @@
 extends EnemyOriginal
 class_name Undead_Enemy
 
+@onready var state_machine: Node = $StateMachine
 
 @onready var anim_enemy: AnimatedSprite2D = $AnimatedSprite2D
 @onready var damage: AudioStreamPlayer2D = $damage
@@ -11,7 +12,8 @@ var on_area : bool = false
 var is_dead : bool = false 
 var bounce_strength = 100
 
-
+func _ready() -> void:
+	name = "Skeleto"
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	
 	if body as MainPlayer :

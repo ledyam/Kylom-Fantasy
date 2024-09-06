@@ -1,13 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsr3p3mgbi1lu"]
+[gd_scene load_steps=2 format=3 uid="uid://bsr3p3mgbi1lu"]
 
 [ext_resource type="Script" path="res://testeo.gd" id="1_k15cy"]
-[ext_resource type="PackedScene" uid="uid://bnp7gvxym3f6c" path="res://Data/Enemys/Skeleton/skeleton.tscn" id="2_4c36p"]
 
 [node name="Testeo" type="Node2D"]
 script = ExtResource("1_k15cy")
-
-[node name="Skeleton" parent="." instance=ExtResource("2_4c36p")]
-critic_chance = 0.316
-DEF = 20.0
-
-[node name="Marker2D" type="Marker2D" parent="." groups=["FirstEnemy"]]

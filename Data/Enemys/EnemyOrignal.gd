@@ -7,6 +7,7 @@ var type : String
 var ATK : float  = 20
 var can_critic : bool = false  
 var level : int = 1
+
 @export_range(0,1) var critic_chance : float
 @export var  DEF : float
 var  numero_flotante : PackedScene = load("res://UI/Indicadores/numero_flotante.tscn")
@@ -29,7 +30,6 @@ func spawn_numero_flotante(damage ):
 		number.find_child("AnimationPlayer").play("normal")
 	get_tree().current_scene.add_child(number)
 #region FUNCIONES Para Daño
-
 func EffectiveDamage(give_attack : float):
 	var damage 
 	damage =  give_attack * Defense(give_attack) * Aleatorio() *Critico(critic_chance)

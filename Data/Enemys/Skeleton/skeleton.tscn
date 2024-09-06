@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://bnp7gvxym3f6c"]
+[gd_scene load_steps=59 format=3 uid="uid://bnp7gvxym3f6c"]
 
 [ext_resource type="Script" path="res://Data/Enemys/Skeleton/skeleton.gd" id="1_dsiug"]
 [ext_resource type="Texture2D" uid="uid://defjht5fstxht" path="res://Assets/Tiles/Cute_Fantasy_Free/Enemies/Skeleton.png" id="2_kt7i0"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Data/Enemys/Skeleton/Scripts/enemy_dead.gd" id="6_dmp4f"]
 [ext_resource type="AudioStream" uid="uid://b4ysuu5wxav3l" path="res://Assets/Sounds/goblin-growl-100279.mp3" id="7_jx7hq"]
 [ext_resource type="Script" path="res://Data/Enemys/Skeleton/Scripts/enemy_take_damage.gd" id="7_legk2"]
+[ext_resource type="Script" path="res://Data/Enemys/Skeleton/Scripts/enemy_patrullaje.gd" id="8_ot5gr"]
 [ext_resource type="PackedScene" uid="uid://bcyomv3f2203e" path="res://Data/Enemys/Generic/patrullaje.tscn" id="9_ucm6i"]
 [ext_resource type="PackedScene" uid="uid://oe8ee4f7bqeh" path="res://UI/Indicadores/indicador_level.tscn" id="10_728rq"]
 
@@ -381,7 +382,7 @@ radius = 47.0
 [node name="Skeleton" type="CharacterBody2D" node_paths=PackedStringArray("Patrullaje")]
 scale = Vector2(1.3, 1.3)
 collision_layer = 2
-collision_mask = 9
+collision_mask = 3
 script = ExtResource("1_dsiug")
 Patrullaje = NodePath("Patrullaje")
 critic_chance = 0.239
@@ -409,6 +410,14 @@ script = ExtResource("6_dmp4f")
 [node name="EnemyTakeDamage" type="Node" parent="StateMachine"]
 script = ExtResource("7_legk2")
 
+[node name="EnemyPatrullaje" type="Node" parent="StateMachine"]
+script = ExtResource("8_ot5gr")
+
+[node name="Receso_Patrullaje" type="Timer" parent="StateMachine/EnemyPatrullaje"]
+process_callback = 0
+wait_time = 7.284
+one_shot = true
+
 [node name="Collision_Body" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ns77y")
 
@@ -432,7 +441,6 @@ wait_time = 0.516
 group_name = "FirstEnemy"
 
 [node name="Indicador_nombre_level" parent="." instance=ExtResource("10_728rq")]
-anchors_preset = 0
 offset_left = -20.0
 offset_top = -10.0
 offset_right = 61.0
@@ -441,6 +449,7 @@ scale = Vector2(0.5, 0.5)
 text = "Skeleto Lv.#"
 
 [connection signal="Take_Damage" from="." to="StateMachine/EnemyWalk" method="_on_skeleton_take_damage"]
+[connection signal="timeout" from="StateMachine/EnemyPatrullaje/Receso_Patrullaje" to="StateMachine/EnemyPatrullaje" method="_on_receso_patrullaje_timeout"]
 [connection signal="body_entered" from="Area_Vigilancia" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area_Vigilancia" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="CD_TakeDamage" to="StateMachine/EnemyTakeDamage" method="_on_cd_take_damage_timeout"]
