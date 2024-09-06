@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://v7k0htmskde2" path="res://Assets/Tiles/pixel-art-house.png" id="9_rv84w"]
 [ext_resource type="Texture2D" uid="uid://be66teyq1xkxr" path="res://Assets/Tiles/Cute_Fantasy_Free/Outdoor decoration/Oak_Tree.png" id="10_tksl4"]
 [ext_resource type="AudioStream" uid="uid://ctbcwf35mm5t6" path="res://Assets/Sounds/ambience-night-rural-campground-new-zeala-17140.mp3" id="12_7m7f7"]
-[ext_resource type="PackedScene" uid="uid://bxkm03xjifvox" path="res://Objects/Objeto.tscn" id="12_iwquq"]
+[ext_resource type="PackedScene" uid="uid://bxkm03xjifvox" path="res://Objects/objeto.tscn" id="12_iwquq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qatax"]
 texture = ExtResource("4_e62o6")

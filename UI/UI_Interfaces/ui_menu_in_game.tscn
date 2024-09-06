@@ -34,6 +34,7 @@ atlas = ExtResource("1_qa2pc")
 region = Rect2(48.1236, 96.0069, 32.0519, 31.3807)
 
 [node name="UI_Menu_InGame" type="Control" node_paths=PackedStringArray("description")]
+z_index = 10
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -95,6 +96,7 @@ layout_mode = 2
 text = "Quit"
 
 [node name="Inventario" type="NinePatchRect" parent="."]
+visible = false
 z_index = 10
 layout_mode = 1
 anchors_preset = 8
