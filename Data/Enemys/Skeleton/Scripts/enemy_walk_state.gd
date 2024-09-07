@@ -4,26 +4,24 @@ extends EnemyState
 func enter():
 	print ("State >>>>WALK<<<<")
 	
-func physics_process(delta: float) -> void:
-
-	if (enemy.on_area and enemy.vida > 0):
-		enemy.velocity = Vector2.ZERO
+func physics_process(_delta: float) -> void:
+	if (enemy.on_area and enemy.life > 0):
+		
 		if enemy.player.position < enemy.position :
 			enemy.anim_enemy.flip_h = true
 			enemy.anim_enemy.play("Skeleton_walk")
-			enemy.position -= (enemy.position - enemy.player.position  ) / 100
+			enemy.velocity = enemy.to_local(enemy.player.position).normalized()* 30
 		else : 
-			enemy.velocity = Vector2.ZERO
+			
 			enemy.anim_enemy.flip_h = false
 			enemy.anim_enemy.play("Skeleton_walk")
-			enemy.position -= (enemy.position - enemy.player.position  ) / 100
-			
-	
-	else: 
-		#Patrullaje En Estado Walk
-		enemy.velocity = enemy.Patrullaje.direction * 20
-		enemy.anim_enemy.play("Skeleton_walk")
+			enemy.velocity = enemy.to_local(enemy.player.position).normalized() * 30
 		enemy.move_and_slide()
+	else: 
+		enemy.Patrullaje._get_next_positions()
+		state_machine.change_to("EnemyIdle")
+		
+		
 
 	
 	

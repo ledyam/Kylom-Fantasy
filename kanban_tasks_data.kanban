@@ -1,0 +1,90 @@
+{
+	"categories": [
+		{
+			"uuid": "f9264766-a461-4d7d-8437-0ca5e3aa89f3",
+			"title": "Interfaz",
+			"color": "0bd713"
+		},
+		{
+			"uuid": "1ee6dac0-ba22-4e0a-a72c-361010f9fcb4",
+			"title": "Base de Datos ",
+			"color": "1eb0b7"
+		},
+		{
+			"uuid": "802c5e02-6d85-4618-9384-d5925a82f9c2",
+			"title": "Dibujo",
+			"color": "e21985"
+		},
+		{
+			"uuid": "191453d0-80cb-49e0-99e5-a0daac855839",
+			"title": "Diseño de Mundo",
+			"color": "97c013"
+		},
+		{
+			"uuid": "52aa36b5-a120-4a5f-9c9b-b29ecccc73ec",
+			"title": "Fixed_Script",
+			"color": "ebed13"
+		},
+		{
+			"uuid": "1c0b2353-5d4a-4e72-b62f-02823d60a92b",
+			"title": "Audio",
+			"color": "0545ee"
+		},
+		{
+			"uuid": "a9b9a51e-62ce-4d59-86a3-fc462de61d0f",
+			"title": "Historia Central",
+			"color": "e9a468"
+		},
+		{
+			"uuid": "b95c0d1e-4d1b-4138-937e-38529b8dc7ca",
+			"title": "Nueva Funcionalidad",
+			"color": "e21818"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "1319d7c3-95ea-403c-a443-986f772d3316",
+			"title": "Pendientes",
+			"tasks": [
+				"f242efb5-50d4-4d73-bfab-00504a332f01"
+			]
+		},
+		{
+			"uuid": "59d6ca3d-b983-4f8a-b834-5052daff4f26",
+			"title": "En Progreso",
+			"tasks": []
+		},
+		{
+			"uuid": "0d46dab2-a88a-4634-b92b-deadf4ef030b",
+			"title": "Completadas",
+			"tasks": []
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "f242efb5-50d4-4d73-bfab-00504a332f01",
+			"title": "Creación de Sistema de Loot ",
+			"description": "Desarrollar un sistema de Loot Generalizado para todos los enemigos Básicos  Instanciables",
+			"category": "b95c0d1e-4d1b-4138-937e-38529b8dc7ca",
+			"steps": [
+				{
+					"details": "Método que Calcule la Probabiliad y Retorne el item en (EnemyOriginal.gd)\n",
+					"done": false
+				}
+			]
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"1319d7c3-95ea-403c-a443-986f772d3316"
+			],
+			[
+				"59d6ca3d-b983-4f8a-b834-5052daff4f26"
+			],
+			[
+				"0d46dab2-a88a-4634-b92b-deadf4ef030b"
+			]
+		]
+	}
+}

@@ -1,18 +1,15 @@
-extends CharacterBody2D
-class_name EnemyCharacter
+extends EnemyOriginal
+class_name Undead_Enemy
+
+var Item : PackedScene= load("res://Objects/objeto.tscn")
+@onready var state_machine: Node = $StateMachine
 @onready var anim_enemy: AnimatedSprite2D = $AnimatedSprite2D
 @onready var damage: AudioStreamPlayer2D = $damage
 @export var Patrullaje : Node2D
-var vida = 100
+
 var player = null
 var on_area : bool = false 
-var dead : bool = false 
-var bounce_strength = 100
-
-signal Take_Damage
-
-
-
+var is_dead : bool = false 
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -30,13 +27,14 @@ func _on_area_2d_body_exited(_body: Node2D) -> void:
 	pass # Replace with function body.
 
 
-func _on_hit_box_area_entered(area: Area2D) -> void:
-	if area.name == "Damage_box" and !dead :
-		emit_signal("Take_Damage")
-		
-
-
-
 func _on_dead_timeout() -> void:
+	var temporal_item = Item.instantiate()
+	temporal_item.global_position = self.global_position
+	temporal_item.Stats = Item_loot[randi_range(0,1)]
+	get_tree().current_scene.add_child(temporal_item)
 	queue_free()
+
+	
+
+
 	pass # Replace with function body.

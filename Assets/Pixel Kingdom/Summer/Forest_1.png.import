@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmcpmb1esrefw"
-path="res://.godot/imported/Forest_1.png-c11ab76d8d26085f5e7cab4ed4bbc249.ctex"
+path="res://.godot/imported/Forest_1.png-a33bc28c420ba9d37743ffa68bbdf78f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixel Kingdom - Grasslands (Free Version)/Summer/Forest_1.png"
-dest_files=["res://.godot/imported/Forest_1.png-c11ab76d8d26085f5e7cab4ed4bbc249.ctex"]
+source_file="res://Assets/Pixel Kingdom/Summer/Forest_1.png"
+dest_files=["res://.godot/imported/Forest_1.png-a33bc28c420ba9d37743ffa68bbdf78f.ctex"]
 
 [params]
 

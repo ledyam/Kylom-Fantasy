@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blj4ll5ut5fx2"
-path="res://.godot/imported/a.png-1c8ca9e5031b1664ff8e5fc51bbcc828.ctex"
+path="res://.godot/imported/a.png-b153b500284d992c1f8fc79f801eedfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixel Kingdom - Grasslands (Free Version)/Summer/a.png"
-dest_files=["res://.godot/imported/a.png-1c8ca9e5031b1664ff8e5fc51bbcc828.ctex"]
+source_file="res://Assets/Pixel Kingdom/Summer/a.png"
+dest_files=["res://.godot/imported/a.png-b153b500284d992c1f8fc79f801eedfc.ctex"]
 
 [params]
 

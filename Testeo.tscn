@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsr3p3mgbi1lu"]
+
+[ext_resource type="Script" path="res://testeo.gd" id="1_k15cy"]
+
+[node name="Testeo" type="Node2D"]
+script = ExtResource("1_k15cy")
+
+[node name="PopupMenu" type="PopupMenu" parent="."]

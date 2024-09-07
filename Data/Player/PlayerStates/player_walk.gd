@@ -5,7 +5,7 @@ func enter():
 	
 
 func physics_process(_delta):
-	if Dialogic.VAR.MOVERSE:
+	if player.can_move:
 		Mover()
 	else :
 		state_machine.change_to(player.states._idle)

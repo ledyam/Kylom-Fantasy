@@ -1,7 +1,8 @@
 extends PlayerState
-@onready var timer: Timer = $"../../Tiempo_de_muerte"
+@onready var timer: Timer = $"../../Timers/Tiempo_de_muerte"
 func enter ():
 	print ("State >>>>DEADDDD<<<<")
+	player.velocity = Vector2.ZERO
 	player.animated_sprite_2d.play(player.animations._dead)
 	timer.start()
 

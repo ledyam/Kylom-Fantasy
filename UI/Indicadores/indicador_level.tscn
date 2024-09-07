@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://oe8ee4f7bqeh"]
+
+[ext_resource type="Script" path="res://UI/Indicadores/indicador_level.gd" id="1_5aqih"]
+[ext_resource type="FontFile" uid="uid://refuf5j5hr24" path="res://Assets/Fonts/PixelOperator8.ttf" id="1_kfydx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5vsms"]
+font = ExtResource("1_kfydx")
+font_size = 8
+
+[node name="Indicador_nombre_level" type="Label"]
+layout_direction = 1
+offset_left = -12.0
+offset_top = -7.0
+offset_right = 14.0
+offset_bottom = 1.0
+scale = Vector2(0.9, 0.9)
+text = "test"
+label_settings = SubResource("LabelSettings_5vsms")
+script = ExtResource("1_5aqih")
+metadata/_edit_use_anchors_ = true

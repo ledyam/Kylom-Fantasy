@@ -1,5 +1,5 @@
 extends PlayerState
-@onready var attack_sounds: AudioStreamPlayer2D = $"../../Attack_sounds"
+@onready var attack_sounds: AudioStreamPlayer2D = $"../../Sounds/Attack_sounds"
 
 func enter ():
 	print (">>>>>ESTADO IDLE<<<<")
@@ -22,13 +22,15 @@ func enter ():
 
 func physics_process(_delta: float):
 	
-	if (player.vida <= 0):
+	if (player.vida_actual <= 0):
+		player.can_attack = false
+		player.recibir_damage = false 
 		state_machine.change_to(player.states._dead)
 		
 		
 		
 	else :
-		#Cambios de Direccion de Movimeint y de Estado 
+		#Cambios de Direccion, Movimiento y Estado 
 		if Dialogic.VAR.MOVERSE: 
 			if Input.is_action_pressed('ui_up') :
 				set_current_direction(player.direction.up)
@@ -46,6 +48,6 @@ func physics_process(_delta: float):
 				set_current_direction(player.direction.left)
 				state_machine.change_to(player.states._walk)
 
-			if Input.is_action_pressed("Atacar") and player.puede_atacar:
+			if Input.is_action_pressed("Atacar") and player.can_attack:
 				attack_sounds.play()
 				state_machine.change_to(player.states._atack)
