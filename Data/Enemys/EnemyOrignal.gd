@@ -7,6 +7,8 @@ var type : String
 var ATK : float  = 20
 var can_critic : bool = false  
 var level : int = 1
+var Item_loot : Dictionary = {}
+
 @export_range(0,1) var critic_chance : float
 @export var  DEF : float
 var  numero_flotante : PackedScene = load("res://UI/Indicadores/numero_flotante.tscn")
@@ -15,7 +17,13 @@ signal Take_Damage
 
 func _ready() -> void:
 	randomize()
-	
+	DataBase.database.execute('SELECT *
+	FROM public."Item_Consumible";')
+	DataBase.Items_data = Item_loot
+	DataBase.Clean_Library()
+	OS.alert("item dropeable cosneguido")
+
+
 
 
 
@@ -29,7 +37,6 @@ func spawn_numero_flotante(damage ):
 		number.find_child("AnimationPlayer").play("normal")
 	get_tree().current_scene.add_child(number)
 #region FUNCIONES Para Daño
-
 func EffectiveDamage(give_attack : float):
 	var damage 
 	damage =  give_attack * Defense(give_attack) * Aleatorio() *Critico(critic_chance)
@@ -46,8 +53,7 @@ func Defense (give_attack : float):
 		return 0.0
 		
 	else : return(give_attack / (give_attack+DEF))
-#endregion
-
+	
 func Critico(chance):
 	var num = randf_range(1,0)
 	
@@ -57,3 +63,5 @@ func Critico(chance):
 	else:
 		can_critic = false 
 		return 1.0
+
+#endregion

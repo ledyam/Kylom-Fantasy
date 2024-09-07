@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwgx6ra48nu08"
-path="res://.godot/imported/GUI_2x.png-dac38f3dab3904d4f609d56b83bce3e4.ctex"
+path="res://.godot/imported/GUI_2x.png-b50e5e4b87f3197d769f838224cf6d84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cryo's Mini GUI/GUI/GUI_2x.png"
-dest_files=["res://.godot/imported/GUI_2x.png-dac38f3dab3904d4f609d56b83bce3e4.ctex"]
+source_file="res://Assets/GUI/GUI/GUI_2x.png"
+dest_files=["res://.godot/imported/GUI_2x.png-b50e5e4b87f3197d769f838224cf6d84.ctex"]
 
 [params]
 

@@ -9,11 +9,11 @@ font_size = 8
 
 [node name="Indicador_nombre_level" type="Label"]
 layout_direction = 1
-anchors_preset = -1
-offset_left = -14.0
+offset_left = -12.0
 offset_top = -7.0
-offset_right = 12.0
+offset_right = 14.0
 offset_bottom = 1.0
+scale = Vector2(0.9, 0.9)
 text = "test"
 label_settings = SubResource("LabelSettings_5vsms")
 script = ExtResource("1_5aqih")

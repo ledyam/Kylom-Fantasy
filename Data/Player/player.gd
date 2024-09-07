@@ -9,15 +9,18 @@ var vida_actual : float  = 100
 var vida_Max : float = 100 
 var attack :  int = 50 
 #endregion
+	
+
+
 
 #region VARIABLES De Control
-
 var can_attack : bool = true
 var can_move : bool = true 
 var direction : PlayerDirections = PlayerDirections.new()
 var recibir_damage = false
 var cda = false
 var knockback = Vector2.ZERO
+
 #endregion
 var  numero_flotante : PackedScene = load("res://UI/Indicadores/numero_flotante.tscn")
 
@@ -30,12 +33,14 @@ var  numero_flotante : PackedScene = load("res://UI/Indicadores/numero_flotante.
 @onready var leap_gj_3_: AudioStreamPlayer = $"Sounds/Leap(gj3)"
 @onready var diurn: Control = $Diurn
 @onready var player_ui: Control = $"Player UI"
+@onready var ui_menu_in_game: Control = $UI_Menu_InGame
+
 
 #endregion
 
-
 #region SEÑALES
 signal Lose_Life (life: float)
+signal Give_life(life:float)
 #endregion
  
 #region CONSTANTES 
@@ -66,11 +71,11 @@ const animations : Dictionary = {
 
 #region FUNCIONES del Engine
 
-	
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
-	
 
+func _ready() -> void:
+	CentralSignal.connect("UsarObjeto",on_RecibirVida)
 
 	
 	#endregion
@@ -95,38 +100,62 @@ func spawn_numero_flotante(damage ):
 #region ALERTA DE SEÑALES
 func _on_timer_timeout() -> void:
 	queue_free()
+	
 	owner.get_tree().reload_current_scene()
 	pass 
 
 
-func _on_hit_box_body_entered(body: Node2D) -> void:
-	if body as EnemyOriginal and vida_actual > 0:
-		recibir_damage = true
-		cda = true
-		knockback = (self.global_position - body.position).normalized() 
-		velocity = knockback * 20
-		Recibir_damage(body.ATK)
-		leap_gj_3_.play()
-		
+
+	
 	pass 
 
-func _on_hit_box_body_exited(body: Node2D) -> void:
-	if body.name == "Skeleton":
-		recibir_damage = false
-		cda = false 
-	pass 
-
-
+#TIMERS
 func _on_cd_timeout() -> void:
 	cda = true
 	recibir_damage = false
 	velocity = Vector2.ZERO
 	pass 
-#endregion
-
-
+	
+#Señal Conectada desde Nodo Lejano
+func on_RecibirVida(vida):
+	vida_actual += vida
+	if vida_actual <= vida_Max:
+		print(vida_actual)
+		Give_life.emit(vida_actual)
+	else : 
+		vida_actual = vida_Max
+		Give_life.emit(vida_actual)
+		
+	pass
+#Señales de Áreas del Personaje
+#SEÑAL Principal de ENTRADA HITBOX PLAYER
+func _on_hit_box_body_entered(body: Node2D) -> void:
+	if body as EnemyOriginal and vida_actual > 0:
+		recibir_damage = true
+		cda = true
+#Asiganción de Empuje al Recibir Daño
+		knockback = (self.global_position - body.position).normalized() 
+		velocity = knockback * 20
+		Recibir_damage(body.ATK) #------Temporal para Cambios
+		leap_gj_3_.play()
+		
+	if body as ObjetoFisico: 
+		ui_menu_in_game.inventario.add_item(body.Stats)
+		body.queue_free()
+		
+#SEÑAL Principal de SALIDA  HITBOX PLAYER
+func _on_hit_box_body_exited(body: Node2D) -> void:
+	if body.name == "Skeleton":
+		recibir_damage = false
+		cda = false 
+	pass 
+	
+	
+#Señal para Ofertar Daño
 func _on_damage_box_body_entered(body: Node2D) -> void:
 	if body as EnemyOriginal:
 		body.EffectiveDamage(attack)
-		
-	pass # Replace with function body.
+	pass 
+	
+	
+#endregion

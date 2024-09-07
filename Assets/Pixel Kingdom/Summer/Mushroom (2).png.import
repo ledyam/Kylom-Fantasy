@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7dw4k65v7yxk"
-path="res://.godot/imported/Mushroom (2).png-78fdb5d5207eb4a265cdf835e68a09c6.ctex"
+path="res://.godot/imported/Mushroom (2).png-012cc6090b1070a3e5187939c8d5a347.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixel Kingdom - Grasslands (Free Version)/Summer/Mushroom (2).png"
-dest_files=["res://.godot/imported/Mushroom (2).png-78fdb5d5207eb4a265cdf835e68a09c6.ctex"]
+source_file="res://Assets/Pixel Kingdom/Summer/Mushroom (2).png"
+dest_files=["res://.godot/imported/Mushroom (2).png-012cc6090b1070a3e5187939c8d5a347.ctex"]
 
 [params]
 

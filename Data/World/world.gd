@@ -1,13 +1,6 @@
 extends Node2D
-
-
-@onready var player: MainPlayer = $Player
-
-var aux : Array
 var skeleton = load("res://Data/Enemys/Skeleton/skeleton.tscn")
 @onready var ciclo_day_night: AnimationPlayer = $"Ciclo Day_Night"
-@onready var dia: AudioStreamPlayer2D = $dia
-@onready var noche: AudioStreamPlayer2D = $noche
 
 
 func _ready() -> void:
@@ -26,12 +19,4 @@ func _physics_process(_delta: float) -> void:
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	CurrentZone.SetZone("Forest")
 	pass # Replace with function body.
-	
-func EnabledMusicDia():
-	noche.stop()
-	dia.play()
-	
-func EnabledMusicNoche():
-	dia.stop()
-	noche.play()
-	
+	get_tree().create_tween()

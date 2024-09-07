@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=3 uid="uid://dc1ttabgya1wf"]
+[gd_scene load_steps=127 format=3 uid="uid://dc1ttabgya1wf"]
 
 [ext_resource type="Texture2D" uid="uid://drs8axg2b5fng" path="res://Assets/Tiles/Cute_Fantasy_Free/Player/Player.png" id="1_iedd1"]
 [ext_resource type="Script" path="res://Data/Player/player.gd" id="1_t574o"]
@@ -11,9 +11,10 @@
 [ext_resource type="AudioStream" uid="uid://beclep87ndefs" path="res://Assets/Sounds/Sword Slash (Rpg).wav" id="9_hdu75"]
 [ext_resource type="Script" path="res://Data/Player/PlayerStates/player_atack.gd" id="10_laalb"]
 [ext_resource type="AudioStream" uid="uid://gbppvr8uv4ki" path="res://Assets/Sounds/Leap (Gj3).wav" id="11_lvs54"]
-[ext_resource type="PackedScene" uid="uid://p0jmnaqahkh5" path="res://UI/life_ui.tscn" id="12_0yp4y"]
+[ext_resource type="PackedScene" uid="uid://p0jmnaqahkh5" path="res://UI/Life_UI/life_ui.tscn" id="12_0yp4y"]
 [ext_resource type="PackedScene" uid="uid://ewo22t74u83d" path="res://UI/Ciclo Dia_Noche/Diurn.tscn" id="12_vyx4a"]
 [ext_resource type="PackedScene" uid="uid://oe8ee4f7bqeh" path="res://UI/Indicadores/indicador_level.tscn" id="14_omp1r"]
+[ext_resource type="PackedScene" uid="uid://5jark5pkwsb" path="res://UI/UI_Interfaces/ui_menu_in_game.tscn" id="15_anmsq"]
 
 [sub_resource type="Animation" id="Animation_gimq3"]
 length = 0.4
@@ -1773,6 +1774,7 @@ size = Vector2(11, 20)
 radius = 9.05539
 
 [node name="Marcus" type="CharacterBody2D"]
+y_sort_enabled = true
 scale = Vector2(0.7, 0.7)
 collision_mask = 14
 script = ExtResource("1_t574o")
@@ -1789,13 +1791,14 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 1.42857)
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_b1j8g")
 animation = &"Player_attack_up"
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+[node name="Body_Collision" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 7.10543e-15)
 shape = SubResource("CapsuleShape2D_656gv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -1806,6 +1809,7 @@ limit_left = -488
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_ghpk6")
 initial_state = NodePath("PlayerIdle")
+DEBUG = false
 
 [node name="PlayerIdle" type="Node" parent="StateMachine"]
 script = ExtResource("4_gku6m")
@@ -1845,7 +1849,7 @@ stream = ExtResource("9_hdu75")
 stream = ExtResource("11_lvs54")
 
 [node name="Damage_box" type="Area2D" parent="."]
-collision_mask = 2
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Damage_box"]
 position = Vector2(0.500005, 13)
@@ -1853,27 +1857,31 @@ shape = SubResource("RectangleShape2D_7dgov")
 disabled = true
 
 [node name="hit_box" type="Area2D" parent="."]
-collision_mask = 2
+y_sort_enabled = true
+collision_mask = 15
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box"]
+[node name="Area_Collision" type="CollisionShape2D" parent="hit_box"]
+y_sort_enabled = true
 shape = SubResource("CircleShape2D_okugr")
 debug_color = Color(0.970136, 0.126886, 0.303562, 0.42)
 
 [node name="Player UI" parent="." instance=ExtResource("12_0yp4y")]
-offset_left = -67.0
-offset_right = 328.0
+offset_left = -67.1429
+offset_right = 327.857
 offset_bottom = 190.0
 
 [node name="Diurn" parent="." instance=ExtResource("12_vyx4a")]
 
 [node name="Indicador_nombre_level" parent="." instance=ExtResource("14_omp1r")]
-anchors_preset = 0
 offset_left = -40.0
-offset_top = -18.5714
+offset_top = -21.4286
 offset_right = 35.0
-offset_bottom = 4.42857
+offset_bottom = 1.57146
 text = "Marcus Lv.#"
 
+[node name="UI_Menu_InGame" parent="." instance=ExtResource("15_anmsq")]
+
+[connection signal="Give_life" from="." to="Player UI" method="_on_marcus_give_life"]
 [connection signal="Lose_Life" from="." to="Player UI" method="_on_player_lose_life"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/PlayerAtack" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timers/CD" to="." method="_on_cd_timeout"]
