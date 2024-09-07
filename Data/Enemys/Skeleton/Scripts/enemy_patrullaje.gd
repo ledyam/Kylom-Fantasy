@@ -2,9 +2,7 @@ extends EnemyState
 
 @onready var receso_patrullaje: Timer = $Receso_Patrullaje
 
-# Called when the node enters the scene tree for the first time.
-func enter() -> void:
-	print (enemy.name  + " : Entrando en modo Patrulla")
+
 	
 
 func physics_process(_delta: float) -> void:

@@ -397,6 +397,7 @@ autoplay = "Skeleton_idle"
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_wyt0r")
 initial_state = NodePath("EnemyWalk")
+DEBUG = false
 
 [node name="EnemyIdle" type="Node" parent="StateMachine"]
 script = ExtResource("3_tqpl3")

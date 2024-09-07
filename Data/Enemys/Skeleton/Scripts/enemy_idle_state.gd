@@ -14,7 +14,7 @@ func physics_process(_delta: float) -> void:
 		if enemy.on_area :
 			state_machine.change_to("EnemyWalk")
 		else : 
-			await get_tree().create_timer(2).timeout
+			
 			state_machine.change_to("EnemyPatrullaje")
 	else :
 		state_machine.change_to("EnemyDead") 
