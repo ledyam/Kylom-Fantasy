@@ -28,7 +28,7 @@ func _physics_process(_delta: float) -> void:
 
 func _connection_established() -> void:
 	print(database.parameter_status)
-	print("Conexion A Base de Datos Establecida")
+	print("Conexión Establecida con la Base de Datos de Forma Exitosa")
 	BDReady.emit()
 	
 
@@ -67,7 +67,7 @@ func _data_received(error_object: Dictionary, transaction_status: PostgreSQLClie
 	if not error_object.is_empty():
 		prints("Error:", error_object)
 	
-	database.close()
+	#database.close()
 
 
 func _authentication_error(error_object: Dictionary) -> void:
