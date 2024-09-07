@@ -3,7 +3,6 @@ var skeleton = load("res://Data/Enemys/Skeleton/skeleton.tscn")
 @onready var ciclo_day_night: AnimationPlayer = $"Ciclo Day_Night"
 
 
-
 func _ready() -> void:
 	ciclo_day_night.play("Ciclo General")
 	CurrentZone.SetZone(self.name)

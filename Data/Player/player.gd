@@ -34,7 +34,7 @@ var  numero_flotante : PackedScene = load("res://UI/Indicadores/numero_flotante.
 @onready var diurn: Control = $Diurn
 @onready var player_ui: Control = $"Player UI"
 @onready var ui_menu_in_game: Control = $UI_Menu_InGame
-@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+
 
 #endregion
 
