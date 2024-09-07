@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dngi8kgl84b6v"
-path="res://.godot/imported/Flower (2).png-f6b4320514278e0f513e92fefcfd7125.ctex"
+path="res://.godot/imported/Flower (2).png-359a277640835cc927e3623856d62027.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixel Kingdom - Grasslands (Free Version)/Summer/Flower (2).png"
-dest_files=["res://.godot/imported/Flower (2).png-f6b4320514278e0f513e92fefcfd7125.ctex"]
+source_file="res://Assets/Pixel Kingdom/Summer/Flower (2).png"
+dest_files=["res://.godot/imported/Flower (2).png-359a277640835cc927e3623856d62027.ctex"]
 
 [params]
 

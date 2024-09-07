@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://clsmmxew5bvuy"
-path="res://.godot/imported/Rock (2).png-3e58e88f4bbc98cf66dbdaeea7fa59fa.ctex"
+path="res://.godot/imported/Rock (2).png-2a17d66a6d3086a1deea86b1d5931c39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixel Kingdom - Grasslands (Free Version)/Summer/Rock (2).png"
-dest_files=["res://.godot/imported/Rock (2).png-3e58e88f4bbc98cf66dbdaeea7fa59fa.ctex"]
+source_file="res://Assets/Pixel Kingdom/Summer/Rock (2).png"
+dest_files=["res://.godot/imported/Rock (2).png-2a17d66a6d3086a1deea86b1d5931c39.ctex"]
 
 [params]
 
