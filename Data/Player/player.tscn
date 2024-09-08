@@ -1803,7 +1803,7 @@ shape = SubResource("CapsuleShape2D_656gv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(3, 0)
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(1.7, 1.7)
 limit_left = -488
 
 [node name="StateMachine" type="Node" parent="."]

@@ -1,0 +1,150 @@
+[gd_scene load_steps=11 format=3 uid="uid://pbj8qfrtsi3o"]
+
+[ext_resource type="StyleBox" uid="uid://drnarcmriti83" path="res://Resources/UI_Themes/hover.tres" id="1_v3ob4"]
+[ext_resource type="StyleBox" uid="uid://b8aew3b4k2hy0" path="res://Resources/UI_Themes/normal.tres" id="2_osdib"]
+[ext_resource type="Script" path="res://UI/Menú Principal/principal_menu.gd" id="3_4yfw4"]
+
+[sub_resource type="Theme" id="Theme_0mox5"]
+Button/font_sizes/font_size = 16
+Button/styles/focus = ExtResource("1_v3ob4")
+Button/styles/normal = ExtResource("2_osdib")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pnrpy"]
+bg_color = Color(0.129739, 0.227326, 0.453125, 1)
+
+[sub_resource type="Animation" id="Animation_okmo0"]
+resource_name = "Oclution"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:texture:fill_to")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.133333, 0.266667, 0.4, 0.633333, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(5, 0), Vector2(1, 0), Vector2(0.901869, 0.107477), Vector2(0.841121, 0.168224), Vector2(0.700935, 0.266355), Vector2(0.495327, 0.462617)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.471095, 1.13261),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.78, 0.78, 0.78, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_45chx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:texture:fill_to")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_08p2e"]
+_data = {
+"Oclution": SubResource("Animation_okmo0"),
+"RESET": SubResource("Animation_45chx")
+}
+
+[sub_resource type="Gradient" id="Gradient_d0etx"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jadgo"]
+gradient = SubResource("Gradient_d0etx")
+fill = 1
+fill_from = Vector2(0.5, 0.471963)
+fill_to = Vector2(5, 0)
+
+[node name="Principal_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_0mox5")
+script = ExtResource("3_4yfw4")
+
+[node name="Panel" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.5
+offset_top = -171.0
+offset_right = 325.5
+offset_bottom = 171.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pnrpy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -39.0
+offset_right = 58.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Inicio" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Inciar"
+
+[node name="Opciones" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Opciones"
+
+[node name="Salir" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Salir"
+
+[node name="AnimationMenu" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_08p2e")
+}
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(324.5, 170)
+scale = Vector2(10.1719, 5.28125)
+texture = SubResource("GradientTexture2D_jadgo")
+
+[connection signal="pressed" from="Panel/VBoxContainer/Inicio" to="." method="_on_inicio_pressed"]
+[connection signal="animation_finished" from="AnimationMenu" to="." method="_on_animation_menu_animation_finished"]

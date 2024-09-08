@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dkcw0st1quc6m" path="res://Assets/Tiles/Rocky Roads2/Objects/apple.png" id="2_k5ym7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_61guv"]
-radius = 7.0
+radius = 4.0
 
 [sub_resource type="Animation" id="Animation_0wbmt"]
 resource_name = "Caida_Drop"
@@ -22,6 +22,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(-14, -14), Vector2(-13, -12), Vector2(-11, -9), Vector2(-10, -7), Vector2(-9, -6), Vector2(-8, -8), Vector2(-6, -6), Vector2(-6.02128, -5.04255), Vector2(-4, -7), Vector2(-1, -6), Vector2(0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.38),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_6t6ro"]
 length = 0.001
@@ -36,6 +48,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ewqji"]
@@ -56,13 +80,12 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_k5ym7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_61guv")
+disabled = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Marker2D"]
+[node name="Object_Animation" type="AnimationPlayer" parent="Marker2D"]
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_ewqji")

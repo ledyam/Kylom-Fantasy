@@ -12,7 +12,7 @@ var item : Dictionary:
 			$Icon.texture = null
 			
 		else:
-			$Icon.texture = load(item["texture"])
+			$Icon.texture = load(item["Texture"])
 
 func _on_mouse_entered() -> void:
 	if item.is_empty() : 
@@ -34,7 +34,7 @@ func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
 		if !self.item.is_empty():
 			print("sumando Vida")
-			CentralSignal.UsarObjeto.emit(item["recuperacion"])
+			CentralSignal.UsarObjeto.emit(item["Health_give"])
 			cantidad -= 1
 			Actualizar_Etiqueta()
 			comer.play()

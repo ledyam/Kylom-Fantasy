@@ -21,10 +21,6 @@ func _ready() -> void:
 	FROM public."Item_Consumible";')
 	DataBase.Items_data = Item_loot
 	DataBase.Clean_Library()
-	OS.alert("item dropeable cosneguido")
-
-
-
 
 
 func spawn_numero_flotante(damage ): 

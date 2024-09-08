@@ -6,8 +6,8 @@ extends Control
 
 #Muestra Descripción , textura y Título del Item
 func set_description(item : Dictionary):
-	description.find_child("Name").text = item["nombre"]
-	description.find_child("Icon").texture = load(item["texture"])
+	description.find_child("Name").text = item["Name"]
+	description.find_child("Icon").texture = load(item["Texture"])
 	description.find_child("Description").text = item["Description"]
 
 #Metodo por defecto para el Inventario General

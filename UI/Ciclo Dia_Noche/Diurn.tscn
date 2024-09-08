@@ -126,7 +126,6 @@ anchor_bottom = 0.9625
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
-metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="Ciclo_UI/Container/VBoxContainer"]
 layout_mode = 2
@@ -140,7 +139,6 @@ anchor_left = 0.164948
 anchor_top = 0.25
 anchor_right = 0.845361
 anchor_bottom = 0.833333
-metadata/_edit_use_anchors_ = true
 
 [node name="Mouth" type="Label" parent="Ciclo_UI/Container/VBoxContainer/Panel/HBoxContainer"]
 layout_mode = 2
@@ -168,7 +166,6 @@ layout_mode = 0
 anchor_right = 0.989691
 anchor_bottom = 1.0
 texture = SubResource("AtlasTexture_1e2yd")
-metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Ciclo_UI/Container/VBoxContainer/Interface_Hour_Day"]
 z_index = 1
