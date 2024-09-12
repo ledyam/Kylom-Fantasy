@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=3 uid="uid://dc1ttabgya1wf"]
+[gd_scene load_steps=127 format=3 uid="uid://dc1ttabgya1wf"]
 
 [ext_resource type="Texture2D" uid="uid://drs8axg2b5fng" path="res://Assets/Tiles/Cute_Fantasy_Free/Player/Player.png" id="1_iedd1"]
 [ext_resource type="Script" path="res://Data/Player/player.gd" id="1_t574o"]
@@ -13,7 +13,6 @@
 [ext_resource type="AudioStream" uid="uid://gbppvr8uv4ki" path="res://Assets/Sounds/Leap (Gj3).wav" id="11_lvs54"]
 [ext_resource type="PackedScene" uid="uid://p0jmnaqahkh5" path="res://UI/Life_UI/life_ui.tscn" id="12_0yp4y"]
 [ext_resource type="AudioStream" uid="uid://n88fshcdfhx7" path="res://Assets/Sounds/Level up Pickup (Rpg).wav" id="12_ig4r5"]
-[ext_resource type="PackedScene" uid="uid://ewo22t74u83d" path="res://UI/Ciclo Dia_Noche/Diurn.tscn" id="12_vyx4a"]
 [ext_resource type="PackedScene" uid="uid://oe8ee4f7bqeh" path="res://UI/Indicadores/indicador_level.tscn" id="14_omp1r"]
 [ext_resource type="PackedScene" uid="uid://5jark5pkwsb" path="res://UI/UI_Interfaces/ui_menu_in_game.tscn" id="15_anmsq"]
 
@@ -1780,6 +1779,20 @@ scale = Vector2(0.7, 0.7)
 collision_mask = 14
 script = ExtResource("1_t574o")
 
+[node name="Player_UI" parent="." instance=ExtResource("12_0yp4y")]
+offset_left = -67.1429
+offset_right = 327.857
+offset_bottom = 190.0
+
+[node name="Indicador_nombre_level" parent="." instance=ExtResource("14_omp1r")]
+offset_left = -40.0
+offset_top = -21.4286
+offset_right = 35.0
+offset_bottom = 1.57146
+text = "Marcus Lv.#"
+
+[node name="UI_Menu_InGame" parent="." instance=ExtResource("15_anmsq")]
+
 [node name="AnimationPlayerActions" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimationPlayerMovements")
 libraries = {
@@ -1868,22 +1881,6 @@ collision_mask = 15
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_okugr")
 debug_color = Color(0.970136, 0.126886, 0.303562, 0.42)
-
-[node name="Player_UI" parent="." instance=ExtResource("12_0yp4y")]
-offset_left = -67.1429
-offset_right = 327.857
-offset_bottom = 190.0
-
-[node name="Diurn" parent="." instance=ExtResource("12_vyx4a")]
-
-[node name="Indicador_nombre_level" parent="." instance=ExtResource("14_omp1r")]
-offset_left = -40.0
-offset_top = -21.4286
-offset_right = 35.0
-offset_bottom = 1.57146
-text = "Marcus Lv.#"
-
-[node name="UI_Menu_InGame" parent="." instance=ExtResource("15_anmsq")]
 
 [connection signal="Give_EXP" from="." to="Player_UI" method="_on_marcus_give_exp"]
 [connection signal="Give_life" from="." to="Player_UI" method="_on_marcus_give_life"]
