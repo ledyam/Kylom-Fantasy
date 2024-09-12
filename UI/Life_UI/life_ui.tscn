@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://p0jmnaqahkh5"]
+[gd_scene load_steps=16 format=3 uid="uid://p0jmnaqahkh5"]
 
 [ext_resource type="Script" path="res://UI/Life_UI/life_ui.gd" id="1_ebjgg"]
 [ext_resource type="Texture2D" uid="uid://cheiqx3f6j47l" path="res://Assets/Tiles/GUI/GUI/GUI_4xBlackpng.png" id="1_o345i"]
+[ext_resource type="PackedScene" uid="uid://ewo22t74u83d" path="res://UI/Ciclo Dia_Noche/Reloj.tscn" id="2_n0y20"]
 [ext_resource type="FontFile" uid="uid://refuf5j5hr24" path="res://Assets/Fonts/PixelOperator8.ttf" id="3_dm8y0"]
 [ext_resource type="Texture2D" uid="uid://bqjfwakgmvips" path="res://Assets/Tiles/Portraits/1 Portraits/Icons_32.png" id="3_oo7et"]
 [ext_resource type="StyleBox" uid="uid://c47l2uhedgd0q" path="res://Resources/UI_Themes/ProgressBar/Fill.tres" id="4_61ofe"]
@@ -185,3 +186,5 @@ grow_vertical = 2
 texture = ExtResource("3_oo7et")
 expand_mode = 3
 flip_h = true
+
+[node name="Reloj" parent="CanvasLayer" instance=ExtResource("2_n0y20")]

@@ -1,11 +1,11 @@
 extends Control
 
-@onready var month: Label = $Ciclo_UI/Container/VBoxContainer/Panel/HBoxContainer/Mouth
-@onready var day_label: Label = $Ciclo_UI/Container/VBoxContainer/Panel/HBoxContainer/Day
-@onready var hour_label: Label = $Ciclo_UI/Container/VBoxContainer/Interface_Hour_Day/HBoxContainer/Hour
-@onready var minute_label: Label = $Ciclo_UI/Container/VBoxContainer/Interface_Hour_Day/HBoxContainer/Minute
-@onready var current_ubication: Label = $Ciclo_UI/Container/VBoxContainer/Current_Ubication/Current_Ubication
-@onready var week_day: Label = $Ciclo_UI/Container/VBoxContainer/Interface_Hour_Day/Week_day
+@onready var month: Label = $Container/VBoxContainer/Panel/HBoxContainer/Mouth
+@onready var day_label: Label = $Container/VBoxContainer/Panel/HBoxContainer/Day
+@onready var hour_label: Label = $Container/VBoxContainer/Interface_Hour_Day/HBoxContainer/Hour
+@onready var minute_label: Label = $Container/VBoxContainer/Interface_Hour_Day/HBoxContainer/Minute
+@onready var current_ubication: Label = $Container/VBoxContainer/Current_Ubication/Current_Ubication
+@onready var week_day: Label = $Container/VBoxContainer/Interface_Hour_Day/Week_day
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
@@ -24,7 +24,6 @@ func _process(_delta: float) -> void:
 	
 	#Toma la Zona donde se encuentra el Player
 	current_ubication.text = CurrentZone.GetZone()
-	
 	#Asignación del Tiempo y Fecha en Interfaz 
 	month.text = MONTH[day_cont]
 	week_day.text = WEEK_DAY[wd]
@@ -39,10 +38,12 @@ func _process(_delta: float) -> void:
 
 	day_label.text = str(day) + "th";
 	pass
-
-
-func CicloTime():
 	
+	if $Timer.is_stopped():
+		$Timer.start()
+	
+
+func _on_timer_timeout() -> void:
 	#Time Ingame
 	if minute == 30  :
 		hour += 1
@@ -59,3 +60,5 @@ func CicloTime():
 		day_cont +=1
 		
 	minute += 30
+
+	pass # Replace with function body.
