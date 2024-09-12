@@ -27,7 +27,6 @@ var knockback = Vector2.ZERO
 @onready var animated_sprite_2d: AnimationPlayer =$AnimationPlayerMovements
 @onready var animated_sprite_2d1: AnimatedSprite2D =$AnimatedSprite2D
 @onready var leap_gj_3_: AudioStreamPlayer = $"Sounds/Leap(gj3)"
-@onready var diurn: Control = $Diurn
 @onready var player_ui: Control = $"Player_UI"
 @onready var ui_menu_in_game: Control = $UI_Menu_InGame
 @onready var indicador_nombre_level: Label = $Indicador_nombre_level
