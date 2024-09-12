@@ -6,10 +6,11 @@ const HOST := "localhost"
 const PORT := 5432 # Default postgres port
 const DATABASE := "postgres" # Database name
 var Items_data : Dictionary
-var row_count : int = 1 
-
+var LEVEL_DATA : Dictionary
+var data_type : String 
 var database: PostgreSQLClient = PostgreSQLClient.new()
 signal BDReady
+signal Data_Ready
 
 func _init():
 	var _error = database.connect("connection_established", Callable(self, "_connection_established"))
@@ -30,6 +31,8 @@ func _connection_established() -> void:
 	print(database.parameter_status)
 	print("Conexión Establecida con la Base de Datos de Forma Exitosa")
 	BDReady.emit()
+
+
 	
 
 func _data_received(error_object: Dictionary, transaction_status: PostgreSQLClient.TransactionStatus, datas: Array) -> void:
@@ -62,12 +65,10 @@ func _data_received(error_object: Dictionary, transaction_status: PostgreSQLClie
 				
 	#Toma el ID del item para mejor manipulación
 			Items_data.get_or_add(row[0],item)
-		
-	print (Items_data)
+	emit_signal("Data_Ready")
+	
 	if not error_object.is_empty():
 		prints("Error:", error_object)
-	
-	#database.close()
 
 
 func _authentication_error(error_object: Dictionary) -> void:
@@ -81,7 +82,7 @@ func _connection_close(clean_closure := true) -> void:
 func _exit_tree() -> void:
 	database.close()
 	
-#endregion	
+#endregion
 
 #region METODOS Custom 
 func Clean_Library():
