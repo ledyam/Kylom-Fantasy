@@ -8,16 +8,16 @@
 "sound_moods": {},
 "style": "MainWithPortraits"
 },
-"default_portrait": "asss",
+"default_portrait": "Normal",
 "description": "A simple boy ",
 "display_name": "Merca",
 "mirror": false,
-"nicknames": ["SecondPlayer"],
+"nicknames": ["Merca"],
 "offset": Vector2(0, 0),
 "portraits": {
-"asss": {
+"Normal": {
 "export_overrides": {
-"image": "\"res://Assets/Free 39 Portraits Pixel Art/1 Portraits/Icons_15.png\""
+"image": "\"res://Assets/Portraits/1 Portraits/Icons_18.png\""
 },
 "ignore_char_scale": false,
 "mirror": true,
