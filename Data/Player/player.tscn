@@ -11,7 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://beclep87ndefs" path="res://Assets/Sounds/Sword Slash (Rpg).wav" id="9_hdu75"]
 [ext_resource type="Script" path="res://Data/Player/PlayerStates/player_atack.gd" id="10_laalb"]
 [ext_resource type="AudioStream" uid="uid://gbppvr8uv4ki" path="res://Assets/Sounds/Leap (Gj3).wav" id="11_lvs54"]
-[ext_resource type="PackedScene" uid="uid://p0jmnaqahkh5" path="res://UI/Life_UI/life_ui.tscn" id="12_0yp4y"]
+[ext_resource type="PackedScene" uid="uid://p0jmnaqahkh5" path="res://UI/Life_UI/Player_UI.tscn" id="12_0yp4y"]
 [ext_resource type="AudioStream" uid="uid://n88fshcdfhx7" path="res://Assets/Sounds/Level up Pickup (Rpg).wav" id="12_ig4r5"]
 [ext_resource type="PackedScene" uid="uid://oe8ee4f7bqeh" path="res://UI/Indicadores/indicador_level.tscn" id="14_omp1r"]
 [ext_resource type="PackedScene" uid="uid://5jark5pkwsb" path="res://UI/UI_Interfaces/ui_menu_in_game.tscn" id="15_anmsq"]

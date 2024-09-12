@@ -1,14 +1,14 @@
 [gd_scene load_steps=16 format=3 uid="uid://p0jmnaqahkh5"]
 
-[ext_resource type="Script" path="res://UI/Life_UI/life_ui.gd" id="1_ebjgg"]
-[ext_resource type="Texture2D" uid="uid://cheiqx3f6j47l" path="res://Assets/Tiles/GUI/GUI/GUI_4xBlackpng.png" id="1_o345i"]
-[ext_resource type="PackedScene" uid="uid://ewo22t74u83d" path="res://UI/Ciclo Dia_Noche/Reloj.tscn" id="2_n0y20"]
-[ext_resource type="FontFile" uid="uid://refuf5j5hr24" path="res://Assets/Fonts/PixelOperator8.ttf" id="3_dm8y0"]
-[ext_resource type="Texture2D" uid="uid://bqjfwakgmvips" path="res://Assets/Tiles/Portraits/1 Portraits/Icons_32.png" id="3_oo7et"]
-[ext_resource type="StyleBox" uid="uid://c47l2uhedgd0q" path="res://Resources/UI_Themes/ProgressBar/Fill.tres" id="4_61ofe"]
+[ext_resource type="Script" path="res://UI/Life_UI/Player_UI.gd" id="1_kf1g5"]
+[ext_resource type="Texture2D" uid="uid://cheiqx3f6j47l" path="res://Assets/Tiles/GUI/GUI/GUI_4xBlackpng.png" id="2_0ow5k"]
+[ext_resource type="FontFile" uid="uid://refuf5j5hr24" path="res://Assets/Fonts/PixelOperator8.ttf" id="3_iu1j3"]
+[ext_resource type="StyleBox" uid="uid://c47l2uhedgd0q" path="res://Resources/UI_Themes/ProgressBar/Fill.tres" id="4_hvh1u"]
+[ext_resource type="Texture2D" uid="uid://bqjfwakgmvips" path="res://Assets/Tiles/Portraits/1 Portraits/Icons_32.png" id="5_0hx5l"]
+[ext_resource type="PackedScene" uid="uid://ewo22t74u83d" path="res://UI/Ciclo Dia_Noche/Reloj.tscn" id="6_uohsm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_acal5"]
-atlas = ExtResource("1_o345i")
+atlas = ExtResource("2_0ow5k")
 region = Rect2(4, 97, 27, 31)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ykjkh"]
@@ -19,7 +19,7 @@ texture_margin_right = 3.0
 bg_color = Color(0.227451, 0.266667, 0.4, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_satu6"]
-font = ExtResource("3_dm8y0")
+font = ExtResource("3_iu1j3")
 font_size = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6rf2"]
@@ -29,17 +29,17 @@ bg_color = Color(0.227451, 0.266667, 0.4, 1)
 bg_color = Color(0.16149, 0.75, 0.213205, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1js4s"]
-atlas = ExtResource("1_o345i")
+atlas = ExtResource("2_0ow5k")
 region = Rect2(212, 148, 56, 56)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dwqk1"]
 texture = SubResource("AtlasTexture_1js4s")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o7le1"]
-atlas = ExtResource("1_o345i")
+atlas = ExtResource("2_0ow5k")
 region = Rect2(35, 39, 36, 30)
 
-[node name="Player UI" type="Control"]
+[node name="Player_UI" type="Control"]
 physics_interpolation_mode = 1
 show_behind_parent = true
 layout_mode = 3
@@ -50,7 +50,7 @@ offset_right = -92.9
 grow_horizontal = 2
 scale = Vector2(0.596452, 0.641471)
 size_flags_horizontal = 4
-script = ExtResource("1_ebjgg")
+script = ExtResource("1_kf1g5")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -79,9 +79,9 @@ offset_right = 47.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_dm8y0")
+theme_override_fonts/font = ExtResource("3_iu1j3")
 theme_override_styles/background = SubResource("StyleBoxFlat_y3p7s")
-theme_override_styles/fill = ExtResource("4_61ofe")
+theme_override_styles/fill = ExtResource("4_hvh1u")
 value = 100.0
 show_percentage = false
 
@@ -183,8 +183,8 @@ offset_right = 13.0
 offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_oo7et")
+texture = ExtResource("5_0hx5l")
 expand_mode = 3
 flip_h = true
 
-[node name="Reloj" parent="CanvasLayer" instance=ExtResource("2_n0y20")]
+[node name="Reloj" parent="CanvasLayer" instance=ExtResource("6_uohsm")]

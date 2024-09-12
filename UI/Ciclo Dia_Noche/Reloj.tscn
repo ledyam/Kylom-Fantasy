@@ -106,12 +106,13 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_yrnus")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Reloj_animation" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_endmq")
 }
 
 [node name="Container" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 9.0
 offset_top = 7.0
 offset_right = 113.0
@@ -143,7 +144,7 @@ anchor_top = 0.25
 anchor_right = 0.845361
 anchor_bottom = 0.833333
 
-[node name="Mouth" type="Label" parent="Container/VBoxContainer/Panel/HBoxContainer"]
+[node name="Month" type="Label" parent="Container/VBoxContainer/Panel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
 text = "October"
