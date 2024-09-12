@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bxkm03xjifvox"]
 
-[ext_resource type="Script" path="res://Objects/objeto_fisico.gd" id="1_7hbbn"]
+[ext_resource type="Script" path="res://Data/Objects/objeto_fisico.gd" id="1_7hbbn"]
 [ext_resource type="Texture2D" uid="uid://dkcw0st1quc6m" path="res://Assets/Tiles/Rocky Roads2/Objects/apple.png" id="2_k5ym7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_61guv"]

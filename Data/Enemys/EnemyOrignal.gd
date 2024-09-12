@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
 class_name EnemyOriginal
-
 var life : float = 100
 var type : String
 var ATK : float  = 20
 var can_critic : bool = false  
 var current_level : int = 1
 var Item_loot : Dictionary = {}
+
 
 @export_range(0,1) var critic_chance : float
 @export var  DEF : float

@@ -22,7 +22,7 @@ func _on_animation_menu_animation_finished(_anim_name: StringName) -> void:
 
 
 func _on_button_with_sound_pressed() -> void:
-
-	gui_transition._hide()
-	animation_menu.play("Oclution")
+	if gui_transition._is_shown : 
+		gui_transition._hide()
+		animation_menu.play("Oclution")
 	pass # Replace with function body.

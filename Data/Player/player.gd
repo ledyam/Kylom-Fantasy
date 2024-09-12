@@ -84,7 +84,7 @@ func Give_Exp(exp : int ):
 	Give_EXP.emit(exp)
 	
 func LEVEL_UP ():
-	current_level +=1
+	current_level += 1
 	vida_Max += 10
 	vida_actual = vida_Max
 	player_ui.Actualizar_Label_UI_Life()

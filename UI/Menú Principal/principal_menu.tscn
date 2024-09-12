@@ -193,6 +193,8 @@ texture = SubResource("GradientTexture2D_jadgo")
 
 [node name="BasicRpgIntroTrack(rpg)" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_f0nun")
+volume_db = 3.852
+autoplay = true
 
 [connection signal="animation_finished" from="AnimationMenu" to="." method="_on_animation_menu_animation_finished"]
 [connection signal="pressed" from="Panel/VBoxContainer/Iniciar" to="." method="_on_button_with_sound_pressed"]

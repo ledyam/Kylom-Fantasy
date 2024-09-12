@@ -90,7 +90,9 @@ folder_colors={
 "res://Data/": "purple",
 "res://DataBase/": "yellow",
 "res://Global/": "pink",
-"res://UI/": "green"
+"res://Resources/": "teal",
+"res://UI/": "green",
+"res://addons/": "blue"
 }
 
 [global_group]

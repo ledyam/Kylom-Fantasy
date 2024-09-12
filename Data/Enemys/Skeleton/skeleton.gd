@@ -1,12 +1,15 @@
 extends EnemyOriginal
 class_name Undead_Enemy
 
+
+
 var Item : PackedScene= load("res://Objects/objeto.tscn")
 @onready var state_machine: Node = $StateMachine
 @onready var anim_enemy: AnimatedSprite2D = $AnimatedSprite2D
 @onready var damage: AudioStreamPlayer2D = $damage
 @export var Patrullaje : Node2D
 
+const NOMBRE : String = "Skeleto"
 var player = null
 var on_area : bool = false 
 var is_dead : bool = false 

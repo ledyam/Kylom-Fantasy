@@ -10,7 +10,6 @@ var item : Dictionary:
 		item = value
 		if item.is_empty() :
 			$Icon.texture = null
-			
 		else:
 			$Icon.texture = load(item["Texture"])
 
