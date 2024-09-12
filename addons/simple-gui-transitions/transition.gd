@@ -751,9 +751,10 @@ func _fade_in_layout() -> void:
 func _fade_out_layout() -> void:
 	if not fade_layout or _layout_only and animation_leave == Anim.FADE:
 		_tween.tween_interval(duration)
+		_tween.tween_property(_layout, "modulate:a", 0.0, duration)
 		return
 
-	_tween.tween_property(_layout, "modulate:a", 0.0, duration)
+	
 
 
 ## Fix of node pop-in in some cases.
