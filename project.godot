@@ -22,9 +22,11 @@ buses/default_bus_layout=""
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-CurrentZone="*res://Data/Global/GLOBAL.gd"
-CentralSignal="*res://CentralSigal.gd"
+CurrentZone="*res://Global/GLOBAL.gd"
+CentralSignal="*res://Global/CentralSignal.gd"
 DataBase="*res://DataBase/DataBase.gd"
+GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
+LocalDatabase="*res://Global/LocalDatabase.gd"
 
 [dialogic]
 
@@ -78,7 +80,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg")
+enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg")
 
 [file_customization]
 
@@ -87,6 +89,7 @@ folder_colors={
 "res://Componentes/": "orange",
 "res://Data/": "purple",
 "res://DataBase/": "yellow",
+"res://Global/": "pink",
 "res://UI/": "green"
 }
 
@@ -97,6 +100,18 @@ FirstEnemy=""
 [gui]
 
 theme/custom_font="res://Assets/Fonts/PixelOperator8.ttf"
+
+[gui_transitions]
+
+config/default/auto_start=true
+config/default/fade_layout=true
+config/default/center_pivot=true
+config/default/duration=2.0
+config/default/delay=0.5
+config/default/transition_type="QUAD"
+config/default/ease_type="IN_OUT"
+config/default/animation_enter=4
+config/default/animation_leave=4
 
 [input]
 

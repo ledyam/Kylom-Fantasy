@@ -6,7 +6,7 @@ var life : float = 100
 var type : String
 var ATK : float  = 20
 var can_critic : bool = false  
-var level : int = 1
+var current_level : int = 1
 var Item_loot : Dictionary = {}
 
 @export_range(0,1) var critic_chance : float
@@ -17,12 +17,17 @@ signal Take_Damage
 
 func _ready() -> void:
 	randomize()
+	DataBase.connect("Data_Ready",on_ready_DataBase)
 	DataBase.database.execute('SELECT *
 	FROM public."Item_Consumible";')
-	DataBase.Items_data = Item_loot
-	DataBase.Clean_Library()
+	DataBase.data_type = "Item"
 
 
+func on_ready_DataBase():
+	if DataBase.data_type == "Item":
+		Item_loot = DataBase.Items_data.duplicate(true)
+		DataBase.Clean_Library()
+	
 func spawn_numero_flotante(damage ): 
 	var number = numero_flotante.instantiate()
 	number.position = global_position

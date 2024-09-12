@@ -3,13 +3,14 @@ extends EnemyState
 var bounce_strength = 300 
 var knockback = Vector2.ZERO
 func enter ():
-	enemy.anim_enemy.play("Skeleton_Take_Damage")
-	print ("Recibiendo Daño Skeleto")
-	enemy.damage.play()
-	cd_take_damage.start()
-	knockback = (enemy.global_position - enemy.player.position).normalized() 
-	enemy.velocity = knockback * 20
-	
+	if enemy.is_dead != true:
+		enemy.anim_enemy.play("Skeleton_Take_Damage")
+		print ("Recibiendo Daño Skeleto")
+		enemy.damage.play()
+		cd_take_damage.start()
+		knockback = (enemy.global_position - enemy.player.position).normalized() 
+		enemy.velocity = knockback * 20
+		
 func physics_process(_delta: float) -> void:
 	enemy.move_and_slide()
 	

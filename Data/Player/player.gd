@@ -1,17 +1,16 @@
-extends CharacterBody2D
+extends Player
 class_name MainPlayer
 
 
 #region VARIABLES ESTADISTICAS
+# Variables Generales
 const NOMBRE = "Marcus"
-var level : int = 1 
-var vida_actual : float  = 100
-var vida_Max : float = 100 
-var attack :  int = 50 
+
+var ATK :  float = 100
+var DEF : float = 20
+
+
 #endregion
-	
-
-
 
 #region VARIABLES De Control
 var can_attack : bool = true
@@ -20,10 +19,7 @@ var direction : PlayerDirections = PlayerDirections.new()
 var recibir_damage = false
 var cda = false
 var knockback = Vector2.ZERO
-
 #endregion
-var  numero_flotante : PackedScene = load("res://UI/Indicadores/numero_flotante.tscn")
-
 #region VARIABLES INSTANCIADAS 
 @onready var mru_2d: MRU2D = $MRU2D
 @export var current_direction: PlayerDirection = direction.none
@@ -32,17 +28,13 @@ var  numero_flotante : PackedScene = load("res://UI/Indicadores/numero_flotante.
 @onready var animated_sprite_2d1: AnimatedSprite2D =$AnimatedSprite2D
 @onready var leap_gj_3_: AudioStreamPlayer = $"Sounds/Leap(gj3)"
 @onready var diurn: Control = $Diurn
-@onready var player_ui: Control = $"Player UI"
+@onready var player_ui: Control = $"Player_UI"
 @onready var ui_menu_in_game: Control = $UI_Menu_InGame
+@onready var indicador_nombre_level: Label = $Indicador_nombre_level
 
 
 #endregion
 
-#region SEÑALES
-signal Lose_Life (life: float)
-signal Give_life(life:float)
-#endregion
- 
 #region CONSTANTES 
 const states : Dictionary = {
 	#MOVIMIENTO
@@ -66,6 +58,7 @@ const animations : Dictionary = {
 	'_attack_turnR':'Player_attack_turn_right',
 	'_dead' : 'Player_dead'
 }
+
 #endregion
 
 
@@ -74,11 +67,8 @@ const animations : Dictionary = {
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
-func _ready() -> void:
-	CentralSignal.connect("UsarObjeto",on_RecibirVida)
 
-	
-	#endregion
+#endregion
 
 #region MÉTODOS del Player
 func Recibir_damage(enemy_Atack : float):
@@ -90,6 +80,17 @@ func Recibir_damage(enemy_Atack : float):
 		cd.start()
 	pass
 	
+func Give_Exp(exp : int ): 
+	Give_EXP.emit(exp)
+	
+func LEVEL_UP ():
+	current_level +=1
+	vida_Max += 10
+	vida_actual = vida_Max
+	player_ui.Actualizar_Label_UI_Life()
+	$"Sounds/LevelUpPickup(rpg)".play()
+	indicador_nombre_level.Actualizar()
+	
 func spawn_numero_flotante(damage ): 
 	var number = numero_flotante.instantiate()
 	number.position = global_position
@@ -97,10 +98,10 @@ func spawn_numero_flotante(damage ):
 	number.find_child("AnimationPlayer").play("normal")
 	get_tree().current_scene.add_child(number)
 
+
 #region ALERTA DE SEÑALES
 func _on_timer_timeout() -> void:
 	queue_free()
-	
 	owner.get_tree().reload_current_scene()
 	pass 
 
@@ -117,15 +118,7 @@ func _on_cd_timeout() -> void:
 	pass 
 	
 #Señal Conectada desde Nodo Lejano
-func on_RecibirVida(vida):
-	vida_actual += vida
-	if vida_actual <= vida_Max:
-		print(vida_actual)
-		Give_life.emit(vida_actual)
-	else : 
-		vida_actual = vida_Max
-		Give_life.emit(vida_actual)
-		
+
 	pass
 #Señales de Áreas del Personaje
 #SEÑAL Principal de ENTRADA HITBOX PLAYER
@@ -138,7 +131,7 @@ func _on_hit_box_body_entered(body: Node2D) -> void:
 		velocity = knockback * 20
 		Recibir_damage(body.ATK) #------Temporal para Cambios
 		leap_gj_3_.play()
-		
+	
 	if body as ObjetoFisico: 
 		ui_menu_in_game.inventario.add_item(body.Stats)
 		body.queue_free()
@@ -149,13 +142,11 @@ func _on_hit_box_body_exited(body: Node2D) -> void:
 		recibir_damage = false
 		cda = false 
 	pass 
-	
-	
 #Señal para Ofertar Daño
 func _on_damage_box_body_entered(body: Node2D) -> void:
 	if body as EnemyOriginal:
-		body.EffectiveDamage(attack)
+		body.EffectiveDamage(ATK)
 	pass 
 	
-	
+
 #endregion

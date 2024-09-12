@@ -54,7 +54,9 @@
 		{
 			"uuid": "59d6ca3d-b983-4f8a-b834-5052daff4f26",
 			"title": "En Progreso",
-			"tasks": []
+			"tasks": [
+				"19cead7b-7651-4bd7-b767-82b5b356d5eb"
+			]
 		},
 		{
 			"uuid": "0d46dab2-a88a-4634-b92b-deadf4ef030b",
@@ -99,6 +101,22 @@
 			"steps": [
 				{
 					"details": "Tématica De Bosque Compatible con los Sprites Agregados",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "19cead7b-7651-4bd7-b767-82b5b356d5eb",
+			"title": "Base de Datos Local",
+			"description": "",
+			"category": "b95c0d1e-4d1b-4138-937e-38529b8dc7ca",
+			"steps": [
+				{
+					"details": "Crear Database Cargable desde la Base de Datos para archivos Grandes",
+					"done": false
+				},
+				{
+					"details": "Profundización en Class FileAccess",
 					"done": false
 				}
 			]

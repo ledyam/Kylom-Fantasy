@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cu1bngt73ivne"]
+[gd_scene load_steps=29 format=4 uid="uid://cu1bngt73ivne"]
 
 [ext_resource type="Script" path="res://Data/World/world.gd" id="1_ec2xn"]
 [ext_resource type="PackedScene" uid="uid://dc1ttabgya1wf" path="res://Data/Player/player.tscn" id="2_0wl5i"]
@@ -496,6 +496,10 @@ tracks/3/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_ausws"]
+resource_name = "Fade_In_World"
+length = 4.0
+
 [sub_resource type="Animation" id="Animation_efre4"]
 length = 0.001
 tracks/0/type = "value"
@@ -514,6 +518,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b8w0i"]
 _data = {
 "Ciclo General": SubResource("Animation_w4foh"),
+"Fade_In_World": SubResource("Animation_ausws"),
 "RESET": SubResource("Animation_efre4")
 }
 
@@ -558,7 +563,7 @@ tile_set = SubResource("TileSet_wph03")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="Ciclo Day_Night" type="AnimationPlayer" parent="."]
+[node name="Animation_World" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_b8w0i")
 }
@@ -594,4 +599,5 @@ max_polyphony = 4
 stream = ExtResource("12_7m7f7")
 max_polyphony = 4
 
+[connection signal="animation_finished" from="Animation_World" to="." method="_on_animation_world_animation_finished"]
 [connection signal="body_entered" from="Entrada_Casa" to="." method="_on_entrada_casa_body_entered"]

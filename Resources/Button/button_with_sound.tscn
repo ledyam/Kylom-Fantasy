@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bweqc780t3ltc"]
+
+[ext_resource type="Script" path="res://Resources/Button/button_with_sound.gd" id="1_dwo21"]
+[ext_resource type="AudioStream" uid="uid://blxqw6kqjo0la" path="res://Assets/Sounds/10_UI_Menu_SFX/001_Hover_01.wav" id="2_xd505"]
+[ext_resource type="AudioStream" uid="uid://c4oadv3dtuqsk" path="res://Assets/Sounds/10_UI_Menu_SFX/013_Confirm_03.wav" id="3_dqmq3"]
+
+[node name="ButtonWithSound" type="Button"]
+offset_right = 32.0
+offset_bottom = 10.0
+script = ExtResource("1_dwo21")
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Hover" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("2_xd505")
+
+[node name="Pressed" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("3_dqmq3")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
