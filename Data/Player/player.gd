@@ -26,7 +26,6 @@ var knockback = Vector2.ZERO
 @onready var cd: Timer = $Timers/CD
 @onready var animated_sprite_2d: AnimationPlayer =$AnimationPlayerMovements
 @onready var animated_sprite_2d1: AnimatedSprite2D =$AnimatedSprite2D
-@onready var leap_gj_3_: AudioStreamPlayer = $"Sounds/Leap(gj3)"
 @onready var player_ui: Control = $"Player_UI"
 @onready var ui_menu_in_game: Control = $UI_Menu_InGame
 @onready var indicador_nombre_level: Label = $Indicador_nombre_level
@@ -129,7 +128,7 @@ func _on_hit_box_body_entered(body: Node2D) -> void:
 		knockback = (self.global_position - body.position).normalized() 
 		velocity = knockback * 20
 		Recibir_damage(body.ATK) #------Temporal para Cambios
-		leap_gj_3_.play()
+		$"Sounds/Leap(gj3)".play()
 	
 	if body as ObjetoFisico: 
 		ui_menu_in_game.inventario.add_item(body.Stats)
