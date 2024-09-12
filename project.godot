@@ -26,7 +26,7 @@ CurrentZone="*res://Global/GLOBAL.gd"
 CentralSignal="*res://Global/CentralSignal.gd"
 DataBase="*res://DataBase/DataBase.gd"
 GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
-LocalDatabase="*res://Global/LocalDatabase.gd"
+Save_Load="*res://Global/Save_Load.gd"
 
 [dialogic]
 
