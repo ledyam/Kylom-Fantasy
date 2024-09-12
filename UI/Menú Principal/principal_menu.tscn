@@ -125,9 +125,6 @@ grow_vertical = 2
 theme = SubResource("Theme_0mox5")
 script = ExtResource("3_4yfw4")
 
-[node name="BasicRpgIntroTrack(rpg)" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_f0nun")
-
 [node name="AnimationMenu" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_08p2e")
@@ -193,6 +190,9 @@ text = "Salir"
 position = Vector2(324.5, 170)
 scale = Vector2(10.1719, 5.28125)
 texture = SubResource("GradientTexture2D_jadgo")
+
+[node name="BasicRpgIntroTrack(rpg)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_f0nun")
 
 [connection signal="animation_finished" from="AnimationMenu" to="." method="_on_animation_menu_animation_finished"]
 [connection signal="pressed" from="Panel/VBoxContainer/Iniciar" to="." method="_on_button_with_sound_pressed"]

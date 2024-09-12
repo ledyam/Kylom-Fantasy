@@ -47,8 +47,7 @@ func _on_marcus_give_exp(exp: int) -> void:
 	else : 
 		progress_bar_exp.value += exp
 		Actualizar_Label_Exp()
-
-
+		
 func on_ready_DataBase():
 	if DataBase.data_type == "Level":
 		LEVEL_DATA = DataBase.Items_data.duplicate(true)

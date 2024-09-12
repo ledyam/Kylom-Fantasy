@@ -20,6 +20,8 @@ var recibir_damage = false
 var cda = false
 var knockback = Vector2.ZERO
 #endregion
+
+
 #region VARIABLES INSTANCIADAS 
 @onready var mru_2d: MRU2D = $MRU2D
 @export var current_direction: PlayerDirection = direction.none
@@ -89,7 +91,7 @@ func LEVEL_UP ():
 	$"Sounds/LevelUpPickup(rpg)".play()
 	indicador_nombre_level.Actualizar()
 	
-func spawn_numero_flotante(damage ): 
+func spawn_numero_flotante(damage): 
 	var number = numero_flotante.instantiate()
 	number.position = global_position
 	number.find_child("Label").text = "%.2f" % damage
@@ -103,10 +105,7 @@ func _on_timer_timeout() -> void:
 	owner.get_tree().reload_current_scene()
 	pass 
 
-
-
-	
-	pass 
+ 
 
 #TIMERS
 func _on_cd_timeout() -> void:

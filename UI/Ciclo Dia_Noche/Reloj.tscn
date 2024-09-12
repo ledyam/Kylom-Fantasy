@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://ewo22t74u83d"]
 
-[ext_resource type="Script" path="res://UI/Ciclo Dia_Noche/Diurn.gd" id="1_yrnus"]
+[ext_resource type="Script" path="res://UI/Ciclo Dia_Noche/Reloj.gd" id="1_yrnus"]
 [ext_resource type="Texture2D" uid="uid://cheiqx3f6j47l" path="res://Assets/Tiles/GUI/GUI/GUI_4xBlackpng.png" id="2_ef1dx"]
 [ext_resource type="FontFile" uid="uid://refuf5j5hr24" path="res://Assets/Fonts/PixelOperator8.ttf" id="3_jpjeb"]
 [ext_resource type="Texture2D" uid="uid://dap6v3bn0l4a0" path="res://Assets/Tiles/GUI/GUI/GUI_4x.png" id="4_ph447"]

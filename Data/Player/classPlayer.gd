@@ -22,6 +22,7 @@ var numero_flotante : PackedScene = load("res://UI/Indicadores/numero_flotante.t
 signal Lose_Life (life: float)
 signal Give_life(life:float)
 signal Give_EXP (exp : int )
+
 #endregion
  
 func _ready() -> void:
