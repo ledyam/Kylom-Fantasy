@@ -309,165 +309,10 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Marcus/Diurn")
+tracks/1/path = NodePath("Sounds/Sound_day")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(5.3, 10.5667, 15.4, 20.4333, 25.6, 30.8667, 35.7, 40.7333, 45.4333, 50.7, 55.5333, 60.5667, 65.2, 70.4667, 75.3, 80.3333, 85.5, 90.7667, 95.6, 100.633, 105.333, 110.6, 115.433, 120.467, 125.4, 130.667, 135.5, 140.533, 145.7, 150.967, 155.8, 160.833, 165.533, 170.8, 175.633, 180.667, 185.433, 190.7, 195.533, 200.567, 205.733, 211, 215.833, 220.867, 225.567, 230.833, 235.667, 240.267),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"values": [{
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}, {
-"args": [],
-"method": &"CicloTime"
-}]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sounds/Sound_day")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0.219505, 108.167),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
@@ -478,13 +323,13 @@ tracks/2/keys = {
 "method": &"stop"
 }]
 }
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sounds/Sound_night")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sounds/Sound_night")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(108.4, 221.733),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
