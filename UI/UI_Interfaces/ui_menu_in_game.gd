@@ -47,3 +47,26 @@ func _on_inventario_pressed() -> void:
 	await animation_player.animation_finished
 	animation_player.play("Show_inventory")
 	
+
+
+func _on_guardar_pressed() -> void:
+	Save_Load.Save_Data(self.owner)
+	pass # Replace with function body.
+
+
+func _on_cargar_pressed() -> void:
+	var pcurrent_scene
+	var loaded_scene = Save_Load.Load_Data()
+	get_tree().create_timer(5).timeout
+	if loaded_scene:
+		
+		get_tree().current_scene.find_child("Marcus").queue_free()
+		get_tree().current_scene.add_child(loaded_scene)
+		
+
+
+	
+	
+	
+	
+	pass # Rep--lace with function body.

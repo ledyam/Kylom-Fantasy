@@ -36,46 +36,32 @@ region = Rect2(0.117874, 95.0915, 48.5292, 34.4172)
 atlas = ExtResource("1_qa2pc")
 region = Rect2(48.1236, 96.0069, 32.0519, 31.3807)
 
-[sub_resource type="Animation" id="Animation_andki"]
-resource_name = "Show_menu"
+[sub_resource type="Animation" id="Animation_oxfsh"]
+resource_name = "Hide_inventory"
 length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Menu:visible")
+tracks/0/path = NodePath("Inventario:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.00472234, 0.0362046),
+"times": PackedFloat32Array(0.0125929, 0.376213),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Menu:modulate")
+tracks/1/path = NodePath("Inventario:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0349074, 0.369815),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Inventario/Sounds/UiOpen")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.0657621),
+"times": PackedFloat32Array(0.377787),
 "transitions": PackedFloat32Array(1),
-"values": [{
-"args": [0.0],
-"method": &"play"
-}]
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_2po5g"]
@@ -199,32 +185,46 @@ tracks/1/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_oxfsh"]
-resource_name = "Hide_inventory"
+[sub_resource type="Animation" id="Animation_andki"]
+resource_name = "Show_menu"
 length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Inventario:modulate")
+tracks/0/path = NodePath("Menu:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0125929, 0.376213),
+"times": PackedFloat32Array(0.00472234, 0.0362046),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"update": 1,
+"values": [false, true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Inventario:visible")
+tracks/1/path = NodePath("Menu:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.377787),
+"times": PackedFloat32Array(0.0349074, 0.369815),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Inventario/Sounds/UiOpen")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0657621),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2hsri"]
@@ -459,4 +459,6 @@ libraries = {
 }
 
 [connection signal="pressed" from="Menu/VBoxContainer/Inventario" to="." method="_on_inventario_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Guardar" to="." method="_on_guardar_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Cargar" to="." method="_on_cargar_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
