@@ -6,9 +6,9 @@ const HOST := "localhost"
 const PORT := 5432 # Default postgres port
 const DATABASE := "postgres" # Database name
 var Items_data : Dictionary
-var LEVEL_DATA : Dictionary
 var data_type : String 
 var database: PostgreSQLClient = PostgreSQLClient.new()
+
 signal BDReady
 signal Data_Ready
 

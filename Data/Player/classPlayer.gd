@@ -4,8 +4,7 @@ class_name Player
 #Variables Atributos Principales Genéricos
 var current_level : int = 1 
 const MAX_LEVEL : int = 20
-var Label_Name_Level = load("res://UI/Indicadores/indicador_level.tscn") 
-var current_EXP : int = 0 
+var Label_Name_Level = load("res://UI/Indicadores/indicador_level.tscn")
 var vida_actual : float  = 100
 var vida_Max : float = 100 
 

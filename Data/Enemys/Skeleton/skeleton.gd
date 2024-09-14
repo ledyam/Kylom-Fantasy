@@ -3,7 +3,7 @@ class_name Undead_Enemy
 
 
 
-var Item : PackedScene= load("res://Objects/objeto.tscn")
+var Item : PackedScene= load("res://Data/Objects/objeto.tscn")
 @onready var state_machine: Node = $StateMachine
 @onready var anim_enemy: AnimatedSprite2D = $AnimatedSprite2D
 @onready var damage: AudioStreamPlayer2D = $damage

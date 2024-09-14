@@ -12,10 +12,7 @@ func _ready() -> void:
 	player = self.owner
 	indicador_vida.text = str(player.vida_actual) + " | " + str(player.vida_Max)
 	indicador_exp.text = str(progress_bar_exp.value)+ '|'+str(progress_bar_exp.max_value)
-	DataBase.connect("Data_Ready",on_ready_DataBase)
-	DataBase.database.execute('SELECT "Nivel", "Experiencia_Necesaria", "Experiencia_Total"
-	FROM public."Experience_Table";')
-	DataBase.data_type = "Level"
+	LEVEL_DATA = LocalDatabase.content.duplicate(true)
 
 func _on_player_lose_life(life_losting: float) -> void:
 	if (progress_bar.value - life_losting) > 0 : 
@@ -40,7 +37,7 @@ func _on_marcus_give_exp(exp: int) -> void:
 	if   (progress_bar_exp.value + exp) > progress_bar_exp.max_value:
 		resto = (progress_bar_exp.value + exp) - progress_bar_exp.max_value
 		player.LEVEL_UP()
-		progress_bar_exp.max_value = LEVEL_DATA[player.current_level]["Experiencia_Necesaria"]
+		progress_bar_exp.max_value = LEVEL_DATA[str(player.current_level)]["Exp_Necesaria"]
 		progress_bar_exp.value = 0 
 		progress_bar_exp.value += resto
 		Actualizar_Label_Exp()
@@ -48,11 +45,7 @@ func _on_marcus_give_exp(exp: int) -> void:
 		progress_bar_exp.value += exp
 		Actualizar_Label_Exp()
 		
-func on_ready_DataBase():
-	if DataBase.data_type == "Level":
-		LEVEL_DATA = DataBase.Items_data.duplicate(true)
-		DataBase.Clean_Library()
-	
+
 
 func Actualizar_Label_Exp():
 	indicador_exp.text = str(progress_bar_exp.value)+ '|'+str(progress_bar_exp.max_value)

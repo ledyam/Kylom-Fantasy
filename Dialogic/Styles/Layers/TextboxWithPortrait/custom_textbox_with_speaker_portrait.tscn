@@ -119,7 +119,7 @@ container_ids = PackedStringArray("1")
 debug_character_portrait = "speaker"
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect2" type="TextureRect" parent="Anchor/Panel/HBox/PortraitPanel"]
+[node name="Portrait" type="TextureRect" parent="Anchor/Panel/HBox/PortraitPanel"]
 z_index = 2
 layout_mode = 1
 anchors_preset = -1

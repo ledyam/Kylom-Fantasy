@@ -16,6 +16,7 @@ var  numero_flotante : PackedScene = load("res://UI/Indicadores/numero_flotante.
 signal Take_Damage
 
 func _ready() -> void:
+	
 	randomize()
 	DataBase.connect("Data_Ready",on_ready_DataBase)
 	DataBase.database.execute('SELECT *
@@ -24,6 +25,7 @@ func _ready() -> void:
 
 
 func on_ready_DataBase():
+	
 	if DataBase.data_type == "Item":
 		Item_loot = DataBase.Items_data.duplicate(true)
 		DataBase.Clean_Library()
@@ -47,8 +49,6 @@ func EffectiveDamage(give_attack : float):
 	Take_Damage.emit()
 func Aleatorio ():
 	return randf_range(0.9 , 1.0)
-
-
 func Defense (give_attack : float):
 	if give_attack == 0 and DEF == 0 : 
 		return 0.0

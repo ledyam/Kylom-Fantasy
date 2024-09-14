@@ -1,0 +1,91 @@
+{
+
+"2" : {
+	"Exp_Necesaria" : 125   ,
+	"Exp_Total" : 175
+	
+	},
+"3" : {
+	"Exp_Necesaria" : 200   ,
+	"Exp_Total" : 375
+	
+	},
+"4" : {
+	"Exp_Necesaria" : 300   ,
+	"Exp_Total" : 675
+	
+	},
+"5" : {
+	"Exp_Necesaria" : 500   ,
+	"Exp_Total" : 1715
+	 
+	},
+"6" : {
+	"Exp_Necesaria" : 750   ,
+	"Exp_Total" : 1925
+	
+	},
+"7" : {
+	"Exp_Necesaria" : 1000   ,
+	"Exp_Total" : 2925
+	
+	},
+"8" : {
+	"Exp_Necesaria" : 1500  ,
+	"Exp_Total" : 4425
+	
+	},
+"9" : {
+	"Exp_Necesaria" : 2000   ,
+	"Exp_Total" : 6425
+	
+	},
+"10" : {
+	"Exp_Necesaria" : 3500   ,
+	"Exp_Total" : 9925
+	
+	},
+"11" : {
+	"Exp_Necesaria" : 5000   ,
+	"Exp_Total" : 14925
+
+	},
+"12" : {
+	"Exp_Necesaria" : 7500   ,
+	"Exp_Total" : 22425
+	
+	},
+"13" : {
+	"Exp_Necesaria" : 10000   ,
+	"Exp_Total" : 32425
+	 
+	},
+	
+"14" : {
+	"Exp_Necesaria" : 15000  ,
+	"Exp_Total" : 47425
+	
+	},
+"15" : {
+	"Exp_Necesaria" : 20000   ,
+	"Exp_Total" : 67425
+	
+	},
+"16" : {
+	"Exp_Necesaria" : 30000   ,
+	"Exp_Total" : 97425
+	
+	},
+"17" : {
+	"Exp_Necesaria" : 50000   ,
+	"Exp_Total" :147425 
+	 
+	},
+	
+"18" : {
+	"Exp_Necesaria" : 75000  ,
+	"Exp_Total" : 425425
+	 
+	}
+
+}
