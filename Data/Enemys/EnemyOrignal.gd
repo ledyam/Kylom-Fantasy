@@ -6,7 +6,7 @@ var type : String
 var ATK : float  = 20
 var can_critic : bool = false  
 var current_level : int = 1
-var Item_loot : Dictionary = {}
+var  loot : Dictionary = {}
 
 
 @export_range(0,1) var critic_chance : float
@@ -16,19 +16,22 @@ var  numero_flotante : PackedScene = load("res://UI/Indicadores/numero_flotante.
 signal Take_Damage
 
 func _ready() -> void:
-	
 	randomize()
-	DataBase.connect("Data_Ready",on_ready_DataBase)
-	DataBase.database.execute('SELECT *
-	FROM public."Item_Consumible";')
-	DataBase.data_type = "Item"
-
-
-func on_ready_DataBase():
-	
-	if DataBase.data_type == "Item":
-		Item_loot = DataBase.Items_data.duplicate(true)
-		DataBase.Clean_Library()
+	var file = FileAccess.open("res://DataBase/Local/Item_Loot.json", FileAccess.READ)
+	if file.file_exists("res://DataBase/Local/Item_Loot.json"):
+		var temp_loot : Dictionary = JSON.parse_string(file.get_as_text())
+		var total_drop : float
+		var random : float
+		for i in temp_loot:
+			total_drop += temp_loot[str(i)]["Drop"]
+		random = randf() * total_drop
+		var acumulador : float
+		for i in temp_loot :
+			acumulador += temp_loot[str(i)]["Drop"]
+			if random <= acumulador:
+				loot.merge(temp_loot[str(i)])
+				 
+			
 	
 func spawn_numero_flotante(damage ): 
 	var number = numero_flotante.instantiate()

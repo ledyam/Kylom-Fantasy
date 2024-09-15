@@ -31,9 +31,13 @@ func _on_area_2d_body_exited(_body: Node2D) -> void:
 
 
 func _on_dead_timeout() -> void:
+	
+	
+	
+	
 	var temporal_item = Item.instantiate()
 	temporal_item.global_position = self.global_position
-	temporal_item.Stats = Item_loot[randi_range(1,2)]
+	temporal_item.Stats = loot.duplicate()
 	get_tree().current_scene.add_child(temporal_item)
 	queue_free()
 

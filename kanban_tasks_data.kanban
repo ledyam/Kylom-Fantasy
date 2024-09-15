@@ -46,10 +46,8 @@
 			"uuid": "1319d7c3-95ea-403c-a443-986f772d3316",
 			"title": "Pendientes",
 			"tasks": [
-				"f242efb5-50d4-4d73-bfab-00504a332f01",
 				"4b766d3b-5bf3-44b4-901b-fb951be96d11",
-				"121f9f39-d2cc-4987-92d8-3933b3f4d6c7",
-				"19cead7b-7651-4bd7-b767-82b5b356d5eb"
+				"121f9f39-d2cc-4987-92d8-3933b3f4d6c7"
 			]
 		},
 		{
@@ -60,14 +58,16 @@
 		{
 			"uuid": "0d46dab2-a88a-4634-b92b-deadf4ef030b",
 			"title": "Completadas",
-			"tasks": []
+			"tasks": [
+				"f242efb5-50d4-4d73-bfab-00504a332f01",
+				"19cead7b-7651-4bd7-b767-82b5b356d5eb",
+				"cd56bb65-b37a-40f8-aa9c-c8921b90c8c6"
+			]
 		},
 		{
 			"uuid": "23d176c3-7f63-45ae-a114-518644380140",
 			"title": "Pendientes (Prioridad)",
-			"tasks": [
-				"cd56bb65-b37a-40f8-aa9c-c8921b90c8c6"
-			]
+			"tasks": []
 		}
 	],
 	"tasks": [
@@ -79,7 +79,7 @@
 			"steps": [
 				{
 					"details": "Método que Calcule la Probabiliad y Retorne el item en (EnemyOriginal.gd)\n",
-					"done": false
+					"done": true
 				}
 			]
 		},
@@ -119,11 +119,11 @@
 			"steps": [
 				{
 					"details": "Crear Database Cargable desde la Base de Datos para archivos Grandes",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "Profundización en Class FileAccess",
-					"done": false
+					"done": true
 				}
 			]
 		},
