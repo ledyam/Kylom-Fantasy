@@ -1,12 +1,19 @@
 extends CharacterBody2D
 class_name Player 
+#Variables de Control
+
+#region VARIABLES De Control
+var direction : PlayerDirections = PlayerDirections.new()
+var recibir_damage = false
+var cooldown_Rdamage = false
+var knockback = Vector2.ZERO
+var can_attack : bool = true
+var can_move : bool = true 
+#endregion
 
 #Variables Atributos Principales Genéricos
 var current_level : int = 1 
 const MAX_LEVEL : int = 20
-
-
-
 
 #Variables STATS
 var Fuerza  : int = 5

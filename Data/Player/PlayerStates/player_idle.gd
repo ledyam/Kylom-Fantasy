@@ -7,18 +7,18 @@ func enter ():
 	#Direcciones de Player en IDLE
 	match player.current_direction:
 		player.direction.none:
-			player.animated_sprite_2d.play(player.animations._idle)
+			player.animated_player_movement.play(player.animations._idle)
 		player.direction.up :
-			player.animated_sprite_2d.play(player.animations._idle_up)
+			player.animated_player_movement.play(player.animations._idle_up)
 
 		player.direction.down :
-			player.animated_sprite_2d.play(player.animations._idle)
+			player.animated_player_movement.play(player.animations._idle)
 
 		player.direction.left :
-			player.animated_sprite_2d.play(player.animations._idle_turnL)
+			player.animated_player_movement.play(player.animations._idle_turnL)
 
 		player.direction.right : 
-			player.animated_sprite_2d.play(player.animations._idle_turnR)
+			player.animated_player_movement.play(player.animations._idle_turnR)
 
 func physics_process(_delta: float):
 	

@@ -7,7 +7,7 @@ class_name MainPlayer
 const NOMBRE = "Marcus"
 var vida_actual : float  = 100 :
 	set(value):
-		if value < 0 : 
+		if value > 0 : 
 			vida_actual = value
 			player_ui.progress_bar.value = value
 			player_ui.indicador_vida.text = str(value) + "|" + str(vida_Max)
@@ -32,22 +32,12 @@ var ATK :  float = 100
 var DEF : float = 20
 #endregion
 
-#region VARIABLES De Control
-
-var can_attack : bool = true
-var can_move : bool = true 
-var direction : PlayerDirections = PlayerDirections.new()
-var recibir_damage = false
-var cooldown_Rdamage = false
-var knockback = Vector2.ZERO
-#endregion
-
 
 #region VARIABLES INSTANCIADAS 
 @onready var mru_2d: MRU2D = $MRU2D
 @export var current_direction: PlayerDirection = direction.none
 @onready var cd: Timer = $Timers/CD
-@onready var animated_sprite_2d: AnimationPlayer =$AnimationPlayerMovements
+@onready var animated_player_movement: AnimationPlayer =$AnimationPlayerMovements
 @onready var animated_sprite_2d1: AnimatedSprite2D =$AnimatedSprite2D
 @onready var player_ui: Control = $"Player_UI"
 @onready var ui_menu_in_game: Control = $UI_Menu_InGame
