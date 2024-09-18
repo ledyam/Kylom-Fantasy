@@ -1,7 +1,7 @@
 {
 	"1": {
 		"Description": "Una banana  que recupera 21 HP",
-		"Drop": 0.61,
+		"Drop": 0.5,
 		"Health_give": 21,
 		"Name": "Banana",
 		"Rarity": "común",
