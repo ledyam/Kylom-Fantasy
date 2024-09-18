@@ -1764,8 +1764,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_656gv"]
-radius = 3.0
-height = 10.0
+radius = 4.28571
+height = 11.4286
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dgov"]
 size = Vector2(11, 20)
@@ -1785,6 +1785,7 @@ offset_right = 327.857
 offset_bottom = 190.0
 
 [node name="Indicador_nombre_level" parent="." instance=ExtResource("14_omp1r")]
+z_index = 10
 offset_left = -40.0
 offset_top = -21.4286
 offset_right = 35.0
@@ -1883,8 +1884,6 @@ shape = SubResource("CircleShape2D_okugr")
 debug_color = Color(0.970136, 0.126886, 0.303562, 0.42)
 
 [connection signal="Give_EXP" from="." to="Player_UI" method="_on_marcus_give_exp"]
-[connection signal="Give_life" from="." to="Player_UI" method="_on_marcus_give_life"]
-[connection signal="Lose_Life" from="." to="Player_UI" method="_on_player_lose_life"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/PlayerAtack" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timers/CD" to="." method="_on_cd_timeout"]
 [connection signal="timeout" from="Timers/Tiempo_de_muerte" to="." method="_on_timer_timeout"]
