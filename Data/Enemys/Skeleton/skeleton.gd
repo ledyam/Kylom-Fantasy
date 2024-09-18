@@ -3,7 +3,7 @@ class_name Undead_Enemy
 
 
 
-var Item : PackedScene= load("res://Data/Objects/objeto.tscn")
+
 @onready var state_machine: Node = $StateMachine
 @onready var anim_enemy: AnimatedSprite2D = $AnimatedSprite2D
 @onready var damage: AudioStreamPlayer2D = $damage
@@ -31,10 +31,6 @@ func _on_area_2d_body_exited(_body: Node2D) -> void:
 
 
 func _on_dead_timeout() -> void:
-	
-	
-	
-	
 	var temporal_item = Item.instantiate()
 	temporal_item.global_position = self.global_position
 	temporal_item.Stats = loot.duplicate()

@@ -7,7 +7,7 @@ var ATK : float  = 20
 var can_critic : bool = false  
 var current_level : int = 1
 var  loot : Dictionary = {}
-
+var Item : PackedScene= load("res://Data/Objects/objeto.tscn")
 
 @export_range(0,1) var critic_chance : float
 @export var  DEF : float
@@ -20,19 +20,19 @@ func _ready() -> void:
 	var file = FileAccess.open("res://DataBase/Local/Item_Loot.json", FileAccess.READ)
 	if file.file_exists("res://DataBase/Local/Item_Loot.json"):
 		var temp_loot : Dictionary = JSON.parse_string(file.get_as_text())
-		var total_drop : float
-		var random : float
-		for i in temp_loot:
-			total_drop += temp_loot[str(i)]["Drop"]
-		random = randf() * total_drop
-		var acumulador : float
-		for i in temp_loot :
-			acumulador += temp_loot[str(i)]["Drop"]
-			if random <= acumulador:
-				loot.merge(temp_loot[str(i)])
+		Item_Probabilidad(temp_loot)
 				 
-			
-	
+func Item_Probabilidad(temp_loot : Dictionary):
+	var total_drop : float = 0.0
+	var random : float = 0.0
+	for i in temp_loot:
+		total_drop += temp_loot[str(i)]["Drop"]
+	random = randf() * total_drop
+	var acumulador : float = 0.0
+	for i in temp_loot :
+		acumulador += temp_loot[str(i)]["Drop"]
+		if random <= acumulador:
+			loot.merge(temp_loot[str(i)])
 func spawn_numero_flotante(damage ): 
 	var number = numero_flotante.instantiate()
 	number.position = global_position
