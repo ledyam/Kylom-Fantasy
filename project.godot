@@ -26,8 +26,8 @@ CurrentZone="*res://Global/GLOBAL.gd"
 CentralSignal="*res://Global/CentralSignal.gd"
 DataBase="*res://DataBase/DataBase.gd"
 GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
-Save_Load="*res://Global/Save_Load.gd"
 LocalDatabase="*res://DataBase/Local/Local_Database_Control.gd"
+SaveLoad="*res://Global/Save_Load.gd"
 
 [dialogic]
 
@@ -99,6 +99,7 @@ folder_colors={
 [global_group]
 
 FirstEnemy=""
+Enemy=""
 
 [gui]
 

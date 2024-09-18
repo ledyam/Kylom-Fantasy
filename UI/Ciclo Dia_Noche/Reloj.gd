@@ -12,7 +12,7 @@ extends Control
 var count_week_day = 0
 var hour : int = 7  
 var day: int = 1
-var day_count : int = 0
+var month_count : int = 0
 var minute : int = 0 
 const MONTH : Array[String] = ["Emosh","Demosh","Marvosh", "Dimerbosh", "Ascurosh","Ekosh"]
 const WEEK_DAY : Array[String] = ["Lunce","Martos","Mordiem", "Jumne", "Vershios","Asombe","Doringo"]
@@ -25,7 +25,7 @@ func _process(_delta: float) -> void:
 	#Toma la Zona donde se encuentra el Player
 	current_ubication.text = CurrentZone.GetZone()
 	#Asignación del Tiempo y Fecha en Interfaz 
-	month.text = MONTH[day_count]
+	month.text = MONTH[month_count]
 	week_day.text = WEEK_DAY[count_week_day]
 	if hour < 10 :
 		hour_label.text = "0" + str(hour)
@@ -62,7 +62,7 @@ func _on_timer_timeout() -> void:
 		
 		
 	if day == 30:
-		day_count += 1
+		month_count += 1
 		
 		
 	minute += 30
