@@ -8,6 +8,8 @@ func _ready() -> void:
 	animation_world.play("Fade_In_World")
 	CurrentZone.SetZone(self.name)
 
+	await get_tree().create_timer(2).timeout
+	Dialogic.start_timeline("Intro")
 
 
 func _physics_process(_delta: float) -> void:
