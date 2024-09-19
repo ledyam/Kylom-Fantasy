@@ -25,7 +25,7 @@ script = ExtResource("1_13env")
 scene = ExtResource("4_prycr")
 overrides = {
 "box_distance": "30.0",
-"box_modulate_custom_color": "Color(0.527344, 0.415761, 0.306931, 1)",
+"box_modulate_custom_color": "Color(0.227451, 0.266667, 0.4, 1)",
 "box_modulate_global_color": "false",
 "box_size": "Vector2(620, 90)",
 "custom_normal_font": "\"res://Dialogic/Styles/PixelOperator8.ttf\"",
@@ -35,8 +35,7 @@ overrides = {
 "name_label_customfont": "\"res://Dialogic/Styles/PixelOperator8.ttf\"",
 "name_label_use_global_font": "false",
 "name_label_use_global_size": "false",
-"portrait_bg_modulate": "Color(0.454902, 0.247059, 0.223529, 1)",
-"text_custom_color": "Color(0, 0, 0, 1)",
+"portrait_bg_modulate": "Color(0, 0, 0, 0)",
 "text_custom_size": "8.0",
 "text_use_global_color": "false",
 "text_use_global_size": "false",

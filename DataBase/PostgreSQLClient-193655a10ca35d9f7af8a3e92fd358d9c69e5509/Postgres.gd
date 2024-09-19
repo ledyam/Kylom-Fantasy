@@ -206,7 +206,7 @@ func execute(sql: String) -> int:
 			return ERR_BUSY
 	
 	push_error("[PostgreSQLClient:%d] The frontend is not connected to backend." % [get_instance_id()])
-	
+	OS.alert("No se Cargaron Los Datos ","Servidor Desconectado")
 	return ERR_CONNECTION_ERROR
 
 

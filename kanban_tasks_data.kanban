@@ -46,7 +46,8 @@
 			"uuid": "1319d7c3-95ea-403c-a443-986f772d3316",
 			"title": "Pendientes",
 			"tasks": [
-				"f242efb5-50d4-4d73-bfab-00504a332f01"
+				"4b766d3b-5bf3-44b4-901b-fb951be96d11",
+				"121f9f39-d2cc-4987-92d8-3933b3f4d6c7"
 			]
 		},
 		{
@@ -57,6 +58,15 @@
 		{
 			"uuid": "0d46dab2-a88a-4634-b92b-deadf4ef030b",
 			"title": "Completadas",
+			"tasks": [
+				"f242efb5-50d4-4d73-bfab-00504a332f01",
+				"19cead7b-7651-4bd7-b767-82b5b356d5eb",
+				"cd56bb65-b37a-40f8-aa9c-c8921b90c8c6"
+			]
+		},
+		{
+			"uuid": "23d176c3-7f63-45ae-a114-518644380140",
+			"title": "Pendientes (Prioridad)",
 			"tasks": []
 		}
 	],
@@ -69,15 +79,67 @@
 			"steps": [
 				{
 					"details": "Método que Calcule la Probabiliad y Retorne el item en (EnemyOriginal.gd)\n",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "4b766d3b-5bf3-44b4-901b-fb951be96d11",
+			"title": "Optimización del Mundo Principal",
+			"description": "",
+			"category": "191453d0-80cb-49e0-99e5-a0daac855839",
+			"steps": [
+				{
+					"details": "DIseñar el Primer Diseño para el Mundo Introductorio",
+					"done": false
+				},
+				{
+					"details": "Colocar los Árboles  con perspectiva RPG",
 					"done": false
 				}
 			]
+		},
+		{
+			"uuid": "121f9f39-d2cc-4987-92d8-3933b3f4d6c7",
+			"title": "Buscar Sprites ",
+			"description": "",
+			"category": "802c5e02-6d85-4618-9384-d5925a82f9c2",
+			"steps": [
+				{
+					"details": "Tématica De Bosque Compatible con los Sprites Agregados",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "19cead7b-7651-4bd7-b767-82b5b356d5eb",
+			"title": "Base de Datos Local",
+			"description": "",
+			"category": "b95c0d1e-4d1b-4138-937e-38529b8dc7ca",
+			"steps": [
+				{
+					"details": "Crear Database Cargable desde la Base de Datos para archivos Grandes",
+					"done": true
+				},
+				{
+					"details": "Profundización en Class FileAccess",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "cd56bb65-b37a-40f8-aa9c-c8921b90c8c6",
+			"title": "Arreglo en la DB Remota",
+			"description": "Arreglar el sistema de consultas pendiente para la instanciación automática de Enemigos con loot asignados\n",
+			"category": "52aa36b5-a120-4a5f-9c9b-b29ecccc73ec",
+			"steps": []
 		}
 	],
 	"layout": {
 		"columns": [
 			[
-				"1319d7c3-95ea-403c-a443-986f772d3316"
+				"1319d7c3-95ea-403c-a443-986f772d3316",
+				"23d176c3-7f63-45ae-a114-518644380140"
 			],
 			[
 				"59d6ca3d-b983-4f8a-b834-5052daff4f26"

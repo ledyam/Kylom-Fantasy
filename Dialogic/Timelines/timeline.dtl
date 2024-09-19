@@ -6,8 +6,8 @@ MainPlayer: Espera......
 character: Escuchaste eso??...
 MainPlayer: Si .........
 set {MOVERSE} = true
-character: Que hacemos aqui 	
-MainPlayer: Nada especial
-MainPlayer: Candela
-character: Si
-MainPlayer: a ya 
+character: Qué hacemos aquí ??
+MainPlayer: Parece que el Desarrollador está enseñando el Juego
+MainPlayer: Ah ya... Candela
+character: Si , parece que no tiene más nada que hacer....... Y eso que le falta el sistema de Guardado
+MainPlayer: jajjajaja

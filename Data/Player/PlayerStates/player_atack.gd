@@ -13,21 +13,21 @@ func enter():
 func Animaciones ():
 	match player.current_direction:
 		player.direction.up :
-			player.animated_sprite_2d.play(player.animations._attack_up)
+			player.animated_player_movement.play(player.animations._attack_up)
 			finish_animation.start()
 			
 		player.direction.down:
-			player.animated_sprite_2d.play(player.animations._attack)
+			player.animated_player_movement.play(player.animations._attack)
 			finish_animation.start()
 			
 		player.direction.none:
-			player.animated_sprite_2d.play(player.animations._attack)
+			player.animated_player_movement.play(player.animations._attack)
 			finish_animation.start()
 		player.direction.left :
-			player.animated_sprite_2d.play(player.animations._attack_turnL)
+			player.animated_player_movement.play(player.animations._attack_turnL)
 			finish_animation.start()
 		player.direction.right :
-			player.animated_sprite_2d.play(player.animations._attack_turnR)
+			player.animated_player_movement.play(player.animations._attack_turnR)
 			finish_animation.start()
 			
 				

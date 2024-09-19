@@ -1,7 +1,7 @@
 extends Node2D
-@onready var skeleton: Undead_Enemy = $Skeleton
+
+@onready var marcus: MainPlayer = $Marcus
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
-		print (skeleton.EffectiveDamage(50))
-	
+		marcus.Give_Exp(2)

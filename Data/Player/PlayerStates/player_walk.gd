@@ -12,15 +12,15 @@ func physics_process(_delta):
 
 func Establecer_Animacciones ():
 	if Input.is_action_pressed('ui_up'):
-		player.animated_sprite_2d.play(player.animations._walk_up)
+		player.animated_player_movement.play(player.animations._walk_up)
 	elif  Input.is_action_pressed("ui_down"):
-		player.animated_sprite_2d.play(player.animations._walk_down)
+		player.animated_player_movement.play(player.animations._walk_down)
 
 	elif  Input.is_action_pressed('ui_right'):
-		player.animated_sprite_2d.play(player.animations._walkr)
+		player.animated_player_movement.play(player.animations._walkr)
 
 	elif  Input.is_action_pressed('ui_left'):
-				player.animated_sprite_2d.play(player.animations._walkl)
+				player.animated_player_movement.play(player.animations._walkl)
 
 	else :
 		state_machine.change_to(player.states._idle)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://5jark5pkwsb"]
+[gd_scene load_steps=23 format=3 uid="uid://5jark5pkwsb"]
 
 [ext_resource type="StyleBox" uid="uid://drnarcmriti83" path="res://Resources/UI_Themes/hover.tres" id="1_2tppg"]
 [ext_resource type="Texture2D" uid="uid://c75pdyh7y2c8" path="res://Assets/Tiles/GUI/GUI/GUI.png" id="1_qa2pc"]
@@ -6,7 +6,10 @@
 [ext_resource type="Script" path="res://UI/UI_Interfaces/ui_menu_in_game.gd" id="3_v0vnf"]
 [ext_resource type="PackedScene" uid="uid://6rpyx7ocac0d" path="res://UI/UI_Interfaces/slot.tscn" id="4_qa64c"]
 [ext_resource type="Script" path="res://UI/UI_Interfaces/inventario.gd" id="5_p1n8l"]
+[ext_resource type="PackedScene" uid="uid://bweqc780t3ltc" path="res://Resources/Button/button_with_sound.tscn" id="5_vnmr3"]
 [ext_resource type="AudioStream" uid="uid://fgh5defjieg1" path="res://Assets/Sounds/level-up-3-199576.mp3" id="7_o6ttr"]
+[ext_resource type="AudioStream" uid="uid://d22avlb4mj8vn" path="res://Assets/Sounds/UI Close.wav" id="8_wwsdr"]
+[ext_resource type="AudioStream" uid="uid://dtfmcs3815kah" path="res://Assets/Sounds/UI Open.wav" id="9_pg4dr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qko2g"]
 
@@ -21,10 +24,6 @@ RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0.494118)
 RichTextLabel/constants/line_separation = 2
 RichTextLabel/font_sizes/normal_font_size = 8
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mfa16"]
-atlas = ExtResource("1_qa2pc")
-region = Rect2(0, 33, 47, 46)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_q31kf"]
 atlas = ExtResource("1_qa2pc")
 region = Rect2(0.117874, 95.0915, 48.5292, 34.4172)
@@ -33,12 +32,221 @@ region = Rect2(0.117874, 95.0915, 48.5292, 34.4172)
 atlas = ExtResource("1_qa2pc")
 region = Rect2(48.1236, 96.0069, 32.0519, 31.3807)
 
+[sub_resource type="Animation" id="Animation_oxfsh"]
+resource_name = "Hide_inventory"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Inventario:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0125929, 0.376213),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Inventario:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.377787),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_2po5g"]
+resource_name = "Hide_menu"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Menu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.38767),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.00629645, 0.392393),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Inventario/Sounds/UiClose")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.131524),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_tnith"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Menu:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menu:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Inventario:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Inventario:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_5f6l8"]
+resource_name = "Show_inventory"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Inventario:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.399825),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Inventario:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0157411),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_andki"]
+resource_name = "Show_menu"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Menu:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.00472234, 0.0362046),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menu:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0349074, 0.369815),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Inventario/Sounds/UiOpen")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0657621),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2hsri"]
+_data = {
+"Hide_inventory": SubResource("Animation_oxfsh"),
+"Hide_menu": SubResource("Animation_2po5g"),
+"RESET": SubResource("Animation_tnith"),
+"Show_inventory": SubResource("Animation_5f6l8"),
+"Show_menu": SubResource("Animation_andki")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfa16"]
+atlas = ExtResource("1_qa2pc")
+region = Rect2(0, 33, 47, 46)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vcia5"]
+font_size = 8
+
 [node name="UI_Menu_InGame" type="Control" node_paths=PackedStringArray("description")]
 z_index = 10
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -6.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_46fjj")
@@ -46,57 +254,8 @@ script = ExtResource("3_v0vnf")
 default_text = "Coloca el cursor encima de un objeto para ver su descripción"
 description = NodePath("Inventario/Description")
 
-[node name="Menu" type="NinePatchRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = -37.5
-offset_right = 46.0
-offset_bottom = 37.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_mfa16")
-region_rect = Rect2(-0.417572, -0.37776, 47.4309, 46.3498)
-patch_margin_left = 9
-patch_margin_top = 9
-patch_margin_right = 8
-patch_margin_bottom = 8
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Inventory" type="Button" parent="Menu/VBoxContainer"]
-layout_mode = 2
-text = "Inventory"
-
-[node name="Options" type="Button" parent="Menu/VBoxContainer"]
-layout_mode = 2
-text = "Options"
-
-[node name="Quit" type="Button" parent="Menu/VBoxContainer"]
-layout_mode = 2
-text = "Quit"
-
 [node name="Inventario" type="NinePatchRect" parent="."]
-visible = false
+modulate = Color(1, 1, 1, 0)
 z_index = 10
 layout_mode = 1
 anchors_preset = 8
@@ -230,7 +389,92 @@ offset_right = 107.0
 offset_bottom = 52.5
 grow_vertical = 2
 
-[node name="CogerObjeto" type="AudioStreamPlayer2D" parent="Inventario"]
+[node name="Sounds" type="Node" parent="Inventario"]
+
+[node name="CogerObjeto" type="AudioStreamPlayer2D" parent="Inventario/Sounds"]
+position = Vector2(173, 66)
 stream = ExtResource("7_o6ttr")
 
-[connection signal="pressed" from="Menu/VBoxContainer/Inventory" to="." method="_on_inventory_pressed"]
+[node name="UiClose" type="AudioStreamPlayer" parent="Inventario/Sounds"]
+stream = ExtResource("8_wwsdr")
+
+[node name="UiOpen" type="AudioStreamPlayer" parent="Inventario/Sounds"]
+stream = ExtResource("9_pg4dr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2hsri")
+}
+
+[node name="Menu" type="NinePatchRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -56.0
+offset_right = 61.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_mfa16")
+region_rect = Rect2(-0.417572, -0.37776, 47.4309, 46.3498)
+patch_margin_left = 9
+patch_margin_top = 9
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inventario" parent="Menu/VBoxContainer" instance=ExtResource("5_vnmr3")]
+layout_mode = 2
+text = "Inventario"
+
+[node name="Guardar" parent="Menu/VBoxContainer" instance=ExtResource("5_vnmr3")]
+layout_mode = 2
+text = "Guardar"
+
+[node name="Cargar" parent="Menu/VBoxContainer" instance=ExtResource("5_vnmr3")]
+layout_mode = 2
+text = "Cargar"
+
+[node name="Salir" parent="Menu/VBoxContainer" instance=ExtResource("5_vnmr3")]
+layout_mode = 2
+text = "Salir"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Saving_Alert" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -15.0
+offset_right = 117.0
+offset_bottom = 1.0
+grow_vertical = 0
+text = "Juego Guardado..."
+label_settings = SubResource("LabelSettings_vcia5")
+
+[connection signal="pressed" from="Menu/VBoxContainer/Inventario" to="." method="_on_inventario_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Guardar" to="." method="_on_guardar_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Cargar" to="." method="_on_cargar_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
