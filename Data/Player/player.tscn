@@ -1790,9 +1790,14 @@ offset_left = -40.0
 offset_top = -21.4286
 offset_right = 35.0
 offset_bottom = 1.57146
-text = "Marcus Lv.#"
+text = "Marcus Lv.1"
 
 [node name="UI_Menu_InGame" parent="." instance=ExtResource("15_anmsq")]
+anchors_preset = 9
+anchor_right = 0.0
+offset_top = 0.0
+offset_right = 0.0
+grow_horizontal = 1
 
 [node name="AnimationPlayerActions" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimationPlayerMovements")

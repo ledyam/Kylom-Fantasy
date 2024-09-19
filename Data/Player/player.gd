@@ -13,7 +13,6 @@ var vida_actual : float  = 100 :
 			player_ui.indicador_vida.text = str(value) + "|" + str(vida_Max)
 		else : 
 			player_ui.indicador_vida.text = str(0) + "|" + str(vida_Max)
-		
 var current_Exp : float  : 
 	set(value):
 		current_Exp = value 
@@ -27,7 +26,10 @@ var vida_Max : float = 100 :
 	set(value):
 		vida_Max = value
 		player_ui.progress_bar_exp.max_value = value
-		
+var current_level : int = 1 :
+	set(value):
+		current_level = value 
+		indicador_nombre_level.text = NOMBRE + " Lv." + str(current_level)
 var ATK :  float = 100
 var DEF : float = 20
 #endregion
@@ -86,16 +88,13 @@ func _physics_process(_delta: float) -> void:
 #region MÉTODOS del Player
 func Recibir_damage(enemy_attack : float):
 	if recibir_damage and cooldown_Rdamage:
-		vida_actual-= enemy_attack
+		vida_actual -= enemy_attack
 		spawn_numero_flotante(enemy_attack)
 		cooldown_Rdamage = false 
 		cd.start()
 	pass
-	
-	
 func on_RecibirVida(vida):
 	vida_actual += vida
-	
 func Give_Exp(exp : int ): 
 	if(player_ui.progress_bar_exp.value + exp) > player_ui.progress_bar_exp.max_value:
 		var resto = (player_ui.progress_bar_exp.value + exp) - player_ui.progress_bar_exp.max_value
@@ -105,14 +104,12 @@ func Give_Exp(exp : int ):
 		current_Exp += resto
 	else : 
 		current_Exp += exp
-		
-
 func LEVEL_UP ():
 	current_level += 1
 	vida_Max += 10
 	vida_actual = vida_Max
 	$"Sounds/LevelUpPickup(rpg)".play()
-	indicador_nombre_level.Actualizar()
+
 
 
 

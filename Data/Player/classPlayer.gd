@@ -12,7 +12,7 @@ var can_move : bool = true
 #endregion
 
 #Variables Atributos Principales Genéricos
-var current_level : int = 1 
+
 const MAX_LEVEL : int = 20
 
 #Variables STATS

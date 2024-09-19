@@ -48,6 +48,6 @@ func physics_process(_delta: float):
 				set_current_direction(player.direction.left)
 				state_machine.change_to(player.states._walk)
 
-			if Input.is_action_pressed("Atacar") and player.can_attack:
+			if Input.is_action_pressed("click") and player.can_attack:
 				attack_sounds.play()
 				state_machine.change_to(player.states._atack)
