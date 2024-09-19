@@ -1,6 +1,6 @@
 extends Control
 @onready var menu: NinePatchRect = $Menu
-@onready var inventario: NinePatchRect = $Inventario
+@onready var inventario: NinePatchRect = $CanvasLayer/Control/Inventario
 @export_multiline var default_text : String
 @export var description :NinePatchRect
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -20,7 +20,7 @@ func set_description(item : Dictionary):
 
 #Metodo por defecto para el Inventario General
 func Normality ():
-	description.find_child("Name").text = "Inventory"
+	description.find_child("Name").text = "Inventario"
 	description.find_child("Icon").texture = null
 	description.find_child("Description").text = default_text
 

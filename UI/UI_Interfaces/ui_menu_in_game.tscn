@@ -1,36 +1,15 @@
-[gd_scene load_steps=23 format=3 uid="uid://5jark5pkwsb"]
+[gd_scene load_steps=21 format=3 uid="uid://5jark5pkwsb"]
 
-[ext_resource type="StyleBox" uid="uid://drnarcmriti83" path="res://Resources/UI_Themes/hover.tres" id="1_2tppg"]
+[ext_resource type="Theme" uid="uid://e2ibn4lqfv0e" path="res://UI/UI_Interfaces/ui_menu_in_game.tres" id="1_lceqp"]
 [ext_resource type="Texture2D" uid="uid://c75pdyh7y2c8" path="res://Assets/Tiles/GUI/GUI/GUI.png" id="1_qa2pc"]
-[ext_resource type="StyleBox" uid="uid://b8aew3b4k2hy0" path="res://Resources/UI_Themes/normal.tres" id="2_djbgs"]
 [ext_resource type="Script" path="res://UI/UI_Interfaces/ui_menu_in_game.gd" id="3_v0vnf"]
 [ext_resource type="PackedScene" uid="uid://6rpyx7ocac0d" path="res://UI/UI_Interfaces/slot.tscn" id="4_qa64c"]
 [ext_resource type="Script" path="res://UI/UI_Interfaces/inventario.gd" id="5_p1n8l"]
 [ext_resource type="PackedScene" uid="uid://bweqc780t3ltc" path="res://Resources/Button/button_with_sound.tscn" id="5_vnmr3"]
+[ext_resource type="PackedScene" uid="uid://dknkcxjhftvvj" path="res://UI/UI_Interfaces/slot_passive.tscn" id="6_51tlx"]
 [ext_resource type="AudioStream" uid="uid://fgh5defjieg1" path="res://Assets/Sounds/level-up-3-199576.mp3" id="7_o6ttr"]
 [ext_resource type="AudioStream" uid="uid://d22avlb4mj8vn" path="res://Assets/Sounds/UI Close.wav" id="8_wwsdr"]
 [ext_resource type="AudioStream" uid="uid://dtfmcs3815kah" path="res://Assets/Sounds/UI Open.wav" id="9_pg4dr"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qko2g"]
-
-[sub_resource type="Theme" id="Theme_46fjj"]
-Button/font_sizes/font_size = 8
-Button/styles/focus = SubResource("StyleBoxEmpty_qko2g")
-Button/styles/hover = ExtResource("1_2tppg")
-Button/styles/normal = ExtResource("2_djbgs")
-Label/colors/font_shadow_color = Color(0, 0, 0, 0.831373)
-Label/font_sizes/font_size = 8
-RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0.494118)
-RichTextLabel/constants/line_separation = 2
-RichTextLabel/font_sizes/normal_font_size = 8
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q31kf"]
-atlas = ExtResource("1_qa2pc")
-region = Rect2(0.117874, 95.0915, 48.5292, 34.4172)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j0udk"]
-atlas = ExtResource("1_qa2pc")
-region = Rect2(48.1236, 96.0069, 32.0519, 31.3807)
 
 [sub_resource type="Animation" id="Animation_oxfsh"]
 resource_name = "Hide_inventory"
@@ -38,7 +17,7 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Inventario:modulate")
+tracks/0/path = NodePath("CanvasLayer/Control/Inventario:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -50,7 +29,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Inventario:visible")
+tracks/1/path = NodePath("CanvasLayer/Control/Inventario:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -90,7 +69,7 @@ tracks/1/keys = {
 tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Inventario/Sounds/UiClose")
+tracks/2/path = NodePath("CanvasLayer/Control/Inventario/Sounds/UiClose")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -131,7 +110,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Inventario:modulate")
+tracks/2/path = NodePath("CanvasLayer/Control/Inventario:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -143,7 +122,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Inventario:visible")
+tracks/3/path = NodePath("CanvasLayer/Control/Inventario:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -159,7 +138,7 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Inventario:modulate")
+tracks/0/path = NodePath("CanvasLayer/Control/Inventario:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -171,7 +150,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Inventario:visible")
+tracks/1/path = NodePath("CanvasLayer/Control/Inventario:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -211,7 +190,7 @@ tracks/1/keys = {
 tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Inventario/Sounds/UiOpen")
+tracks/2/path = NodePath("CanvasLayer/Control/Inventario/Sounds/UiOpen")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -236,6 +215,14 @@ _data = {
 atlas = ExtResource("1_qa2pc")
 region = Rect2(0, 33, 47, 46)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_q31kf"]
+atlas = ExtResource("1_qa2pc")
+region = Rect2(0.117874, 95.0915, 48.5292, 34.4172)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0udk"]
+atlas = ExtResource("1_qa2pc")
+region = Rect2(48.1236, 96.0069, 32.0519, 31.3807)
+
 [sub_resource type="LabelSettings" id="LabelSettings_vcia5"]
 font_size = 8
 
@@ -249,157 +236,10 @@ offset_top = -6.0
 offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_46fjj")
+theme = ExtResource("1_lceqp")
 script = ExtResource("3_v0vnf")
 default_text = "Coloca el cursor encima de un objeto para ver su descripción"
-description = NodePath("Inventario/Description")
-
-[node name="Inventario" type="NinePatchRect" parent="."]
-modulate = Color(1, 1, 1, 0)
-z_index = 10
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -143.0
-offset_top = -98.0
-offset_right = 143.0
-offset_bottom = 98.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_q31kf")
-patch_margin_left = 9
-patch_margin_top = 9
-patch_margin_right = 9
-patch_margin_bottom = 7
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-script = ExtResource("5_p1n8l")
-
-[node name="GridContainer" type="GridContainer" parent="Inventario"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 132.0
-offset_top = -79.0
-offset_right = 308.0
-offset_bottom = 61.0
-grow_vertical = 2
-columns = 4
-
-[node name="Slot" parent="Inventario/GridContainer" instance=ExtResource("4_qa64c")]
-layout_mode = 2
-
-[node name="Slot2" parent="Inventario/GridContainer" instance=ExtResource("4_qa64c")]
-layout_mode = 2
-
-[node name="Slot3" parent="Inventario/GridContainer" instance=ExtResource("4_qa64c")]
-layout_mode = 2
-
-[node name="Slot4" parent="Inventario/GridContainer" instance=ExtResource("4_qa64c")]
-layout_mode = 2
-
-[node name="Slot5" parent="Inventario/GridContainer" instance=ExtResource("4_qa64c")]
-layout_mode = 2
-
-[node name="Slot6" parent="Inventario/GridContainer" instance=ExtResource("4_qa64c")]
-layout_mode = 2
-
-[node name="Slot7" parent="Inventario/GridContainer" instance=ExtResource("4_qa64c")]
-layout_mode = 2
-
-[node name="Slot8" parent="Inventario/GridContainer" instance=ExtResource("4_qa64c")]
-layout_mode = 2
-
-[node name="Slot9" parent="Inventario/GridContainer" instance=ExtResource("4_qa64c")]
-layout_mode = 2
-
-[node name="Slot10" parent="Inventario/GridContainer" instance=ExtResource("4_qa64c")]
-layout_mode = 2
-
-[node name="Slot11" parent="Inventario/GridContainer" instance=ExtResource("4_qa64c")]
-layout_mode = 2
-
-[node name="Slot12" parent="Inventario/GridContainer" instance=ExtResource("4_qa64c")]
-layout_mode = 2
-
-[node name="Slot13" parent="Inventario/GridContainer" instance=ExtResource("4_qa64c")]
-layout_mode = 2
-
-[node name="Slot14" parent="Inventario/GridContainer" instance=ExtResource("4_qa64c")]
-layout_mode = 2
-
-[node name="Slot15" parent="Inventario/GridContainer" instance=ExtResource("4_qa64c")]
-layout_mode = 2
-
-[node name="Slot16" parent="Inventario/GridContainer" instance=ExtResource("4_qa64c")]
-layout_mode = 2
-
-[node name="Description" type="NinePatchRect" parent="Inventario"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 25.0
-offset_right = 130.0
-offset_bottom = 146.0
-texture = SubResource("AtlasTexture_j0udk")
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 5
-patch_margin_bottom = 4
-
-[node name="Name" type="Label" parent="Inventario/Description"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_top = 10.0
-offset_right = 20.0
-offset_bottom = 26.0
-grow_horizontal = 2
-
-[node name="Description" type="RichTextLabel" parent="Inventario/Description"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -51.0
-offset_top = -26.5
-offset_right = 49.0
-offset_bottom = 28.5
-grow_horizontal = 2
-grow_vertical = 2
-bbcode_enabled = true
-fit_content = true
-scroll_following = true
-
-[node name="Icon" type="TextureRect" parent="Inventario/Description"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 85.0
-offset_top = 31.5
-offset_right = 107.0
-offset_bottom = 52.5
-grow_vertical = 2
-
-[node name="Sounds" type="Node" parent="Inventario"]
-
-[node name="CogerObjeto" type="AudioStreamPlayer2D" parent="Inventario/Sounds"]
-position = Vector2(173, 66)
-stream = ExtResource("7_o6ttr")
-
-[node name="UiClose" type="AudioStreamPlayer" parent="Inventario/Sounds"]
-stream = ExtResource("8_wwsdr")
-
-[node name="UiOpen" type="AudioStreamPlayer" parent="Inventario/Sounds"]
-stream = ExtResource("9_pg4dr")
+description = NodePath("CanvasLayer/Control/Inventario/Int_Inventario/Description/Description")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -461,15 +301,285 @@ text = "Salir"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Saving_Alert" type="Label" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_lceqp")
+
+[node name="Inventario" type="NinePatchRect" parent="CanvasLayer/Control"]
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 11.5
+offset_top = 2.0
+offset_right = 599.5
+offset_bottom = 292.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_q31kf")
+patch_margin_left = 9
+patch_margin_top = 9
+patch_margin_right = 9
+patch_margin_bottom = 7
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("5_p1n8l")
+
+[node name="Int_Inventario" type="HBoxContainer" parent="CanvasLayer/Control/Inventario"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0266876
+anchor_top = 0.0623053
+anchor_right = 0.965463
+anchor_bottom = 0.943925
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Description" type="Panel" parent="CanvasLayer/Control/Inventario/Int_Inventario"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Description" type="NinePatchRect" parent="CanvasLayer/Control/Inventario/Int_Inventario/Description"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = -117.0
+offset_right = 82.5
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_j0udk")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 5
+patch_margin_bottom = 4
+
+[node name="Name" type="Label" parent="CanvasLayer/Control/Inventario/Int_Inventario/Description/Description"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.5
+offset_top = 10.0
+offset_right = 46.5
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "Inventario"
+horizontal_alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="CanvasLayer/Control/Inventario/Int_Inventario/Description/Description"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.6923
+offset_top = -23.5685
+offset_right = 62.3077
+offset_bottom = 96.4315
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "asdasdasdasdasdasd"
+fit_content = true
+scroll_following = true
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Control/Inventario/Int_Inventario/Description/Description"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 104.808
+offset_top = -87.5685
+offset_right = 156.808
+offset_bottom = -40.5685
+grow_vertical = 2
+
+[node name="Equipable_Item" type="ItemList" parent="CanvasLayer/Control/Inventario/Int_Inventario"]
+layout_mode = 2
+size_flags_horizontal = 3
+select_mode = 1
+allow_reselect = true
+max_columns = 5
+
+[node name="Slot" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.390863
+anchor_top = 0.10424
+anchor_right = 0.619289
+anchor_bottom = 0.245583
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Slot2" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.619289
+anchor_top = 0.287986
+anchor_right = 0.847716
+anchor_bottom = 0.429329
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Slot3" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.162437
+anchor_top = 0.287986
+anchor_right = 0.390863
+anchor_bottom = 0.429329
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Slot4" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.390863
+anchor_top = 0.471731
+anchor_right = 0.619289
+anchor_bottom = 0.613074
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Slot5" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.619289
+anchor_top = 0.687279
+anchor_right = 0.847716
+anchor_bottom = 0.828622
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Slot6" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.162437
+anchor_top = 0.687279
+anchor_right = 0.390863
+anchor_bottom = 0.828622
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Items" type="Panel" parent="CanvasLayer/Control/Inventario/Int_Inventario"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -94.0
+offset_right = 70.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 7
+columns = 4
+
+[node name="Slot" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
+layout_mode = 2
+
+[node name="Slot2" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
+layout_mode = 2
+
+[node name="Slot3" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
+layout_mode = 2
+
+[node name="Slot4" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
+layout_mode = 2
+
+[node name="Slot5" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
+layout_mode = 2
+
+[node name="Slot6" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
+layout_mode = 2
+
+[node name="Slot7" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
+layout_mode = 2
+
+[node name="Slot8" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
+layout_mode = 2
+
+[node name="Slot9" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
+layout_mode = 2
+
+[node name="Slot10" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
+layout_mode = 2
+
+[node name="Slot11" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
+layout_mode = 2
+
+[node name="Slot12" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
+layout_mode = 2
+
+[node name="Slot13" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
+layout_mode = 2
+
+[node name="Slot14" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
+layout_mode = 2
+
+[node name="Slot15" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
+layout_mode = 2
+
+[node name="Slot16" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
+layout_mode = 2
+
+[node name="Slot17" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
+layout_mode = 2
+
+[node name="Slot18" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
+layout_mode = 2
+
+[node name="Slot19" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
+layout_mode = 2
+
+[node name="Slot20" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
+layout_mode = 2
+
+[node name="Sounds" type="Node" parent="CanvasLayer/Control/Inventario"]
+
+[node name="CogerObjeto" type="AudioStreamPlayer2D" parent="CanvasLayer/Control/Inventario/Sounds"]
+position = Vector2(173, 66)
+stream = ExtResource("7_o6ttr")
+
+[node name="UiClose" type="AudioStreamPlayer" parent="CanvasLayer/Control/Inventario/Sounds"]
+stream = ExtResource("8_wwsdr")
+
+[node name="UiOpen" type="AudioStreamPlayer" parent="CanvasLayer/Control/Inventario/Sounds"]
+stream = ExtResource("9_pg4dr")
+
+[node name="Saving_Alert" type="Label" parent="CanvasLayer/Control"]
 visible = false
+layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 3.0
-offset_top = -15.0
+offset_top = 285.0
 offset_right = 117.0
-offset_bottom = 1.0
+offset_bottom = 301.0
 grow_vertical = 0
 text = "Juego Guardado..."
 label_settings = SubResource("LabelSettings_vcia5")
