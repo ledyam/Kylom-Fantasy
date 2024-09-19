@@ -58,24 +58,39 @@ func _on_inventario_pressed() -> void:
 
 
 func _on_guardar_pressed() -> void:
-	SaveLoad.Save(player)
+	SaveLoad.Save(player , inventario.GuardarInv())
+	$CanvasLayer/Saving_Alert.visible = true
+	await get_tree().create_timer(2).timeout
+	$CanvasLayer/Saving_Alert.visible = false
 	pass
 	
-
 func _on_cargar_pressed() -> void:
 	var data : Dictionary =  SaveLoad.Load()
 	
+	
+#region Estadisiticas del Player
 	player.position = str_to_var(data.player.position)
 	player.vida_actual  = str_to_var(data.player.vida_actual)
 	player.current_Exp = str_to_var(data.player.current_Exp)
+	player.vida_Max =  str_to_var (data.player.vida_Max) 
+	player.Max_Exp =  str_to_var (data.player.Max_Exp)
+	player.current_level = str_to_var (data.player.current_level)
+#endregion
 	
+#region Inventario
+	inventario.CargarInv(data.inventory)
+#endregion
 	
+#region Datos del Tiempo
 	player.player_ui.reloj.minute = str_to_var(data.player.player_reloj.minute)
 	player.player_ui.reloj.hour = str_to_var(data.player.player_reloj.hour)
 	player.player_ui.reloj.day = str_to_var(data.player.player_reloj.day)
 	player.player_ui.reloj.count_week_day = str_to_var(data.player.player_reloj.week_day)
 	player.player_ui.reloj.month_count = str_to_var(data.player.player_reloj.month)
-
+#endregion
+	
+		
+	
 	
 	if !get_tree().get_nodes_in_group("Enemy").is_empty():
 		get_tree().call_group("Enemy", "queue_free")

@@ -8,7 +8,7 @@
 		"Texture": "res://Assets/Tiles/Rocky Roads2/Objects/banana.png"
 	},
 	"2": {
-		"Description": "Una banana  que recupera 20 HP",
+		"Description": "Una manzana que recupera 20 HP",
 		"Drop": 0.61,
 		"Health_give": 20,
 		"Name": "Manzana",
