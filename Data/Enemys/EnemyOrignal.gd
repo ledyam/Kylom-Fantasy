@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
 class_name EnemyOriginal
-
 var life : float = 100
 var type : String
 var ATK : float  = 20
 var can_critic : bool = false  
-var level : int = 1
-var Item_loot : Dictionary = {}
+var current_level : int = 1
+var  loot : Dictionary = {}
+var Item : PackedScene= load("res://Data/Objects/objeto.tscn")
 
 @export_range(0,1) var critic_chance : float
 @export var  DEF : float
@@ -17,16 +17,22 @@ signal Take_Damage
 
 func _ready() -> void:
 	randomize()
-	DataBase.database.execute('SELECT *
-	FROM public."Item_Consumible";')
-	DataBase.Items_data = Item_loot
-	DataBase.Clean_Library()
-	OS.alert("item dropeable cosneguido")
-
-
-
-
-
+	var file = FileAccess.open("res://DataBase/Local/Item_Loot.json", FileAccess.READ)
+	if file.file_exists("res://DataBase/Local/Item_Loot.json"):
+		var temp_loot : Dictionary = JSON.parse_string(file.get_as_text())
+		Item_Probabilidad(temp_loot)
+				 
+func Item_Probabilidad(temp_loot : Dictionary):
+	var total_drop : float = 0.0
+	var random : float = 0.0
+	for i in temp_loot:
+		total_drop += temp_loot[str(i)]["Drop"]
+	random = randf() * total_drop
+	var acumulador : float = 0.0
+	for i in temp_loot :
+		acumulador += temp_loot[str(i)]["Drop"]
+		if random <= acumulador:
+			loot.merge(temp_loot[str(i)])
 func spawn_numero_flotante(damage ): 
 	var number = numero_flotante.instantiate()
 	number.position = global_position
@@ -46,8 +52,6 @@ func EffectiveDamage(give_attack : float):
 	Take_Damage.emit()
 func Aleatorio ():
 	return randf_range(0.9 , 1.0)
-
-
 func Defense (give_attack : float):
 	if give_attack == 0 and DEF == 0 : 
 		return 0.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://by6waso0mjpjp"]
+[gd_scene load_steps=14 format=3 uid="uid://by6waso0mjpjp"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Character/node_portrait_container.gd" id="1_4jxq7"]
 [ext_resource type="Script" path="res://Dialogic/Styles/Layers/TextboxWithPortrait/speaker_portrait_textbox_layer.gd" id="1_7jt4d"]
@@ -12,7 +12,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sho15"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmg1w"]
-bg_color = Color(0.826607, 0.49835, 0.448005, 1)
+bg_color = Color(0.6, 0.6, 0.6, 0)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
@@ -20,18 +20,18 @@ corner_radius_bottom_left = 3
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lsvm5"]
 atlas = ExtResource("3_7vv7x")
-region = Rect2(48, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qxq1w"]
-atlas = ExtResource("3_7vv7x")
-region = Rect2(102, 6, 12, 11)
+region = Rect2(16, 24, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_udrmn"]
 atlas = ExtResource("2_daex2")
-region = Rect2(224, 96, 32, 32)
+region = Rect2(-0.173368, 47.0334, 16.201, 17.0785)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3jenp"]
 texture = SubResource("AtlasTexture_udrmn")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
 
 [node name="TextboxWithSpeakerPortrait" type="Control"]
 layout_mode = 3
@@ -106,10 +106,10 @@ metadata/_edit_use_anchors_ = true
 [node name="DialogicNode_PortraitContainer" type="Control" parent="Anchor/Panel/HBox/PortraitPanel/PortraitBackgroundColor"]
 z_index = 1
 layout_mode = 1
-anchor_left = 0.171935
-anchor_top = 0.188119
-anchor_right = 0.841313
-anchor_bottom = 0.871287
+anchor_left = 0.248435
+anchor_top = 0.277228
+anchor_right = 0.758437
+anchor_bottom = 0.782178
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -119,7 +119,7 @@ container_ids = PackedStringArray("1")
 debug_character_portrait = "speaker"
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect2" type="TextureRect" parent="Anchor/Panel/HBox/PortraitPanel"]
+[node name="Portrait" type="TextureRect" parent="Anchor/Panel/HBox/PortraitPanel"]
 z_index = 2
 layout_mode = 1
 anchors_preset = -1
@@ -145,19 +145,6 @@ horizontal_alignment = 1
 script = ExtResource("2_y0h34")
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="Anchor/Panel/HBox/PortraitPanel"]
-z_as_relative = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.140127
-anchor_top = 0.128713
-anchor_right = 0.853503
-anchor_bottom = 0.841584
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_qxq1w")
-metadata/_edit_use_anchors_ = true
-
 [node name="PanelRect" type="Panel" parent="Anchor/Panel/HBox"]
 z_index = 1
 layout_mode = 2
@@ -170,39 +157,35 @@ unique_name_in_owner = true
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.142857
+anchor_left = 0.0670554
 anchor_top = 0.19802
-anchor_right = 0.862974
-anchor_bottom = 0.891089
+anchor_right = 0.892128
+anchor_bottom = 0.80198
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 11
+theme_override_constants/table_v_separation = 0
+theme_override_constants/table_h_separation = 0
+theme_override_constants/text_highlight_v_padding = 0
+theme_override_constants/line_separation = 6
+theme_override_font_sizes/normal_font_size = 8
 bbcode_enabled = true
-text = "Some text"
+text = "Some textasd asd asdhasvdasghdashdaasd asdasda sdasdasd"
 scroll_following = true
+autowrap_mode = 1
 script = ExtResource("3_11puy")
 textbox_root = NodePath("../../..")
+start_hidden = false
 metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="Anchor/Panel/HBox/PanelRect"]
-z_as_relative = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_qxq1w")
 
 [node name="NextIndicator" type="Control" parent="Anchor/Panel/HBox/PanelRect"]
 unique_name_in_owner = true
-modulate = Color(0.721569, 0.435294, 0.313726, 1)
+modulate = Color(0.14902, 0.168627, 0.266667, 1)
 layout_mode = 1
-anchor_left = 0.912
-anchor_top = 0.812
-anchor_right = 0.913
-anchor_bottom = 0.812
+anchor_left = 0.910936
+anchor_top = 0.86834
+anchor_right = 0.911936
+anchor_bottom = 0.86834
 offset_left = 0.18399
 offset_top = -0.012001
 offset_right = -0.159027

@@ -1,0 +1,203 @@
+[gd_scene load_steps=16 format=3 uid="uid://pbj8qfrtsi3o"]
+
+[ext_resource type="StyleBox" uid="uid://drnarcmriti83" path="res://Resources/UI_Themes/hover.tres" id="1_v3ob4"]
+[ext_resource type="StyleBox" uid="uid://b8aew3b4k2hy0" path="res://Resources/UI_Themes/normal.tres" id="2_osdib"]
+[ext_resource type="Script" path="res://UI/Menú Principal/principal_menu.gd" id="3_4yfw4"]
+[ext_resource type="AudioStream" uid="uid://bwdvunglqc0ic" path="res://Assets/Sounds/Basic Rpg Intro Track (RPG).wav" id="4_f0nun"]
+[ext_resource type="Texture2D" uid="uid://14f5ksaddk04" path="res://Assets/Mis Inventos/OIG4.4UyrIlu0XobCaUCgC7Yd.jpg" id="4_ggbb8"]
+[ext_resource type="Script" path="res://addons/simple-gui-transitions/transition.gd" id="4_ir1pv"]
+[ext_resource type="PackedScene" uid="uid://bweqc780t3ltc" path="res://Resources/Button/button_with_sound.tscn" id="6_lakr6"]
+
+[sub_resource type="Theme" id="Theme_0mox5"]
+Button/font_sizes/font_size = 16
+Button/styles/focus = ExtResource("1_v3ob4")
+Button/styles/normal = ExtResource("2_osdib")
+
+[sub_resource type="Animation" id="Animation_lsxcl"]
+resource_name = "Introduction"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0.511828, 0.511828, 0.511828, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/VBoxContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_okmo0"]
+resource_name = "Oclution"
+length = 2.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 2.23333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.78, 0.78, 0.78, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_45chx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/VBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_08p2e"]
+_data = {
+"Introduction": SubResource("Animation_lsxcl"),
+"Oclution": SubResource("Animation_okmo0"),
+"RESET": SubResource("Animation_45chx")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afso3"]
+texture = ExtResource("4_ggbb8")
+texture_margin_left = 54.0
+texture_margin_right = 50.0
+
+[sub_resource type="Gradient" id="Gradient_d0etx"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jadgo"]
+gradient = SubResource("Gradient_d0etx")
+fill = 1
+fill_from = Vector2(0.5, 0.471963)
+fill_to = Vector2(5, 0)
+
+[node name="Principal_Menu" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_0mox5")
+script = ExtResource("3_4yfw4")
+
+[node name="AnimationMenu" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_08p2e")
+}
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.5
+offset_top = -171.0
+offset_right = 325.5
+offset_bottom = 171.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_afso3")
+
+[node name="GuiTransition" type="Node" parent="Panel"]
+script = ExtResource("4_ir1pv")
+auto_start = 0
+animation_enter = 4
+animation_leave = 4
+duration = 2.0
+delay = 0.93
+layout = NodePath("../VBoxContainer")
+group = NodePath("../VBoxContainer")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -39.0
+offset_right = 58.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Iniciar" parent="Panel/VBoxContainer" instance=ExtResource("6_lakr6")]
+layout_mode = 2
+text = "Iniciar"
+
+[node name="Opciones" parent="Panel/VBoxContainer" instance=ExtResource("6_lakr6")]
+layout_mode = 2
+text = "Opciones"
+
+[node name="Salir" parent="Panel/VBoxContainer" instance=ExtResource("6_lakr6")]
+layout_mode = 2
+text = "Salir"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(324.5, 170)
+scale = Vector2(10.1719, 5.28125)
+texture = SubResource("GradientTexture2D_jadgo")
+
+[node name="BasicRpgIntroTrack(rpg)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_f0nun")
+volume_db = 3.852
+autoplay = true
+
+[connection signal="animation_finished" from="AnimationMenu" to="." method="_on_animation_menu_animation_finished"]
+[connection signal="pressed" from="Panel/VBoxContainer/Iniciar" to="." method="_on_button_with_sound_pressed"]

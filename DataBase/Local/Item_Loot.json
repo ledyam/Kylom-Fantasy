@@ -1,0 +1,18 @@
+{
+	"1": {
+		"Description": "Una banana  que recupera 21 HP",
+		"Drop": 0.5,
+		"Health_give": 21,
+		"Name": "Banana",
+		"Rarity": "común",
+		"Texture": "res://Assets/Tiles/Rocky Roads2/Objects/banana.png"
+	},
+	"2": {
+		"Description": "Una manzana que recupera 20 HP",
+		"Drop": 0.61,
+		"Health_give": 20,
+		"Name": "Manzana",
+		"Rarity": "común",
+		"Texture": "res://Assets/Tiles/Rocky Roads2/Objects/apple.png"
+	}
+}

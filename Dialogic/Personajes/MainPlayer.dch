@@ -12,12 +12,12 @@
 "description": "",
 "display_name": "Marcus",
 "mirror": false,
-"nicknames": ["MainPlayer"],
+"nicknames": ["Marcus"],
 "offset": Vector2(0, 0),
 "portraits": {
 "happy": {
 "export_overrides": {
-"image": "\"res://Assets/Free 39 Portraits Pixel Art/1 Portraits/Icons_01.png\""
+"image": "\"res://Assets/Portraits/1 Portraits/Icons_32.png\""
 },
 "mirror": true,
 "offset": Vector2(0, 0),
