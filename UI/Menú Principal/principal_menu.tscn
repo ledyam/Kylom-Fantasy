@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://pbj8qfrtsi3o"]
+[gd_scene load_steps=17 format=3 uid="uid://pbj8qfrtsi3o"]
 
 [ext_resource type="StyleBox" uid="uid://drnarcmriti83" path="res://Resources/UI_Themes/hover.tres" id="1_v3ob4"]
 [ext_resource type="StyleBox" uid="uid://b8aew3b4k2hy0" path="res://Resources/UI_Themes/normal.tres" id="2_osdib"]
@@ -39,6 +39,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Game_Name:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.16667, 4.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_okmo0"]
@@ -95,6 +107,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Game_Name:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_08p2e"]
 _data = {
@@ -105,8 +129,7 @@ _data = {
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afso3"]
 texture = ExtResource("4_ggbb8")
-texture_margin_left = 54.0
-texture_margin_right = 50.0
+texture_margin_left = 61.0
 
 [sub_resource type="Gradient" id="Gradient_d0etx"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -116,6 +139,12 @@ gradient = SubResource("Gradient_d0etx")
 fill = 1
 fill_from = Vector2(0.5, 0.471963)
 fill_to = Vector2(5, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pocjm"]
+line_spacing = 7.0
+font_size = 24
+outline_size = 35
+outline_color = Color(0.1845, 0.216743, 0.324219, 1)
 
 [node name="Principal_Menu" type="Control"]
 texture_filter = 1
@@ -142,9 +171,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -325.5
+offset_left = -325.0
 offset_top = -171.0
-offset_right = 325.5
+offset_right = 326.0
 offset_bottom = 171.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -168,10 +197,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -58.0
-offset_top = -39.0
-offset_right = 58.0
-offset_bottom = 39.0
+offset_left = -65.5
+offset_top = -28.0
+offset_right = 50.5
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 6
@@ -198,6 +227,21 @@ texture = SubResource("GradientTexture2D_jadgo")
 stream = ExtResource("4_f0nun")
 volume_db = 3.852
 autoplay = true
+
+[node name="Game_Name" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -74.0
+offset_top = 43.0
+offset_right = 73.0
+offset_bottom = 98.0
+grow_horizontal = 2
+text = " KYLOM 
+FANTASY"
+label_settings = SubResource("LabelSettings_pocjm")
 
 [connection signal="animation_finished" from="AnimationMenu" to="." method="_on_animation_menu_animation_finished"]
 [connection signal="pressed" from="Panel/VBoxContainer/Iniciar" to="." method="_on_button_with_sound_pressed"]
