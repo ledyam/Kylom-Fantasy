@@ -6,7 +6,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_je4qp"]
 atlas = ExtResource("1_1ro5j")
-region = Rect2(48.2266, 95.8909, 32.3711, 32.119)
+region = Rect2(49, 96, 31, 32)
 
 [sub_resource type="LabelSettings" id="LabelSettings_5t3le"]
 font_size = 8
@@ -26,6 +26,7 @@ texture = SubResource("AtlasTexture_je4qp")
 
 [node name="Icon" type="TextureRect" parent="."]
 layout_mode = 2
+stretch_mode = 5
 
 [node name="Contador" type="Label" parent="."]
 visible = false

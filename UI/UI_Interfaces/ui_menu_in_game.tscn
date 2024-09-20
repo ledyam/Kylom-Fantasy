@@ -429,52 +429,57 @@ grow_vertical = 1
 [node name="Slot2" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.619289
-anchor_top = 0.287986
-anchor_right = 0.847716
-anchor_bottom = 0.429329
+anchor_left = 0.69507
+anchor_top = 0.286006
+anchor_right = 0.923496
+anchor_bottom = 0.427348
 grow_horizontal = 1
 grow_vertical = 1
+slot_type = 4
 
 [node name="Slot3" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.162437
-anchor_top = 0.287986
-anchor_right = 0.390863
-anchor_bottom = 0.429329
+anchor_left = 0.0873353
+anchor_top = 0.289927
+anchor_right = 0.315762
+anchor_bottom = 0.43127
 grow_horizontal = 1
 grow_vertical = 1
+slot_type = 3
 
 [node name="Slot4" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.390863
-anchor_top = 0.471731
-anchor_right = 0.619289
-anchor_bottom = 0.613074
+anchor_left = 0.391203
+anchor_top = 0.340908
+anchor_right = 0.619629
+anchor_bottom = 0.482251
 grow_horizontal = 1
 grow_vertical = 1
+slot_type = 1
 
 [node name="Slot5" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.619289
-anchor_top = 0.687279
-anchor_right = 0.847716
-anchor_bottom = 0.828622
+anchor_left = 0.391203
+anchor_top = 0.533065
+anchor_right = 0.619629
+anchor_bottom = 0.674407
 grow_horizontal = 1
 grow_vertical = 1
+slot_type = 2
 
 [node name="Slot6" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.162437
-anchor_top = 0.687279
-anchor_right = 0.390863
-anchor_bottom = 0.828622
+anchor_left = 0.391203
+anchor_top = 0.717378
+anchor_right = 0.619629
+anchor_bottom = 0.858721
 grow_horizontal = 1
 grow_vertical = 1
+slot_type = 5
 
 [node name="Items" type="Panel" parent="CanvasLayer/Control/Inventario/Int_Inventario"]
 layout_mode = 2

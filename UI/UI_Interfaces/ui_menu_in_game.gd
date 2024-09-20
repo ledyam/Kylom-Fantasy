@@ -59,9 +59,9 @@ func _on_inventario_pressed() -> void:
 
 func _on_guardar_pressed() -> void:
 	SaveLoad.Save(player , inventario.GuardarInv())
-	$CanvasLayer/Saving_Alert.visible = true
+	$CanvasLayer/Control/Saving_Alert.visible = true
 	await get_tree().create_timer(2).timeout
-	$CanvasLayer/Saving_Alert.visible = false
+	$CanvasLayer/Control/Saving_Alert.visible = false
 	pass
 	
 func _on_cargar_pressed() -> void:
@@ -90,8 +90,6 @@ func _on_cargar_pressed() -> void:
 #endregion
 	
 		
-	
-	
 	if !get_tree().get_nodes_in_group("Enemy").is_empty():
 		get_tree().call_group("Enemy", "queue_free")
 		for enemy_config in data.enemies:
