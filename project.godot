@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="First Proyect"
+config/name="Kylom Fantasy"
 run/main_scene="res://UI/Menú Principal/principal_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
@@ -28,6 +28,10 @@ DataBase="*res://DataBase/DataBase.gd"
 GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
 LocalDatabase="*res://DataBase/Local/Local_Database_Control.gd"
 SaveLoad="*res://Global/Save_Load.gd"
+
+[debug]
+
+gdscript/warnings/unused_signal=0
 
 [dialogic]
 

@@ -165,14 +165,18 @@
 			"steps": [
 				{
 					"details": "Nuevos Slot de tipo Equipable",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "Slot Pasivo de Armadura",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "Slot Pasivo de Arma Simple",
+					"done": true
+				},
+				{
+					"details": "Sistema Drag_and_Drop",
 					"done": false
 				}
 			]

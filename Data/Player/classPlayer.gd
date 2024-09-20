@@ -24,7 +24,6 @@ var Carisma : int = 5
 var numero_flotante : PackedScene = load("res://UI/Indicadores/numero_flotante.tscn")
 
 #region SEÑALES
-signal Give_EXP (exp : int )
 #endregion
  
 func spawn_numero_flotante(damage): 
