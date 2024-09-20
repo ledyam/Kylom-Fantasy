@@ -101,21 +101,21 @@ func Recibir_damage(enemy_attack : float):
 func on_RecibirVida(vida):
 	vida_actual += vida
 	
-func Give_Experiencia(exp : int ): 
-	if(player_ui.progress_bar_exp.value + exp) > player_ui.progress_bar_exp.max_value:
-		var resto = (player_ui.progress_bar_exp.value + exp) - player_ui.progress_bar_exp.max_value
+func Give_Experiencia (exp_recive : int ): 
+	if(player_ui.progress_bar_exp.value + exp_recive) > player_ui.progress_bar_exp.max_value:
+		var resto = (player_ui.progress_bar_exp.value + exp_recive) - player_ui.progress_bar_exp.max_value
 		LEVEL_UP()
 		Max_Exp = LocalDatabase.content[str(current_level)]["Exp_Necesaria"]
 		current_Exp = 0 
 		current_Exp += resto
 	else : 
-		current_Exp += exp
+		current_Exp += exp_recive
 func LEVEL_UP ():
 	current_level += 1
 	vida_Max += 10
 	vida_actual = vida_Max
 	$"Sounds/LevelUpPickup(rpg)".play()
-
+	pass
 
 
 
