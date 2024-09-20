@@ -7,12 +7,20 @@ class_name MainPlayer
 const NOMBRE = "Marcus"
 var vida_actual : float  = 100 :
 	set(value):
-		if value > 0 : 
-			vida_actual = value
+		if value <= 0 :
 			player_ui.progress_bar.value = value
-			player_ui.indicador_vida.text = str(value) + "|" + str(vida_Max)
-		else : 
 			player_ui.indicador_vida.text = str(0) + "|" + str(vida_Max)
+		elif value > 0  :
+				vida_actual = value
+				if vida_actual > vida_Max:
+					vida_actual = vida_Max
+				player_ui.progress_bar.value = vida_actual
+				player_ui.indicador_vida.text = str(vida_actual) + "|" + str(vida_Max) 
+			
+var vida_Max : float = 100 :
+	set(value):
+		vida_Max = value
+		player_ui.progress_bar.max_value = value
 var current_Exp : float  : 
 	set(value):
 		current_Exp = value 
@@ -22,10 +30,7 @@ var Max_Exp : float = 50:
 	set(value):
 		Max_Exp = value
 		player_ui.progress_bar_exp.max_value = value
-var vida_Max : float = 100 :
-	set(value):
-		vida_Max = value
-		player_ui.progress_bar_exp.max_value = value
+
 var current_level : int = 1 :
 	set(value):
 		current_level = value 
@@ -95,21 +100,22 @@ func Recibir_damage(enemy_attack : float):
 	pass
 func on_RecibirVida(vida):
 	vida_actual += vida
-func Give_Exp(exp : int ): 
-	if(player_ui.progress_bar_exp.value + exp) > player_ui.progress_bar_exp.max_value:
-		var resto = (player_ui.progress_bar_exp.value + exp) - player_ui.progress_bar_exp.max_value
+	
+func Give_Experiencia (exp_recive : int ): 
+	if(player_ui.progress_bar_exp.value + exp_recive) > player_ui.progress_bar_exp.max_value:
+		var resto = (player_ui.progress_bar_exp.value + exp_recive) - player_ui.progress_bar_exp.max_value
 		LEVEL_UP()
 		Max_Exp = LocalDatabase.content[str(current_level)]["Exp_Necesaria"]
 		current_Exp = 0 
 		current_Exp += resto
 	else : 
-		current_Exp += exp
+		current_Exp += exp_recive
 func LEVEL_UP ():
 	current_level += 1
 	vida_Max += 10
 	vida_actual = vida_Max
 	$"Sounds/LevelUpPickup(rpg)".play()
-
+	pass
 
 
 

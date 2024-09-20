@@ -24,7 +24,6 @@ var item : Dictionary:
 func _on_mouse_entered() -> void:
 	if item.is_empty() : 
 		owner.Normality()
-		
 	else : 
 		owner.set_description(item)
 	pass 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://6rpyx7ocac0d"]
+[gd_scene load_steps=6 format=3 uid="uid://6rpyx7ocac0d"]
 
 [ext_resource type="Texture2D" uid="uid://c75pdyh7y2c8" path="res://Assets/Tiles/GUI/GUI/GUI.png" id="1_1ro5j"]
 [ext_resource type="Script" path="res://UI/UI_Interfaces/slot.gd" id="1_bccgt"]
@@ -6,7 +6,10 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_je4qp"]
 atlas = ExtResource("1_1ro5j")
-region = Rect2(48.2266, 95.8909, 32.3711, 32.119)
+region = Rect2(49, 96, 31, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5t3le"]
+font_size = 8
 
 [node name="Slot" type="PanelContainer"]
 anchors_preset = 15
@@ -23,6 +26,7 @@ texture = SubResource("AtlasTexture_je4qp")
 
 [node name="Icon" type="TextureRect" parent="."]
 layout_mode = 2
+stretch_mode = 5
 
 [node name="Contador" type="Label" parent="."]
 visible = false
@@ -30,6 +34,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "x2"
+label_settings = SubResource("LabelSettings_5t3le")
 
 [node name="Comer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_kjamg")

@@ -1720,4 +1720,3 @@ stream = ExtResource("12_7m7f7")
 max_polyphony = 4
 
 [connection signal="animation_finished" from="Animation_World" to="." method="_on_animation_world_animation_finished"]
-[connection signal="body_entered" from="Entrada_Casa" to="." method="_on_entrada_casa_body_entered"]

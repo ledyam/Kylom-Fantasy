@@ -46,14 +46,16 @@
 			"uuid": "1319d7c3-95ea-403c-a443-986f772d3316",
 			"title": "Pendientes",
 			"tasks": [
-				"4b766d3b-5bf3-44b4-901b-fb951be96d11",
 				"121f9f39-d2cc-4987-92d8-3933b3f4d6c7"
 			]
 		},
 		{
 			"uuid": "59d6ca3d-b983-4f8a-b834-5052daff4f26",
 			"title": "En Progreso",
-			"tasks": []
+			"tasks": [
+				"0b11db4b-3715-480f-bd42-97c7a55939cd",
+				"4b766d3b-5bf3-44b4-901b-fb951be96d11"
+			]
 		},
 		{
 			"uuid": "0d46dab2-a88a-4634-b92b-deadf4ef030b",
@@ -61,7 +63,8 @@
 			"tasks": [
 				"f242efb5-50d4-4d73-bfab-00504a332f01",
 				"19cead7b-7651-4bd7-b767-82b5b356d5eb",
-				"cd56bb65-b37a-40f8-aa9c-c8921b90c8c6"
+				"cd56bb65-b37a-40f8-aa9c-c8921b90c8c6",
+				"57dfe606-a194-4a43-a535-cfdffcaf7228"
 			]
 		},
 		{
@@ -133,6 +136,50 @@
 			"description": "Arreglar el sistema de consultas pendiente para la instanciación automática de Enemigos con loot asignados\n",
 			"category": "52aa36b5-a120-4a5f-9c9b-b29ecccc73ec",
 			"steps": []
+		},
+		{
+			"uuid": "57dfe606-a194-4a43-a535-cfdffcaf7228",
+			"title": "Creación de Sistema de Guardado",
+			"description": "",
+			"category": "b95c0d1e-4d1b-4138-937e-38529b8dc7ca",
+			"steps": [
+				{
+					"details": "Sistema simple para Personaje",
+					"done": true
+				},
+				{
+					"details": "Funcionalidad para guardar Item de Inventario",
+					"done": true
+				},
+				{
+					"details": "Funcionalidad para registrar enemigos activos al Guardar",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "0b11db4b-3715-480f-bd42-97c7a55939cd",
+			"title": "Ampliación del Sistema de Inventario",
+			"description": "",
+			"category": "b95c0d1e-4d1b-4138-937e-38529b8dc7ca",
+			"steps": [
+				{
+					"details": "Nuevos Slot de tipo Equipable",
+					"done": true
+				},
+				{
+					"details": "Slot Pasivo de Armadura",
+					"done": true
+				},
+				{
+					"details": "Slot Pasivo de Arma Simple",
+					"done": true
+				},
+				{
+					"details": "Sistema Drag_and_Drop",
+					"done": false
+				}
+			]
 		}
 	],
 	"layout": {
