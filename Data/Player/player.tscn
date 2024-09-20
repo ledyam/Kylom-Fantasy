@@ -1888,7 +1888,6 @@ y_sort_enabled = true
 shape = SubResource("CircleShape2D_okugr")
 debug_color = Color(0.970136, 0.126886, 0.303562, 0.42)
 
-[connection signal="Give_EXP" from="." to="Player_UI" method="_on_marcus_give_exp"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/PlayerAtack" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timers/CD" to="." method="_on_cd_timeout"]
 [connection signal="timeout" from="Timers/Tiempo_de_muerte" to="." method="_on_timer_timeout"]
