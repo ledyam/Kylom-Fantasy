@@ -28,16 +28,12 @@ func Save (player : Player , inventario) -> void:
 		enemies = []
 	}
 
-	
 	for enemy in get_tree().get_nodes_in_group("Enemy"):
 		save_dict.enemies.push_back({
 			position = var_to_str(enemy.position),
 		})
 
 	file.store_line(JSON.stringify(save_dict))
-
-
-
 	pass
 
 func Load():
@@ -46,9 +42,4 @@ func Load():
 	json.parse(file.get_line())
 	var save_dict := json.get_data() as Dictionary
 	return save_dict
-
-
-
-	pass
-
 	pass

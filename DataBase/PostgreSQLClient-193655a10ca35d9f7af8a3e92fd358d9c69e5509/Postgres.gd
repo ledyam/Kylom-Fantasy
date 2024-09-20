@@ -1,6 +1,7 @@
 # Lience MIT
 # Written by Samuel MARZIN
 # Detailed documentation: https://github.com/Marzin-bot/PostgreSQLClient/wiki/Documentation
+#warning-ignore-all:unused_signal
 extends Object
 
 
