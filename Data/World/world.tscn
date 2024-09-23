@@ -1639,7 +1639,7 @@ script = ExtResource("1_ec2xn")
 
 [node name="Marcus" parent="." instance=ExtResource("2_0wl5i")]
 texture_filter = 1
-position = Vector2(326.124, -60.5152)
+position = Vector2(310.178, -68.6016)
 
 [node name="light" type="Node2D" parent="."]
 z_index = 1

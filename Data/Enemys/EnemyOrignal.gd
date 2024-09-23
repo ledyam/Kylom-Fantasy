@@ -17,8 +17,8 @@ signal Take_Damage
 
 func _ready() -> void:
 	randomize()
-	var file = FileAccess.open("res://DataBase/Local/Item_Loot.json", FileAccess.READ)
-	if FileAccess.file_exists("res://DataBase/Local/Item_Loot.json"):
+	var file = FileAccess.open("res://DataBase/Local/Item_Equipable.json", FileAccess.READ)
+	if FileAccess.file_exists("res://DataBase/Local/Item_Equipable.json"):
 		var temp_loot : Dictionary = JSON.parse_string(file.get_as_text())
 		Item_Probabilidad(temp_loot)
 				 

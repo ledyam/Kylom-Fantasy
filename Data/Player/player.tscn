@@ -1828,20 +1828,22 @@ limit_left = -488
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_ghpk6")
-initial_state = NodePath("PlayerIdle")
+initial_state = NodePath("Idle")
 DEBUG = false
 
-[node name="PlayerIdle" type="Node" parent="StateMachine"]
+[node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("4_gku6m")
 
-[node name="PlayerWalk" type="Node" parent="StateMachine"]
+[node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("5_r0c14")
 
-[node name="PlayerAtack" type="Node" parent="StateMachine"]
+[node name="Attack" type="Node" parent="StateMachine"]
 script = ExtResource("10_laalb")
 
-[node name="PlayerDead" type="Node" parent="StateMachine"]
+[node name="Dead" type="Node" parent="StateMachine"]
 script = ExtResource("7_vmpfd")
+
+[node name="Damage" type="Node" parent="StateMachine"]
 
 [node name="MRU2D" type="Node" parent="." node_paths=PackedStringArray("character")]
 script = ExtResource("8_eb17p")
@@ -1888,10 +1890,10 @@ y_sort_enabled = true
 shape = SubResource("CircleShape2D_okugr")
 debug_color = Color(0.970136, 0.126886, 0.303562, 0.42)
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/PlayerAtack" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/Attack" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timers/CD" to="." method="_on_cd_timeout"]
 [connection signal="timeout" from="Timers/Tiempo_de_muerte" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Timers/Finish_animation" to="StateMachine/PlayerAtack" method="_on_finish_animation_timeout"]
+[connection signal="timeout" from="Timers/Finish_animation" to="StateMachine/Attack" method="_on_finish_animation_timeout"]
 [connection signal="body_entered" from="Damage_box" to="." method="_on_damage_box_body_entered"]
 [connection signal="body_entered" from="hit_box" to="." method="_on_hit_box_body_entered"]
 [connection signal="body_exited" from="hit_box" to="." method="_on_hit_box_body_exited"]
