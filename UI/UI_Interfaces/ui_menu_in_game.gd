@@ -16,13 +16,16 @@ func _ready() -> void:
 func set_description(item : Dictionary):
 	description.find_child("Name").text = item["Name"]
 	description.find_child("Icon").texture = load(item["Texture"])
-	description.find_child("Description").text = item["Description"]
-
+	description.find_child("Description").text = item["Description"] 
+	description.find_child("Stats").text = str(item["Stats"]) + '\n\n '+item["Rarity"]
+	
+	
 #Metodo por defecto para el Inventario General
 func Normality ():
 	description.find_child("Name").text = "Inventario"
 	description.find_child("Icon").texture = null
 	description.find_child("Description").text = default_text
+	description.find_child("Stats").text = ""
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Esc")   :
@@ -67,7 +70,6 @@ func _on_guardar_pressed() -> void:
 func _on_cargar_pressed() -> void:
 	var data : Dictionary =  SaveLoad.Load()
 	
-	
 #region Estadisiticas del Player
 	player.position = str_to_var(data.player.position)
 	player.vida_actual  = str_to_var(data.player.vida_actual)
@@ -76,7 +78,7 @@ func _on_cargar_pressed() -> void:
 	player.Max_Exp =  str_to_var (data.player.Max_Exp)
 	player.current_level = str_to_var (data.player.current_level)
 #endregion
-	
+
 #region Inventario
 	inventario.CargarInv(data.inventory)
 #endregion
@@ -89,7 +91,8 @@ func _on_cargar_pressed() -> void:
 	player.player_ui.reloj.month_count = str_to_var(data.player.player_reloj.month)
 #endregion
 	
-		
+#region Instanciación de Enemigos Guardados
+
 	if !get_tree().get_nodes_in_group("Enemy").is_empty():
 		get_tree().call_group("Enemy", "queue_free")
 		for enemy_config in data.enemies:
@@ -97,3 +100,4 @@ func _on_cargar_pressed() -> void:
 			enemy.position = str_to_var(enemy_config.position)
 			get_tree().current_scene.add_child(enemy)
 	pass # Replace with function body.
+#endregion

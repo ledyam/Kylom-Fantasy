@@ -1,4 +1,4 @@
-extends PanelContainer
+extends CenterContainer
 
 @export_enum("Cabeza : 0" , "Pecho : 1", "Piernas : 2" ,  "Arma : 3" ,         \
  " Protección : 4", "Botas : 5","Manos : 6"  ) var slot_type : int 
@@ -19,8 +19,9 @@ var item : Dictionary:
 	set(value):
 		item = value
 		if item.is_empty() :
-			$Icon.texture = null
+			$Icon.texture = Default[slot_type]
 		else:
+			$Equip.play()
 			$Icon.texture = load(item["Texture"])
 
 func _on_mouse_entered() -> void:
@@ -33,3 +34,14 @@ func _on_mouse_entered() -> void:
 
 func _ready() -> void:
 		$Icon.texture = Default[slot_type]
+
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event.is_action_pressed("click"):
+		if !self.item.is_empty():
+			$Icon.texture = Default[slot_type]
+			owner.Normality()
+			$Unquip.play()
+			var unquip = owner.find_child("Inventario") 
+			unquip.add_item(item.duplicate(true))
+			self.item.clear()

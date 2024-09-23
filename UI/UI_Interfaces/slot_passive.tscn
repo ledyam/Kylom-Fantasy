@@ -1,8 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dknkcxjhftvvj"]
+[gd_scene load_steps=5 format=3 uid="uid://dknkcxjhftvvj"]
 
 [ext_resource type="PackedScene" uid="uid://6rpyx7ocac0d" path="res://UI/UI_Interfaces/slot.tscn" id="1_6g0yn"]
 [ext_resource type="Script" path="res://UI/UI_Interfaces/slot_passive.gd" id="2_6pr5k"]
+[ext_resource type="AudioStream" uid="uid://giel2othme0i" path="res://Assets/Sounds/10_UI_Menu_SFX/070_Equip_10.wav" id="3_a3ipx"]
+[ext_resource type="AudioStream" uid="uid://cwntjltnkph3j" path="res://Assets/Sounds/10_UI_Menu_SFX/071_Unequip_01.wav" id="4_7m7s5"]
 
 [node name="Slot" instance=ExtResource("1_6g0yn")]
 script = ExtResource("2_6pr5k")
 slot_type = 0
+
+[node name="Equip" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("3_a3ipx")
+
+[node name="Unquip" type="AudioStreamPlayer" parent="." index="4"]
+stream = ExtResource("4_7m7s5")
