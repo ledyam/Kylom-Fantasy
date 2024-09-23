@@ -1,0 +1,24 @@
+{
+	"6": {
+		"Description": "Una simple espada de hierro. ",
+		"Drop": 0.5,
+		"Name": "Espada de Hierro",
+		"Rarity": "Común",
+		"Stats": { "Ataque" : 10},
+		"Texture": "res://Assets/16x16 RPG Item Pack/Item__00.png",
+		"Type": "Espada",
+		"Slot_Type" : 3
+	},
+	
+	"7": {
+		"Description": "Un simple escudo de hierro. ",
+		"Drop": 0.5,
+		"Name": "Escudo de Hierro",
+		"Rarity": "Común",
+		"Stats": { "Protection" : 10},
+		"Texture": "res://Assets/Mis Inventos/Primer_Escudo.png",
+		"Type": "Escudo",
+		"Slot_Type" : 4
+	}
+		
+}
