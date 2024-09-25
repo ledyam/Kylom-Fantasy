@@ -10,3 +10,4 @@ Kylom Fantasy es un Videojuego PixelArt con perspectiva RPG Medieval desarrollad
 
 
 Escribiendo desde PC BRIAN
+2
