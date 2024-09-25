@@ -1,5 +1,5 @@
 ## Kylom Fantasy
- Primer Proyecto Solo de Godot 
+ Primer Proyecto Colaborativo de Aficionados en el Motor Gráfico de  Godot 
 Videojuego RPG con motivo de estudio y entrenamiento como desarrrollador Indie.
 :)
 
