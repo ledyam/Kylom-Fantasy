@@ -1,4 +1,4 @@
-extends CenterContainer
+extends Control
 
 @export_enum("Cabeza : 0" , "Pecho : 1", "Piernas : 2" ,  "Arma : 3" ,         \
  " Protección : 4", "Botas : 5","Manos : 6"  ) var slot_type : int 
@@ -19,10 +19,10 @@ var item : Dictionary:
 	set(value):
 		item = value
 		if item.is_empty() :
-			$Icon.texture = Default[slot_type]
+			$CenterContainer/Icon.texture = Default[slot_type]
 		else:
 			$Equip.play()
-			$Icon.texture = load(item["Texture"])
+			$CenterContainer/Icon.texture = load(item["Texture"])
 
 func _on_mouse_entered() -> void:
 	if item.is_empty() : 
@@ -33,7 +33,7 @@ func _on_mouse_entered() -> void:
 	pass 
 
 func _ready() -> void:
-		$Icon.texture = Default[slot_type]
+		$CenterContainer/Icon.texture = Default[slot_type]
 
 
 func _on_gui_input(event: InputEvent) -> void:

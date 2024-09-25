@@ -1,8 +1,6 @@
-extends CenterContainer
-@onready var comer: AudioStreamPlayer2D = $Comer
-
-
-@onready var contador: Label = $Icon/Contador
+extends Control
+@onready var usar: AudioStreamPlayer2D = $Sounds/Usar
+@onready var contador: Label = $Contador
 var is_vacio : bool = true
 var cantidad : int = 0 :
 	set(value):
@@ -17,9 +15,9 @@ var item : Dictionary:
 	set(value):
 		item = value
 		if item.is_empty() :
-			$Icon.texture = null
+			$CenterContainer/Icon.texture = null
 		else:
-			$Icon.texture = load(item["Texture"])
+			$CenterContainer/Icon.texture = load(item["Texture"])
 
 func _on_mouse_entered() -> void:
 	if item.is_empty() : 
@@ -36,11 +34,11 @@ func _on_gui_input(event: InputEvent) -> void:
 			print("sumando Vida")
 			CentralSignal.UsarObjeto.emit(item["Health_give"])
 			cantidad -= 1
-			comer.play()
+			usar.play()
 			if cantidad == 0 :
 				self.item.clear()
 				is_vacio = true
-				$Icon.texture = null
+				$CenterContainer/Icon.texture = null
 				owner.Normality()
 		elif item.has("Type") : 
 			var Equipables_SLot = owner.find_child("Equipable_Item").get_children()
@@ -49,7 +47,7 @@ func _on_gui_input(event: InputEvent) -> void:
 				if i.slot_type == item["Slot_Type"] and  i.item != item :
 					i.item = item.duplicate(true)
 					item.clear()
-					$Icon.texture = null
+					$CenterContainer/Icon.texture = null
 					is_vacio = true
 					break
 	pass # Replace with function body.
