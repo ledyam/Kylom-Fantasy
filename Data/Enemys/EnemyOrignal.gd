@@ -32,7 +32,8 @@ func Item_Probabilidad(temp_loot : Dictionary):
 	for i in temp_loot :
 		acumulador += temp_loot[str(i)]["Drop"]
 		if random <= acumulador:
-			loot.merge(temp_loot[str(i)])
+			loot = temp_loot[str(i)].duplicate(true)
+			break
 func spawn_numero_flotante(damage ): 
 	var number = numero_flotante.instantiate()
 	number.position = global_position
