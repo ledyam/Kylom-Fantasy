@@ -66,9 +66,9 @@ const states : Dictionary = {
 }
 const animations : Dictionary = {
 	
-	_idle = 'Player_idle',
-	_idle_turnL = 'Player_idle_turn_left',
-	_idle_turnR = 'Player_idle_turn_right',
+	_idle = 'Player_idle_down',
+	_idle_turnL = 'Player_idle_left',
+	_idle_turnR = 'Player_idle_right',
 	_idle_up = 'Player_idle_up',
 	_walkr =  'Player_walk_right',
 	_walkl =  'Player_walk_left',
@@ -76,8 +76,12 @@ const animations : Dictionary = {
 	_walk_up = 'Player_walk_up',
 	_attack = 'Player_attack_down',
 	_attack_up = 'Player_attack_up',
-	_attack_turnL = 'Player_attack_turn_left',
-	_attack_turnR = 'Player_attack_turn_right',
+	_attack_turnL = 'Player_attack_left',
+	_attack_turnR = 'Player_attack_right',
+	_hit_down = 'Player_hit_down',
+	_hit_up = 'Player_hit_up',
+	_hit_left = 'Player_hit_left',
+	_hit_right = 'Player_hit_right',
 	_dead  = 'Player_dead'
 }
 
@@ -100,6 +104,7 @@ func Recibir_damage(enemy_attack : float):
 	if recibir_damage and cooldown_Rdamage:
 		vida_actual -= enemy_attack
 		spawn_numero_flotante(enemy_attack)
+		Hit_Damage.emit()
 		cooldown_Rdamage = false 
 		cd.start()
 	pass
@@ -154,7 +159,9 @@ func _on_hit_box_body_entered(body: Node2D) -> void:
 		cooldown_Rdamage = true
 #Asiganción de Empuje al Recibir Daño
 		knockback = (self.global_position - body.position).normalized() 
-		velocity = knockback * 40
+		velocity = knockback * 20
+		
+		
 		
 		Recibir_damage(body.ATK) #------Temporal para Cambios
 		

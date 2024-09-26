@@ -48,3 +48,10 @@ func physics_process(_delta: float):
 			if Input.is_action_pressed("Atacar") and player.can_attack:
 				attack_sounds.play()
 				state_machine.change_to(player.states._atack)
+				
+			if Input.is_action_pressed(' Jump'):
+				state_machine.change_to("Jump")
+
+func _on_marcus_hit_damage() -> void:
+	state_machine.change_to("Damage")
+	pass # Replace with function body.

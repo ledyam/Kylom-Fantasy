@@ -17,7 +17,7 @@ func set_description(item : Dictionary):
 	description.find_child("Name").text = item["Name"]
 	description.find_child("Icon").texture = load(item["Texture"])
 	description.find_child("Description").text = item["Description"] 
-	description.find_child("Stats").text = str(item["Stats"]) + '\n\n '+item["Rarity"]
+	#description.find_child("Stats").text = str(item["Stats"]) + '\n\n '+item["Rarity"]
 	
 	
 #Metodo por defecto para el Inventario General
