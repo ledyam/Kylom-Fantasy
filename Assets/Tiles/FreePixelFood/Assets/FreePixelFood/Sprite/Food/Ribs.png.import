@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4rwnowkwinvg"
-path="res://.godot/imported/Ribs.png-9e64d0aab064801403b549db982be703.ctex"
+path="res://.godot/imported/Ribs.png-f6682a6216bbc94e4c4f49b8e565b3ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Ribs.png"
-dest_files=["res://.godot/imported/Ribs.png-9e64d0aab064801403b549db982be703.ctex"]
+source_file="res://Assets/Tiles/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Ribs.png"
+dest_files=["res://.godot/imported/Ribs.png-f6682a6216bbc94e4c4f49b8e565b3ac.ctex"]
 
 [params]
 

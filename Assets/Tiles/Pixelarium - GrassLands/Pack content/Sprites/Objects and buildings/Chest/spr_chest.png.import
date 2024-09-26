@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ck4dk28jsdafl"
-path="res://.godot/imported/spr_chest.png-28d58d495ad6fd68b17176582f5a681c.ctex"
+path="res://.godot/imported/spr_chest.png-ad014801ccb15a8e10c855d54b369dc0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Objects and buildings/Chest/spr_chest.png"
-dest_files=["res://.godot/imported/spr_chest.png-28d58d495ad6fd68b17176582f5a681c.ctex"]
+source_file="res://Assets/Tiles/Pixelarium - GrassLands/Pack content/Sprites/Objects and buildings/Chest/spr_chest.png"
+dest_files=["res://.godot/imported/spr_chest.png-ad014801ccb15a8e10c855d54b369dc0.ctex"]
 
 [params]
 

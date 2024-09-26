@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bffhexuqc0d2c"
-path="res://.godot/imported/spr_water_waves_animated_tileset.png-84478ca3b3c4aacdfd33e31ff03493f8.ctex"
+path="res://.godot/imported/spr_water_waves_animated_tileset.png-0a39545259c8c435a2c59f21723125ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/spr_water_waves_animated_tileset.png"
-dest_files=["res://.godot/imported/spr_water_waves_animated_tileset.png-84478ca3b3c4aacdfd33e31ff03493f8.ctex"]
+source_file="res://Assets/Tiles/Pixelarium - GrassLands/Pack content/Sprites/Tileset/spr_water_waves_animated_tileset.png"
+dest_files=["res://.godot/imported/spr_water_waves_animated_tileset.png-0a39545259c8c435a2c59f21723125ed.ctex"]
 
 [params]
 

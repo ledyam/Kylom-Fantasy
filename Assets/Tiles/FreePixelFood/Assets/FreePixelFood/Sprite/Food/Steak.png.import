@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bduenlfso1egx"
-path="res://.godot/imported/Steak.png-aad63ef10b952a28062f685abf8047b2.ctex"
+path="res://.godot/imported/Steak.png-97a62a5b3943f09e167ef9eb1826326b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Steak.png"
-dest_files=["res://.godot/imported/Steak.png-aad63ef10b952a28062f685abf8047b2.ctex"]
+source_file="res://Assets/Tiles/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Steak.png"
+dest_files=["res://.godot/imported/Steak.png-97a62a5b3943f09e167ef9eb1826326b.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0x4unrmsy72e"
-path="res://.godot/imported/11.png-b207c5da410e266dee84f6f2aa5048a9.ctex"
+path="res://.godot/imported/11.png-b37f1ac964e6e46c5a688cce5fb534af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Free Paper UI System/Free Paper UI System/1 Sprites/Content/4 Buttons/11.png"
-dest_files=["res://.godot/imported/11.png-b207c5da410e266dee84f6f2aa5048a9.ctex"]
+source_file="res://Assets/GUI/Free Paper UI System/Free Paper UI System/1 Sprites/Content/4 Buttons/11.png"
+dest_files=["res://.godot/imported/11.png-b37f1ac964e6e46c5a688cce5fb534af.ctex"]
 
 [params]
 

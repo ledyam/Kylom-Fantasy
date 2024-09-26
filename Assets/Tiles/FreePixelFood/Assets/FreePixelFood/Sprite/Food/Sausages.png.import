@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c24njnydfs6pp"
-path="res://.godot/imported/Sausages.png-917ee350e1fff7ee7f0090c127e8e65a.ctex"
+path="res://.godot/imported/Sausages.png-a675231ffe02b07e74a16d5706a7bbae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Sausages.png"
-dest_files=["res://.godot/imported/Sausages.png-917ee350e1fff7ee7f0090c127e8e65a.ctex"]
+source_file="res://Assets/Tiles/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Sausages.png"
+dest_files=["res://.godot/imported/Sausages.png-a675231ffe02b07e74a16d5706a7bbae.ctex"]
 
 [params]
 

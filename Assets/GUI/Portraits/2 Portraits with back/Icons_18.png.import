@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4x7v1sqgsqog"
-path="res://.godot/imported/Icons_18.png-2605943e29de042ee2ce9c38b72770d3.ctex"
+path="res://.godot/imported/Icons_18.png-d7b33e971e3e0c20a7d5dc3afc272484.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Portraits/2 Portraits with back/Icons_18.png"
-dest_files=["res://.godot/imported/Icons_18.png-2605943e29de042ee2ce9c38b72770d3.ctex"]
+source_file="res://Assets/GUI/Portraits/2 Portraits with back/Icons_18.png"
+dest_files=["res://.godot/imported/Icons_18.png-d7b33e971e3e0c20a7d5dc3afc272484.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfmetd2xcmier"
-path="res://.godot/imported/spr_fence_Four-intersection.png-32abd65ce71ff7f234cf3e9c7e03dba2.ctex"
+path="res://.godot/imported/spr_fence_Four-intersection.png-b312adcebb6cf3da34ecafcfe65dc181.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Objects and buildings/Fences/spr_fence_Four-intersection.png"
-dest_files=["res://.godot/imported/spr_fence_Four-intersection.png-32abd65ce71ff7f234cf3e9c7e03dba2.ctex"]
+source_file="res://Assets/Tiles/Pixelarium - GrassLands/Pack content/Sprites/Objects and buildings/Fences/spr_fence_Four-intersection.png"
+dest_files=["res://.godot/imported/spr_fence_Four-intersection.png-b312adcebb6cf3da34ecafcfe65dc181.ctex"]
 
 [params]
 

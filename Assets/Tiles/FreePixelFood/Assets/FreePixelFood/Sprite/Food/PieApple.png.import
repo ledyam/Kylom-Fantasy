@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dex5julah3t6y"
-path="res://.godot/imported/PieApple.png-07d5bb50bbeca6f7862ed846262b2b6f.ctex"
+path="res://.godot/imported/PieApple.png-8da6abbadabfbd5d3769f87ccfbfb1fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FreePixelFood/Assets/FreePixelFood/Sprite/Food/PieApple.png"
-dest_files=["res://.godot/imported/PieApple.png-07d5bb50bbeca6f7862ed846262b2b6f.ctex"]
+source_file="res://Assets/Tiles/FreePixelFood/Assets/FreePixelFood/Sprite/Food/PieApple.png"
+dest_files=["res://.godot/imported/PieApple.png-8da6abbadabfbd5d3769f87ccfbfb1fe.ctex"]
 
 [params]
 

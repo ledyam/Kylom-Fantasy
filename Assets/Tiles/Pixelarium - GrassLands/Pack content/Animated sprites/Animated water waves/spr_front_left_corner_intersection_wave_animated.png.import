@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dyxi1xmhbjyis"
-path="res://.godot/imported/spr_front_left_corner_intersection_wave_animated.png-b4a28acf0ece2f84fb1a7637155fd350.ctex"
+path="res://.godot/imported/spr_front_left_corner_intersection_wave_animated.png-c51f38a467a34894508810ba802c60d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixelarium - GrassLands - Free Version/Pack content/Animated sprites/Animated water waves/spr_front_left_corner_intersection_wave_animated.png"
-dest_files=["res://.godot/imported/spr_front_left_corner_intersection_wave_animated.png-b4a28acf0ece2f84fb1a7637155fd350.ctex"]
+source_file="res://Assets/Tiles/Pixelarium - GrassLands/Pack content/Animated sprites/Animated water waves/spr_front_left_corner_intersection_wave_animated.png"
+dest_files=["res://.godot/imported/spr_front_left_corner_intersection_wave_animated.png-c51f38a467a34894508810ba802c60d0.ctex"]
 
 [params]
 

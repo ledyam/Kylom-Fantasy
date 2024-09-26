@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnbote31wa23m"
-path="res://.godot/imported/Jam.png-e473400dc08453a72fe50b18b71eea16.ctex"
+path="res://.godot/imported/Jam.png-3b052483b9cd7bcaf824065e89666159.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Jam.png"
-dest_files=["res://.godot/imported/Jam.png-e473400dc08453a72fe50b18b71eea16.ctex"]
+source_file="res://Assets/Tiles/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Jam.png"
+dest_files=["res://.godot/imported/Jam.png-3b052483b9cd7bcaf824065e89666159.ctex"]
 
 [params]
 

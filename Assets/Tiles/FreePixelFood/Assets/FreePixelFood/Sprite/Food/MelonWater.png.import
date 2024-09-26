@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://binx6hqiqfkcv"
-path="res://.godot/imported/MelonWater.png-4c084a79d6babd93c55ac3a9704cc9cd.ctex"
+path="res://.godot/imported/MelonWater.png-0c790bc838b6e2ccb030eb82e6b7b499.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FreePixelFood/Assets/FreePixelFood/Sprite/Food/MelonWater.png"
-dest_files=["res://.godot/imported/MelonWater.png-4c084a79d6babd93c55ac3a9704cc9cd.ctex"]
+source_file="res://Assets/Tiles/FreePixelFood/Assets/FreePixelFood/Sprite/Food/MelonWater.png"
+dest_files=["res://.godot/imported/MelonWater.png-0c790bc838b6e2ccb030eb82e6b7b499.ctex"]
 
 [params]
 

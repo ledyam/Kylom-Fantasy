@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnkburhu2y42p"
-path="res://.godot/imported/Bread.png-b1e83f6ac314e1693d119ef12881f916.ctex"
+path="res://.godot/imported/Bread.png-9864ae31aa24bfbd6e370c911610e87e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Bread.png"
-dest_files=["res://.godot/imported/Bread.png-b1e83f6ac314e1693d119ef12881f916.ctex"]
+source_file="res://Assets/Tiles/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Bread.png"
+dest_files=["res://.godot/imported/Bread.png-9864ae31aa24bfbd6e370c911610e87e.ctex"]
 
 [params]
 

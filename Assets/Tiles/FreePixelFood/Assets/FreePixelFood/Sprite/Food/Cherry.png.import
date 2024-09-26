@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://big0n7emdujqp"
-path="res://.godot/imported/Cherry.png-743d62a9f5c63b0194313f0b01409575.ctex"
+path="res://.godot/imported/Cherry.png-102d0374e695e4c3244a609992a0e2ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Cherry.png"
-dest_files=["res://.godot/imported/Cherry.png-743d62a9f5c63b0194313f0b01409575.ctex"]
+source_file="res://Assets/Tiles/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Cherry.png"
+dest_files=["res://.godot/imported/Cherry.png-102d0374e695e4c3244a609992a0e2ee.ctex"]
 
 [params]
 
