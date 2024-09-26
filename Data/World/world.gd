@@ -1,5 +1,5 @@
 extends Node2D
-var skeleton = load("res://Data/Enemys/Skeleton/skeleton.tscn")
+var skeleton = load("res://Data/Enemys/Slime/slime.tscn")
 @onready var animation_world: AnimationPlayer = $Animation_World
 
 func _ready() -> void:

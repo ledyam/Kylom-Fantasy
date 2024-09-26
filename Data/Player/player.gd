@@ -1,7 +1,7 @@
 extends Player
 class_name MainPlayer
 
-
+#endcnedbcmdebcmedbcemdcbedmcejdncejdnc
 #region VARIABLES ESTADISTICAS
 # Variables Generales
 const NOMBRE = "Marcus"
