@@ -1962,7 +1962,6 @@ y_sort_enabled = true
 collision_mask = 15
 
 [node name="Area_Collision" type="CollisionShape2D" parent="hit_box"]
-visible = false
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_okugr")
 debug_color = Color(0.970136, 0.126886, 0.303562, 0.42)
