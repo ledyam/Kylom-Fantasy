@@ -6,38 +6,67 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_je4qp"]
 atlas = ExtResource("1_1ro5j")
-region = Rect2(49, 96, 31, 32)
+region = Rect2(48, 96, 32, 32)
 
 [sub_resource type="LabelSettings" id="LabelSettings_5t3le"]
 font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+outline_color = Color(0.789063, 0.714877, 0.573251, 1)
 
-[node name="Slot" type="PanelContainer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Slot" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = -170.0
+offset_right = -325.0
+offset_bottom = -170.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bccgt")
-metadata/_edit_use_anchors_ = true
 
-[node name="BG" type="TextureRect" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="TextureRect" parent="CenterContainer"]
 layout_mode = 2
 texture = SubResource("AtlasTexture_je4qp")
 
-[node name="Icon" type="TextureRect" parent="."]
+[node name="Icon" type="TextureRect" parent="CenterContainer"]
 layout_mode = 2
+localize_numeral_system = false
 stretch_mode = 5
 
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Usar" type="AudioStreamPlayer2D" parent="Sounds"]
+position = Vector2(-16, -16)
+stream = ExtResource("3_kjamg")
+
 [node name="Contador" type="Label" parent="."]
-visible = false
 layout_mode = 2
+offset_left = -1.0
+offset_top = 5.0
+offset_right = 13.0
+offset_bottom = 13.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
-text = "x2"
 label_settings = SubResource("LabelSettings_5t3le")
-
-[node name="Comer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_kjamg")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

@@ -2,15 +2,11 @@ extends Node2D
 var skeleton = load("res://Data/Enemys/Skeleton/skeleton.tscn")
 @onready var animation_world: AnimationPlayer = $Animation_World
 
-
-	
 func _ready() -> void:
 	animation_world.play("Fade_In_World")
 	CurrentZone.SetZone(self.name)
 
-	await get_tree().create_timer(2).timeout
-	Dialogic.start_timeline("Intro")
-
+	
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Morir"):

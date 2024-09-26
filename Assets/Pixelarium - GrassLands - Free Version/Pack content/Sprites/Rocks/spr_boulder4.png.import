@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c50ydmyb5gtwk"
-path="res://.godot/imported/Primera_Espada.png-a2a6cb597ef6ebe48c139a6dbe2aed5e.ctex"
+uid="uid://b2rauqik6elhj"
+path="res://.godot/imported/spr_boulder4.png-bdd5061786e5418f43c2c490ebf8d323.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Mis Inventos/Primera_Espada.png"
-dest_files=["res://.godot/imported/Primera_Espada.png-a2a6cb597ef6ebe48c139a6dbe2aed5e.ctex"]
+source_file="res://Assets/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Rocks/spr_boulder4.png"
+dest_files=["res://.godot/imported/spr_boulder4.png-bdd5061786e5418f43c2c490ebf8d323.ctex"]
 
 [params]
 

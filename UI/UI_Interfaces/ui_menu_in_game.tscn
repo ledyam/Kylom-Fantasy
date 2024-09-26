@@ -283,7 +283,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Inventario" parent="Menu/VBoxContainer" instance=ExtResource("5_vnmr3")]
+[node name="InventarioB" parent="Menu/VBoxContainer" instance=ExtResource("5_vnmr3")]
 layout_mode = 2
 text = "Inventario"
 
@@ -372,9 +372,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -49.5
+offset_left = -50.5
 offset_top = 10.0
-offset_right = 46.5
+offset_right = 47.5
 offset_bottom = 26.0
 grow_horizontal = 2
 text = "Inventario"
@@ -388,97 +388,93 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -65.6923
-offset_top = -23.5685
-offset_right = 62.3077
-offset_bottom = 96.4315
+offset_top = -34.5685
+offset_right = 70.3077
+offset_bottom = 35.4315
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-text = "asdasdasdasdasdasd"
 fit_content = true
 scroll_following = true
 
 [node name="Icon" type="TextureRect" parent="CanvasLayer/Control/Inventario/Int_Inventario/Description/Description"]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 104.808
-offset_top = -87.5685
-offset_right = 156.808
-offset_bottom = -40.5685
+anchors_preset = -1
+anchor_left = 0.393939
+anchor_top = 0.123932
+anchor_right = 0.636364
+anchor_bottom = 0.273504
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Stats" type="RichTextLabel" parent="CanvasLayer/Control/Inventario/Int_Inventario/Description/Description"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -73.5
+offset_top = -93.0
+offset_right = 70.5
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
 
 [node name="Equipable_Item" type="ItemList" parent="CanvasLayer/Control/Inventario/Int_Inventario"]
 layout_mode = 2
 size_flags_horizontal = 3
-select_mode = 1
 allow_reselect = true
 max_columns = 5
+same_column_width = true
+fixed_column_width = 2
 
 [node name="Slot" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.390863
-anchor_top = 0.10424
-anchor_right = 0.619289
-anchor_bottom = 0.245583
-grow_horizontal = 1
-grow_vertical = 1
+offset_left = 0.307678
+offset_top = -7.56854
+offset_right = 0.307678
+offset_bottom = -7.56854
+slot_type = 1
 
 [node name="Slot2" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.69507
-anchor_top = 0.286006
-anchor_right = 0.923496
-anchor_bottom = 0.427348
-grow_horizontal = 1
-grow_vertical = 1
-slot_type = 4
+offset_left = 0.307693
+offset_top = 35.4315
+offset_right = 0.307693
+offset_bottom = 35.4315
+slot_type = 2
 
 [node name="Slot3" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0873353
-anchor_top = 0.289927
-anchor_right = 0.315762
-anchor_bottom = 0.43127
-grow_horizontal = 1
-grow_vertical = 1
-slot_type = 3
+offset_left = 0.307693
+offset_top = -63.5685
+offset_right = 0.307693
+offset_bottom = -63.5685
 
 [node name="Slot4" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.391203
-anchor_top = 0.340908
-anchor_right = 0.619629
-anchor_bottom = 0.482251
-grow_horizontal = 1
-grow_vertical = 1
-slot_type = 1
+offset_left = 45.3077
+offset_top = -33.5685
+offset_right = 45.3077
+offset_bottom = -33.5685
+slot_type = 4
 
 [node name="Slot5" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.391203
-anchor_top = 0.533065
-anchor_right = 0.619629
-anchor_bottom = 0.674407
-grow_horizontal = 1
-grow_vertical = 1
-slot_type = 2
+offset_left = -42.6923
+offset_top = -31.5685
+offset_right = -42.6923
+offset_bottom = -31.5685
+slot_type = 3
 
 [node name="Slot6" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.391203
-anchor_top = 0.717378
-anchor_right = 0.619629
-anchor_bottom = 0.858721
-grow_horizontal = 1
-grow_vertical = 1
+offset_left = 0.307678
+offset_top = 80.4315
+offset_right = 0.307678
+offset_bottom = 80.4315
 slot_type = 5
 
 [node name="Items" type="Panel" parent="CanvasLayer/Control/Inventario/Int_Inventario"]
@@ -492,15 +488,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -70.0
-offset_top = -94.0
-offset_right = 70.0
-offset_bottom = 94.0
+offset_left = -67.6923
+offset_top = -89.5685
+offset_right = 64.3077
+offset_bottom = 86.4315
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
-theme_override_constants/h_separation = 4
-theme_override_constants/v_separation = 7
+theme_override_constants/h_separation = 44
+theme_override_constants/v_separation = 44
 columns = 4
 
 [node name="Slot" parent="CanvasLayer/Control/Inventario/Int_Inventario/Items/GridContainer" instance=ExtResource("4_qa64c")]
@@ -565,8 +561,7 @@ layout_mode = 2
 
 [node name="Sounds" type="Node" parent="CanvasLayer/Control/Inventario"]
 
-[node name="CogerObjeto" type="AudioStreamPlayer2D" parent="CanvasLayer/Control/Inventario/Sounds"]
-position = Vector2(173, 66)
+[node name="CogerObjeto" type="AudioStreamPlayer" parent="CanvasLayer/Control/Inventario/Sounds"]
 stream = ExtResource("7_o6ttr")
 
 [node name="UiClose" type="AudioStreamPlayer" parent="CanvasLayer/Control/Inventario/Sounds"]
@@ -589,7 +584,7 @@ grow_vertical = 0
 text = "Juego Guardado..."
 label_settings = SubResource("LabelSettings_vcia5")
 
-[connection signal="pressed" from="Menu/VBoxContainer/Inventario" to="." method="_on_inventario_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/InventarioB" to="." method="_on_inventario_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Guardar" to="." method="_on_guardar_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Cargar" to="." method="_on_cargar_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
