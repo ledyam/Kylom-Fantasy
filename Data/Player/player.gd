@@ -151,9 +151,6 @@ func _on_cd_timeout() -> void:
 	
 	
 #region Señales
-#PRUEBA DE FUEGO
-
-
 
 #SEÑAL Principal de ENTRADA HITBOX PLAYER
 func _on_hit_box_body_entered(body: Node2D) -> void:
@@ -188,5 +185,3 @@ func _on_damage_box_body_entered(body: Node2D) -> void:
 	pass 
 	
 #endregion
-func Moverrrrrrr():
-	pass
