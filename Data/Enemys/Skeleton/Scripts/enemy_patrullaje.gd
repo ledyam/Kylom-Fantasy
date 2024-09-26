@@ -2,9 +2,6 @@ extends EnemyState
 
 @onready var receso_patrullaje: Timer = $Receso_Patrullaje
 
-
-	
-
 func physics_process(_delta: float) -> void:
 	
 	if !enemy.on_area :

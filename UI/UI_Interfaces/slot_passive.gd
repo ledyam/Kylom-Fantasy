@@ -39,7 +39,7 @@ func _ready() -> void:
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
 		if !self.item.is_empty():
-			$Icon.texture = Default[slot_type]
+			$CenterContainer/Icon.texture = Default[slot_type]
 			owner.Normality()
 			$Unquip.play()
 			var unquip = owner.find_child("Inventario") 

@@ -1,5 +1,5 @@
-extends EnemyOriginal
-class_name Undead_Enemy
+extends "res://Data/Enemys/EnemyOrignal.gd"
+
 
 
 @onready var state_machine: Node = $StateMachine
@@ -7,7 +7,7 @@ class_name Undead_Enemy
 @onready var damage: AudioStreamPlayer2D = $damage
 @export var Patrullaje : Node2D
 
-const NOMBRE : String = "Skeleto"
+const NOMBRE : String = "Goblin"
 var player = null
 var on_area : bool = false 
 var is_dead : bool = false 
@@ -23,7 +23,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_body_exited(_body: Node2D) -> void:
 	on_area = false 
-	player = null
+
 	print ("Saliendo de señal")
 	pass # Replace with function body.
 

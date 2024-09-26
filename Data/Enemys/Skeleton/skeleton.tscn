@@ -12,22 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://bcyomv3f2203e" path="res://Data/Enemys/Generic/patrullaje.tscn" id="9_ucm6i"]
 [ext_resource type="PackedScene" uid="uid://oe8ee4f7bqeh" path="res://UI/Indicadores/indicador_level.tscn" id="10_728rq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b4n6o"]
-atlas = ExtResource("2_kt7i0")
-region = Rect2(0, 224, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7iv88"]
-atlas = ExtResource("2_kt7i0")
-region = Rect2(64, 224, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2sv56"]
-atlas = ExtResource("2_kt7i0")
-region = Rect2(32, 224, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tc1pa"]
-atlas = ExtResource("2_kt7i0")
-region = Rect2(96, 224, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_hikah"]
 atlas = ExtResource("2_kt7i0")
 region = Rect2(0, 192, 32, 32)
@@ -116,6 +100,22 @@ region = Rect2(128, 64, 32, 32)
 atlas = ExtResource("2_kt7i0")
 region = Rect2(160, 64, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4n6o"]
+atlas = ExtResource("2_kt7i0")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7iv88"]
+atlas = ExtResource("2_kt7i0")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sv56"]
+atlas = ExtResource("2_kt7i0")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc1pa"]
+atlas = ExtResource("2_kt7i0")
+region = Rect2(96, 224, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_boa6f"]
 atlas = ExtResource("2_kt7i0")
 region = Rect2(0, 128, 32, 32)
@@ -192,32 +192,7 @@ region = Rect2(160, 160, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b4n6o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7iv88")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b4n6o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2sv56")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7iv88")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2sv56")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tc1pa")
-}],
-"loop": false,
-"name": &"Enemy_Take_Damage",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
+
 "texture": SubResource("AtlasTexture_hikah")
 }, {
 "duration": 1.0,
@@ -301,6 +276,32 @@ animations = [{
 "loop": true,
 "name": &"Enemy_idle_up",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4n6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7iv88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4n6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sv56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7iv88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sv56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tc1pa")
+}],
+"loop": false,
+"name": &"Enemy_take_damage",
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
