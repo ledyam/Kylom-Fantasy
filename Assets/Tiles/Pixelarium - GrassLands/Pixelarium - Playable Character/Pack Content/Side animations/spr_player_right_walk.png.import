@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6h4ui0km8xmu"
-path="res://.godot/imported/spr_player_right_walk.png-0edb9b774ae0c99e9964419157b709dd.ctex"
+path="res://.godot/imported/spr_player_right_walk.png-faac58da42029e3f1b612b64667efabb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Side animations/spr_player_right_walk.png"
-dest_files=["res://.godot/imported/spr_player_right_walk.png-0edb9b774ae0c99e9964419157b709dd.ctex"]
+source_file="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Side animations/spr_player_right_walk.png"
+dest_files=["res://.godot/imported/spr_player_right_walk.png-faac58da42029e3f1b612b64667efabb.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlu6cqov3mwlt"
-path="res://.godot/imported/2.png-eab4201112cd59302c08e69111b028f8.ctex"
+path="res://.godot/imported/2.png-468014ecbab736985765a443bb52e40c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Free Paper UI System/Free Paper UI System/1 Sprites/Book Desk/2.png"
-dest_files=["res://.godot/imported/2.png-eab4201112cd59302c08e69111b028f8.ctex"]
+source_file="res://Assets/GUI/Free Paper UI System/Free Paper UI System/1 Sprites/Book Desk/2.png"
+dest_files=["res://.godot/imported/2.png-468014ecbab736985765a443bb52e40c.ctex"]
 
 [params]
 

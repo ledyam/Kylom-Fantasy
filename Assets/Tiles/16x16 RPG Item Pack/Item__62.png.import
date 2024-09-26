@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chtwoq38sory0"
-path="res://.godot/imported/Item__62.png-6d7e472d7d6444621504170275d6d654.ctex"
+path="res://.godot/imported/Item__62.png-e05dfa7c850c1bfeb46b71c958183447.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/16x16 RPG Item Pack/Item__62.png"
-dest_files=["res://.godot/imported/Item__62.png-6d7e472d7d6444621504170275d6d654.ctex"]
+source_file="res://Assets/Tiles/16x16 RPG Item Pack/Item__62.png"
+dest_files=["res://.godot/imported/Item__62.png-e05dfa7c850c1bfeb46b71c958183447.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkvdraowe0mrt"
-path="res://.godot/imported/spr_tree3.png-9b476b3e21f9c98bd9a11525ff836d09.ctex"
+path="res://.godot/imported/spr_tree3.png-57b3fee2ecaa616b6961b4a3d4cd4380.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Vegetation/spr_tree3.png"
-dest_files=["res://.godot/imported/spr_tree3.png-9b476b3e21f9c98bd9a11525ff836d09.ctex"]
+source_file="res://Assets/Tiles/Pixelarium - GrassLands/Pack content/Sprites/Vegetation/spr_tree3.png"
+dest_files=["res://.godot/imported/spr_tree3.png-57b3fee2ecaa616b6961b4a3d4cd4380.ctex"]
 
 [params]
 

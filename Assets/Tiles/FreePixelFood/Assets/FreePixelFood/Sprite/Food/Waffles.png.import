@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c73xnwhh6l4lk"
-path="res://.godot/imported/Waffles.png-5f9d214daaf6d8266a5da962908763a9.ctex"
+path="res://.godot/imported/Waffles.png-19912b42397ed1c78ab741f4286976a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Waffles.png"
-dest_files=["res://.godot/imported/Waffles.png-5f9d214daaf6d8266a5da962908763a9.ctex"]
+source_file="res://Assets/Tiles/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Waffles.png"
+dest_files=["res://.godot/imported/Waffles.png-19912b42397ed1c78ab741f4286976a2.ctex"]
 
 [params]
 

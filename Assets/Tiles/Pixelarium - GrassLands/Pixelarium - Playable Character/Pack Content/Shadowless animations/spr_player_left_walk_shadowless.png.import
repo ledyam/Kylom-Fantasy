@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://scd77xfbumy6"
-path="res://.godot/imported/spr_player_left_walk_shadowless.png-4e3a988f33fb74544739a85559004b24.ctex"
+path="res://.godot/imported/spr_player_left_walk_shadowless.png-8fa7bd5cdaa9eaaf2ce24af59d933d80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Shadowless animations/spr_player_left_walk_shadowless.png"
-dest_files=["res://.godot/imported/spr_player_left_walk_shadowless.png-4e3a988f33fb74544739a85559004b24.ctex"]
+source_file="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Shadowless animations/spr_player_left_walk_shadowless.png"
+dest_files=["res://.godot/imported/spr_player_left_walk_shadowless.png-8fa7bd5cdaa9eaaf2ce24af59d933d80.ctex"]
 
 [params]
 

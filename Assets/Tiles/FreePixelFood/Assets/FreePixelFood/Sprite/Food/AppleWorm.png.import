@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4vchr5flsb81"
-path="res://.godot/imported/AppleWorm.png-b59024eabbd33e978188b5ed1f8e6900.ctex"
+path="res://.godot/imported/AppleWorm.png-7f5a99706799f65708a8db7686aa2adb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FreePixelFood/Assets/FreePixelFood/Sprite/Food/AppleWorm.png"
-dest_files=["res://.godot/imported/AppleWorm.png-b59024eabbd33e978188b5ed1f8e6900.ctex"]
+source_file="res://Assets/Tiles/FreePixelFood/Assets/FreePixelFood/Sprite/Food/AppleWorm.png"
+dest_files=["res://.godot/imported/AppleWorm.png-7f5a99706799f65708a8db7686aa2adb.ctex"]
 
 [params]
 

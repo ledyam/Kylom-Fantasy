@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://du70e7gccuebi"
-path="res://.godot/imported/Moonshine.png-b011fc9bcb35a6f7a43569e6191549ab.ctex"
+path="res://.godot/imported/Moonshine.png-77e2324d1982cad2c940a8e2c400eb3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Moonshine.png"
-dest_files=["res://.godot/imported/Moonshine.png-b011fc9bcb35a6f7a43569e6191549ab.ctex"]
+source_file="res://Assets/Tiles/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Moonshine.png"
+dest_files=["res://.godot/imported/Moonshine.png-77e2324d1982cad2c940a8e2c400eb3e.ctex"]
 
 [params]
 

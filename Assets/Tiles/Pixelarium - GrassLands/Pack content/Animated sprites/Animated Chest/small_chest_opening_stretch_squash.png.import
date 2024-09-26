@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://e0b6nx24vyi5"
-path="res://.godot/imported/small_chest_opening_stretch_squash.png-f1524c0a47db0d59d5a5a9db1b2105a2.ctex"
+path="res://.godot/imported/small_chest_opening_stretch_squash.png-3e80b413263ad735a5ce69fc9bec5127.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixelarium - GrassLands - Free Version/Pack content/Animated sprites/Animated Chest/small_chest_opening_stretch_squash.png"
-dest_files=["res://.godot/imported/small_chest_opening_stretch_squash.png-f1524c0a47db0d59d5a5a9db1b2105a2.ctex"]
+source_file="res://Assets/Tiles/Pixelarium - GrassLands/Pack content/Animated sprites/Animated Chest/small_chest_opening_stretch_squash.png"
+dest_files=["res://.godot/imported/small_chest_opening_stretch_squash.png-3e80b413263ad735a5ce69fc9bec5127.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jw7yg2a6m17w"
-path="res://.godot/imported/PepperRed.png-0ef92baa521b5244c412e396c7ed0af7.ctex"
+path="res://.godot/imported/PepperRed.png-a6133bf9ed2fbea82601453f3c4e84d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FreePixelFood/Assets/FreePixelFood/Sprite/Food/PepperRed.png"
-dest_files=["res://.godot/imported/PepperRed.png-0ef92baa521b5244c412e396c7ed0af7.ctex"]
+source_file="res://Assets/Tiles/FreePixelFood/Assets/FreePixelFood/Sprite/Food/PepperRed.png"
+dest_files=["res://.godot/imported/PepperRed.png-a6133bf9ed2fbea82601453f3c4e84d4.ctex"]
 
 [params]
 

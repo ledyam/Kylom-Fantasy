@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hhbjv130880y"
-path="res://.godot/imported/Plant (9).png-05bb99155d2f263edb902ee7467d6e01.ctex"
+path="res://.godot/imported/Plant (9).png-2fb9a5c498c963c0707a3242b9d06691.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixel Kingdom/Summer/Plant (9).png"
-dest_files=["res://.godot/imported/Plant (9).png-05bb99155d2f263edb902ee7467d6e01.ctex"]
+source_file="res://Assets/Tiles/Pixel Kingdom/Summer/Plant (9).png"
+dest_files=["res://.godot/imported/Plant (9).png-2fb9a5c498c963c0707a3242b9d06691.ctex"]
 
 [params]
 

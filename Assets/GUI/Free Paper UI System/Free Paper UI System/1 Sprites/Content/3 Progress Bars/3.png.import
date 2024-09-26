@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxuchpkj5fdof"
-path="res://.godot/imported/3.png-fd786dda38d68bf26b376147ba02bd34.ctex"
+path="res://.godot/imported/3.png-20eb8692f8274a4697ca7a444e728f18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Free Paper UI System/Free Paper UI System/1 Sprites/Content/3 Progress Bars/3.png"
-dest_files=["res://.godot/imported/3.png-fd786dda38d68bf26b376147ba02bd34.ctex"]
+source_file="res://Assets/GUI/Free Paper UI System/Free Paper UI System/1 Sprites/Content/3 Progress Bars/3.png"
+dest_files=["res://.godot/imported/3.png-20eb8692f8274a4697ca7a444e728f18.ctex"]
 
 [params]
 

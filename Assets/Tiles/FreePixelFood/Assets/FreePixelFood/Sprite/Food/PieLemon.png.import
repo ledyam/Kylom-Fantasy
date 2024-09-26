@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cu7scfw42at2i"
-path="res://.godot/imported/PieLemon.png-0d676b3537e04eb2e8f6921577c19f74.ctex"
+path="res://.godot/imported/PieLemon.png-7966e715548060214e3ff31b3e7542bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FreePixelFood/Assets/FreePixelFood/Sprite/Food/PieLemon.png"
-dest_files=["res://.godot/imported/PieLemon.png-0d676b3537e04eb2e8f6921577c19f74.ctex"]
+source_file="res://Assets/Tiles/FreePixelFood/Assets/FreePixelFood/Sprite/Food/PieLemon.png"
+dest_files=["res://.godot/imported/PieLemon.png-7966e715548060214e3ff31b3e7542bd.ctex"]
 
 [params]
 

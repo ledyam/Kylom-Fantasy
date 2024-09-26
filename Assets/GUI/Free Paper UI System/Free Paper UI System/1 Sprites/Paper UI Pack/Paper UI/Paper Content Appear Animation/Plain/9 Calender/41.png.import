@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://yns4gn6rjwlg"
-path="res://.godot/imported/41.png-10d0848a2fab7e9bd53125da06ec4044.ctex"
+path="res://.godot/imported/41.png-3a01fa935923d6c1f50ae51c3069c929.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Free Paper UI System/Free Paper UI System/1 Sprites/Paper UI Pack/Paper UI/Paper Content Appear Animation/Plain/9 Calender/41.png"
-dest_files=["res://.godot/imported/41.png-10d0848a2fab7e9bd53125da06ec4044.ctex"]
+source_file="res://Assets/GUI/Free Paper UI System/Free Paper UI System/1 Sprites/Paper UI Pack/Paper UI/Paper Content Appear Animation/Plain/9 Calender/41.png"
+dest_files=["res://.godot/imported/41.png-3a01fa935923d6c1f50ae51c3069c929.ctex"]
 
 [params]
 

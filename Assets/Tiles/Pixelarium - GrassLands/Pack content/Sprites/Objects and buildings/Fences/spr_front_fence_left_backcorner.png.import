@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b52qjvaiyg8j5"
-path="res://.godot/imported/spr_front_fence_left_backcorner.png-67cd4bf08aaf61ab8eb0b359a28eda43.ctex"
+path="res://.godot/imported/spr_front_fence_left_backcorner.png-116c052578f220689d64528e99628a38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Objects and buildings/Fences/spr_front_fence_left_backcorner.png"
-dest_files=["res://.godot/imported/spr_front_fence_left_backcorner.png-67cd4bf08aaf61ab8eb0b359a28eda43.ctex"]
+source_file="res://Assets/Tiles/Pixelarium - GrassLands/Pack content/Sprites/Objects and buildings/Fences/spr_front_fence_left_backcorner.png"
+dest_files=["res://.godot/imported/spr_front_fence_left_backcorner.png-116c052578f220689d64528e99628a38.ctex"]
 
 [params]
 

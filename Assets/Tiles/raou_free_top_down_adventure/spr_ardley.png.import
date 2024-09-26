@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qjjcfuohdylc"
-path="res://.godot/imported/spr_ardley.png-4c3d6ac4c08155b549dbe6cba10a5f94.ctex"
+path="res://.godot/imported/spr_ardley.png-f8e915a633366dc255c5b699dba7d72f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/raou_free_top_down_adventure/spr_ardley.png"
-dest_files=["res://.godot/imported/spr_ardley.png-4c3d6ac4c08155b549dbe6cba10a5f94.ctex"]
+source_file="res://Assets/Tiles/raou_free_top_down_adventure/spr_ardley.png"
+dest_files=["res://.godot/imported/spr_ardley.png-f8e915a633366dc255c5b699dba7d72f.ctex"]
 
 [params]
 

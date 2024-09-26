@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ld536ny8llue"
-path="res://.godot/imported/spr_player_front_idle.png-383aed9b5ee2de357253674d96bdedc3.ctex"
+path="res://.godot/imported/spr_player_front_idle.png-2291ff46ed0885729d2bcb749f879c8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Front animations/spr_player_front_idle.png"
-dest_files=["res://.godot/imported/spr_player_front_idle.png-383aed9b5ee2de357253674d96bdedc3.ctex"]
+source_file="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Front animations/spr_player_front_idle.png"
+dest_files=["res://.godot/imported/spr_player_front_idle.png-2291ff46ed0885729d2bcb749f879c8c.ctex"]
 
 [params]
 

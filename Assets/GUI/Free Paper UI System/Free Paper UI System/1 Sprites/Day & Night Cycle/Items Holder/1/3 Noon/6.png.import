@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpydktiggwau3"
-path="res://.godot/imported/6.png-f2b3b25af2f4da477c53de199866f881.ctex"
+path="res://.godot/imported/6.png-729a6a95b3f4644987ce71c382565186.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Free Paper UI System/Free Paper UI System/1 Sprites/Day & Night Cycle/Items Holder/1/3 Noon/6.png"
-dest_files=["res://.godot/imported/6.png-f2b3b25af2f4da477c53de199866f881.ctex"]
+source_file="res://Assets/GUI/Free Paper UI System/Free Paper UI System/1 Sprites/Day & Night Cycle/Items Holder/1/3 Noon/6.png"
+dest_files=["res://.godot/imported/6.png-729a6a95b3f4644987ce71c382565186.ctex"]
 
 [params]
 

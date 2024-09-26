@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjgbhd5nhenf8"
-path="res://.godot/imported/spr_ocean_wave_front_left_corner.png-da983f6a9e80a427b48b29da1e8902d3.ctex"
+path="res://.godot/imported/spr_ocean_wave_front_left_corner.png-ecf1ca72e7c23d3520540cfaa9cd06ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixelarium - GrassLands - Free Version/Pack content/Animated sprites/Animated Ocean Water TIle/spr_ocean_wave_front_left_corner.png"
-dest_files=["res://.godot/imported/spr_ocean_wave_front_left_corner.png-da983f6a9e80a427b48b29da1e8902d3.ctex"]
+source_file="res://Assets/Tiles/Pixelarium - GrassLands/Pack content/Animated sprites/Animated Ocean Water TIle/spr_ocean_wave_front_left_corner.png"
+dest_files=["res://.godot/imported/spr_ocean_wave_front_left_corner.png-ecf1ca72e7c23d3520540cfaa9cd06ab.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d12d133nx8xva"
-path="res://.godot/imported/spr_left_side_wave_animated.png-8e9041f4d842e3289ae565e115c31c5f.ctex"
+path="res://.godot/imported/spr_left_side_wave_animated.png-b7960cec8bff9c409923eeb8d09d05b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixelarium - GrassLands - Free Version/Pack content/Animated sprites/Animated water waves/spr_left_side_wave_animated.png"
-dest_files=["res://.godot/imported/spr_left_side_wave_animated.png-8e9041f4d842e3289ae565e115c31c5f.ctex"]
+source_file="res://Assets/Tiles/Pixelarium - GrassLands/Pack content/Animated sprites/Animated water waves/spr_left_side_wave_animated.png"
+dest_files=["res://.godot/imported/spr_left_side_wave_animated.png-b7960cec8bff9c409923eeb8d09d05b6.ctex"]
 
 [params]
 

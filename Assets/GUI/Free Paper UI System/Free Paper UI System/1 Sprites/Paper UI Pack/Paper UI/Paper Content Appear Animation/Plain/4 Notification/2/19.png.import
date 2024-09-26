@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://m66x2hxx25cc"
-path="res://.godot/imported/19.png-c29d1e4595f12b6c795c318e0a324bb3.ctex"
+path="res://.godot/imported/19.png-3d59d77da1728b4e0d768b0e37b1003d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Free Paper UI System/Free Paper UI System/1 Sprites/Paper UI Pack/Paper UI/Paper Content Appear Animation/Plain/4 Notification/2/19.png"
-dest_files=["res://.godot/imported/19.png-c29d1e4595f12b6c795c318e0a324bb3.ctex"]
+source_file="res://Assets/GUI/Free Paper UI System/Free Paper UI System/1 Sprites/Paper UI Pack/Paper UI/Paper Content Appear Animation/Plain/4 Notification/2/19.png"
+dest_files=["res://.godot/imported/19.png-3d59d77da1728b4e0d768b0e37b1003d.ctex"]
 
 [params]
 
