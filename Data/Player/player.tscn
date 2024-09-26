@@ -3,102 +3,36 @@
 [ext_resource type="Script" path="res://Data/Player/player.gd" id="1_t574o"]
 [ext_resource type="Script" path="res://Componentes/Máquina de Estados/estate_machine.gd" id="3_ghpk6"]
 [ext_resource type="Script" path="res://Data/Player/PlayerStates/player_idle.gd" id="4_gku6m"]
-[ext_resource type="Texture2D" uid="uid://ot1qp354uod1" path="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Front animations/spr_player_front_jump.png" id="5_ai1ng"]
+[ext_resource type="Texture2D" uid="uid://ot1qp354uod1" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Front animations/spr_player_front_jump.png" id="5_ai1ng"]
 [ext_resource type="Script" path="res://Data/Player/PlayerStates/player_walk.gd" id="5_r0c14"]
-[ext_resource type="Texture2D" uid="uid://rjv61kiyw0jd" path="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Front animations/spr_player_front_attack.png" id="5_ub7w5"]
-[ext_resource type="Texture2D" uid="uid://c32hkaccof4ak" path="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Side animations/spr_player_left_attack.png" id="6_nojws"]
-[ext_resource type="Texture2D" uid="uid://cwx7koiylam8d" path="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Side animations/spr_player_right_attack.png" id="7_p5k6t"]
+[ext_resource type="Texture2D" uid="uid://rjv61kiyw0jd" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Front animations/spr_player_front_attack.png" id="5_ub7w5"]
+[ext_resource type="Texture2D" uid="uid://c32hkaccof4ak" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Side animations/spr_player_left_attack.png" id="6_nojws"]
+[ext_resource type="Texture2D" uid="uid://cwx7koiylam8d" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Side animations/spr_player_right_attack.png" id="7_p5k6t"]
 [ext_resource type="Script" path="res://Data/Player/PlayerStates/player_dead.gd" id="7_vmpfd"]
 [ext_resource type="Script" path="res://Componentes/Movimiento Rectilineo Uniforme 2d/mru2d.gd" id="8_eb17p"]
-[ext_resource type="Texture2D" uid="uid://b6ik40o7knrcg" path="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Back animations/spr_player_back_attack.png" id="8_rml6m"]
-[ext_resource type="Texture2D" uid="uid://bnw1binxx50q6" path="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Special animations/spr_player_death.png" id="9_fjrfl"]
+[ext_resource type="Texture2D" uid="uid://b6ik40o7knrcg" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Back animations/spr_player_back_attack.png" id="8_rml6m"]
+[ext_resource type="Texture2D" uid="uid://bnw1binxx50q6" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Special animations/spr_player_death.png" id="9_fjrfl"]
 [ext_resource type="AudioStream" uid="uid://beclep87ndefs" path="res://Assets/Sounds/Sword Slash (Rpg).wav" id="9_hdu75"]
-[ext_resource type="Texture2D" uid="uid://ld536ny8llue" path="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Front animations/spr_player_front_idle.png" id="10_jmhku"]
-[ext_resource type="Texture2D" uid="uid://cwbb3d3ir5omx" path="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Front animations/spr_player_front_hit.png" id="10_k5p1e"]
+[ext_resource type="Texture2D" uid="uid://ld536ny8llue" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Front animations/spr_player_front_idle.png" id="10_jmhku"]
+[ext_resource type="Texture2D" uid="uid://cwbb3d3ir5omx" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Front animations/spr_player_front_hit.png" id="10_k5p1e"]
 [ext_resource type="Script" path="res://Data/Player/PlayerStates/player_atack.gd" id="10_laalb"]
-[ext_resource type="Texture2D" uid="uid://dk40q2l7w0a1u" path="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Side animations/spr_player_left_idle.png" id="11_fyfcc"]
+[ext_resource type="Texture2D" uid="uid://dk40q2l7w0a1u" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Side animations/spr_player_left_idle.png" id="11_fyfcc"]
 [ext_resource type="AudioStream" uid="uid://gbppvr8uv4ki" path="res://Assets/Sounds/Leap (Gj3).wav" id="11_lvs54"]
-[ext_resource type="Texture2D" uid="uid://dpeqdbjnme3in" path="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Side animations/spr_player_left_hit.png" id="11_v1qa6"]
+[ext_resource type="Texture2D" uid="uid://dpeqdbjnme3in" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Side animations/spr_player_left_hit.png" id="11_v1qa6"]
 [ext_resource type="PackedScene" uid="uid://p0jmnaqahkh5" path="res://UI/Life_UI/Player_UI.tscn" id="12_0yp4y"]
 [ext_resource type="AudioStream" uid="uid://n88fshcdfhx7" path="res://Assets/Sounds/Level up Pickup (Rpg).wav" id="12_ig4r5"]
-[ext_resource type="Texture2D" uid="uid://bqkpo2xxo7uvm" path="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Side animations/spr_player_right_idle.png" id="12_jdw8q"]
-[ext_resource type="Texture2D" uid="uid://ux5j3qqpiffl" path="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Side animations/spr_player_right_hit.png" id="12_rd1sv"]
-[ext_resource type="Texture2D" uid="uid://cbaq6b8mbc4q8" path="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Back animations/spr_player_back_hit.png" id="13_2h17x"]
-[ext_resource type="Texture2D" uid="uid://cu56dl5wpu4rg" path="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Back animations/spr_player_back_idle.png" id="13_lcasp"]
-[ext_resource type="Texture2D" uid="uid://bphbwdg746mfl" path="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Front animations/spr_player_front_walk.png" id="14_kw4p6"]
+[ext_resource type="Texture2D" uid="uid://bqkpo2xxo7uvm" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Side animations/spr_player_right_idle.png" id="12_jdw8q"]
+[ext_resource type="Texture2D" uid="uid://ux5j3qqpiffl" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Side animations/spr_player_right_hit.png" id="12_rd1sv"]
+[ext_resource type="Texture2D" uid="uid://cbaq6b8mbc4q8" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Back animations/spr_player_back_hit.png" id="13_2h17x"]
+[ext_resource type="Texture2D" uid="uid://cu56dl5wpu4rg" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Back animations/spr_player_back_idle.png" id="13_lcasp"]
+[ext_resource type="Texture2D" uid="uid://bphbwdg746mfl" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Front animations/spr_player_front_walk.png" id="14_kw4p6"]
 [ext_resource type="PackedScene" uid="uid://oe8ee4f7bqeh" path="res://UI/Indicadores/indicador_level.tscn" id="14_omp1r"]
 [ext_resource type="PackedScene" uid="uid://5jark5pkwsb" path="res://UI/UI_Interfaces/ui_menu_in_game.tscn" id="15_anmsq"]
-[ext_resource type="Texture2D" uid="uid://osdj1uiucrx1" path="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Side animations/spr_player_left_walk.png" id="15_gwg4l"]
-[ext_resource type="Texture2D" uid="uid://c6h4ui0km8xmu" path="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Side animations/spr_player_right_walk.png" id="16_35lro"]
-[ext_resource type="Texture2D" uid="uid://cvgxqrj717fc4" path="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Back animations/spr_player_back_walk.png" id="17_k3l2a"]
+[ext_resource type="Texture2D" uid="uid://osdj1uiucrx1" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Side animations/spr_player_left_walk.png" id="15_gwg4l"]
+[ext_resource type="Texture2D" uid="uid://c6h4ui0km8xmu" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Side animations/spr_player_right_walk.png" id="16_35lro"]
+[ext_resource type="Texture2D" uid="uid://cvgxqrj717fc4" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Back animations/spr_player_back_walk.png" id="17_k3l2a"]
 [ext_resource type="Script" path="res://Data/Player/damage.gd" id="27_m7flb"]
 [ext_resource type="Script" path="res://Data/Player/jump.gd" id="29_tlnfh"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dgov"]
-size = Vector2(41.2009, 12.1995)
-
-[sub_resource type="Animation" id="Animation_urscd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Damage_box/CollisionPolygon2D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Damage_box/CollisionPolygon2D:shape:size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(41.2009, 12.1995)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Damage_box/CollisionPolygon2D:shape")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("RectangleShape2D_7dgov")]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Damage_box/CollisionPolygon2D:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(5.96046e-08, -12.8571)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Damage_box/CollisionPolygon2D:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.240293]
-}
 
 [sub_resource type="Animation" id="Animation_u1utt"]
 length = 0.5
@@ -351,6 +285,9 @@ tracks/5/keys = {
 "update": 1,
 "values": [true, false, true]
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dgov"]
+size = Vector2(41.2009, 12.1995)
 
 [sub_resource type="Animation" id="Animation_qe8c0"]
 length = 0.7
@@ -787,6 +724,69 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["Player_walk_up"]
+}
+
+[sub_resource type="Animation" id="Animation_urscd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Damage_box/CollisionPolygon2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Damage_box/CollisionPolygon2D:shape:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(41.2009, 12.1995)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Damage_box/CollisionPolygon2D:shape")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_7dgov")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Damage_box/CollisionPolygon2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5.96046e-08, -12.8571)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Damage_box/CollisionPolygon2D:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.240293]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jfr3x"]
@@ -1962,7 +1962,6 @@ y_sort_enabled = true
 collision_mask = 15
 
 [node name="Area_Collision" type="CollisionShape2D" parent="hit_box"]
-visible = false
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_okugr")
 debug_color = Color(0.970136, 0.126886, 0.303562, 0.42)

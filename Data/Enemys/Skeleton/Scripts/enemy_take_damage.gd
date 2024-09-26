@@ -4,7 +4,7 @@ var bounce_strength = 300
 var knockback = Vector2.ZERO
 func enter ():
 	if enemy.is_dead != true:
-		enemy.anim_enemy.play("Skeleton_Take_Damage")
+		enemy.anim_enemy.play("Enemy_Take_Damage")
 		print ("Recibiendo Daño Skeleto")
 		enemy.damage.play()
 		cd_take_damage.start()

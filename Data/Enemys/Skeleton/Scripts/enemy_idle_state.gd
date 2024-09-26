@@ -2,8 +2,8 @@ extends EnemyState
 
 
 func enter ():
-	print ("Estado IDLE del SKELETON")
-	enemy.anim_enemy.play("Skeleton_idle")
+	print ("Estado IDLE del " + enemy.name)
+	enemy.anim_enemy.play("Enemy_idle")
 	pass
 	
 	

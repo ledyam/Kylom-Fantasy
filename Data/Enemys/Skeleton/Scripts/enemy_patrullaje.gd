@@ -10,10 +10,10 @@ func physics_process(_delta: float) -> void:
 	if !enemy.on_area :
 		enemy.velocity = enemy.Patrullaje.direction * 15
 		if enemy.position < enemy.Patrullaje.current_positions.position :
-			enemy.anim_enemy.play("Skeleton_walk")
+			enemy.anim_enemy.play("Enemy_walk")
 			enemy.anim_enemy.flip_h = false 
 		else: 
-			enemy.anim_enemy.play("Skeleton_walk")
+			enemy.anim_enemy.play("Enemy_walk")
 			enemy.anim_enemy.flip_h = true   
 			
 		enemy.move_and_slide()
