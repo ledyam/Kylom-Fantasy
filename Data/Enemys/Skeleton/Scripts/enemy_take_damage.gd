@@ -3,9 +3,9 @@ extends EnemyState
 var bounce_strength = 300 
 var knockback = Vector2.ZERO
 func enter ():
-	if enemy.is_dead != true:
-		enemy.anim_enemy.play("Skeleton_Take_Damage")
-		print ("Recibiendo Daño Skeleto")
+	if !enemy.is_dead :
+		enemy.anim_enemy.play("Enemy_take_damage")
+		print ("Recibiendo Daño Skeleton")
 		enemy.damage.play()
 		cd_take_damage.start()
 		knockback = (enemy.global_position - enemy.player.position).normalized() 

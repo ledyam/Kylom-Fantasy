@@ -3,7 +3,7 @@ extends EnemyState
 
 func enter ():
 	print ("Estado IDLE del SKELETON")
-	enemy.anim_enemy.play("Skeleton_idle")
+	enemy.anim_enemy.play("Enemy_idle")
 	pass
 	
 	

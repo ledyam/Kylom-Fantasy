@@ -9,12 +9,12 @@ func physics_process(_delta: float) -> void:
 		
 		if enemy.player.position < enemy.position :
 			enemy.anim_enemy.flip_h = true
-			enemy.anim_enemy.play("Skeleton_walk")
+			enemy.anim_enemy.play("Enemy_walk")
 			enemy.velocity = enemy.to_local(enemy.player.position).normalized()* 15
 		else : 
 			
 			enemy.anim_enemy.flip_h = false
-			enemy.anim_enemy.play("Skeleton_walk")
+			enemy.anim_enemy.play("Enemy_walk")
 			enemy.velocity = enemy.to_local(enemy.player.position).normalized() * 15
 		enemy.move_and_slide()
 	else: 
