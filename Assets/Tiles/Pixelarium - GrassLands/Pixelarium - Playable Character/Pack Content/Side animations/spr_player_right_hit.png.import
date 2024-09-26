@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ux5j3qqpiffl"
-path="res://.godot/imported/spr_player_right_hit.png-c5286e6b9e47f58aa7bd1608d5aa7b69.ctex"
+path="res://.godot/imported/spr_player_right_hit.png-44af033f286e6ebcf2c6a815dd314941.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Side animations/spr_player_right_hit.png"
-dest_files=["res://.godot/imported/spr_player_right_hit.png-c5286e6b9e47f58aa7bd1608d5aa7b69.ctex"]
+source_file="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Side animations/spr_player_right_hit.png"
+dest_files=["res://.godot/imported/spr_player_right_hit.png-44af033f286e6ebcf2c6a815dd314941.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnw1binxx50q6"
-path="res://.godot/imported/spr_player_death.png-68b3efa5dce09b8fc0ec84688a3591cf.ctex"
+path="res://.godot/imported/spr_player_death.png-a3342d88e37a7cd9f8a54e45cbe84df4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Special animations/spr_player_death.png"
-dest_files=["res://.godot/imported/spr_player_death.png-68b3efa5dce09b8fc0ec84688a3591cf.ctex"]
+source_file="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Special animations/spr_player_death.png"
+dest_files=["res://.godot/imported/spr_player_death.png-a3342d88e37a7cd9f8a54e45cbe84df4.ctex"]
 
 [params]
 

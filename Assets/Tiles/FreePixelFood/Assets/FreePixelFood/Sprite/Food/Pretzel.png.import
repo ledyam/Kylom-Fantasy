@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d10c0imqb4taq"
-path="res://.godot/imported/Pretzel.png-04c92097ab50c444c4c2576050e9451f.ctex"
+path="res://.godot/imported/Pretzel.png-dc3b0bf83bcee2d775eec39586be9fd3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Pretzel.png"
-dest_files=["res://.godot/imported/Pretzel.png-04c92097ab50c444c4c2576050e9451f.ctex"]
+source_file="res://Assets/Tiles/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Pretzel.png"
+dest_files=["res://.godot/imported/Pretzel.png-dc3b0bf83bcee2d775eec39586be9fd3.ctex"]
 
 [params]
 

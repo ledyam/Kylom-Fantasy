@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctmuyj8756860"
-path="res://.godot/imported/Honeycomb.png-0a0f7dbe4dfc903411b4c42442571adf.ctex"
+path="res://.godot/imported/Honeycomb.png-8585f1267e91a471e5ea007c062dfc3a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Honeycomb.png"
-dest_files=["res://.godot/imported/Honeycomb.png-0a0f7dbe4dfc903411b4c42442571adf.ctex"]
+source_file="res://Assets/Tiles/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Honeycomb.png"
+dest_files=["res://.godot/imported/Honeycomb.png-8585f1267e91a471e5ea007c062dfc3a.ctex"]
 
 [params]
 

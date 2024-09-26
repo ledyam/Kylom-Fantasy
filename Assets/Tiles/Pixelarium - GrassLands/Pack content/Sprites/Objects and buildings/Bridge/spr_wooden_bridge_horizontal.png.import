@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgjb8b3d1p0sq"
-path="res://.godot/imported/spr_wooden_bridge_horizontal.png-5947876798c9427a010a477ac3c01a5f.ctex"
+path="res://.godot/imported/spr_wooden_bridge_horizontal.png-d3d1cd90e165b1887bb6e30126f59d41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Objects and buildings/Bridge/spr_wooden_bridge_horizontal.png"
-dest_files=["res://.godot/imported/spr_wooden_bridge_horizontal.png-5947876798c9427a010a477ac3c01a5f.ctex"]
+source_file="res://Assets/Tiles/Pixelarium - GrassLands/Pack content/Sprites/Objects and buildings/Bridge/spr_wooden_bridge_horizontal.png"
+dest_files=["res://.godot/imported/spr_wooden_bridge_horizontal.png-d3d1cd90e165b1887bb6e30126f59d41.ctex"]
 
 [params]
 

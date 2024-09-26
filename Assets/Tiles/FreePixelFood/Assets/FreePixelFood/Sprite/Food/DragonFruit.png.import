@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bamynbcg4jnc6"
-path="res://.godot/imported/DragonFruit.png-7265d0dfcec40261d35b5f66bf72f821.ctex"
+path="res://.godot/imported/DragonFruit.png-9f42db13650f52d7d93b998f5408b00b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FreePixelFood/Assets/FreePixelFood/Sprite/Food/DragonFruit.png"
-dest_files=["res://.godot/imported/DragonFruit.png-7265d0dfcec40261d35b5f66bf72f821.ctex"]
+source_file="res://Assets/Tiles/FreePixelFood/Assets/FreePixelFood/Sprite/Food/DragonFruit.png"
+dest_files=["res://.godot/imported/DragonFruit.png-9f42db13650f52d7d93b998f5408b00b.ctex"]
 
 [params]
 

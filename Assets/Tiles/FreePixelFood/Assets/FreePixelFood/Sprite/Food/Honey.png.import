@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ba2ilar4vnnvr"
-path="res://.godot/imported/Honey.png-1a8a3dea1db9bfcbaa697bb4cec81f0c.ctex"
+path="res://.godot/imported/Honey.png-749590259c736d59200dafd005901e8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Honey.png"
-dest_files=["res://.godot/imported/Honey.png-1a8a3dea1db9bfcbaa697bb4cec81f0c.ctex"]
+source_file="res://Assets/Tiles/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Honey.png"
+dest_files=["res://.godot/imported/Honey.png-749590259c736d59200dafd005901e8a.ctex"]
 
 [params]
 

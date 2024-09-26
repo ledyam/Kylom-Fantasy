@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgwvobbykaeb4"
-path="res://.godot/imported/spr_crate4.png-41c5d9ac22b3df759d00b9b62e9a8ae1.ctex"
+path="res://.godot/imported/spr_crate4.png-9a1179142abf65167ef9ce6359db2deb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Objects and buildings/Barrels and crates/spr_crate4.png"
-dest_files=["res://.godot/imported/spr_crate4.png-41c5d9ac22b3df759d00b9b62e9a8ae1.ctex"]
+source_file="res://Assets/Tiles/Pixelarium - GrassLands/Pack content/Sprites/Objects and buildings/Barrels and crates/spr_crate4.png"
+dest_files=["res://.godot/imported/spr_crate4.png-9a1179142abf65167ef9ce6359db2deb.ctex"]
 
 [params]
 

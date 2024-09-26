@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1k3jsdbsn725"
-path="res://.godot/imported/spr_shadow.png-8c29af59639a1b2d553da8a885bd5da9.ctex"
+path="res://.godot/imported/spr_shadow.png-27210e8ab9a2162d8bfbd897e9f53267.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixelarium - GrassLands - Free Version/Pixelarium - Playable Character - Free Version/Pack Content/Assets/spr_shadow.png"
-dest_files=["res://.godot/imported/spr_shadow.png-8c29af59639a1b2d553da8a885bd5da9.ctex"]
+source_file="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Assets/spr_shadow.png"
+dest_files=["res://.godot/imported/spr_shadow.png-27210e8ab9a2162d8bfbd897e9f53267.ctex"]
 
 [params]
 

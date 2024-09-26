@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dghkc3x4j7e60"
-path="res://.godot/imported/Trunk (1).png-a2a90ce8a5f1587c7ed70b929d2c4245.ctex"
+path="res://.godot/imported/Trunk (1).png-88db9839c74aee73fc59040d45023cd0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixel Kingdom/Summer/Trunk (1).png"
-dest_files=["res://.godot/imported/Trunk (1).png-a2a90ce8a5f1587c7ed70b929d2c4245.ctex"]
+source_file="res://Assets/Tiles/Pixel Kingdom/Summer/Trunk (1).png"
+dest_files=["res://.godot/imported/Trunk (1).png-88db9839c74aee73fc59040d45023cd0.ctex"]
 
 [params]
 

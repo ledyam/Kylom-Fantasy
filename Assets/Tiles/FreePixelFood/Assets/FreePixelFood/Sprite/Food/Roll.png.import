@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbm3ptyjq8wmw"
-path="res://.godot/imported/Roll.png-3803588fc00a8b63c13835e78d2b4700.ctex"
+path="res://.godot/imported/Roll.png-f45705457d4ed00e19cb727343cadc7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Roll.png"
-dest_files=["res://.godot/imported/Roll.png-3803588fc00a8b63c13835e78d2b4700.ctex"]
+source_file="res://Assets/Tiles/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Roll.png"
+dest_files=["res://.godot/imported/Roll.png-f45705457d4ed00e19cb727343cadc7b.ctex"]
 
 [params]
 

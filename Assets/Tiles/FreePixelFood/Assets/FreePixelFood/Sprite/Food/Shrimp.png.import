@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://de25gbe81ddmo"
-path="res://.godot/imported/Shrimp.png-cddbf85f0ba627c0081c75f11599d7f5.ctex"
+path="res://.godot/imported/Shrimp.png-a090608ac0b55720dff5cef598129b86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Shrimp.png"
-dest_files=["res://.godot/imported/Shrimp.png-cddbf85f0ba627c0081c75f11599d7f5.ctex"]
+source_file="res://Assets/Tiles/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Shrimp.png"
+dest_files=["res://.godot/imported/Shrimp.png-a090608ac0b55720dff5cef598129b86.ctex"]
 
 [params]
 

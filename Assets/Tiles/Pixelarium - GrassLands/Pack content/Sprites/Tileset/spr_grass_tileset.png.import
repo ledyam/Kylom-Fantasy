@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://be6hpytdocccr"
-path="res://.godot/imported/spr_grass_tileset.png-dd1ff7dd09bbf4c15e927b2b73f472dc.ctex"
+path="res://.godot/imported/spr_grass_tileset.png-9075fc26680cd80e8e601caee39ff486.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/spr_grass_tileset.png"
-dest_files=["res://.godot/imported/spr_grass_tileset.png-dd1ff7dd09bbf4c15e927b2b73f472dc.ctex"]
+source_file="res://Assets/Tiles/Pixelarium - GrassLands/Pack content/Sprites/Tileset/spr_grass_tileset.png"
+dest_files=["res://.godot/imported/spr_grass_tileset.png-9075fc26680cd80e8e601caee39ff486.ctex"]
 
 [params]
 

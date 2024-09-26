@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fl1tp2p2mvdg"
-path="res://.godot/imported/1.png-21fe540245f6788a6ce6d7609aa11035.ctex"
+path="res://.godot/imported/1.png-7f44d203ba603c830599a16346e6354d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Free Paper UI System/Free Paper UI System/1 Sprites/Content/9 Stamp/Stamp/idle/1.png"
-dest_files=["res://.godot/imported/1.png-21fe540245f6788a6ce6d7609aa11035.ctex"]
+source_file="res://Assets/GUI/Free Paper UI System/Free Paper UI System/1 Sprites/Content/9 Stamp/Stamp/idle/1.png"
+dest_files=["res://.godot/imported/1.png-7f44d203ba603c830599a16346e6354d.ctex"]
 
 [params]
 

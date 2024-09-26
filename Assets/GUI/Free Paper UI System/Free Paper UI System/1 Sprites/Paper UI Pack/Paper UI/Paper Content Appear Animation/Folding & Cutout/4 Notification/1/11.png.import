@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dyxyvpl808eye"
-path="res://.godot/imported/11.png-22be6acc5b66d8719d780b410fb77d80.ctex"
+path="res://.godot/imported/11.png-c948e2ba03fdb91abe475614d5820080.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Free Paper UI System/Free Paper UI System/1 Sprites/Paper UI Pack/Paper UI/Paper Content Appear Animation/Folding & Cutout/4 Notification/1/11.png"
-dest_files=["res://.godot/imported/11.png-22be6acc5b66d8719d780b410fb77d80.ctex"]
+source_file="res://Assets/GUI/Free Paper UI System/Free Paper UI System/1 Sprites/Paper UI Pack/Paper UI/Paper Content Appear Animation/Folding & Cutout/4 Notification/1/11.png"
+dest_files=["res://.godot/imported/11.png-c948e2ba03fdb91abe475614d5820080.ctex"]
 
 [params]
 

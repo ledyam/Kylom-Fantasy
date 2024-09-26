@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://lmmh35ta160b"
-path="res://.godot/imported/spr_anna.png-ee1f6c6694dd10dba8d39c26d0e711a8.ctex"
+path="res://.godot/imported/spr_anna.png-b5c38d1632a213b3ceb4932b6f2f7218.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/raou_free_top_down_adventure/spr_anna.png"
-dest_files=["res://.godot/imported/spr_anna.png-ee1f6c6694dd10dba8d39c26d0e711a8.ctex"]
+source_file="res://Assets/Tiles/raou_free_top_down_adventure/spr_anna.png"
+dest_files=["res://.godot/imported/spr_anna.png-b5c38d1632a213b3ceb4932b6f2f7218.ctex"]
 
 [params]
 

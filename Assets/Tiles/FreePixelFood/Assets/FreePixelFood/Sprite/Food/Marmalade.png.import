@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfy1qp4dhfhms"
-path="res://.godot/imported/Marmalade.png-810f201cea4cb3141ff9d51e968c851f.ctex"
+path="res://.godot/imported/Marmalade.png-37ef27816411c9a1df97585c344f4dbc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Marmalade.png"
-dest_files=["res://.godot/imported/Marmalade.png-810f201cea4cb3141ff9d51e968c851f.ctex"]
+source_file="res://Assets/Tiles/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Marmalade.png"
+dest_files=["res://.godot/imported/Marmalade.png-37ef27816411c9a1df97585c344f4dbc.ctex"]
 
 [params]
 

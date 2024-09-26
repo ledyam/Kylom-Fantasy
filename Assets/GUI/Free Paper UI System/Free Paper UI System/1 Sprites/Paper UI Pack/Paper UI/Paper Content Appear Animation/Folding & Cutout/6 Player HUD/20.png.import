@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbfnl6qc54h7a"
-path="res://.godot/imported/20.png-60cd6b97666e5ed3877320f87aa51584.ctex"
+path="res://.godot/imported/20.png-0365461d30eb86769097e6183b53dd9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Free Paper UI System/Free Paper UI System/1 Sprites/Paper UI Pack/Paper UI/Paper Content Appear Animation/Folding & Cutout/6 Player HUD/20.png"
-dest_files=["res://.godot/imported/20.png-60cd6b97666e5ed3877320f87aa51584.ctex"]
+source_file="res://Assets/GUI/Free Paper UI System/Free Paper UI System/1 Sprites/Paper UI Pack/Paper UI/Paper Content Appear Animation/Folding & Cutout/6 Player HUD/20.png"
+dest_files=["res://.godot/imported/20.png-0365461d30eb86769097e6183b53dd9f.ctex"]
 
 [params]
 

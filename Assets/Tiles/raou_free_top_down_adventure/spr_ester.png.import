@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cubgqudjsqleb"
-path="res://.godot/imported/spr_ester.png-d37b80d12791de21255ee2761c0b7f7b.ctex"
+path="res://.godot/imported/spr_ester.png-f77734a2831148da3b773d383eb49455.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/raou_free_top_down_adventure/spr_ester.png"
-dest_files=["res://.godot/imported/spr_ester.png-d37b80d12791de21255ee2761c0b7f7b.ctex"]
+source_file="res://Assets/Tiles/raou_free_top_down_adventure/spr_ester.png"
+dest_files=["res://.godot/imported/spr_ester.png-f77734a2831148da3b773d383eb49455.ctex"]
 
 [params]
 
