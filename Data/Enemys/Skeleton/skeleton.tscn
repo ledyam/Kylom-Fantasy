@@ -12,6 +12,26 @@
 [ext_resource type="PackedScene" uid="uid://bcyomv3f2203e" path="res://Data/Enemys/Generic/patrullaje.tscn" id="9_ucm6i"]
 [ext_resource type="PackedScene" uid="uid://oe8ee4f7bqeh" path="res://UI/Indicadores/indicador_level.tscn" id="10_728rq"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ns77y"]
+radius = 3.0
+height = 10.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4n6o"]
+atlas = ExtResource("2_kt7i0")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7iv88"]
+atlas = ExtResource("2_kt7i0")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sv56"]
+atlas = ExtResource("2_kt7i0")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc1pa"]
+atlas = ExtResource("2_kt7i0")
+region = Rect2(96, 224, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_hikah"]
 atlas = ExtResource("2_kt7i0")
 region = Rect2(0, 192, 32, 32)
@@ -100,22 +120,6 @@ region = Rect2(128, 64, 32, 32)
 atlas = ExtResource("2_kt7i0")
 region = Rect2(160, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b4n6o"]
-atlas = ExtResource("2_kt7i0")
-region = Rect2(0, 224, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7iv88"]
-atlas = ExtResource("2_kt7i0")
-region = Rect2(64, 224, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2sv56"]
-atlas = ExtResource("2_kt7i0")
-region = Rect2(32, 224, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tc1pa"]
-atlas = ExtResource("2_kt7i0")
-region = Rect2(96, 224, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_boa6f"]
 atlas = ExtResource("2_kt7i0")
 region = Rect2(0, 128, 32, 32)
@@ -192,7 +196,32 @@ region = Rect2(160, 160, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-
+"texture": SubResource("AtlasTexture_b4n6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7iv88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4n6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sv56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7iv88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sv56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tc1pa")
+}],
+"loop": false,
+"name": &"Enemy_Take_Damage",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_hikah")
 }, {
 "duration": 1.0,
@@ -279,32 +308,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b4n6o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7iv88")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b4n6o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2sv56")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7iv88")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2sv56")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tc1pa")
-}],
-"loop": false,
-"name": &"Enemy_take_damage",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_boa6f")
 }, {
 "duration": 1.0,
@@ -373,10 +376,6 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ns77y"]
-radius = 3.0
-height = 10.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_rpbbb"]
 radius = 47.0
 
@@ -389,15 +388,18 @@ Patrullaje = NodePath("Patrullaje")
 critic_chance = 0.239
 DEF = 30.0
 
+[node name="Collision_Body" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ns77y")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_xo01h")
-animation = &"Enemy_walk_up"
+animation = &"Enemy_Take_Damage"
 autoplay = "Enemy_idle"
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_wyt0r")
-initial_state = NodePath("EnemyWalk")
+initial_state = NodePath("EnemyIdle")
 DEBUG = false
 
 [node name="EnemyIdle" type="Node" parent="StateMachine"]
@@ -420,17 +422,11 @@ process_callback = 0
 wait_time = 7.284
 one_shot = true
 
-[node name="Collision_Body" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_ns77y")
-
 [node name="Area_Vigilancia" type="Area2D" parent="."]
 
 [node name="Collision_Area" type="CollisionShape2D" parent="Area_Vigilancia"]
 shape = SubResource("CircleShape2D_rpbbb")
 debug_color = Color(0.976471, 0.117647, 0.117647, 0.419608)
-
-[node name="damage" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_jx7hq")
 
 [node name="CD_TakeDamage" type="Timer" parent="."]
 wait_time = 0.802
@@ -449,6 +445,11 @@ offset_right = 61.0
 offset_bottom = -2.0
 scale = Vector2(0.5, 0.5)
 text = "Skeleto Lv.#"
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Hit_Damage" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("7_jx7hq")
 
 [connection signal="Take_Damage" from="." to="StateMachine/EnemyWalk" method="_on_skeleton_take_damage"]
 [connection signal="timeout" from="StateMachine/EnemyPatrullaje/Receso_Patrullaje" to="StateMachine/EnemyPatrullaje" method="_on_receso_patrullaje_timeout"]
