@@ -53,6 +53,8 @@ var DEF : float = 20
 @onready var player_ui: Control = $"Player_UI"
 @onready var ui_menu_in_game: Control = $UI_Menu_InGame
 @onready var indicador_nombre_level: Label = $Indicador_nombre_level
+@onready var body_collision: CollisionShape2D = $Body_Collision
+
 #endregion
 
 #region CONSTANTES 
@@ -130,6 +132,7 @@ func LEVEL_UP ():
 
 #region ALERTA DE SEÑALES
 func _on_timer_timeout() -> void:
+	body_collision.disabled = true
 	queue_free()
 	owner.get_tree().reload_current_scene()
 	pass 
@@ -160,17 +163,11 @@ func _on_hit_box_body_entered(body: Node2D) -> void:
 #Asiganción de Empuje al Recibir Daño
 		knockback = (self.global_position - body.position).normalized() 
 		velocity = knockback * 20
-		
-		
-		
 		Recibir_damage(body.ATK) #------Temporal para Cambios
 		
 		$"Sounds/Leap(gj3)".play()
-	
-	if body is ObjetoFisico: 
-		ui_menu_in_game.inventario.add_item(body.Stats)
-		body.queue_free()
-		
+
+
 #SEÑAL Principal de SALIDA  HITBOX PLAYER
 func _on_hit_box_body_exited(body: Node2D) -> void:
 	if body.name == "Skeleton":

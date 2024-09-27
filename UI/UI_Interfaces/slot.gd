@@ -1,15 +1,18 @@
 extends Control
-@onready var usar: AudioStreamPlayer2D = $Sounds/Usar
+
 @onready var contador: Label = $Contador
+
+enum use_type {COMER, TOMAR}
+
 var is_vacio : bool = true
 var cantidad : int = 0 :
 	set(value):
 		cantidad = value
 		contador.text = "x"+str(cantidad)
-		if cantidad != 0 and cantidad != 1 : 
+		if cantidad != 0 and cantidad != 1 :
 			contador.visible = true
 		else : contador.visible = false
-
+	
 
 var item : Dictionary:
 	set(value):
@@ -20,11 +23,11 @@ var item : Dictionary:
 			$CenterContainer/Icon.texture = load(item["Texture"])
 
 func _on_mouse_entered() -> void:
-	if item.is_empty() : 
+	if item.is_empty() :
 		owner.Normality()
-	else : 
+	else :
 		owner.set_description(item)
-	pass 
+	pass
 
 	
 #Accion de usar objeto Consumible del Inventario 
@@ -34,13 +37,19 @@ func _on_gui_input(event: InputEvent) -> void:
 			print("sumando Vida")
 			CentralSignal.UsarObjeto.emit(item["Health_give"])
 			cantidad -= 1
-			usar.play()
+			if item["Use_Type"] == use_type.TOMAR:
+				$Sounds/Tomar.play()
+			else : 
+				$Sounds/Comer.play()
+			
+			
+			
 			if cantidad == 0 :
 				self.item.clear()
 				is_vacio = true
 				$CenterContainer/Icon.texture = null
 				owner.Normality()
-		elif item.has("Type") : 
+		elif item.has("Type") :
 			var Equipables_SLot = owner.find_child("Equipable_Item").get_children()
 			
 			for i in Equipables_SLot:
