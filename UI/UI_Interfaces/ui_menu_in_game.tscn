@@ -432,49 +432,49 @@ fixed_column_width = 2
 
 [node name="Slot" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
 layout_mode = 1
-offset_left = 0.307678
-offset_top = -7.56854
-offset_right = 0.307678
-offset_bottom = -7.56854
+offset_left = -1.69232
+offset_top = -33.5686
+offset_right = -1.69232
+offset_bottom = -33.5686
 slot_type = 1
 
 [node name="Slot2" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
 layout_mode = 1
-offset_left = 0.307693
-offset_top = 35.4315
-offset_right = 0.307693
-offset_bottom = 35.4315
+offset_left = -1.69231
+offset_top = 9.43146
+offset_right = -1.69231
+offset_bottom = 9.43146
 slot_type = 2
 
 [node name="Slot3" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
 layout_mode = 1
-offset_left = 0.307693
-offset_top = -63.5685
-offset_right = 0.307693
-offset_bottom = -63.5685
+offset_left = -1.69231
+offset_top = -89.5685
+offset_right = -1.69231
+offset_bottom = -89.5685
 
 [node name="Slot4" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
 layout_mode = 1
-offset_left = 45.3077
-offset_top = -33.5685
-offset_right = 45.3077
-offset_bottom = -33.5685
+offset_left = 43.3077
+offset_top = -59.5685
+offset_right = 43.3077
+offset_bottom = -59.5685
 slot_type = 4
 
 [node name="Slot5" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
 layout_mode = 1
-offset_left = -42.6923
-offset_top = -31.5685
-offset_right = -42.6923
-offset_bottom = -31.5685
+offset_left = -45.6923
+offset_top = -59.5685
+offset_right = -45.6923
+offset_bottom = -59.5685
 slot_type = 3
 
 [node name="Slot6" parent="CanvasLayer/Control/Inventario/Int_Inventario/Equipable_Item" instance=ExtResource("6_51tlx")]
 layout_mode = 1
-offset_left = 0.307678
-offset_top = 80.4315
-offset_right = 0.307678
-offset_bottom = 80.4315
+offset_left = -1.69232
+offset_top = 54.4315
+offset_right = -1.69232
+offset_bottom = 54.4315
 slot_type = 5
 
 [node name="Items" type="Panel" parent="CanvasLayer/Control/Inventario/Int_Inventario"]
