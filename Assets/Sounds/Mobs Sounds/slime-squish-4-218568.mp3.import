@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2yi11mb42p3w"
+path="res://.godot/imported/slime-squish-4-218568.mp3-5ebf5bd2fdece6c58d6d58538e7b9916.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Mobs Sounds/slime-squish-4-218568.mp3"
+dest_files=["res://.godot/imported/slime-squish-4-218568.mp3-5ebf5bd2fdece6c58d6d58538e7b9916.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
