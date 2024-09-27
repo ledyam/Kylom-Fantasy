@@ -4,7 +4,7 @@ extends "res://Data/Enemys/EnemyOrignal.gd"
 
 @onready var state_machine: Node = $StateMachine
 @onready var anim_enemy: AnimatedSprite2D = $AnimatedSprite2D
-@onready var damage: AudioStreamPlayer2D = $damage
+@onready var damage: AudioStreamPlayer2D = $Sounds/Hit_Damage
 @export var Patrullaje : Node2D
 
 const NOMBRE : String = "Goblin"
