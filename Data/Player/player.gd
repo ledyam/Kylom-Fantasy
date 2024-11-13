@@ -36,13 +36,11 @@ var current_level : int = 1 :
 	set(value):
 		current_level = value 
 		indicador_nombre_level.text = NOMBRE + " Lv." + str(current_level)
-
-
-
 var ATK :  float = 100
 var DEF : float = 20
 #endregion
 
+#endregion
 
 #region VARIABLES INSTANCIADAS 
 @onready var mru_2d: MRU2D = $MRU2D
@@ -86,9 +84,7 @@ const animations : Dictionary = {
 	_hit_right = 'Player_hit_right',
 	_dead  = 'Player_dead'
 }
-
 #endregion
-
 
 #region FUNCIONES del Engine
 func _ready() -> void:

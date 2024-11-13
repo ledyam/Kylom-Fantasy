@@ -5,9 +5,7 @@ class_name Undead_Enemy
 @export var Patrullaje : Node2D
 
 const NOMBRE : String = "Skeleto"
-var player = null
-var on_area : bool = false 
-var is_dead : bool = false 
+
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
