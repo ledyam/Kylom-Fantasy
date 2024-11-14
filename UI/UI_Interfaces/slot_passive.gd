@@ -42,6 +42,5 @@ func _on_gui_input(event: InputEvent) -> void:
 			$CenterContainer/Icon.texture = Default[slot_type]
 			owner.Normality()
 			$Unquip.play()
-			var unquip = owner.find_child("Inventario") 
-			unquip.add_item(item.duplicate(true))
+			owner.add_item(item.duplicate(true))
 			self.item.clear()

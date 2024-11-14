@@ -1,4 +1,6 @@
 extends NinePatchRect
+@export_multiline var default_text : String
+@onready var coger_objeto: AudioStreamPlayer = $Sounds/CogerObjeto
 
 #Método para agregar items al inventario
 func add_item (item ) :
@@ -8,25 +10,22 @@ func add_item (item ) :
 		
 		if !i.is_vacio and i.item == item and !item.has("Type"):
 			i.cantidad += 1
-			$Sounds/CogerObjeto.play()
 			break
 		
 		
 		elif i.is_vacio and item.has("Type"):
 			i.is_vacio = false
 			i.item = item
-			$Sounds/CogerObjeto.play()
 			break
 			
 		elif i.is_vacio:
 			i.item = item
 			i.is_vacio = false
 			i.cantidad += 1
-			$Sounds/CogerObjeto.play()
+
 			break
 
 #region Métodos de Abastecimiento de Inventario 
-
 func add_item_Inventory_free(item , cantidad ) :
 	
 	var index = self.find_child("GridContainer")
@@ -40,14 +39,14 @@ func add_item_Inventory_free(item , cantidad ) :
 
 
 func add_item_Inventory_Equipable(item):
-#endregion
+
 	var index = self.find_child("Equipable_Item")
 	for i in index.get_children():
 		if item["Slot_Type"] == i.slot_type:
 			i.item = item
 
 
-
+#endregion
 #region Sistema de Save_Load del Inventario
 
 func GuardarInv():
@@ -92,3 +91,18 @@ func CargarInv(items : Dictionary):
 		add_item_Inventory_Equipable( items.Inventario_Equipable[str(item)].item)
 	
 #endregion
+
+#Muestra Descripción , textura y Título del Item
+func set_description(item : Dictionary):
+	find_child("Name").text = item["Name"]
+	find_child("Icon").texture = load(item["Texture"])
+	find_child("Description").text = item["Description"] 
+	#find_child("Stats").text = str(item["Stats"]) + '\n\n '+item["Rarity"]
+	
+	
+#Metodo por defecto para el Inventario General
+func Normality ():
+	find_child("Name").text = "Inventario"
+	find_child("Icon").texture = null
+	find_child("Description").text = default_text
+	find_child("Stats").text = ""

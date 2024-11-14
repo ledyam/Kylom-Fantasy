@@ -1,0 +1,212 @@
+[gd_scene load_steps=7 format=3 uid="uid://q1cmeacruiwm"]
+
+[ext_resource type="Texture2D" uid="uid://c75pdyh7y2c8" path="res://Assets/Tiles/GUI/GUI/GUI.png" id="1_aubuc"]
+[ext_resource type="Script" path="res://UI/bestiary.gd" id="1_wjln5"]
+[ext_resource type="PackedScene" uid="uid://brhbdqmyil5lk" path="res://UI/UI_Interfaces/slot_bestiary.tscn" id="2_43n46"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h80l1"]
+atlas = ExtResource("1_aubuc")
+region = Rect2(0.117874, 95.0915, 48.5292, 34.4172)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sexh7"]
+atlas = ExtResource("1_aubuc")
+region = Rect2(48.1236, 96.0069, 32.0519, 31.3807)
+
+[sub_resource type="LabelSettings" id="LabelSettings_u5o7g"]
+font_size = 20
+
+[node name="Bestiary" type="NinePatchRect"]
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -294.0
+offset_top = -145.0
+offset_right = 294.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_h80l1")
+patch_margin_left = 9
+patch_margin_top = 9
+patch_margin_right = 9
+patch_margin_bottom = 7
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("1_wjln5")
+
+[node name="Int_Bestiario" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0266876
+anchor_top = 0.0623053
+anchor_right = 0.965463
+anchor_bottom = 0.943925
+offset_left = 0.307692
+offset_top = 23.9315
+offset_right = 2.30774
+offset_bottom = 0.261749
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Mobs" type="Panel" parent="Int_Bestiario"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Contenedor" type="GridContainer" parent="Int_Bestiario/Mobs"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.6923
+offset_top = -89.5685
+offset_right = 64.3077
+offset_bottom = 86.4315
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 42
+theme_override_constants/v_separation = 41
+columns = 6
+
+[node name="Slot" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
+layout_mode = 2
+
+[node name="Slot2" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
+layout_mode = 2
+
+[node name="Slot3" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
+layout_mode = 2
+
+[node name="Slot4" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
+layout_mode = 2
+
+[node name="Slot5" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
+layout_mode = 2
+
+[node name="Slot6" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
+layout_mode = 2
+
+[node name="Slot7" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
+layout_mode = 2
+
+[node name="Slot8" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
+layout_mode = 2
+
+[node name="Slot9" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
+layout_mode = 2
+
+[node name="Slot10" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
+layout_mode = 2
+
+[node name="Slot11" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
+layout_mode = 2
+
+[node name="Slot12" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
+layout_mode = 2
+
+[node name="Slot13" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
+layout_mode = 2
+
+[node name="Slot14" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
+layout_mode = 2
+
+[node name="Slot15" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
+layout_mode = 2
+
+[node name="Slot16" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
+layout_mode = 2
+
+[node name="Slot17" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
+layout_mode = 2
+
+[node name="Slot18" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
+layout_mode = 2
+
+[node name="Slot19" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
+layout_mode = 2
+
+[node name="Slot20" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
+layout_mode = 2
+
+[node name="Description" type="Panel" parent="Int_Bestiario"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Description" type="NinePatchRect" parent="Int_Bestiario/Description"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.5
+offset_top = -108.0
+offset_right = 130.5
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_sexh7")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 5
+patch_margin_bottom = 4
+
+[node name="Name" type="Label" parent="Int_Bestiario/Description/Description"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.5
+offset_top = 10.0
+offset_right = 47.5
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "#Nombre"
+horizontal_alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="Int_Bestiario/Description/Description"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -118.5
+offset_top = -106.0
+offset_right = 119.5
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "#Descripcion"
+fit_content = true
+scroll_following = true
+
+[node name="Icon" type="TextureRect" parent="Int_Bestiario/Description/Description"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.283683
+anchor_top = 0.185605
+anchor_right = 0.701865
+anchor_bottom = 0.49757
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.0
+offset_top = 12.0
+offset_right = 131.0
+offset_bottom = 36.0
+grow_horizontal = 2
+text = "Bestiario"
+label_settings = SubResource("LabelSettings_u5o7g")

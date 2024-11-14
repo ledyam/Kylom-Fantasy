@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://brhbdqmyil5lk"]
+
+[ext_resource type="PackedScene" uid="uid://6rpyx7ocac0d" path="res://UI/UI_Interfaces/slot.tscn" id="1_lq6ym"]
+[ext_resource type="Texture2D" uid="uid://nv8p8s2n3sc6" path="res://Assets/Incong.png" id="2_2upas"]
+
+[node name="Slot" instance=ExtResource("1_lq6ym")]
+
+[node name="BG" parent="CenterContainer" index="0"]
+stretch_mode = 3
+
+[node name="Icon" parent="CenterContainer" index="1"]
+texture = ExtResource("2_2upas")

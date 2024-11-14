@@ -1,8 +1,7 @@
 extends Control
 @onready var menu: NinePatchRect = $Menu
 @onready var inventario: NinePatchRect = $CanvasLayer/Control/Inventario
-@export_multiline var default_text : String
-@export var description :NinePatchRect
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 var player : Player
 
@@ -12,20 +11,6 @@ func _ready() -> void:
 	inventario.visible = false
 	player = self.owner
 	
-#Muestra Descripción , textura y Título del Item
-func set_description(item : Dictionary):
-	description.find_child("Name").text = item["Name"]
-	description.find_child("Icon").texture = load(item["Texture"])
-	description.find_child("Description").text = item["Description"] 
-	#description.find_child("Stats").text = str(item["Stats"]) + '\n\n '+item["Rarity"]
-	
-	
-#Metodo por defecto para el Inventario General
-func Normality ():
-	description.find_child("Name").text = "Inventario"
-	description.find_child("Icon").texture = null
-	description.find_child("Description").text = default_text
-	description.find_child("Stats").text = ""
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Esc")   :
@@ -33,7 +18,7 @@ func _input(event: InputEvent) -> void:
 			animation_player.play("Hide_menu")
 		else: 
 			animation_player.play("Show_menu")
-		
+
 
 
 
