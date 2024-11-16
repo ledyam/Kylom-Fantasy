@@ -24,7 +24,7 @@ var item : Dictionary:
 
 func _on_mouse_entered() -> void:
 	if item.is_empty() :
-		owner.Normality()
+		owner.Default()
 	else :
 		owner.set_description(item)
 	pass
@@ -48,7 +48,7 @@ func _on_gui_input(event: InputEvent) -> void:
 				self.item.clear()
 				is_vacio = true
 				$CenterContainer/Icon.texture = null
-				owner.Normality()
+				owner.Default()
 		elif item.has("Type") :
 			var Equipables_SLot = owner.find_child("Equipable_Item").get_children()
 			

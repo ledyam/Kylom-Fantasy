@@ -1,8 +1,12 @@
 extends NinePatchRect
 @export_multiline var default_text : String
 @onready var coger_objeto: AudioStreamPlayer = $Sounds/CogerObjeto
-@onready var player_in_inv: AnimatedSprite2D = $Int_Inventario/Equipable_Item/PlayerInInv
+@onready var player_in_inv: AnimatedSprite2D = $PlayerInInv
 
+
+
+func _ready() -> void:
+	Default()
 
 func _process(delta: float) -> void:
 	if self.visible:
@@ -106,8 +110,8 @@ func set_description(item : Dictionary):
 	
 	
 #Metodo por defecto para el Inventario General
-func Normality ():
-	find_child("Name").text = "Inventario"
+func Default ():
+	find_child("Name").text = ""
 	find_child("Icon").texture = null
 	find_child("Description").text = default_text
 	find_child("Stats").text = ""

@@ -109,7 +109,7 @@ func Recibir_damage(enemy_attack : float):
 func on_RecibirVida(vida):
 	vida_actual += vida
 func Give_Experiencia (exp_recive : int ): 
-	if(player_ui.progress_bar_exp.value + exp_recive) > player_ui.progress_bar_exp.max_value:
+	if(player_ui.progress_bar_exp.value + exp_recive) >= player_ui.progress_bar_exp.max_value:
 		var resto = (player_ui.progress_bar_exp.value + exp_recive) - player_ui.progress_bar_exp.max_value
 		LEVEL_UP()
 		Max_Exp = LocalDatabase.content[str(current_level)]["Exp_Necesaria"]

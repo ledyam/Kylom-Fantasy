@@ -273,6 +273,10 @@ grow_vertical = 2
 layout_mode = 2
 text = "Inventario"
 
+[node name="Bestiario" parent="Menu/VBoxContainer" instance=ExtResource("5_vnmr3")]
+layout_mode = 2
+text = "Bestiario"
+
 [node name="Guardar" parent="Menu/VBoxContainer" instance=ExtResource("5_vnmr3")]
 layout_mode = 2
 text = "Guardar"
@@ -305,7 +309,6 @@ theme = ExtResource("1_lceqp")
 [node name="Inventario" parent="CanvasLayer/Control" instance=ExtResource("5_tnsaa")]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-default_text = "ASEREJE"
 
 [node name="Bestiary" parent="CanvasLayer/Control" instance=ExtResource("11_8o6i4")]
 layout_mode = 1
@@ -324,6 +327,7 @@ text = "Juego Guardado..."
 label_settings = SubResource("LabelSettings_vcia5")
 
 [connection signal="pressed" from="Menu/VBoxContainer/InventarioB" to="." method="_on_inventario_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Bestiario" to="." method="_on_bestiario_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Guardar" to="." method="_on_guardar_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Cargar" to="." method="_on_cargar_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Salir" to="." method="_on_salir_pressed"]

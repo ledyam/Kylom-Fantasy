@@ -22,7 +22,7 @@ buses/default_bus_layout=""
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-CurrentZone="*res://Global/GLOBAL.gd"
+GLOBAL="*res://Global/GLOBAL.gd"
 CentralSignal="*res://Global/CentralSignal.gd"
 DataBase="*res://DataBase/DataBase.gd"
 GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"

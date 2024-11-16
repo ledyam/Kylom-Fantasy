@@ -13,10 +13,6 @@
 atlas = ExtResource("1_uk4u5")
 region = Rect2(0.117874, 95.0915, 48.5292, 34.4172)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j0udk"]
-atlas = ExtResource("1_uk4u5")
-region = Rect2(48.1236, 96.0069, 32.0519, 31.3807)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_1x2rb"]
 atlas = ExtResource("4_4ifyf")
 region = Rect2(0, 0, 64, 64)
@@ -109,6 +105,10 @@ animations = [{
 "speed": 17.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0udk"]
+atlas = ExtResource("1_uk4u5")
+region = Rect2(48.1236, 96.0069, 32.0519, 31.3807)
+
 [sub_resource type="LabelSettings" id="LabelSettings_46po6"]
 font_size = 20
 
@@ -133,6 +133,15 @@ patch_margin_bottom = 7
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 script = ExtResource("2_f0txq")
+default_text = "Selecciona cualquier item en el Inventario "
+
+[node name="PlayerInInv" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(297, 143)
+scale = Vector2(2.875, 3.125)
+sprite_frames = SubResource("SpriteFrames_bu4l2")
+animation = &"Inv"
+frame_progress = 0.520267
 
 [node name="Int_Inventario" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -189,10 +198,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -65.6923
-offset_top = -34.5685
-offset_right = 70.3077
-offset_bottom = 35.4315
+offset_left = -66.5
+offset_top = 9.99992
+offset_right = 69.5
+offset_bottom = 79.9999
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
@@ -202,12 +211,14 @@ scroll_following = true
 [node name="Icon" type="TextureRect" parent="Int_Inventario/DescriptionPanel/DescriptionBackground"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.393939
-anchor_top = 0.123932
-anchor_right = 0.636364
-anchor_bottom = 0.273504
+anchor_left = 0.353591
+anchor_top = 0.18376
+anchor_right = 0.662983
+anchor_bottom = 0.388889
+offset_top = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="Stats" type="RichTextLabel" parent="Int_Inventario/DescriptionPanel/DescriptionBackground"]
 layout_mode = 1
@@ -217,9 +228,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -73.5
-offset_top = -93.0
+offset_top = -171.0
 offset_right = 70.5
-offset_bottom = -13.0
+offset_bottom = -91.0001
 grow_horizontal = 2
 grow_vertical = 0
 bbcode_enabled = true
@@ -298,13 +309,6 @@ offset_top = -17.5001
 offset_right = 68.5
 offset_bottom = -17.5001
 slot_type = 5
-
-[node name="PlayerInInv" type="AnimatedSprite2D" parent="Int_Inventario/Equipable_Item"]
-position = Vector2(95, 104)
-scale = Vector2(2.875, 3.125)
-sprite_frames = SubResource("SpriteFrames_bu4l2")
-animation = &"Inv"
-frame_progress = 0.0585229
 
 [node name="Items" type="Panel" parent="Int_Inventario"]
 layout_mode = 2

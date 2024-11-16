@@ -14,15 +14,18 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Esc") :
 		if  $Menu.visible : 
 			animation_player.play("Hide_menu")
-		else: 
-			animation_player.play("Show_menu")
 
+		elif !$Menu.visible && $CanvasLayer/Control/Inventario.visible or $CanvasLayer/Control/Bestiary.visible: 
+			$CanvasLayer/Control/Inventario.visible = false 
+			$CanvasLayer/Control/Bestiary.visible = false
+		elif !$Menu.visible: 
+			animation_player.play("Show_menu")
 
 	if event.is_action_pressed('Inventory'):
 		if inventario.visible:
 			animation_player.play("Hide_inventory")
-		else :
-			animation_player.play("Show_inventory")
+		elif !$CanvasLayer/Control/Bestiary.visible :
+				animation_player.play("Show_inventory")
 
 
 func _on_salir_pressed() -> void:
@@ -36,6 +39,11 @@ func _on_inventario_pressed() -> void:
 	animation_player.play("Show_inventory")
 	
 
+func _on_bestiario_pressed() -> void:
+	animation_player.play("Hide_menu")
+	await animation_player.animation_finished
+	$CanvasLayer/Control/Bestiary.visible = true 
+	pass # Replace with function body.
 
 
 

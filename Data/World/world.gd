@@ -9,7 +9,6 @@ var enemy
 
 func _ready() -> void:
 	animation_world.play("Fade_In_World")
-	CurrentZone.SetZone(self.name)
 	
 	
 
@@ -21,8 +20,6 @@ func _physics_process(_delta: float) -> void:
 		add_child(ske)
 	pass
 
-func _on_area_2d_body_entered(_body: Node2D) -> void:
-	CurrentZone.SetZone("Forest")
 	
 
 

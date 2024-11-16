@@ -21,32 +21,15 @@ const MINIMUM_DISTANCE = 13
 
 #region VARIABLES Instancias 
 var  numero_flotante : PackedScene = load("res://UI/Indicadores/numero_flotante.tscn")
-var Item : PackedScene= load("res://Data/Objects/objeto.tscn")
+var  Item : PackedScene = load("res://Data/Objects/objeto.tscn")
 
 signal Take_Damage
 
 func _ready() -> void:
-	randomize()
-	var file = FileAccess.open("res://DataBase/Local/Item_Equipable.json", FileAccess.READ)
-	if FileAccess.file_exists("res://DataBase/Local/Item_Equipable.json"):
-		var temp_loot : Dictionary = JSON.parse_string(file.get_as_text())
-		Item_Probabilidad(temp_loot)
-		file.close()
-		
-		
-#region FUNCIONES Instanciación 
-func Item_Probabilidad(temp_loot : Dictionary):
-	var total_drop : float = 0.0
-	var random : float = 0.0
-	for i in temp_loot:
-		total_drop += temp_loot[str(i)]["Drop"]
-	random = randf() * total_drop
-	var acumulador : float = 0.0
-	for i in temp_loot :
-		acumulador += temp_loot[str(i)]["Drop"]
-		if random <= acumulador:
-			loot = temp_loot[str(i)].duplicate(true)
-			break
+	loot = GLOBAL.Asignar_Item()
+	print ("ASAO")
+	
+
 func spawn_numero_flotante(damage ): 
 	var number = numero_flotante.instantiate()
 	number.position = global_position

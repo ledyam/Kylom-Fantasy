@@ -8,9 +8,6 @@ func enter() -> void:
 	
 func _dead() -> void:
 	var temporal_item = enemy.Item.instantiate()
-	temporal_item.global_position = enemy.global_position
-	temporal_item.Stats = enemy.loot.duplicate()
-	get_tree().current_scene.add_child(temporal_item)
-	enemy.player.Give_Experiencia (randi_range(20 , 35))
+	CentralSignal.Instantiate.emit(temporal_item , enemy.global_position,enemy.loot.duplicate())
 	CentralSignal.Unlock_Bestiary.emit(enemy.NOMBRE)
 	enemy.queue_free()

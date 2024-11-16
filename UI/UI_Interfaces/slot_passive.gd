@@ -5,8 +5,7 @@ extends Control
 var slot_type : int 
 
 
-var Default : Dictionary = {
-	
+var default : Dictionary = {
 	0:load("res://Assets/GUI/GUI/Casco.png"),
 	1:load("res://Assets/GUI/GUI/Pecho.png"),
 	2:load("res://Assets/GUI/GUI/Pantalones.png"),
@@ -21,28 +20,37 @@ var item : Dictionary:
 	set(value):
 		item = value
 		if item.is_empty() :
-			$CenterContainer/Icon.texture = Default[slot_type]
+			$CenterContainer/Icon.texture = default[slot_type]
 		else:
 			$Equip.play()
 			$CenterContainer/Icon.texture = load(item["Texture"])
 
 func _on_mouse_entered() -> void:
 	if item.is_empty() : 
-		owner.Normality()
-		
+		owner.Default()
 	else : 
 		owner.set_description(item)
 	pass 
-
+	
 func _ready() -> void:
-		$CenterContainer/Icon.texture = Default[slot_type]
+		$CenterContainer/Icon.texture = default[slot_type]
 
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
 		if !self.item.is_empty():
-			$CenterContainer/Icon.texture = Default[slot_type]
-			owner.Normality()
+			$CenterContainer/Icon.texture = default[slot_type]
+			owner.Default()
+			Desasignar_Stats()
 			$Unquip.play()
 			owner.add_item(item.duplicate(true))
 			self.item.clear()
+
+
+func Desasignar_Stats():
+	match item["Type"] : 
+		"Espada" : 
+			print(item["Stats"]["Ataque"])
+			owner.owner.player.ATK -= item["Stats"]["Ataque"]
+		"Escudo":
+			owner.owner.player.DEF -= item["Stats"]["Protection"]

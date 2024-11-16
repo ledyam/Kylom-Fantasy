@@ -20,12 +20,3 @@ func _on_area_2d_body_exited(_body: Node2D) -> void:
 	player = null
 	print ("Saliendo de señal")
 	pass # Replace with function body.
-
-
-
-func _on_dead_timeout() -> void:
-	var temporal_item = Item.instantiate()
-	temporal_item.global_position = self.global_position
-	temporal_item.Stats = loot.duplicate()
-	get_tree().current_scene.add_child(temporal_item)
-	queue_free()
