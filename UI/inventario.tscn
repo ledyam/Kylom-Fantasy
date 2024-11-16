@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://ckmhjkds58k4w"]
+[gd_scene load_steps=25 format=3 uid="uid://ckmhjkds58k4w"]
 
 [ext_resource type="Texture2D" uid="uid://c75pdyh7y2c8" path="res://Assets/Tiles/GUI/GUI/GUI.png" id="1_uk4u5"]
 [ext_resource type="Script" path="res://UI/UI_Interfaces/inventario.gd" id="2_f0txq"]
 [ext_resource type="PackedScene" uid="uid://dknkcxjhftvvj" path="res://UI/UI_Interfaces/slot_passive.tscn" id="3_aifig"]
+[ext_resource type="Texture2D" uid="uid://ld536ny8llue" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Front animations/spr_player_front_idle.png" id="4_4ifyf"]
 [ext_resource type="PackedScene" uid="uid://b4earws7layh2" path="res://UI/UI_Interfaces/slot_Inventory.tscn" id="4_64eyj"]
 [ext_resource type="AudioStream" uid="uid://fgh5defjieg1" path="res://Assets/Sounds/level-up-3-199576.mp3" id="5_epkjq"]
 [ext_resource type="AudioStream" uid="uid://d22avlb4mj8vn" path="res://Assets/Sounds/UI Close.wav" id="6_63ln4"]
@@ -15,6 +16,98 @@ region = Rect2(0.117874, 95.0915, 48.5292, 34.4172)
 [sub_resource type="AtlasTexture" id="AtlasTexture_j0udk"]
 atlas = ExtResource("1_uk4u5")
 region = Rect2(48.1236, 96.0069, 32.0519, 31.3807)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x2rb"]
+atlas = ExtResource("4_4ifyf")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj2cx"]
+atlas = ExtResource("4_4ifyf")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_845nv"]
+atlas = ExtResource("4_4ifyf")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkoo2"]
+atlas = ExtResource("4_4ifyf")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jaenp"]
+atlas = ExtResource("4_4ifyf")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sp4co"]
+atlas = ExtResource("4_4ifyf")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ei25u"]
+atlas = ExtResource("4_4ifyf")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl0le"]
+atlas = ExtResource("4_4ifyf")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypcj1"]
+atlas = ExtResource("4_4ifyf")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kahx"]
+atlas = ExtResource("4_4ifyf")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_diduk"]
+atlas = ExtResource("4_4ifyf")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c40h4"]
+atlas = ExtResource("4_4ifyf")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bu4l2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1x2rb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj2cx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_845nv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkoo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jaenp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sp4co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ei25u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cl0le")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypcj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kahx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_diduk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c40h4")
+}],
+"loop": true,
+"name": &"Inv",
+"speed": 17.0
+}]
 
 [sub_resource type="LabelSettings" id="LabelSettings_46po6"]
 font_size = 20
@@ -141,50 +234,77 @@ fixed_column_width = 2
 
 [node name="Slot" parent="Int_Inventario/Equipable_Item" instance=ExtResource("3_aifig")]
 layout_mode = 1
-offset_left = 0.5
-offset_top = -19.5
-offset_right = 0.5
-offset_bottom = -19.5
+offset_left = -67.5
+offset_top = -17.5001
+offset_right = -67.5
+offset_bottom = -17.5001
 slot_type = 1
 
 [node name="Slot2" parent="Int_Inventario/Equipable_Item" instance=ExtResource("3_aifig")]
 layout_mode = 1
-offset_left = 0.499985
-offset_top = 32.5
-offset_right = 0.499985
-offset_bottom = 32.5
+offset_left = -67.5
+offset_top = 50.4999
+offset_right = -67.5
+offset_bottom = 50.4999
 slot_type = 2
 
 [node name="Slot3" parent="Int_Inventario/Equipable_Item" instance=ExtResource("3_aifig")]
 layout_mode = 1
-offset_left = 1.49998
-offset_top = -73.5
-offset_right = 1.49998
-offset_bottom = -73.5
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = -67.5
+offset_top = 32.9999
+offset_right = -67.5
+offset_bottom = 32.9999
+grow_vertical = 1
 
 [node name="Slot4" parent="Int_Inventario/Equipable_Item" instance=ExtResource("3_aifig")]
 layout_mode = 1
-offset_left = 46.5
-offset_top = -45.5
-offset_right = 46.5
-offset_bottom = -45.5
+offset_left = 20.5
+offset_top = 90.4999
+offset_right = 20.5
+offset_bottom = 90.4999
 slot_type = 4
 
 [node name="Slot5" parent="Int_Inventario/Equipable_Item" instance=ExtResource("3_aifig")]
 layout_mode = 1
-offset_left = -42.5
-offset_top = -45.5
-offset_right = -42.5
-offset_bottom = -45.5
+offset_left = -19.5
+offset_top = 90.4999
+offset_right = -19.5
+offset_bottom = 90.4999
 slot_type = 3
 
 [node name="Slot6" parent="Int_Inventario/Equipable_Item" instance=ExtResource("3_aifig")]
 layout_mode = 1
-offset_left = 0.5
-offset_top = 81.5
-offset_right = 0.5
-offset_bottom = 81.5
+offset_left = 68.5
+offset_top = -84.5001
+offset_right = 68.5
+offset_bottom = -84.5001
+slot_type = 7
+
+[node name="Slot7" parent="Int_Inventario/Equipable_Item" instance=ExtResource("3_aifig")]
+layout_mode = 1
+offset_left = 68.5
+offset_top = 50.4999
+offset_right = 68.5
+offset_bottom = 50.4999
+slot_type = 6
+
+[node name="Slot8" parent="Int_Inventario/Equipable_Item" instance=ExtResource("3_aifig")]
+layout_mode = 1
+offset_left = 68.5
+offset_top = -17.5001
+offset_right = 68.5
+offset_bottom = -17.5001
 slot_type = 5
+
+[node name="PlayerInInv" type="AnimatedSprite2D" parent="Int_Inventario/Equipable_Item"]
+position = Vector2(95, 104)
+scale = Vector2(2.875, 3.125)
+sprite_frames = SubResource("SpriteFrames_bu4l2")
+animation = &"Inv"
+frame_progress = 0.0585229
 
 [node name="Items" type="Panel" parent="Int_Inventario"]
 layout_mode = 2

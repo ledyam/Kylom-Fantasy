@@ -1,7 +1,12 @@
 extends NinePatchRect
 @export_multiline var default_text : String
 @onready var coger_objeto: AudioStreamPlayer = $Sounds/CogerObjeto
+@onready var player_in_inv: AnimatedSprite2D = $Int_Inventario/Equipable_Item/PlayerInInv
 
+
+func _process(delta: float) -> void:
+	if self.visible:
+		player_in_inv.play("Inv")
 #Método para agregar items al inventario
 func add_item (item ) :
 	var index = self.find_child("GridContainer")

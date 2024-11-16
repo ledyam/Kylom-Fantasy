@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://q1cmeacruiwm"]
+[gd_scene load_steps=16 format=3 uid="uid://q1cmeacruiwm"]
 
 [ext_resource type="Texture2D" uid="uid://c75pdyh7y2c8" path="res://Assets/Tiles/GUI/GUI/GUI.png" id="1_aubuc"]
 [ext_resource type="Script" path="res://UI/bestiary.gd" id="1_wjln5"]
 [ext_resource type="PackedScene" uid="uid://brhbdqmyil5lk" path="res://UI/UI_Interfaces/slot_bestiary.tscn" id="2_43n46"]
+[ext_resource type="Texture2D" uid="uid://ttvu8o3yb8ki" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Enemy Pack1/Slime/Blue Slime/spr_Blue_slime_walk.png" id="4_v23bt"]
+[ext_resource type="Texture2D" uid="uid://bt7obsoyet57j" path="res://Assets/2.png" id="5_l72g2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h80l1"]
 atlas = ExtResource("1_aubuc")
@@ -11,6 +13,61 @@ region = Rect2(0.117874, 95.0915, 48.5292, 34.4172)
 [sub_resource type="AtlasTexture" id="AtlasTexture_sexh7"]
 atlas = ExtResource("1_aubuc")
 region = Rect2(48.1236, 96.0069, 32.0519, 31.3807)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n74kw"]
+atlas = ExtResource("4_v23bt")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp8uv"]
+atlas = ExtResource("4_v23bt")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oev8c"]
+atlas = ExtResource("4_v23bt")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj5r4"]
+atlas = ExtResource("4_v23bt")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8i61"]
+atlas = ExtResource("4_v23bt")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fj4q"]
+atlas = ExtResource("4_v23bt")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_buory"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n74kw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp8uv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oev8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj5r4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8i61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fj4q")
+}],
+"loop": true,
+"name": &"Slime",
+"speed": 14.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="LabelSettings" id="LabelSettings_u5o7g"]
 font_size = 20
@@ -36,6 +93,7 @@ patch_margin_bottom = 7
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 script = ExtResource("1_wjln5")
+default_text = "Descubre nuevos enemigos en tus aventuras para desbloquearlos"
 
 [node name="Int_Bestiario" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -62,15 +120,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -67.6923
+offset_left = -104.192
 offset_top = -89.5685
-offset_right = 64.3077
+offset_right = 100.808
 offset_bottom = 86.4315
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
-theme_override_constants/h_separation = 42
-theme_override_constants/v_separation = 41
+theme_override_constants/h_separation = 41
+theme_override_constants/v_separation = 40
 columns = 6
 
 [node name="Slot" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
@@ -133,21 +191,21 @@ layout_mode = 2
 [node name="Slot20" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
 layout_mode = 2
 
-[node name="Description" type="Panel" parent="Int_Bestiario"]
+[node name="DescriptionPanel" type="Panel" parent="Int_Bestiario"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Description" type="NinePatchRect" parent="Int_Bestiario/Description"]
+[node name="DescriptionZone" type="NinePatchRect" parent="Int_Bestiario/DescriptionPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -129.5
-offset_top = -108.0
-offset_right = 130.5
-offset_bottom = 106.0
+offset_left = -130.5
+offset_top = -109.5
+offset_right = 129.5
+offset_bottom = 104.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -157,7 +215,11 @@ patch_margin_top = 4
 patch_margin_right = 5
 patch_margin_bottom = 4
 
-[node name="Name" type="Label" parent="Int_Bestiario/Description/Description"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Int_Bestiario/DescriptionPanel/DescriptionZone"]
+position = Vector2(134, 70)
+sprite_frames = SubResource("SpriteFrames_buory")
+
+[node name="Name" type="Label" parent="Int_Bestiario/DescriptionPanel/DescriptionZone"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -170,17 +232,17 @@ grow_horizontal = 2
 text = "#Nombre"
 horizontal_alignment = 1
 
-[node name="Description" type="RichTextLabel" parent="Int_Bestiario/Description/Description"]
+[node name="Description" type="RichTextLabel" parent="Int_Bestiario/DescriptionPanel/DescriptionZone"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -118.5
-offset_top = -106.0
-offset_right = 119.5
-offset_bottom = -9.0
+offset_left = -86.0
+offset_top = -72.0
+offset_right = 103.0
+offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 0
 bbcode_enabled = true
@@ -188,25 +250,32 @@ text = "#Descripcion"
 fit_content = true
 scroll_following = true
 
-[node name="Icon" type="TextureRect" parent="Int_Bestiario/Description/Description"]
+[node name="Default" type="TextureRect" parent="Int_Bestiario/DescriptionPanel/DescriptionZone"]
+texture_filter = 1
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.283683
-anchor_top = 0.185605
-anchor_right = 0.701865
-anchor_bottom = 0.49757
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -74.0
+offset_right = 50.0
+offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("5_l72g2")
+expand_mode = 3
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -67.0
-offset_top = 12.0
-offset_right = 131.0
-offset_bottom = 36.0
+offset_left = -75.0
+offset_top = 15.0
+offset_right = 73.0
+offset_bottom = 39.0
 grow_horizontal = 2
-text = "Bestiario"
+text = "BESTIARIO"
 label_settings = SubResource("LabelSettings_u5o7g")

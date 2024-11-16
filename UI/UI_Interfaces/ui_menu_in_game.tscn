@@ -307,8 +307,10 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 default_text = "ASEREJE"
 
+[node name="Bestiary" parent="CanvasLayer/Control" instance=ExtResource("11_8o6i4")]
+layout_mode = 1
+
 [node name="Saving_Alert" type="Label" parent="CanvasLayer/Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -320,9 +322,6 @@ offset_bottom = 146.0
 grow_vertical = 0
 text = "Juego Guardado..."
 label_settings = SubResource("LabelSettings_vcia5")
-
-[node name="Bestiary" parent="CanvasLayer/Control" instance=ExtResource("11_8o6i4")]
-layout_mode = 1
 
 [connection signal="pressed" from="Menu/VBoxContainer/InventarioB" to="." method="_on_inventario_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Guardar" to="." method="_on_guardar_pressed"]

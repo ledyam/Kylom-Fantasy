@@ -1,25 +1,21 @@
 extends Control
-@onready var menu: NinePatchRect = $Menu
 @onready var inventario: NinePatchRect = $CanvasLayer/Control/Inventario
-
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 var player : Player
 
-
 func _ready() -> void:
-	menu.visible = false
+	$Menu.visible = false
 	inventario.visible = false
+	$CanvasLayer/Control/Saving_Alert.visible = false 
 	player = self.owner
 	
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Esc")   :
-		if  menu.visible : 
+	if event.is_action_pressed("Esc") :
+		if  $Menu.visible : 
 			animation_player.play("Hide_menu")
 		else: 
 			animation_player.play("Show_menu")
-
-
 
 
 	if event.is_action_pressed('Inventory'):

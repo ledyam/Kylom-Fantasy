@@ -1,7 +1,8 @@
 extends Control
 
 @export_enum("Cabeza : 0" , "Pecho : 1", "Piernas : 2" ,  "Arma : 3" ,         \
- " Protección : 4", "Botas : 5","Manos : 6"  ) var slot_type : int 
+ " Protección : 4", "Botas : 5", "Anillo : 6" , "Collar: 7") \
+var slot_type : int 
 
 
 var Default : Dictionary = {
@@ -12,7 +13,8 @@ var Default : Dictionary = {
 	3:load("res://Assets/GUI/GUI/Arma.png"),
 	4:load("res://Assets/GUI/GUI/Protection.png"),
 	5:load("res://Assets/GUI/GUI/Botas.png"),
-	#6:load("res://Assets/GUI/GUI/Manos.png")
+	6:load("res://Assets/GUI/GUI/Anillo.png"),
+	7:load("res://Assets/GUI/GUI/Collar.png")
 }
 
 var item : Dictionary:

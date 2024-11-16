@@ -12,4 +12,5 @@ func _dead() -> void:
 	temporal_item.Stats = enemy.loot.duplicate()
 	get_tree().current_scene.add_child(temporal_item)
 	enemy.player.Give_Experiencia (randi_range(20 , 35))
+	CentralSignal.Unlock_Bestiary.emit(enemy.NOMBRE)
 	enemy.queue_free()
