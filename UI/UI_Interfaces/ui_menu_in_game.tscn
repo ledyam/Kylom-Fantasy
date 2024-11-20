@@ -311,9 +311,11 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 
 [node name="Bestiary" parent="CanvasLayer/Control" instance=ExtResource("11_8o6i4")]
+visible = false
 layout_mode = 1
 
 [node name="Saving_Alert" type="Label" parent="CanvasLayer/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0

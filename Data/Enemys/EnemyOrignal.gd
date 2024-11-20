@@ -27,6 +27,7 @@ signal Take_Damage
 
 func _ready() -> void:
 	loot = GLOBAL.Asignar_Item()
+	loot = GLOBAL.Asignar_Item()
 	print ("ASAO")
 	
 

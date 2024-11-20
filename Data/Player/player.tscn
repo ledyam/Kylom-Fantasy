@@ -2325,7 +2325,7 @@ zoom = Vector2(1.7, 1.7)
 limit_left = -2000
 limit_top = -1500
 limit_right = 2000
-limit_bottom = 1500
+limit_bottom = 0
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_ghpk6")

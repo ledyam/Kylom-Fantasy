@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://c75pdyh7y2c8" path="res://Assets/Tiles/GUI/GUI/GUI.png" id="1_aubuc"]
 [ext_resource type="Script" path="res://UI/bestiary.gd" id="1_wjln5"]
 [ext_resource type="PackedScene" uid="uid://brhbdqmyil5lk" path="res://UI/UI_Interfaces/slot_bestiary.tscn" id="2_43n46"]
-[ext_resource type="Texture2D" uid="uid://b4qx4nrma62m" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Enemy Pack1/Golbin/spr_goblin_walk.png" id="4_8g4jc"]
-[ext_resource type="Texture2D" uid="uid://ttvu8o3yb8ki" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Enemy Pack1/Slime/Blue Slime/spr_Blue_slime_walk.png" id="4_v23bt"]
+[ext_resource type="Texture2D" uid="uid://re857e8v6ct8" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Enemy Pack/Goblin/spr_goblin_walk_right.png" id="4_8g4jc"]
+[ext_resource type="Texture2D" uid="uid://ttvu8o3yb8ki" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Enemy Pack/Slime/Blue Slime/spr_Blue_slime_walk.png" id="4_v23bt"]
 [ext_resource type="Texture2D" uid="uid://bt7obsoyet57j" path="res://Assets/2.png" id="5_l72g2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h80l1"]
@@ -267,7 +267,7 @@ patch_margin_bottom = 4
 position = Vector2(134, 70)
 sprite_frames = SubResource("SpriteFrames_buory")
 animation = &"Goblin"
-frame_progress = 0.0339931
+frame_progress = 0.108119
 
 [node name="Name" type="Label" parent="Int_Bestiario/DescriptionPanel/DescriptionZone"]
 layout_mode = 1

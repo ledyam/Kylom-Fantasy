@@ -2,6 +2,7 @@
 class_name Humanoid extends "res://Data/Enemys/EnemyOrignal.gd"
 
 
+
 @onready var anim_enemy: AnimationPlayer = $AnimationEnemy
 @export var Patrullaje : Node2D
 
