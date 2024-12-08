@@ -1,44 +1,31 @@
 extends Control
-@onready var menu: NinePatchRect = $Menu
 @onready var inventario: NinePatchRect = $CanvasLayer/Control/Inventario
-@export_multiline var default_text : String
-@export var description :NinePatchRect
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 var player : Player
 
-
 func _ready() -> void:
-	menu.visible = false
+	$CanvasLayer/Control/Menu.visible = false
 	inventario.visible = false
+	$CanvasLayer/Control/Saving_Alert.visible = false 
 	player = self.owner
 	
-#Muestra Descripción , textura y Título del Item
-func set_description(item : Dictionary):
-	description.find_child("Name").text = item["Name"]
-	description.find_child("Icon").texture = load(item["Texture"])
-	description.find_child("Description").text = item["Description"]
-
-#Metodo por defecto para el Inventario General
-func Normality ():
-	description.find_child("Name").text = "Inventario"
-	description.find_child("Icon").texture = null
-	description.find_child("Description").text = default_text
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Esc")   :
-		if  menu.visible : 
+	if event.is_action_pressed("Esc") :
+		if  $CanvasLayer/Control/Menu.visible : 
 			animation_player.play("Hide_menu")
-		else: 
+
+		elif !$CanvasLayer/Control/Menu.visible && $CanvasLayer/Control/Inventario.visible or $CanvasLayer/Control/Bestiary.visible: 
+			$CanvasLayer/Control/Inventario.visible = false 
+			$CanvasLayer/Control/Bestiary.visible = false
+		elif !$CanvasLayer/Control/Menu.visible: 
 			animation_player.play("Show_menu")
-		
-
-
 
 	if event.is_action_pressed('Inventory'):
 		if inventario.visible:
 			animation_player.play("Hide_inventory")
-		else :
-			animation_player.play("Show_inventory")
+		elif !$CanvasLayer/Control/Bestiary.visible :
+				animation_player.play("Show_inventory")
 
 
 func _on_salir_pressed() -> void:
@@ -52,6 +39,11 @@ func _on_inventario_pressed() -> void:
 	animation_player.play("Show_inventory")
 	
 
+func _on_bestiario_pressed() -> void:
+	animation_player.play("Hide_menu")
+	await animation_player.animation_finished
+	$CanvasLayer/Control/Bestiary.visible = true 
+	pass # Replace with function body.
 
 
 
@@ -67,7 +59,6 @@ func _on_guardar_pressed() -> void:
 func _on_cargar_pressed() -> void:
 	var data : Dictionary =  SaveLoad.Load()
 	
-	
 #region Estadisiticas del Player
 	player.position = str_to_var(data.player.position)
 	player.vida_actual  = str_to_var(data.player.vida_actual)
@@ -76,7 +67,7 @@ func _on_cargar_pressed() -> void:
 	player.Max_Exp =  str_to_var (data.player.Max_Exp)
 	player.current_level = str_to_var (data.player.current_level)
 #endregion
-	
+
 #region Inventario
 	inventario.CargarInv(data.inventory)
 #endregion
@@ -89,7 +80,8 @@ func _on_cargar_pressed() -> void:
 	player.player_ui.reloj.month_count = str_to_var(data.player.player_reloj.month)
 #endregion
 	
-		
+#region Instanciación de Enemigos Guardados
+
 	if !get_tree().get_nodes_in_group("Enemy").is_empty():
 		get_tree().call_group("Enemy", "queue_free")
 		for enemy_config in data.enemies:
@@ -97,3 +89,4 @@ func _on_cargar_pressed() -> void:
 			enemy.position = str_to_var(enemy_config.position)
 			get_tree().current_scene.add_child(enemy)
 	pass # Replace with function body.
+#endregion

@@ -8,7 +8,8 @@ var recibir_damage = false
 var cooldown_Rdamage = false
 var knockback = Vector2.ZERO
 var can_attack : bool = true
-var can_move : bool = true 
+var is_jumping : bool = false
+var is_moving : bool = false 
 #endregion
 
 #Variables Atributos Principales Genéricos
@@ -24,6 +25,7 @@ var Carisma : int = 5
 var numero_flotante : PackedScene = load("res://UI/Indicadores/numero_flotante.tscn")
 
 #region SEÑALES
+signal Hit_Damage
 #endregion
  
 func spawn_numero_flotante(damage): 

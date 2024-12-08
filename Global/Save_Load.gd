@@ -1,9 +1,6 @@
 extends Node
 const SAVE_PATH = "user://Guardado1.json"
 
-# Called when the node enters the scene tree for the first time.
-
-
 
 func Save (player : Player , inventario) -> void:
 	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -32,7 +29,6 @@ func Save (player : Player , inventario) -> void:
 		save_dict.enemies.push_back({
 			position = var_to_str(enemy.position),
 		})
-
 	file.store_line(JSON.stringify(save_dict))
 	pass
 
@@ -42,4 +38,4 @@ func Load():
 	json.parse(file.get_line())
 	var save_dict := json.get_data() as Dictionary
 	return save_dict
-	pass
+	
