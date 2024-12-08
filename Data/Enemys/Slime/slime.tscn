@@ -1,19 +1,20 @@
-[gd_scene load_steps=75 format=3 uid="uid://c5yg2ij4c0jes"]
+[gd_scene load_steps=76 format=3 uid="uid://c5yg2ij4c0jes"]
 
 [ext_resource type="Script" path="res://Data/Enemys/Slime/slime.gd" id="1_f8vrb"]
 [ext_resource type="Texture2D" uid="uid://jta3fi43chj0" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Enemy Pack1/Slime/Blue Slime/spr_Blue_slime_death.png" id="1_faxs8"]
 [ext_resource type="Texture2D" uid="uid://bhucx8ebj8p80" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Enemy Pack1/Slime/Blue Slime/spr_Blue_slime_hurt.png" id="2_e06ig"]
-[ext_resource type="Script" path="res://Data/Enemys/Skeleton/Scripts/state_machine_enemy.gd" id="2_oltfq"]
+[ext_resource type="Script" path="res://Data/Enemys/Generic/Scripts/state_machine_enemy.gd" id="2_i5iue"]
+[ext_resource type="Script" path="res://Data/Enemys/Generic/Scripts/enemy_idle_state.gd" id="3_kni1l"]
 [ext_resource type="Texture2D" uid="uid://ck5b2k31qmh6j" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Enemy Pack1/Slime/Blue Slime/spr_Blue_slime_attack.png" id="3_qixca"]
 [ext_resource type="Texture2D" uid="uid://dnokqqmvi7qti" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Enemy Pack1/Slime/Blue Slime/spr_Blue_slime_idle.png" id="4_8lu31"]
 [ext_resource type="Texture2D" uid="uid://ttvu8o3yb8ki" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Enemy Pack1/Slime/Blue Slime/spr_Blue_slime_walk.png" id="5_djbw4"]
-[ext_resource type="Script" path="res://Data/Enemys/Slime/enemy_idle.gd" id="8_0bfyh"]
+[ext_resource type="Script" path="res://Data/Enemys/Generic/Scripts/enemy_dead.gd" id="5_p467i"]
+[ext_resource type="Script" path="res://Data/Enemys/Generic/Scripts/enemy_take_damage.gd" id="6_ebq2x"]
+[ext_resource type="Script" path="res://Data/Enemys/Generic/Scripts/enemy_patrullaje.gd" id="6_xtevj"]
+[ext_resource type="Script" path="res://Data/Enemys/Generic/Scripts/attack.gd" id="8_4tarf"]
 [ext_resource type="Script" path="res://Data/Enemys/Slime/enemy_walk.gd" id="9_gc5ts"]
 [ext_resource type="PackedScene" uid="uid://bcyomv3f2203e" path="res://Data/Enemys/Generic/patrullaje.tscn" id="9_qd4gj"]
 [ext_resource type="PackedScene" uid="uid://oe8ee4f7bqeh" path="res://UI/Indicadores/indicador_level.tscn" id="10_6cefr"]
-[ext_resource type="Script" path="res://Data/Enemys/Slime/enemy_dead.gd" id="10_d4fae"]
-[ext_resource type="Script" path="res://Data/Enemys/Slime/enemy_take_damage.gd" id="11_ckpwl"]
-[ext_resource type="Script" path="res://Data/Enemys/Slime/enemy_patrullaje.gd" id="12_b6v5p"]
 [ext_resource type="AudioStream" uid="uid://c2yi11mb42p3w" path="res://Assets/Sounds/Mobs Sounds/slime-squish-4-218568.mp3" id="15_r3x3b"]
 [ext_resource type="AudioStream" uid="uid://dxxbo1w7jxmo1" path="res://Assets/Sounds/Mobs Sounds/slimejump-6913.mp3" id="16_vtqls"]
 
@@ -367,57 +368,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pluhw"]
-radius = 3.0
-height = 10.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_3strd"]
-radius = 47.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_52jv5"]
-radius = 13.3417
-
-[sub_resource type="Animation" id="Animation_s7w8e"]
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Enemy_Take_Damage"]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sounds/Hit_Damage")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [0.0],
-"method": &"play"
-}]
-}
-
 [sub_resource type="Animation" id="Animation_x5r2s"]
 length = 0.882353
 tracks/0/type = "value"
@@ -499,6 +449,18 @@ tracks/2/keys = {
 "method": &"_dead"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Collision_Body:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_ygjup"]
 length = 0.666667
@@ -526,6 +488,48 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["Enemy_idle"]
+}
+
+[sub_resource type="Animation" id="Animation_s7w8e"]
+resource_name = "Enemy_take_damage"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Enemy_Take_Damage"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sounds/Hit_Damage")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_7es1d"]
@@ -624,53 +628,82 @@ tracks/0/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Collision_Body:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kh2xn"]
 _data = {
-"Enemy_Take_Damage": SubResource("Animation_s7w8e"),
 "Enemy_attack": SubResource("Animation_x5r2s"),
 "Enemy_dead": SubResource("Animation_2vuba"),
 "Enemy_idle": SubResource("Animation_ygjup"),
+"Enemy_take_damage": SubResource("Animation_s7w8e"),
 "Enemy_walk_left": SubResource("Animation_7es1d"),
 "Enemy_walk_right": SubResource("Animation_4pcop"),
 "RESET": SubResource("Animation_gk0mk")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pluhw"]
+radius = 3.0
+height = 10.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3strd"]
+radius = 47.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_52jv5"]
+radius = 13.3417
+
 [node name="Slime" type="CharacterBody2D" node_paths=PackedStringArray("Patrullaje")]
 script = ExtResource("1_f8vrb")
 Patrullaje = NodePath("Patrullaje")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_eryfk")
-animation = &"Enemy_dead"
-autoplay = "Enemy_idle"
-frame = 14
-
 [node name="StateMachine" type="Node" parent="."]
-script = ExtResource("2_oltfq")
+script = ExtResource("2_i5iue")
 initial_state = NodePath("Idle")
 DEBUG = false
 
 [node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource("8_0bfyh")
+script = ExtResource("3_kni1l")
 
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("9_gc5ts")
 
 [node name="Dead" type="Node" parent="StateMachine"]
-script = ExtResource("10_d4fae")
+script = ExtResource("5_p467i")
 
 [node name="TakeDamage" type="Node" parent="StateMachine"]
-script = ExtResource("11_ckpwl")
+script = ExtResource("6_ebq2x")
 
 [node name="Patrullaje" type="Node" parent="StateMachine"]
-script = ExtResource("12_b6v5p")
+script = ExtResource("6_xtevj")
 
 [node name="Receso_Patrullaje" type="Timer" parent="StateMachine/Patrullaje"]
 process_callback = 0
 wait_time = 7.284
 one_shot = true
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("8_4tarf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_eryfk")
+animation = &"Enemy_attack"
+autoplay = "Enemy_idle"
+
+[node name="AnimationEnemy" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kh2xn")
+}
 
 [node name="Collision_Body" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_pluhw")
@@ -687,8 +720,13 @@ debug_color = Color(0.976471, 0.117647, 0.117647, 0.419608)
 shape = SubResource("CircleShape2D_52jv5")
 debug_color = Color(0.159617, 0.7, 0.213134, 0.42)
 
-[node name="CD_TakeDamage" type="Timer" parent="."]
-wait_time = 0.433
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Hit_Damage" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("15_r3x3b")
+
+[node name="Jump" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("16_vtqls")
 
 [node name="Patrullaje" parent="." instance=ExtResource("9_qd4gj")]
 group_name = "FirstEnemy"
@@ -701,23 +739,10 @@ offset_bottom = -2.0
 scale = Vector2(0.5, 0.5)
 text = "Slime Lv.#"
 
-[node name="AnimationEnemy" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_kh2xn")
-}
-
-[node name="Sounds" type="Node" parent="."]
-
-[node name="Hit_Damage" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("15_r3x3b")
-
-[node name="Jump" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("16_vtqls")
-
 [connection signal="Take_Damage" from="." to="StateMachine/Walk" method="_on_take_damage"]
 [connection signal="timeout" from="StateMachine/Patrullaje/Receso_Patrullaje" to="StateMachine/Patrullaje" method="_on_receso_patrullaje_timeout"]
+[connection signal="animation_finished" from="AnimationEnemy" to="StateMachine/TakeDamage" method="_on_animation_enemy_animation_finished"]
 [connection signal="body_entered" from="Area_Vigilancia" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area_Vigilancia" to="." method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Area_Salto" to="StateMachine/Walk" method="_on_area_salto_body_entered"]
-[connection signal="body_exited" from="Area_Salto" to="StateMachine/Walk" method="_on_area_salto_body_exited"]
-[connection signal="timeout" from="CD_TakeDamage" to="StateMachine/TakeDamage" method="_on_cd_take_damage_timeout"]
+[connection signal="body_entered" from="Area_Salto" to="." method="_on_area_salto_body_entered"]
+[connection signal="body_exited" from="Area_Salto" to="." method="_on_area_salto_body_exited"]

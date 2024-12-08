@@ -1,47 +1,31 @@
 extends Control
-@onready var menu: NinePatchRect = $Menu
 @onready var inventario: NinePatchRect = $CanvasLayer/Control/Inventario
-@export_multiline var default_text : String
-@export var description :NinePatchRect
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 var player : Player
 
-
 func _ready() -> void:
-	menu.visible = false
+	$CanvasLayer/Control/Menu.visible = false
 	inventario.visible = false
+	$CanvasLayer/Control/Saving_Alert.visible = false 
 	player = self.owner
 	
-#Muestra Descripción , textura y Título del Item
-func set_description(item : Dictionary):
-	description.find_child("Name").text = item["Name"]
-	description.find_child("Icon").texture = load(item["Texture"])
-	description.find_child("Description").text = item["Description"] 
-	#description.find_child("Stats").text = str(item["Stats"]) + '\n\n '+item["Rarity"]
-	
-	
-#Metodo por defecto para el Inventario General
-func Normality ():
-	description.find_child("Name").text = "Inventario"
-	description.find_child("Icon").texture = null
-	description.find_child("Description").text = default_text
-	description.find_child("Stats").text = ""
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Esc")   :
-		if  menu.visible : 
+	if event.is_action_pressed("Esc") :
+		if  $CanvasLayer/Control/Menu.visible : 
 			animation_player.play("Hide_menu")
-		else: 
+
+		elif !$CanvasLayer/Control/Menu.visible && $CanvasLayer/Control/Inventario.visible or $CanvasLayer/Control/Bestiary.visible: 
+			$CanvasLayer/Control/Inventario.visible = false 
+			$CanvasLayer/Control/Bestiary.visible = false
+		elif !$CanvasLayer/Control/Menu.visible: 
 			animation_player.play("Show_menu")
-		
-
-
 
 	if event.is_action_pressed('Inventory'):
 		if inventario.visible:
 			animation_player.play("Hide_inventory")
-		else :
-			animation_player.play("Show_inventory")
+		elif !$CanvasLayer/Control/Bestiary.visible :
+				animation_player.play("Show_inventory")
 
 
 func _on_salir_pressed() -> void:
@@ -55,6 +39,11 @@ func _on_inventario_pressed() -> void:
 	animation_player.play("Show_inventory")
 	
 
+func _on_bestiario_pressed() -> void:
+	animation_player.play("Hide_menu")
+	await animation_player.animation_finished
+	$CanvasLayer/Control/Bestiary.visible = true 
+	pass # Replace with function body.
 
 
 

@@ -7,10 +7,9 @@
 
 [node name="Slot" instance=ExtResource("1_6g0yn")]
 script = ExtResource("2_6pr5k")
-slot_type = 0
 
-[node name="Equip" type="AudioStreamPlayer" parent="." index="3"]
+[node name="Equip" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource("3_a3ipx")
 
-[node name="Unquip" type="AudioStreamPlayer" parent="." index="4"]
+[node name="Unquip" type="AudioStreamPlayer" parent="." index="3"]
 stream = ExtResource("4_7m7s5")

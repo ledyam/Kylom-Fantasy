@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4earws7layh2"]
+
+[ext_resource type="PackedScene" uid="uid://6rpyx7ocac0d" path="res://UI/UI_Interfaces/slot.tscn" id="1_jj1q4"]
+[ext_resource type="AudioStream" uid="uid://7scm2cox50g0" path="res://Assets/Sounds/eating-sound-effect-36186.mp3" id="2_0xvuh"]
+[ext_resource type="Script" path="res://UI/UI_Interfaces/slot_inventory.gd" id="2_6drx1"]
+[ext_resource type="AudioStream" uid="uid://ctj7ntot8u0g8" path="res://Assets/Sounds/8_Atk_Magic_SFX/recording1-2-10987.mp3" id="3_35w73"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_aktlr"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+outline_color = Color(0.789063, 0.714877, 0.573251, 1)
+
+[node name="Slot" instance=ExtResource("1_jj1q4")]
+script = ExtResource("2_6drx1")
+
+[node name="Icon" parent="CenterContainer" index="1"]
+stretch_mode = 3
+
+[node name="Contador" type="Label" parent="." index="1"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 5.0
+offset_right = 13.0
+offset_bottom = 13.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_aktlr")
+
+[node name="Sounds" type="Node" parent="." index="2"]
+
+[node name="Comer" type="AudioStreamPlayer" parent="Sounds" index="0"]
+stream = ExtResource("2_0xvuh")
+
+[node name="Tomar" type="AudioStreamPlayer" parent="Sounds" index="1"]
+stream = ExtResource("3_35w73")

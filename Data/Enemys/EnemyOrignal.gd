@@ -1,39 +1,36 @@
-extends CharacterBody2D
 
-class_name EnemyOriginal
+class_name EnemyOriginal extends CharacterBody2D 
+
+#region VARIABLES Stats
 var life : float = 100
-var type : String
-var ATK : float  = 20
-var can_critic : bool = false  
 var current_level : int = 1
-var  loot : Dictionary = {}
-var Item : PackedScene= load("res://Data/Objects/objeto.tscn")
+var ATK : float  = 20
+var  DEF : float = 20 
 
+
+#region VARIABLES Control
+var type : String
+var can_critic : bool = false  
+var is_alive : bool = true
+var  loot : Dictionary = {}
+var player = null # Referencia al Player
+var on_area : bool = false
+const MINIMUM_DISTANCE = 13 
 @export_range(0,1) var critic_chance : float
-@export var  DEF : float
+
+
+#region VARIABLES Instancias 
 var  numero_flotante : PackedScene = load("res://UI/Indicadores/numero_flotante.tscn")
+var  Item : PackedScene = load("res://Data/Objects/objeto.tscn")
 
 signal Take_Damage
 
 func _ready() -> void:
-	randomize()
-	var file = FileAccess.open("res://DataBase/Local/Item_Equipable.json", FileAccess.READ)
-	if FileAccess.file_exists("res://DataBase/Local/Item_Equipable.json"):
-		var temp_loot : Dictionary = JSON.parse_string(file.get_as_text())
-		Item_Probabilidad(temp_loot)
-				 
-func Item_Probabilidad(temp_loot : Dictionary):
-	var total_drop : float = 0.0
-	var random : float = 0.0
-	for i in temp_loot:
-		total_drop += temp_loot[str(i)]["Drop"]
-	random = randf() * total_drop
-	var acumulador : float = 0.0
-	for i in temp_loot :
-		acumulador += temp_loot[str(i)]["Drop"]
-		if random <= acumulador:
-			loot = temp_loot[str(i)].duplicate(true)
-			break
+	loot = GLOBAL.Asignar_Item()
+	loot = GLOBAL.Asignar_Item()
+	print ("ASAO")
+	
+
 func spawn_numero_flotante(damage ): 
 	var number = numero_flotante.instantiate()
 	number.position = global_position
@@ -43,11 +40,13 @@ func spawn_numero_flotante(damage ):
 	else:
 		number.find_child("AnimationPlayer").play("normal")
 	get_tree().current_scene.add_child(number)
-#region FUNCIONES Para Daño
+	
+	
+#region FUNCIONES Control de Daño Recibido
 func EffectiveDamage(give_attack : float):
 	var damage 
 	damage =  give_attack * Defense(give_attack) * Aleatorio() *Critico(critic_chance)
-	print (damage , " de daño RECIBIDO")
+	print ("%.2f" % damage , " de daño RECIBIDO")
 	life -= damage
 	spawn_numero_flotante(damage)
 	Take_Damage.emit()
@@ -56,9 +55,8 @@ func Aleatorio ():
 func Defense (give_attack : float):
 	if give_attack == 0 and DEF == 0 : 
 		return 0.0
-		
-	else : return(give_attack / (give_attack+DEF))
-	
+	else :
+		return(give_attack / (give_attack+DEF))
 func Critico(chance):
 	var num = randf_range(1,0)
 	
@@ -68,5 +66,4 @@ func Critico(chance):
 	else:
 		can_critic = false 
 		return 1.0
-
 #endregion

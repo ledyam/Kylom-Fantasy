@@ -8,7 +8,8 @@ var recibir_damage = false
 var cooldown_Rdamage = false
 var knockback = Vector2.ZERO
 var can_attack : bool = true
-var can_move : bool = true 
+var is_jumping : bool = false
+var is_moving : bool = false 
 #endregion
 
 #Variables Atributos Principales Genéricos
