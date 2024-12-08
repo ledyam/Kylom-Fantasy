@@ -1,7 +1,7 @@
 extends PlayerState
 
 
-func physics_process(delta: float) -> void:
+func physics_process(_delta: float) -> void:
 	if player.is_moving : 
 		var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		player.mru_2d.direction_2d = input_direction

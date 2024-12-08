@@ -8,7 +8,7 @@ extends NinePatchRect
 func _ready() -> void:
 	Default()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if self.visible:
 		player_in_inv.play("Inv")
 #Método para agregar items al inventario

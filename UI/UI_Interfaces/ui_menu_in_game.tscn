@@ -41,7 +41,7 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Menu:modulate")
+tracks/0/path = NodePath("CanvasLayer/Control/Menu:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -53,7 +53,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Menu:visible")
+tracks/1/path = NodePath("CanvasLayer/Control/Menu:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -82,7 +82,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Menu:visible")
+tracks/0/path = NodePath("CanvasLayer/Control/Menu:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -94,7 +94,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Menu:modulate")
+tracks/1/path = NodePath("CanvasLayer/Control/Menu:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -162,7 +162,7 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Menu:visible")
+tracks/0/path = NodePath("CanvasLayer/Control/Menu:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -174,7 +174,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Menu:modulate")
+tracks/1/path = NodePath("CanvasLayer/Control/Menu:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -232,63 +232,6 @@ libraries = {
 "": SubResource("AnimationLibrary_2hsri")
 }
 
-[node name="Menu" type="NinePatchRect" parent="."]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -61.0
-offset_top = -56.0
-offset_right = 61.0
-offset_bottom = 56.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_mfa16")
-region_rect = Rect2(-0.417572, -0.37776, 47.4309, 46.3498)
-patch_margin_left = 9
-patch_margin_top = 9
-patch_margin_right = 8
-patch_margin_bottom = 8
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="InventarioB" parent="Menu/VBoxContainer" instance=ExtResource("5_vnmr3")]
-layout_mode = 2
-text = "Inventario"
-
-[node name="Bestiario" parent="Menu/VBoxContainer" instance=ExtResource("5_vnmr3")]
-layout_mode = 2
-text = "Bestiario"
-
-[node name="Guardar" parent="Menu/VBoxContainer" instance=ExtResource("5_vnmr3")]
-layout_mode = 2
-text = "Guardar"
-
-[node name="Cargar" parent="Menu/VBoxContainer" instance=ExtResource("5_vnmr3")]
-layout_mode = 2
-text = "Cargar"
-
-[node name="Salir" parent="Menu/VBoxContainer" instance=ExtResource("5_vnmr3")]
-layout_mode = 2
-text = "Salir"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
@@ -305,6 +248,63 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_lceqp")
+
+[node name="Menu" type="NinePatchRect" parent="CanvasLayer/Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.5
+offset_top = -59.0
+offset_right = 61.5
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_mfa16")
+region_rect = Rect2(-0.417572, -0.37776, 47.4309, 46.3498)
+patch_margin_left = 9
+patch_margin_top = 9
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventarioB" parent="CanvasLayer/Control/Menu/VBoxContainer" instance=ExtResource("5_vnmr3")]
+layout_mode = 2
+text = "Inventario"
+
+[node name="Bestiario" parent="CanvasLayer/Control/Menu/VBoxContainer" instance=ExtResource("5_vnmr3")]
+layout_mode = 2
+text = "Bestiario"
+
+[node name="Guardar" parent="CanvasLayer/Control/Menu/VBoxContainer" instance=ExtResource("5_vnmr3")]
+layout_mode = 2
+text = "Guardar"
+
+[node name="Cargar" parent="CanvasLayer/Control/Menu/VBoxContainer" instance=ExtResource("5_vnmr3")]
+layout_mode = 2
+text = "Cargar"
+
+[node name="Salir" parent="CanvasLayer/Control/Menu/VBoxContainer" instance=ExtResource("5_vnmr3")]
+layout_mode = 2
+text = "Salir"
 
 [node name="Inventario" parent="CanvasLayer/Control" instance=ExtResource("5_tnsaa")]
 modulate = Color(1, 1, 1, 0)
@@ -328,8 +328,8 @@ grow_vertical = 0
 text = "Juego Guardado..."
 label_settings = SubResource("LabelSettings_vcia5")
 
-[connection signal="pressed" from="Menu/VBoxContainer/InventarioB" to="." method="_on_inventario_pressed"]
-[connection signal="pressed" from="Menu/VBoxContainer/Bestiario" to="." method="_on_bestiario_pressed"]
-[connection signal="pressed" from="Menu/VBoxContainer/Guardar" to="." method="_on_guardar_pressed"]
-[connection signal="pressed" from="Menu/VBoxContainer/Cargar" to="." method="_on_cargar_pressed"]
-[connection signal="pressed" from="Menu/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Menu/VBoxContainer/InventarioB" to="." method="_on_inventario_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Menu/VBoxContainer/Bestiario" to="." method="_on_bestiario_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Menu/VBoxContainer/Guardar" to="." method="_on_guardar_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Menu/VBoxContainer/Cargar" to="." method="_on_cargar_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Menu/VBoxContainer/Salir" to="." method="_on_salir_pressed"]

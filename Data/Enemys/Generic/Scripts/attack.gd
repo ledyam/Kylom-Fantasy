@@ -1,6 +1,6 @@
 extends EnemyState
 
-func physics_process(delta: float) -> void:
+func physics_process(_delta: float) -> void:
 	if enemy.global_position.distance_to(enemy.player.position) <= enemy.MINIMUM_DISTANCE :
 		enemy.anim_enemy.play("Enemy_attack")
 	else :

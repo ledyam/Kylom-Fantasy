@@ -4,7 +4,7 @@ extends Control
 var player : Player
 
 func _ready() -> void:
-	$Menu.visible = false
+	$CanvasLayer/Control/Menu.visible = false
 	inventario.visible = false
 	$CanvasLayer/Control/Saving_Alert.visible = false 
 	player = self.owner
@@ -12,13 +12,13 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Esc") :
-		if  $Menu.visible : 
+		if  $CanvasLayer/Control/Menu.visible : 
 			animation_player.play("Hide_menu")
 
-		elif !$Menu.visible && $CanvasLayer/Control/Inventario.visible or $CanvasLayer/Control/Bestiary.visible: 
+		elif !$CanvasLayer/Control/Menu.visible && $CanvasLayer/Control/Inventario.visible or $CanvasLayer/Control/Bestiary.visible: 
 			$CanvasLayer/Control/Inventario.visible = false 
 			$CanvasLayer/Control/Bestiary.visible = false
-		elif !$Menu.visible: 
+		elif !$CanvasLayer/Control/Menu.visible: 
 			animation_player.play("Show_menu")
 
 	if event.is_action_pressed('Inventory'):
