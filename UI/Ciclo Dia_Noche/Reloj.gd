@@ -23,7 +23,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	
 	#Toma la Zona donde se encuentra el Player
-	current_ubication.text = CurrentZone.GetZone()
+	#current_ubication.text = CurrentZone.GetZone()
 	#Asignación del Tiempo y Fecha en Interfaz 
 	month.text = MONTH[month_count]
 	week_day.text = WEEK_DAY[count_week_day]
