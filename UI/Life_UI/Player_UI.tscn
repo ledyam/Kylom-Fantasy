@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://p0jmnaqahkh5"]
+[gd_scene load_steps=15 format=3 uid="uid://p0jmnaqahkh5"]
 
 [ext_resource type="Script" path="res://UI/Life_UI/Player_UI.gd" id="1_kf1g5"]
 [ext_resource type="Texture2D" uid="uid://73y7oc3x7fiw" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Interfaces Bundle - Free version/Pack Content/DarkMode Interface/Player interface/Player Status/Bars/spr_stamina_bar.png" id="2_qer4n"]
@@ -6,9 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://ys1mqrjr7yiq" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Interfaces Bundle - Free version/Pack Content/DarkMode Interface/Player interface/Player Status/single size player status/spr_player_status_healthbar_bk.png" id="3_lrv12"]
 [ext_resource type="Texture2D" uid="uid://dxiguut7m0vkd" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Interfaces Bundle - Free version/Pack Content/DarkMode Interface/Player interface/Player Status/Bars/spr_health_bar.png" id="4_l1poa"]
 [ext_resource type="Texture2D" uid="uid://bae3n7oe5qvpc" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Interfaces Bundle - Free version/Pack Content/DarkMode Interface/Player interface/Player Status/single size player status/spr_player_status_version2.png" id="5_0m35y"]
-[ext_resource type="Texture2D" uid="uid://bdcuvp8jd8gy6" path="res://Assets/Tiles/Portraits/Player_Portraits.png" id="5_6sh5c"]
 [ext_resource type="Texture2D" uid="uid://df271i02qvuex" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Interfaces Bundle - Free version/Pack Content/DarkMode Interface/Player interface/Player Status/single size player status/spr_player_status_staminahbar_bk.png" id="5_k1elt"]
-[ext_resource type="PackedScene" uid="uid://ewo22t74u83d" path="res://UI/Ciclo Dia_Noche/Reloj.tscn" id="6_uohsm"]
+[ext_resource type="Texture2D" uid="uid://t8l1moviv8xk" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/spr_portrait_9frame.png" id="8_s2k4y"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xla1b"]
 texture = ExtResource("3_lrv12")
@@ -101,10 +100,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -21.5
-offset_top = -2.5
-offset_right = 57.5
-offset_bottom = 6.5
+offset_left = -17.5
+offset_top = -1.0
+offset_right = 61.5
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.648306, 0.679999)
@@ -117,28 +116,17 @@ vertical_alignment = 1
 y_sort_enabled = true
 texture_filter = 1
 offset_left = 1.0
-offset_right = 194.0
+offset_right = 193.0
 offset_bottom = 81.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_24ug5")
 
 [node name="Player" type="TextureRect" parent="CanvasLayer/Portrait"]
-z_index = 1
 y_sort_enabled = true
 texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -70.5
-offset_top = -23.5
-offset_right = -44.0556
-offset_bottom = 4.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_6sh5c")
+layout_mode = 0
+offset_left = 21.0
+offset_top = 24.0
+offset_right = 58.0
+offset_bottom = 58.0
+texture = ExtResource("8_s2k4y")
 expand_mode = 3
-flip_h = true
-
-[node name="Reloj" parent="CanvasLayer" instance=ExtResource("6_uohsm")]
