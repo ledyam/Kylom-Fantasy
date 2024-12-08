@@ -153,7 +153,6 @@ y_sort_enabled = true
 script = ExtResource("1_ec2xn")
 
 [node name="Marcus" parent="." instance=ExtResource("2_0wl5i")]
-visible = false
 z_index = 1
 texture_filter = 1
 position = Vector2(-3.72529e-09, -9)
@@ -211,13 +210,10 @@ position = Vector2(-266, -10)
 shape = SubResource("SegmentShape2D_howla")
 debug_color = Color(0.7, 0.0100511, 0, 0.42)
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="Marker2D" type="Marker2D" parent="." groups=["FirstEnemy"]]
 position = Vector2(-143, -612)
 
-[node name="Marker2D2" type="Marker2D" parent="."]
+[node name="Marker2D2" type="Marker2D" parent="." groups=["FirstEnemy"]]
 position = Vector2(136, -608)
 
 [connection signal="animation_finished" from="Animation_World" to="." method="_on_animation_world_animation_finished"]
-
-[editable path="Marcus"]
-[editable path="Marcus/Player_UI"]
