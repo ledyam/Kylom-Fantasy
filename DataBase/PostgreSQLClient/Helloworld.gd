@@ -13,7 +13,7 @@ func _init():
 	var _error = database.connect("connection_established", Callable(self, "_connection_established"))
 	_error = database.connect("authentication_error", Callable(self, "_authentication_error"))
 	_error = database.connect("connection_closed", Callable(self, "_connection_close"))
-	_error = database.connect("data_received", Callable(self, "_data_received"))he
+	_error = database.connect("data_received", Callable(self, "_data_received"))
 	#Connection to the database
 	_error = database.connect_to_host("postgresql://%s:%s@%s:%d/%s" % [USER, PASSWORD, HOST, PORT, DATABASE])
 

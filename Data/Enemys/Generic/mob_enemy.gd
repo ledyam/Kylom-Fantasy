@@ -9,13 +9,12 @@ var life : float = 100 :
 var current_level : int = 1
 var ATK : float  = 20
 var  DEF : float = 20 
-
+var loot: Item
 
 #region VARIABLES Control
 var type : String
 var can_critic : bool = false  
 var is_alive : bool = true
-var  loot : Dictionary = {}
 var player = null # Referencia al Player
 var on_area : bool = false
 const MINIMUM_DISTANCE = 13 
@@ -24,7 +23,7 @@ const MINIMUM_DISTANCE = 13
 
 #region VARIABLES Instancias 
 var  numero_flotante : PackedScene = load("res://UI/Indicadores/numero_flotante.tscn")
-var  Item : PackedScene = load("res://Data/Objects/objeto.tscn")
+var  item : PackedScene = load("res://Data/Items/item.tscn")
 
 
 
@@ -32,8 +31,6 @@ signal Take_Damage
 
 func _ready() -> void:
 	loot = GLOBAL.Asignar_Item()
-	loot = GLOBAL.Asignar_Item()
-	print ("ASAO")
 	
 
 func spawn_numero_flotante(damage ): 

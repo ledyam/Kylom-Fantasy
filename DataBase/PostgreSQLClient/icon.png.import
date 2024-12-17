@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dj33n32jr42q6"
-path="res://.godot/imported/icon.png-58695beaccc67133638905ea3a09258d.ctex"
+path="res://.godot/imported/icon.png-3d0db9df9eb54e2734165f0a272d6326.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DataBase/PostgreSQLClient-193655a10ca35d9f7af8a3e92fd358d9c69e5509/icon.png"
-dest_files=["res://.godot/imported/icon.png-58695beaccc67133638905ea3a09258d.ctex"]
+source_file="res://DataBase/PostgreSQLClient/icon.png"
+dest_files=["res://.godot/imported/icon.png-3d0db9df9eb54e2734165f0a272d6326.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bxkm03xjifvox"]
 
-[ext_resource type="Script" path="res://Data/Objects/objeto_fisico.gd" id="1_7hbbn"]
-[ext_resource type="Texture2D" uid="uid://cx26uvigstect" path="res://Assets/Mis Inventos/bolsa dropeable.png" id="1_di1x8"]
+[ext_resource type="Texture2D" uid="uid://cx26uvigstect" path="res://Assets/Mis Inventos/bolsa dropeable.png" id="1_cmfp3"]
+[ext_resource type="Script" path="res://Data/Items/fisic_item.gd" id="2_cw6mp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_smdl8"]
 radius = 7.14287
@@ -21,13 +21,13 @@ _data = {
 "RESET": SubResource("Animation_6t6ro")
 }
 
-[node name="Objeto" type="Sprite2D"]
+[node name="Item" type="Sprite2D"]
 position = Vector2(0, -1.49012e-08)
 scale = Vector2(0.7, 0.725)
-texture = ExtResource("1_di1x8")
+texture = ExtResource("1_cmfp3")
 hframes = 2
 frame = 1
-script = ExtResource("1_7hbbn")
+script = ExtResource("2_cw6mp")
 
 [node name="Area2D" type="Area2D" parent="."]
 z_index = 1
@@ -41,5 +41,4 @@ libraries = {
 "": SubResource("AnimationLibrary_ewqji")
 }
 
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

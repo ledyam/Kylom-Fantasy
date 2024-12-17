@@ -1,7 +1,7 @@
 extends Control
 
 @export_enum("Cabeza : 0" , "Pecho : 1", "Piernas : 2" ,  "Arma : 3" ,         \
- " Protección : 4", "Botas : 5", "Anillo : 6" , "Collar: 7") \
+			 " Protección : 4", "Botas : 5", "Anillo : 6" , "Collar: 7")       \
 var slot_type : int 
 
 
@@ -16,17 +16,17 @@ var default : Dictionary = {
 	7:load("res://Assets/GUI/GUI/Collar.png")
 }
 
-var item : Dictionary:
+var item : Item:
 	set(value):
 		item = value
-		if item.is_empty() :
+		if item == null :
 			$CenterContainer/Icon.texture = default[slot_type]
 		else:
 			$Equip.play()
-			$CenterContainer/Icon.texture = load(item["Texture"])
+			$CenterContainer/Icon.texture = item.texture
 
 func _on_mouse_entered() -> void:
-	if item.is_empty() : 
+	if item == null : 
 		owner.Default()
 	else : 
 		owner.set_description(item)
@@ -38,19 +38,17 @@ func _ready() -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
-		if !self.item.is_empty():
+		if self.item != null:
 			$CenterContainer/Icon.texture = default[slot_type]
 			owner.Default()
 			Desasignar_Stats()
 			$Unquip.play()
-			owner.add_item(item.duplicate(true))
-			self.item.clear()
+			owner.add_item(item)
+			self.item = null
+
 
 
 func Desasignar_Stats():
-	match item["Type"] : 
-		"Espada" : 
-			print(item["Stats"]["Ataque"])
-			owner.owner.player.ATK -= item["Stats"]["Ataque"]
-		"Escudo":
-			owner.owner.player.DEF -= item["Stats"]["Protection"]
+	match item.type : 
+		"Wapon" : 
+			owner.owner.player.ATK -= item.attribute_value

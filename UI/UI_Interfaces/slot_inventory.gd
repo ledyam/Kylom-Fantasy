@@ -10,17 +10,17 @@ var cantidad : int = 0 :
 		if cantidad != 0 and cantidad != 1 :
 			contador.visible = true
 		else : contador.visible = false
-var item : Dictionary:
+var item : Item:
 	set(value):
 		item = value
-		if item.is_empty() :
+		if item == null :
 			$CenterContainer/Icon.texture = null
 		else:
-			$CenterContainer/Icon.texture = load(item["Texture"])
+			$CenterContainer/Icon.texture = item.texture
 
 
 func _on_mouse_entered() -> void:
-	if item.is_empty() :
+	if item == null :
 		owner.Default()
 	else :
 		owner.set_description(item)
@@ -30,24 +30,21 @@ func _on_mouse_entered() -> void:
 #Accion de usar objeto Consumible del Inventario 
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
-		if !self.item.is_empty() and item.has("Health_give"):
+		if self.item != null  and item.type == "Use":
 			Item_Consumible()
-		elif item.has("Type") :
+		else :
 			Item_Equipable()
 	pass # Replace with function body.
 
 func Asignar_Stats():
-	match item["Type"] : 
-		"Espada" : 
-			owner.owner.player.ATK += item["Stats"]["Ataque"]
-		"Escudo":
-			owner.owner.player.DEF += item["Stats"]["Protection"]
-
+	match item.type : 
+		"Wapon" : 
+			owner.owner.player.ATK += item.attribute_value
 
 #region Uso de Item
 
 func Item_Consumible():
-	CentralSignal.UsarObjeto.emit(item["Health_give"])
+	CentralSignal.UsarObjeto.emit(20)
 	cantidad -= 1
 	if item["Use_Type"] == 1:
 		$Sounds/Tomar.play()
@@ -65,10 +62,9 @@ func Item_Equipable():
 	var Equipables_SLot = owner.find_child("Equipable_Item").get_children()  
 	
 	for i in Equipables_SLot:
-		if i.slot_type == item["Slot_Type"] and  i.item != item :
-			i.item = item.duplicate(true)
+		if i.slot_type == item.slot_type and  i.item != item :
+			i.item = item
 			Asignar_Stats()
-			item.clear()
 			$CenterContainer/Icon.texture = null
 			is_vacio = true
 			break
