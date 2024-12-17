@@ -17,7 +17,8 @@ func _on_area_2d_body_exited(_body: Node2D) -> void:
 	pass # Replace with function body.
 func _on_area_salto_body_entered(body: Node2D) -> void:
 	if body as MainPlayer:
-		can_jump = true	
+		can_jump = true
 func _on_area_salto_body_exited(body: Node2D) -> void:
 	if body as MainPlayer:
 		can_jump = false 
+		

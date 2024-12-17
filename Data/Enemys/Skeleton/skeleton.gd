@@ -1,4 +1,4 @@
-extends EnemyOriginal
+extends MobEnemy
 class_name Undead_Enemy
 
 @onready var anim_enemy: AnimatedSprite2D = $AnimatedSprite2D

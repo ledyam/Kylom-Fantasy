@@ -9,7 +9,6 @@ func _ready() -> void:
 	var Level_EXP = FileAccess.open("res://DataBase/Local/Level_Exp.json", FileAccess.READ)
 	content = JSON.parse_string(Level_EXP.get_as_text())
 	Level_EXP.close()
-	DataBase.data_type = "Item"
 	
 	
 	

@@ -2,7 +2,7 @@ extends Node
 class_name EnemyState
 
 var state_machine : StateMachine
-var enemy : EnemyOriginal
+var enemy : CharacterBody2D
 
 
 func enter ():

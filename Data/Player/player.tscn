@@ -35,8 +35,8 @@
 [ext_resource type="Texture2D" uid="uid://cvgxqrj717fc4" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Back animations/spr_player_back_walk.png" id="17_k3l2a"]
 [ext_resource type="Texture2D" uid="uid://b1kl185qmd8aa" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Back animations/spr_player_back_jump.png" id="19_2l41x"]
 [ext_resource type="Texture2D" uid="uid://dk507h16ovh38" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Side animations/spr_player_left_jump.png" id="22_12ijg"]
-[ext_resource type="Script" path="res://Data/Player/damage.gd" id="27_m7flb"]
-[ext_resource type="Script" path="res://Data/Player/jump.gd" id="29_tlnfh"]
+[ext_resource type="Script" path="res://Data/Player/PlayerStates/player_hit.gd" id="27_m7flb"]
+[ext_resource type="Script" path="res://Data/Player/PlayerStates/player_jump.gd" id="29_tlnfh"]
 
 [sub_resource type="Animation" id="Animation_qyj0v"]
 length = 0.7

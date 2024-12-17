@@ -1,10 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://bxkm03xjifvox"]
 
 [ext_resource type="Script" path="res://Data/Objects/objeto_fisico.gd" id="1_7hbbn"]
-[ext_resource type="Texture2D" uid="uid://dkcw0st1quc6m" path="res://Assets/Tiles/Rocky Roads2/Objects/apple.png" id="2_k5ym7"]
+[ext_resource type="Texture2D" uid="uid://cx26uvigstect" path="res://Assets/Mis Inventos/bolsa dropeable.png" id="1_di1x8"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_61guv"]
-radius = 5.71429
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_smdl8"]
+radius = 7.14287
+height = 17.1429
 
 [sub_resource type="Animation" id="Animation_0wbmt"]
 resource_name = "Caida_Drop"
@@ -21,19 +22,24 @@ _data = {
 }
 
 [node name="Objeto" type="Sprite2D"]
-z_index = 1
-scale = Vector2(0.7, 0.725444)
-texture = ExtResource("2_k5ym7")
+position = Vector2(0, -1.49012e-08)
+scale = Vector2(0.7, 0.725)
+texture = ExtResource("1_di1x8")
+hframes = 2
+frame = 1
 script = ExtResource("1_7hbbn")
 
 [node name="Area2D" type="Area2D" parent="."]
+z_index = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_61guv")
+position = Vector2(0, 1.37932)
+shape = SubResource("CapsuleShape2D_smdl8")
 
 [node name="Object_Animation" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_ewqji")
 }
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

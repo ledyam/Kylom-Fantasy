@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://brhbdqmyil5lk" path="res://UI/UI_Interfaces/slot_bestiary.tscn" id="2_43n46"]
 [ext_resource type="Texture2D" uid="uid://re857e8v6ct8" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Enemy Pack/Goblin/spr_goblin_walk_right.png" id="4_8g4jc"]
 [ext_resource type="Texture2D" uid="uid://ttvu8o3yb8ki" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Enemy Pack/Slime/Blue Slime/spr_Blue_slime_walk.png" id="4_v23bt"]
-[ext_resource type="Texture2D" uid="uid://bt7obsoyet57j" path="res://Assets/2.png" id="5_l72g2"]
+[ext_resource type="Texture2D" uid="uid://bt7obsoyet57j" path="res://Assets/Mis Inventos/2.png" id="5_l72g2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h80l1"]
 atlas = ExtResource("1_aubuc")

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Kylom Fantasy"
+config/name="Wikep Fantasy"
 run/main_scene="res://UI/Menú Principal/principal_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
@@ -35,8 +35,14 @@ gdscript/warnings/unused_signal=0
 
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={}
+directories/dch_directory={
+"MainPlayer": "res://Dialogic/Personajes/MainPlayer.dch",
+"character": "res://UI/UI DI/character.dch"
+}
+directories/dtl_directory={
+"Intro": "res://Dialogic/Timelines/Intro.dtl",
+"timeline": "res://Dialogic/Timelines/timeline.dtl"
+}
 glossary/default_case_sensitive=true
 layout/style_list=["res://Dialogic/Styles/Estilo Propio.tres", "res://Dialogic/Styles/Demás.tres", "res://Dialogic/Styles/MainWithPortraits.tres"]
 layout/default_style="res://Dialogic/Styles/Demás.tres"
@@ -80,7 +86,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg")
+enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg")
 
 [file_customization]
 

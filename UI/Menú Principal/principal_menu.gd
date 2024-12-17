@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func _on_animation_menu_animation_finished(_anim_name: StringName) -> void:
 	if _anim_name == "Oclution":
-		get_tree().change_scene_to_file("res://Data/World/world.tscn")
+		get_tree().change_scene_to_file("res://Data/World/Bosque_Esmeralda.tscn")
 	if _anim_name == "Introduction":
 		gui_transition._show()
 

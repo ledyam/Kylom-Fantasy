@@ -153,7 +153,7 @@ func _on_cd_timeout() -> void:
 
 #SEÑAL Principal de ENTRADA HITBOX PLAYER
 func _on_hit_box_body_entered(body: Node2D) -> void:
-	if body is EnemyOriginal and vida_actual > 0:
+	if body is MobEnemy and vida_actual > 0:
 		recibir_damage = true
 		cooldown_Rdamage = true
 #Asiganción de Empuje al Recibir Daño
@@ -173,7 +173,7 @@ func _on_hit_box_body_exited(body: Node2D) -> void:
 	
 #Señal para Realizar Daño
 func _on_damage_box_body_entered(body: Node2D) -> void:
-	if body as EnemyOriginal:
+	if body as MobEnemy:
 		body.EffectiveDamage(ATK)
 	pass 
 	
