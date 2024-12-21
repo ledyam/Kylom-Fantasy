@@ -17,12 +17,12 @@ func add_item (item ) :
 	
 	for i in index.get_children():
 		
-		if !i.is_vacio and i.item == item and item.type == "Use":
+		if !i.is_vacio and i.item == item and item.type == 8:
 			i.cantidad += 1
 			break
 		
 		
-		elif i.is_vacio and item.type != "Use":
+		elif i.is_vacio and item.type != 8:
 			i.is_vacio = false
 			i.item = item
 			break

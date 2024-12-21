@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qjgnyvrkx5x3"
-path="res://.godot/imported/Casco.png-a296c9cc2f3c0dfbebfd90266e4ee19f.ctex"
+uid="uid://bt7t5h4yyqsde"
+path="res://.godot/imported/spr_player_right_idle_jump.png-95782e6ffac8b8a132eb659ac50136e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GUI/GUI/Casco.png"
-dest_files=["res://.godot/imported/Casco.png-a296c9cc2f3c0dfbebfd90266e4ee19f.ctex"]
+source_file="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Side animations/spr_player_right_idle_jump.png"
+dest_files=["res://.godot/imported/spr_player_right_idle_jump.png-95782e6ffac8b8a132eb659ac50136e4.ctex"]
 
 [params]
 

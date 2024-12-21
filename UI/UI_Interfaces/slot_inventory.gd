@@ -30,10 +30,11 @@ func _on_mouse_entered() -> void:
 #Accion de usar objeto Consumible del Inventario 
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
-		if self.item != null  and item.type == "Use":
+		if self.item != null  and item.type == 8:
 			Item_Consumible()
-		else :
+		if  self.item != null and item.type != 8:
 			Item_Equipable()
+		
 	pass # Replace with function body.
 
 func Asignar_Stats():
@@ -62,10 +63,11 @@ func Item_Equipable():
 	var Equipables_SLot = owner.find_child("Equipable_Item").get_children()  
 	
 	for i in Equipables_SLot:
-		if i.slot_type == item.slot_type and  i.item != item :
+		if i.slot_type == item.type and  i.item != item :
 			i.item = item
 			Asignar_Stats()
 			$CenterContainer/Icon.texture = null
+			item = null
 			is_vacio = true
 			break
 #endregion

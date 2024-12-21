@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0g4ddr2vyc0d"
-path="res://.godot/imported/Pantalones.png-25056e6df725274ebf224ac1f9cc7a33.ctex"
+uid="uid://brkoiqq37jyph"
+path="res://.godot/imported/Item__72.png-98ba1b7badfc3cfa5e80426eaa5f97b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GUI/GUI/Pantalones.png"
-dest_files=["res://.godot/imported/Pantalones.png-25056e6df725274ebf224ac1f9cc7a33.ctex"]
+source_file="res://Assets/Tiles/16x16 Item Pack/Item__72.png"
+dest_files=["res://.godot/imported/Item__72.png-98ba1b7badfc3cfa5e80426eaa5f97b2.ctex"]
 
 [params]
 

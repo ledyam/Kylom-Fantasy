@@ -5,33 +5,57 @@ func physics_process(_delta: float) -> void:
 	if player.is_moving : 
 		var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		player.mru_2d.direction_2d = input_direction
-		Animaciones()
+		if Input.is_action_pressed("Jump"):
+			AnimacionesCombinadas()
+		elif Input.is_action_pressed(" JumpIdle"):      
+			Animaciones()
 		player.mru_2d.move()
 	else : 
 		Animaciones()
 
 
+
 func Animaciones():
 	match player.current_direction:
 		player.direction.none:
-			player.animated_player_movement.play("Player_jump_front")
-		player.direction.up:
-			player.animated_player_movement.play("Player_jump_back")
+			$"../../AnimationPlayerMovements".play("Character_Jump/Player_idle_jump_front")
 		player.direction.down:
-			player.animated_player_movement.play("Player_jump_front")
+				$"../../AnimationPlayerMovements".play("Character_Jump/Player_idle_jump_front")
+		player.direction.up:
+				$"../../AnimationPlayerMovements".play("Character_Jump/Player_idle_jump_back")
 		player.direction.left:
-			player.animated_player_movement.play("Player_jump_left")
+			$"../../AnimationPlayerMovements".play("Character_Jump/Player_idle_jump_left")
 		player.direction.right:
-			player.animated_player_movement.play("Player_jump_right")
-			
-		
+			$"../../AnimationPlayerMovements".play("Character_Jump/Player_idle_jump_right")
+func AnimacionesCombinadas():
 	
+	match player.current_direction:
+		player.direction.none:
+			$"../../AnimationPlayerMovements".play("Character_Jump/Player_jump_front")
+		player.direction.down:
+				$"../../AnimationPlayerMovements".play("Character_Jump/Player_jump_front")
+		player.direction.up:
+				$"../../AnimationPlayerMovements".play("Character_Jump/Player_jump_back")
+		player.direction.left:
+			$"../../AnimationPlayerMovements".play("Character_Jump/Player_jump_left")
+		player.direction.right:
+			$"../../AnimationPlayerMovements".play("Character_Jump/Player_jump_right")
+			
 
 
 func _on_animation_player_movements_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "Player_jump_back" or anim_name == "Player_jump_front"   \
-	or anim_name == "Player_jump_left" or anim_name == "Player_jump_right":
+	var jump_animations = [
+		"Character_Jump/Player_jump_back", 
+		"Character_Jump/Player_jump_front", 
+		"Character_Jump/Player_jump_left", 
+		"Character_Jump/Player_jump_right",
+		"Character_Jump/Player_idle_jump_back",
+		"Character_Jump/Player_idle_jump_front",
+		"Character_Jump/Player_idle_jump_left",
+		"Character_Jump/Player_idle_jump_right"
+		]
+	if anim_name in jump_animations:
 		if player.is_moving:
-			state_machine.change_to(player.states._walk)
-		else : 
-			state_machine.change_to(player.states._idle)
+			state_machine.change_to(player.abreviate.states._walk)
+		else:
+			state_machine.change_to(player.abreviate.states._idle)

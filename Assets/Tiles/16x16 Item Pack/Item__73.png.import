@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8bwe2442sojo"
-path="res://.godot/imported/Arma.png-e6194d4209b19e96053d46ecbff6b5c8.ctex"
+uid="uid://nsvkua0terqp"
+path="res://.godot/imported/Item__73.png-1c1e90ea76dfa3078461ef7c04b69330.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GUI/GUI/Arma.png"
-dest_files=["res://.godot/imported/Arma.png-e6194d4209b19e96053d46ecbff6b5c8.ctex"]
+source_file="res://Assets/Tiles/16x16 Item Pack/Item__73.png"
+dest_files=["res://.godot/imported/Item__73.png-1c1e90ea76dfa3078461ef7c04b69330.ctex"]
 
 [params]
 

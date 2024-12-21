@@ -65,8 +65,14 @@ debug_color = Color(0.976471, 0.117647, 0.117647, 0.419608)
 
 [node name="Timers" type="Node" parent="."]
 
+[node name="Await" type="Timer" parent="Timers"]
+wait_time = 9.191
+one_shot = true
+
 [node name="Sounds" type="Node" parent="."]
 
 [node name="Hit_Damage" type="AudioStreamPlayer" parent="Sounds"]
 
 [node name="Patrullaje" parent="." instance=ExtResource("10_01jtp")]
+
+[connection signal="timeout" from="Timers/Await" to="StateMachine/Patrullaje" method="_on_await_timeout"]

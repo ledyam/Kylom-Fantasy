@@ -6,11 +6,11 @@
 [resource]
 script = ExtResource("1_nheto")
 name = "Casco de Hierro"
-slot_type = 0
+type = 0
 texture = ExtResource("2_dnh1u")
 rarity = "común"
 drop = 0.9
 description = "Un simple casco de hierro "
-type = "Armor"
+Estefula = 4
 attribute = "DEF"
 attribute_value = 20.0

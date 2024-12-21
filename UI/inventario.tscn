@@ -321,18 +321,151 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -67.6923
-offset_top = -89.5685
-offset_right = 64.3077
-offset_bottom = 86.4315
+offset_left = -73.5
+offset_top = -88.5001
+offset_right = 234.5
+offset_bottom = 149.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.7, 0.7)
 size_flags_horizontal = 3
-theme_override_constants/h_separation = 44
-theme_override_constants/v_separation = 44
-columns = 4
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 34
+columns = 8
 
 [node name="Slot" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot41" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot42" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot43" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot44" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot45" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot46" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot47" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot48" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot49" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot50" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot51" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot52" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot53" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot54" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot55" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot56" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot57" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot58" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot59" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot60" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot61" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot62" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot63" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot64" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot21" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot22" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot23" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot24" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot25" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot26" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot27" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot28" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot29" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot30" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot31" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot32" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot33" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot34" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot35" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot36" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot37" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot38" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot39" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot40" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]
 layout_mode = 2
 
 [node name="Slot2" parent="Int_Inventario/Items/GridContainer" instance=ExtResource("4_64eyj")]

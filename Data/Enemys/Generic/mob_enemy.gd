@@ -9,6 +9,7 @@ var life : float = 100 :
 var current_level : int = 1
 var ATK : float  = 20
 var  DEF : float = 20 
+
 var loot: Item
 
 #region VARIABLES Control
@@ -51,7 +52,7 @@ func EffectiveDamage(give_attack : float):
 	print ("%.2f" % damage , " de daño RECIBIDO")
 	life -= damage
 	spawn_numero_flotante(damage)
-	
+
 	Take_Damage.emit()
 func Aleatorio ():
 	return randf_range(0.9 , 1.0)

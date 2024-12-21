@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxkm03xjifvox"]
+[gd_scene load_steps=6 format=3 uid="uid://bxkm03xjifvox"]
 
-[ext_resource type="Texture2D" uid="uid://cx26uvigstect" path="res://Assets/Mis Inventos/bolsa dropeable.png" id="1_cmfp3"]
 [ext_resource type="Script" path="res://Data/Items/fisic_item.gd" id="2_cw6mp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_smdl8"]
@@ -22,9 +21,9 @@ _data = {
 }
 
 [node name="Item" type="Sprite2D"]
+z_index = 1
 position = Vector2(0, -1.49012e-08)
 scale = Vector2(0.7, 0.725)
-texture = ExtResource("1_cmfp3")
 hframes = 2
 frame = 1
 script = ExtResource("2_cw6mp")

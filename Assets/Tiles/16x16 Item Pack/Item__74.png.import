@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chpsuxkrq2j0y"
-path="res://.godot/imported/Pecho.png-954e2948f5562ba2ffbfd294e2ae7121.ctex"
+uid="uid://bnmrggunu3s1b"
+path="res://.godot/imported/Item__74.png-29475236848d95013809071ee70adaa2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GUI/GUI/Pecho.png"
-dest_files=["res://.godot/imported/Pecho.png-954e2948f5562ba2ffbfd294e2ae7121.ctex"]
+source_file="res://Assets/Tiles/16x16 Item Pack/Item__74.png"
+dest_files=["res://.godot/imported/Item__74.png-29475236848d95013809071ee70adaa2.ctex"]
 
 [params]
 
