@@ -1,3 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+/addons/kanban_tasks
+/addons/AS2P
