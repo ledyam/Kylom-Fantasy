@@ -800,7 +800,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("hit_box/Area_Collision:disabled")
+tracks/5/path = NodePath("Hit_box/Area_Collision:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -2431,12 +2431,14 @@ shape = SubResource("CapsuleShape2D_656gv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(3, 0)
-zoom = Vector2(1.7, 1.7)
+zoom = Vector2(2, 2)
 limit_left = -2000
 limit_top = -1500
 limit_right = 2000
 limit_bottom = 0
 limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
 rotation_smoothing_enabled = true
 
 [node name="StateMachine" type="Node" parent="."]
@@ -2500,11 +2502,11 @@ scale = Vector2(0.999995, 0.999995)
 shape = SubResource("RectangleShape2D_irov1")
 disabled = true
 
-[node name="hit_box" type="Area2D" parent="."]
+[node name="Hit_box" type="Area2D" parent="."]
 y_sort_enabled = true
 collision_mask = 15
 
-[node name="Area_Collision" type="CollisionShape2D" parent="hit_box"]
+[node name="Area_Collision" type="CollisionShape2D" parent="Hit_box"]
 y_sort_enabled = true
 position = Vector2(0.0607903, 0.0607903)
 shape = SubResource("CircleShape2D_okugr")
@@ -2517,5 +2519,5 @@ debug_color = Color(0.970136, 0.126886, 0.303562, 0.42)
 [connection signal="timeout" from="Timers/Tiempo_de_muerte" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timers/Finish_animation" to="StateMachine/Attack" method="_on_finish_animation_timeout"]
 [connection signal="body_entered" from="Damage_box" to="." method="_on_damage_box_body_entered"]
-[connection signal="body_entered" from="hit_box" to="." method="_on_hit_box_body_entered"]
-[connection signal="body_exited" from="hit_box" to="." method="_on_hit_box_body_exited"]
+[connection signal="body_entered" from="Hit_box" to="." method="_on_hit_box_body_entered"]
+[connection signal="body_exited" from="Hit_box" to="." method="_on_hit_box_body_exited"]

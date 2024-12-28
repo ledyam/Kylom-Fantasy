@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxkm03xjifvox"]
+[gd_scene load_steps=7 format=3 uid="uid://bxkm03xjifvox"]
 
+[ext_resource type="Texture2D" uid="uid://b77ioym1ufple" path="res://Assets/Tiles/16x16 Item Pack/Item__00.png" id="1_mos5g"]
 [ext_resource type="Script" path="res://Data/Items/fisic_item.gd" id="2_cw6mp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_smdl8"]
@@ -24,8 +25,7 @@ _data = {
 z_index = 1
 position = Vector2(0, -1.49012e-08)
 scale = Vector2(0.7, 0.725)
-hframes = 2
-frame = 1
+texture = ExtResource("1_mos5g")
 script = ExtResource("2_cw6mp")
 
 [node name="Area2D" type="Area2D" parent="."]
