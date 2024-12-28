@@ -3,8 +3,8 @@
 [ext_resource type="StyleBox" uid="uid://drnarcmriti83" path="res://Resources/UI_Themes/hover.tres" id="1_v3ob4"]
 [ext_resource type="StyleBox" uid="uid://b8aew3b4k2hy0" path="res://Resources/UI_Themes/normal.tres" id="2_osdib"]
 [ext_resource type="Script" path="res://UI/Menú Principal/principal_menu.gd" id="3_4yfw4"]
+[ext_resource type="Texture2D" uid="uid://glcgr1k1amjc" path="res://Assets/Mis Inventos/Principal Menu.jpg" id="4_2cl0u"]
 [ext_resource type="AudioStream" uid="uid://bwdvunglqc0ic" path="res://Assets/Sounds/Basic Rpg Intro Track (RPG).wav" id="4_f0nun"]
-[ext_resource type="Texture2D" uid="uid://14f5ksaddk04" path="res://Assets/Mis Inventos/OIG4.4UyrIlu0XobCaUCgC7Yd.jpg" id="4_ggbb8"]
 [ext_resource type="Script" path="res://addons/simple-gui-transitions/transition.gd" id="4_ir1pv"]
 [ext_resource type="PackedScene" uid="uid://bweqc780t3ltc" path="res://Resources/Button/button_with_sound.tscn" id="6_lakr6"]
 
@@ -128,7 +128,7 @@ _data = {
 }
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afso3"]
-texture = ExtResource("4_ggbb8")
+texture = ExtResource("4_2cl0u")
 texture_margin_left = 61.0
 
 [sub_resource type="Gradient" id="Gradient_d0etx"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://glcgr1k1amjc"
-path="res://.godot/imported/OIG4.4UyrIlu0XobCaUCgC7Yd.jpg-6d944281bcce2e2180c6d7d2a6d4f85e.ctex"
+path="res://.godot/imported/Principal Menu.jpg-eb1ec286a6cb43ff873d9f0ae2b339c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://OIG4.4UyrIlu0XobCaUCgC7Yd.jpg"
-dest_files=["res://.godot/imported/OIG4.4UyrIlu0XobCaUCgC7Yd.jpg-6d944281bcce2e2180c6d7d2a6d4f85e.ctex"]
+source_file="res://Assets/Mis Inventos/Principal Menu.jpg"
+dest_files=["res://.godot/imported/Principal Menu.jpg-eb1ec286a6cb43ff873d9f0ae2b339c2.ctex"]
 
 [params]
 
