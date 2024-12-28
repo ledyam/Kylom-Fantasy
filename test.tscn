@@ -37,4 +37,6 @@ texture = ExtResource("2_14k11")
 position = Vector2(317.307, 152.796)
 texture = ExtResource("3_8k7fq")
 
+[node name="SubViewport" type="SubViewport" parent="."]
+
 [connection signal="pressed" from="Button" to="." method="SiguienteTextura"]
