@@ -2429,7 +2429,7 @@ libraries = {
 y_sort_enabled = true
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_b1j8g")
-animation = &"Player_attack_down"
+animation = &"Player_idle_down"
 autoplay = "Player_idle_down"
 
 [node name="Body_Collision" type="CollisionShape2D" parent="."]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coobvo2783ukl"
-path="res://.godot/imported/Primer_Escudo.png-2bc38383d578ca7436b491f5aef12f54.ctex"
+uid="uid://bb0iap0mrjuxo"
+path="res://.godot/imported/Plantilla SV.png-478c6c7400aec781f29e60b5c82ccbe9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Mis Inventos/Primer_Escudo.png"
-dest_files=["res://.godot/imported/Primer_Escudo.png-2bc38383d578ca7436b491f5aef12f54.ctex"]
+source_file="res://Assets/Mis Inventos/Plantilla SV.png"
+dest_files=["res://.godot/imported/Plantilla SV.png-478c6c7400aec781f29e60b5c82ccbe9.ctex"]
 
 [params]
 
