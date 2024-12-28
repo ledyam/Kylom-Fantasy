@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "Default_Textbox"
+},
+"default_portrait": "",
+"description": "",
+"display_name": "Marcus",
+"mirror": false,
+"nicknames": ["MArcus"],
+"offset": Vector2(0, 0),
+"portraits": {
+"": {
+"export_overrides": {
+"image": "\"res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/spr_portrait_9frame.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}

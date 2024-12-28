@@ -154,8 +154,6 @@ var Voice := preload("res://addons/dialogic/Modules/Voice/subsystem_voice.gd").n
 
 ## Autoloads are added first, so this happens REALLY early on game startup.
 func _ready() -> void:
-	DialogicResourceUtil.update()
-
 	_collect_subsystems()
 
 	clear()
@@ -212,6 +210,8 @@ func start_timeline(timeline:Variant, label_or_idx:Variant = "") -> void:
 
 	current_timeline = timeline
 	current_timeline_events = current_timeline.events
+	for event in current_timeline_events:
+		event.dialogic = self
 	current_event_idx = -1
 
 	if typeof(label_or_idx) == TYPE_STRING:

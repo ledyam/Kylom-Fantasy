@@ -74,3 +74,4 @@ func suggest_portraits(search:String) -> Dictionary:
 	for portrait in character_editor.get_updated_portrait_dict().keys():
 		suggestions[portrait] = {'value':portrait}
 	return suggestions
+

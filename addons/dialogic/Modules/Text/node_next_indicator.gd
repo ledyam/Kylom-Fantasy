@@ -63,19 +63,19 @@ func _on_visibility_changed() -> void:
 
 
 func play_animation(current_animation: int, time:float) -> void:
-	### clean up previous tween to prevent slipping
+	# clean up previous tween to prevent slipping
 	if tween:
 		tween.stop()
 
 	match current_animation:
 		Animations.BOUNCE:
 			tween = (create_tween() as Tween)
-			var distance = 4
+			var distance := 4
 			tween.set_parallel(false)
 			tween.set_trans(Tween.TRANS_SINE)
 			tween.set_ease(Tween.EASE_IN_OUT)
 			tween.set_loops()
-#
+
 			tween.tween_property(self, 'position', Vector2(0,distance), time*0.3).as_relative()
 			tween.tween_property(self, 'position', - Vector2(0,distance), time*0.3).as_relative()
 		Animations.BLINK:
@@ -85,5 +85,5 @@ func play_animation(current_animation: int, time:float) -> void:
 			tween.set_ease(Tween.EASE_IN_OUT)
 			tween.set_loops()
 
-			tween.tween_property(self, 'modulate:a', 0, time*0.5)
-			tween.tween_property(self, 'modulate:a', 1, time*0.5)
+			tween.tween_property(self, 'modulate:a', 0, time*0.3)
+			tween.tween_property(self, 'modulate:a', 1, time*0.3)

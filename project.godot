@@ -27,6 +27,7 @@ CentralSignal="*res://Global/CentralSignal.gd"
 GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
 LocalDatabase="*res://DataBase/Local/Local_Database_Control.gd"
 SaveLoad="*res://Global/Save_Load.gd"
+QuestSystem="*res://addons/quest_system/quest_manager.gd"
 
 [debug]
 
@@ -35,16 +36,14 @@ gdscript/warnings/unused_signal=0
 [dialogic]
 
 directories/dch_directory={
-"MainPlayer": "res://Dialogic/Personajes/MainPlayer.dch",
-"character": "res://UI/UI DI/character.dch"
+"Componentes/character": "res://Componentes/character.dch"
 }
 directories/dtl_directory={
-"Intro": "res://Dialogic/Timelines/Intro.dtl",
-"timeline": "res://Dialogic/Timelines/timeline.dtl"
+"timelineasd": "res://Componentes/timelineasd.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://Dialogic/Styles/Estilo Propio.tres", "res://Dialogic/Styles/Demás.tres", "res://Dialogic/Styles/MainWithPortraits.tres"]
-layout/default_style="res://Dialogic/Styles/Demás.tres"
+layout/style_list=["res://Dialogues/Default_Textbox.tres", "res://Dialogues/New_File.tres"]
+layout/default_style="res://Dialogues/Default_Textbox.tres"
 variables={
 "MOVERSE": true
 }
@@ -71,6 +70,7 @@ timer/process_in_physics=true
 portraits/default_portrait=""
 animations/join_default="Fade In"
 animations/leave_default="Instant Out"
+audio/max_channels=4.0
 
 [display]
 
@@ -85,7 +85,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg")
+enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/quest_system/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg")
 
 [file_customization]
 
