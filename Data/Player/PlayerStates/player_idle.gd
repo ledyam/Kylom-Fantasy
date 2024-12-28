@@ -28,30 +28,29 @@ func physics_process(_delta: float):
 		state_machine.change_to(player.states._dead)
 	else :
 		#Cambios de Direccion, Movimiento y Estado 
-		if Dialogic.VAR.MOVERSE: 
+		
+		if Input.is_action_pressed('ui_up') :
+			set_current_direction(player.direction.up)
+			state_machine.change_to(player.abreviate.states._walk)
+
+		if Input.is_action_pressed('ui_down'):
+			set_current_direction(player.direction.down)
+			state_machine.change_to(player.abreviate.states._walk)
 			
-			if Input.is_action_pressed('ui_up') :
-				set_current_direction(player.direction.up)
-				state_machine.change_to(player.abreviate.states._walk)
+		if Input.is_action_pressed('ui_right'):
+			set_current_direction(player.direction.right)
+			state_machine.change_to(player.abreviate.states._walk)
+			
+		if Input.is_action_pressed('ui_left'):
+			set_current_direction(player.direction.left)
+			state_machine.change_to(player.abreviate.states._walk)
 
-			if Input.is_action_pressed('ui_down'):
-				set_current_direction(player.direction.down)
-				state_machine.change_to(player.abreviate.states._walk)
-				
-			if Input.is_action_pressed('ui_right'):
-				set_current_direction(player.direction.right)
-				state_machine.change_to(player.abreviate.states._walk)
-				
-			if Input.is_action_pressed('ui_left'):
-				set_current_direction(player.direction.left)
-				state_machine.change_to(player.abreviate.states._walk)
-
-			if Input.is_action_pressed("Atacar") and player.can_attack:
-				attack_sounds.play()
-				state_machine.change_to(player.abreviate.states._atack)
-				
-			if Input.is_action_pressed("Jump") or Input.is_action_pressed(" JumpIdle"):
-				state_machine.change_to("Jump")
+		if Input.is_action_pressed("Atacar") and player.can_attack:
+			attack_sounds.play()
+			state_machine.change_to(player.abreviate.states._atack)
+			
+		if Input.is_action_pressed("Jump") or Input.is_action_pressed(" JumpIdle"):
+			state_machine.change_to("Jump")
 
 func _on_marcus_hit_damage() -> void:
 	state_machine.change_to("Hit")
