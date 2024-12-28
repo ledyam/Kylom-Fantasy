@@ -23,8 +23,7 @@ _data = {
 
 [node name="Item" type="Sprite2D"]
 z_index = 1
-position = Vector2(0, -1.49012e-08)
-scale = Vector2(0.7, 0.725)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_mos5g")
 script = ExtResource("2_cw6mp")
 
