@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwptar7fbs25p"]
+
+[ext_resource type="Texture2D" uid="uid://sitkcv2xhlek" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Interfaces Bundle - Free version/Pack Content/DarkMode Interface/Enemy Healthbar/spr_enemy_health_bar_frame.png" id="1_ilyha"]
+[ext_resource type="Texture2D" uid="uid://e4bf3uvy2bbv" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Interfaces Bundle - Free version/Pack Content/DarkMode Interface/Enemy Healthbar/spr_enemy_health_bar_over.png" id="2_khwxv"]
+[ext_resource type="Texture2D" uid="uid://2160asnko3ss" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Interfaces Bundle - Free version/Pack Content/DarkMode Interface/Enemy Healthbar/spr_enemy_health_bar.png" id="3_3ge0i"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o13bu"]
+texture = ExtResource("2_khwxv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s4aok"]
+texture = ExtResource("3_3ge0i")
+axis_stretch_horizontal = 2
+
+[node name="mob_enemy_health_bar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.125, -0.125)
+scale = Vector2(1.07857, 1.06818)
+texture = ExtResource("1_ilyha")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+z_index = -1
+layout_mode = 1
+offset_left = -6.0
+offset_top = -3.0
+offset_right = 22.0
+offset_bottom = 2.0
+scale = Vector2(0.887527, 0.974638)
+theme_override_styles/background = SubResource("StyleBoxTexture_o13bu")
+theme_override_styles/fill = SubResource("StyleBoxTexture_s4aok")
+value = 100.0
+show_percentage = false

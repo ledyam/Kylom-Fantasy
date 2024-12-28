@@ -17,12 +17,12 @@ func add_item (item ) :
 	
 	for i in index.get_children():
 		
-		if !i.is_vacio and i.item == item and !item.has("Type"):
+		if !i.is_vacio and i.item == item and item.type == 8:
 			i.cantidad += 1
 			break
 		
 		
-		elif i.is_vacio and item.has("Type"):
+		elif i.is_vacio and item.type != 8:
 			i.is_vacio = false
 			i.item = item
 			break
@@ -51,7 +51,7 @@ func add_item_Inventory_Equipable(item):
 
 	var index = self.find_child("Equipable_Item")
 	for i in index.get_children():
-		if item["Slot_Type"] == i.slot_type:
+		if item.slot_type == i.slot_type:
 			i.item = item
 
 
@@ -102,10 +102,10 @@ func CargarInv(items : Dictionary):
 #endregion
 
 #Muestra Descripción , textura y Título del Item
-func set_description(item : Dictionary):
-	find_child("Name").text = item["Name"]
-	find_child("Icon").texture = load(item["Texture"])
-	find_child("Description").text = item["Description"] 
+func set_description(item : Item):
+	find_child("Name").text = item.name
+	find_child("Icon").texture = item.texture
+	find_child("Description").text = item.description
 	#find_child("Stats").text = str(item["Stats"]) + '\n\n '+item["Rarity"]
 	
 	

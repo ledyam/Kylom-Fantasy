@@ -11,7 +11,8 @@ func physics_process(_delta: float) -> void:
 	if enemy.is_alive: 
 		if enemy.on_area :
 			state_machine.change_to("Walk")
-		else : 
+		else :
 			state_machine.change_to("Patrullaje")
+	
 
 	

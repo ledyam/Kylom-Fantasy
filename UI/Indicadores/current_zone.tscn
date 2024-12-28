@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://btoj7kdyr3rcs"]
+
+[ext_resource type="Texture2D" uid="uid://bdllbpfixvd7h" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Interfaces Bundle - Free version/Pack Content/DarkMode Interface/GameplayHud/spr_banner_hud.png" id="1_poykt"]
+[ext_resource type="Script" path="res://UI/Indicadores/current_zone.gd" id="2_gkqtx"]
+[ext_resource type="FontFile" uid="uid://12clpnokwfus" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="3_57smo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_esd5v"]
+texture = ExtResource("1_poykt")
+region_rect = Rect2(0, 0, 192, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_e7r5e"]
+font = ExtResource("3_57smo")
+font_size = 10
+
+[node name="Current_Zone" type="Panel"]
+anchors_preset = -1
+anchor_left = 0.639
+anchor_right = 0.639
+offset_left = -220.35
+offset_top = 2.0
+offset_right = 119.65
+offset_bottom = 86.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_esd5v")
+script = ExtResource("2_gkqtx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -3.0
+offset_right = 78.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BOSQUE ESMERALDA"
+label_settings = SubResource("LabelSettings_e7r5e")
+horizontal_alignment = 1
+vertical_alignment = 1

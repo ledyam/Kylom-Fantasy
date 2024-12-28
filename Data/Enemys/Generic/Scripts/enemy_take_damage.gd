@@ -15,8 +15,8 @@ func physics_process(_delta: float) -> void:
 		enemy.move_and_slide()
 		
 
-func _on_animation_enemy_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "Enemy_take_damage":
+func Change_state ():
+	
 		if enemy.life > 0 : 
 			state_machine.change_to("Idle")
 			

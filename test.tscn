@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://du0kjlrcg6bdx"]
+
+[ext_resource type="Script" path="res://test.gd" id="1_2cw8g"]
+[ext_resource type="Texture2D" uid="uid://c1jjedtpssvqk" path="res://Assets/Mis Inventos/cuerpo.png" id="2_14k11"]
+[ext_resource type="Texture2D" uid="uid://bb0iap0mrjuxo" path="res://Assets/Mis Inventos/Plantilla SV.png" id="3_8k7fq"]
+
+[sub_resource type="Animation" id="Animation_vs6lo"]
+length = 0.285714
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_maxg6"]
+_data = {
+"idle": SubResource("Animation_vs6lo")
+}
+
+[node name="test" type="Node2D"]
+position = Vector2(0, 2)
+script = ExtResource("1_2cw8g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_maxg6")
+}
+
+[node name="Button" type="Button" parent="."]
+offset_left = 240.0
+offset_top = 192.0
+offset_right = 390.0
+offset_bottom = 244.0
+text = "Next Player"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(317.307, 152.796)
+texture = ExtResource("2_14k11")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(317.307, 152.796)
+texture = ExtResource("3_8k7fq")
+
+[connection signal="pressed" from="Button" to="." method="SiguienteTextura"]

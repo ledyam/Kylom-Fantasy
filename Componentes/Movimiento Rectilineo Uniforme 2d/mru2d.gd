@@ -5,17 +5,13 @@ extends Node
 class_name MRU2D
 @export var ver_vector : bool = false  
 @export var character : CharacterBody2D
-@export var speed: float = 50
+@export var speed: float = 40
 @export var direction_2d : Vector2 
 @export var normalized : bool = true 
 
 
-
-
-
 func _ready() -> void:
 	pass
-	
 	
 func get_velocity() -> Vector2: 
 	if normalized :
@@ -28,4 +24,9 @@ func get_velocity() -> Vector2:
 func move():
 	character.velocity = get_velocity()
 
-	pass
+
+func SpeedEnSalto():
+	if speed > 40:
+		speed -= 5 
+	else : 
+		speed += 5

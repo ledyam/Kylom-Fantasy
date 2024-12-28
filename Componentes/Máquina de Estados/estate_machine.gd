@@ -33,7 +33,7 @@ func _ready() -> void:
 
 func _enter_state():
 	if DEBUG:
-		print (controlador.NOMBRE, ": Entrando en estado :", state.name)
+		print (controlador.stats.NOMBRE, ": Entrando en estado :", state.name)
 	
 	state.player = controlador
 	state.state_machine = self

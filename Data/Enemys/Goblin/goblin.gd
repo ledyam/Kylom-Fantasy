@@ -1,6 +1,5 @@
 
-class_name Humanoid extends "res://Data/Enemys/EnemyOrignal.gd"
-
+class_name Humanoid extends "res://Data/Enemys/Generic/mob_enemy.gd"
 
 
 @onready var anim_enemy: AnimationPlayer = $AnimationEnemy
@@ -27,5 +26,11 @@ func _on_attack_area_area_entered(area: Area2D) -> void:
 	if area.name == "hit_box" :
 		area.owner.Recibir_damage(ATK)
 		
+
+	pass # Replace with function body.
+
+
+func _on_area_loot_mouse_entered() -> void:
+	
 
 	pass # Replace with function body.

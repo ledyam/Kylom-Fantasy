@@ -1,10 +1,7 @@
 extends Control
 
-@onready var month: Label = $Container/VBoxContainer/Panel/HBoxContainer/Month
-@onready var day_label: Label = $Container/VBoxContainer/Panel/HBoxContainer/Day
-@onready var hour_label: Label = $Container/VBoxContainer/Interface_Hour_Day/HBoxContainer/Hour
-@onready var minute_label: Label = $Container/VBoxContainer/Interface_Hour_Day/HBoxContainer/Minute
-@onready var current_ubication: Label = $Container/VBoxContainer/Current_Ubication/Current_Ubication
+@onready var hour_label: Label = $Container/HBoxContainer/Hour
+@onready var minute_label: Label = $Container/HBoxContainer/Minute
 @onready var week_day: Label = $Container/VBoxContainer/Interface_Hour_Day/Week_day
 @onready var animation_reloj: AnimationPlayer =$Reloj_animation 
 
@@ -21,12 +18,7 @@ func _ready() -> void:
 	animation_reloj.play("Contador")
 
 func _process(_delta: float) -> void:
-	
-	#Toma la Zona donde se encuentra el Player
-	#current_ubication.text = CurrentZone.GetZone()
-	#Asignación del Tiempo y Fecha en Interfaz 
-	month.text = MONTH[month_count]
-	week_day.text = WEEK_DAY[count_week_day]
+
 	if hour < 10 :
 		hour_label.text = "0" + str(hour)
 	else:
@@ -36,8 +28,6 @@ func _process(_delta: float) -> void:
 		minute_label.text = "0" + str(minute)
 	else :
 		minute_label.text =  str(minute)
-
-	day_label.text = str(day) + "th";
 	pass
 	
 	if $Timer.is_stopped():
@@ -52,17 +42,7 @@ func _on_timer_timeout() -> void:
 		return
 		
 	if hour == 24 : 
-		day += 1
-		count_week_day += 1
-		
-		if count_week_day > 6 :
-			count_week_day = 0
-			
 		hour = 00
-		
-		
-	if day == 30:
-		month_count += 1
 		
 		
 	minute += 30

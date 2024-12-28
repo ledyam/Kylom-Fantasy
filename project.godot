@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Kylom Fantasy"
+config/name="Wikep Fantasy"
 run/main_scene="res://UI/Menú Principal/principal_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
@@ -24,7 +24,6 @@ buses/default_bus_layout=""
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 GLOBAL="*res://Global/GLOBAL.gd"
 CentralSignal="*res://Global/CentralSignal.gd"
-DataBase="*res://DataBase/DataBase.gd"
 GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
 LocalDatabase="*res://DataBase/Local/Local_Database_Control.gd"
 SaveLoad="*res://Global/Save_Load.gd"
@@ -35,8 +34,14 @@ gdscript/warnings/unused_signal=0
 
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={}
+directories/dch_directory={
+"MainPlayer": "res://Dialogic/Personajes/MainPlayer.dch",
+"character": "res://UI/UI DI/character.dch"
+}
+directories/dtl_directory={
+"Intro": "res://Dialogic/Timelines/Intro.dtl",
+"timeline": "res://Dialogic/Timelines/timeline.dtl"
+}
 glossary/default_case_sensitive=true
 layout/style_list=["res://Dialogic/Styles/Estilo Propio.tres", "res://Dialogic/Styles/Demás.tres", "res://Dialogic/Styles/MainWithPortraits.tres"]
 layout/default_style="res://Dialogic/Styles/Demás.tres"
@@ -80,7 +85,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg")
+enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg")
 
 [file_customization]
 
@@ -184,7 +189,7 @@ Atacar={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":88,"key_label":0,"unicode":120,"location":0,"echo":false,"script":null)
 ]
 }
-" Jump"={
+" JumpIdle"={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
 ]
@@ -192,6 +197,11 @@ Atacar={
 Bestiary={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":66,"key_label":0,"unicode":98,"location":0,"echo":false,"script":null)
+]
+}
+Jump={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":true,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
 ]
 }
 
