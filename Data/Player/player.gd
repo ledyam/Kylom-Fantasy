@@ -4,6 +4,8 @@ class_name MainPlayer
 #region VARIABLES INSTANCIADAS 
 var stats = Stats.new()
 var abreviate = Abreviate.new()
+
+
 @onready var mru_2d: MRU2D = $MRU2D
 @export var current_direction: PlayerDirection = direction.none
 @onready var cd: Timer = $Timers/CD

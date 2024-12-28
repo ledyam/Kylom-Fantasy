@@ -32,7 +32,6 @@ var max_exp : float = 50:
 		max_exp = value
 		player.player_ui.progress_bar_exp.max_value = value
 var current_level : int = 1 :
-	
 	set(value):
 		current_level = value 
 var ATK :  float = 100
