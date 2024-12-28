@@ -42,8 +42,8 @@ directories/dtl_directory={
 "timelineasd": "res://Componentes/timelineasd.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://Dialogues/Default_Textbox.tres", "res://Dialogues/New_File.tres"]
-layout/default_style="res://Dialogues/Default_Textbox.tres"
+layout/style_list=[]
+layout/default_style=""
 variables={
 "MOVERSE": true
 }
