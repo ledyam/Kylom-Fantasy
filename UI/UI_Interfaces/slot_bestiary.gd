@@ -6,14 +6,6 @@ extends Control
 var is_vacio : bool = true
 var mob_name : String
 
-#var item : Dictionary:
-	#set(value):
-		#item = value
-		#if item.is_empty() :
-			#$CenterContainer/Icon.texture = null
-		#else:
-			#$CenterContainer/Icon.texture = load("res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Enemy Pack1/Slime/Blue Slime/Bestiary_slot.png")
-
 
 
 
