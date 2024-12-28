@@ -8,7 +8,7 @@ func _ready() -> void:
 	CentralSignal.connect("Unlock_Bestiary",Unlock_Slot)
 	
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Bestiary")&& !visible && !$"../Inventario".visible:
+	if event.is_action_pressed("Bestiary") && !visible && !$"../Inventario".visible:
 		visible = true 
 	
 	elif event.is_action_pressed("Bestiary") && visible:
@@ -19,7 +19,6 @@ func _input(event: InputEvent) -> void:
 
 func Default_Description ():
 	find_child("Description").text = default_text
-
 
 func Unlock_Slot(mob_name):
 	var index = find_child("Contenedor")
