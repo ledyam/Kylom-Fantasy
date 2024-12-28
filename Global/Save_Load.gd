@@ -7,10 +7,10 @@ func Save (player : Player , inventario) -> void:
 	var save_dict = {
 		player = {
 			position = var_to_str(player.position),
-			vida_actual = var_to_str(player.vida_actual),
-			current_Exp = var_to_str(player.current_Exp),
-			vida_Max = var_to_str (player.vida_Max), 
-			Max_Exp =  var_to_str(player.Max_Exp),
+			current_life= var_to_str(player.current_life),
+			current_exp = var_to_str(player.current_exp),
+			max_life = var_to_str (player.max_life), 
+			max_exp =  var_to_str(player.max_exp),
 			current_level = var_to_str (player.current_level),
 			
 			player_reloj = {

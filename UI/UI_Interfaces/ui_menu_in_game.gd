@@ -61,10 +61,10 @@ func _on_cargar_pressed() -> void:
 	
 #region Estadisiticas del Player
 	player.position = str_to_var(data.player.position)
-	player.vida_actual  = str_to_var(data.player.vida_actual)
-	player.current_Exp = str_to_var(data.player.current_Exp)
-	player.vida_Max =  str_to_var (data.player.vida_Max) 
-	player.Max_Exp =  str_to_var (data.player.Max_Exp)
+	player.current_life = str_to_var(data.player.current_life)
+	player.current_exp = str_to_var(data.player.current_exp)
+	player.max_life =  str_to_var (data.player.max_life) 
+	player.max_exp =  str_to_var (data.player.max_exp)
 	player.current_level = str_to_var (data.player.current_level)
 #endregion
 

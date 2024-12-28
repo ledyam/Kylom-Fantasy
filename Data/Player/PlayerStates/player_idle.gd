@@ -22,7 +22,7 @@ func enter ():
 
 func physics_process(_delta: float):
 	
-	if (player.stats.vida_actual <= 0):
+	if (player.stats.current_life<= 0):
 		player.can_attack = false
 		player.recibir_damage = false 
 		state_machine.change_to(player.states._dead)

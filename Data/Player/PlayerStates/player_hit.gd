@@ -3,7 +3,7 @@ extends PlayerState
 func enter():
 	print ("Estado HIT")
 	
-	if player.stats.vida_actual > 0 :
+	if player.stats.current_life> 0 :
 		match player.current_direction:
 			player.direction.none:
 				player.anim_movement.play(player.animations._hit_down)

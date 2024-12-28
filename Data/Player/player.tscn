@@ -1,4 +1,4 @@
-[gd_scene load_steps=268 format=3 uid="uid://dc1ttabgya1wf"]
+[gd_scene load_steps=267 format=3 uid="uid://dc1ttabgya1wf"]
 
 [ext_resource type="Script" path="res://Data/Player/player.gd" id="1_t574o"]
 [ext_resource type="Script" path="res://Componentes/Máquina de Estados/estate_machine.gd" id="3_ghpk6"]
@@ -29,7 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://cbaq6b8mbc4q8" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Back animations/spr_player_back_hit.png" id="13_2h17x"]
 [ext_resource type="Texture2D" uid="uid://cu56dl5wpu4rg" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Back animations/spr_player_back_idle.png" id="13_lcasp"]
 [ext_resource type="Texture2D" uid="uid://bphbwdg746mfl" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Front animations/spr_player_front_walk.png" id="14_kw4p6"]
-[ext_resource type="PackedScene" uid="uid://oe8ee4f7bqeh" path="res://UI/Indicadores/indicador_level.tscn" id="14_omp1r"]
 [ext_resource type="PackedScene" uid="uid://5jark5pkwsb" path="res://UI/UI_Interfaces/ui_menu_in_game.tscn" id="15_anmsq"]
 [ext_resource type="Texture2D" uid="uid://osdj1uiucrx1" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Side animations/spr_player_left_walk.png" id="15_gwg4l"]
 [ext_resource type="Texture2D" uid="uid://p8aki86t3xtp" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Back animations/spr_player_back_idle_jump.png" id="16_2e0as"]
@@ -2400,14 +2399,6 @@ scale = Vector2(0.7, 0.7)
 collision_mask = 14
 script = ExtResource("1_t574o")
 
-[node name="Indicador_nombre_level" parent="." instance=ExtResource("14_omp1r")]
-z_index = 10
-offset_left = -34.2249
-offset_top = -25.6535
-offset_right = 40.7751
-offset_bottom = -2.65343
-text = "Marcus Lv.1"
-
 [node name="Player_UI" parent="." instance=ExtResource("12_0yp4y")]
 offset_left = -67.1429
 offset_right = 327.857
@@ -2432,6 +2423,7 @@ position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_b1j8g")
 animation = &"Player_idle_down"
 autoplay = "Player_idle_down"
+frame = 1
 
 [node name="Body_Collision" type="CollisionShape2D" parent="."]
 z_index = 2
