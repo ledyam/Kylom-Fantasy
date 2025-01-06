@@ -43,7 +43,7 @@
 [ext_resource type="Script" path="res://Data/Player/PlayerStates/player_jump.gd" id="29_tlnfh"]
 
 [sub_resource type="Animation" id="Animation_qyj0v"]
-length = 0.7
+length = 0.61
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -121,7 +121,7 @@ tracks/5/keys = {
 size = Vector2(11.3372, 29.2238)
 
 [sub_resource type="Animation" id="Animation_bt2pl"]
-length = 0.7
+length = 0.61
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -196,7 +196,7 @@ tracks/5/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_tcf6q"]
-length = 0.7
+length = 0.61
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -804,18 +804,6 @@ tracks/5/path = NodePath("Hit_box/Area_Collision:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Body_Collision:disabled")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -2421,9 +2409,8 @@ libraries = {
 y_sort_enabled = true
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_b1j8g")
-animation = &"Player_idle_down"
+animation = &"Player_idle_jump_right"
 autoplay = "Player_idle_down"
-frame = 1
 
 [node name="Body_Collision" type="CollisionShape2D" parent="."]
 z_index = 2
@@ -2437,7 +2424,6 @@ limit_top = -1500
 limit_right = 2000
 limit_bottom = 0
 limit_smoothed = true
-position_smoothing_enabled = true
 position_smoothing_speed = 1.0
 rotation_smoothing_enabled = true
 
@@ -2477,7 +2463,7 @@ wait_time = 2.996
 
 [node name="Finish_animation" type="Timer" parent="Timers"]
 process_callback = 0
-wait_time = 0.71
+wait_time = 0.592
 one_shot = true
 
 [node name="Sounds" type="Node" parent="."]
@@ -2507,7 +2493,6 @@ y_sort_enabled = true
 collision_mask = 15
 
 [node name="Area_Collision" type="CollisionShape2D" parent="Hit_box"]
-y_sort_enabled = true
 position = Vector2(0.0607903, 0.0607903)
 shape = SubResource("CircleShape2D_okugr")
 debug_color = Color(0.970136, 0.126886, 0.303562, 0.42)

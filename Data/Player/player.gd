@@ -83,14 +83,14 @@ func _on_cd_timeout() -> void:
 
 #SEÑAL Principal de ENTRADA HITBOX PLAYER
 func _on_hit_box_body_entered(body: Node2D) -> void:
-	if body is MobEnemy and stats.current_life> 0:
+	if body is MobEnemy and stats.current_life > 0:
 		recibir_damage = true
 		cooldown_Rdamage = true
+		
 #Asiganción de Empuje al Recibir Daño
 		knockback = (self.global_position - body.position).normalized() 
 		velocity = knockback * 20
 		Recibir_damage(body.ATK) #------Temporal para Cambios
-		
 		$"Sounds/Leap(gj3)".play()
 
 
