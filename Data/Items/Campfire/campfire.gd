@@ -4,6 +4,7 @@ var on_area = false
 var  encendido = false
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is MainPlayer : 
 		on_area = true
 	
 
