@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://droh7mil8e000"]
+
+[ext_resource type="Script" path="res://Data/Items/item.gd" id="1_w6kr6"]
+[ext_resource type="Texture2D" uid="uid://d4ise8b7x2h0i" path="res://Assets/Tiles/Food/Sprite/Food/Apple.png" id="2_a2ky7"]
+
+[resource]
+script = ExtResource("1_w6kr6")
+name = "Manzana"
+type = 8
+texture = ExtResource("2_a2ky7")
+rarity = "Común"
+drop = 0.98
+description = "Una deliciosa manzana silvestre"
+attribute = "REG"
+attribute_value = 40.0

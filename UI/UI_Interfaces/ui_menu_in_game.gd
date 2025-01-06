@@ -1,6 +1,8 @@
 extends Control
 @onready var inventario: NinePatchRect = $CanvasLayer/Control/Inventario
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var stats_player: NinePatchRect = $CanvasLayer/Control/StatsPlayer
+
 var player : Player
 
 func _ready() -> void:

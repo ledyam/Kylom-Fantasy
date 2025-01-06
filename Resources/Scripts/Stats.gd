@@ -34,5 +34,6 @@ var max_exp : float = 50:
 var current_level : int = 1 :
 	set(value):
 		current_level = value 
-var ATK :  float = 100
-var DEF : float = 20
+
+var ATK :  float = 50
+var DEF : float = 25

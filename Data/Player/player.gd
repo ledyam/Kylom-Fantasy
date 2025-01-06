@@ -16,6 +16,7 @@ var abreviate = Abreviate.new()
 
 
 
+
 #endregion
 
 #region FUNCIONES del Engine
@@ -54,23 +55,27 @@ func LEVEL_UP ():
 	stats.current_level += 1
 	stats.max_life += 10
 	stats.current_life= stats.max_life
+	ui_menu_in_game.stats_player.IncrementarPuntosRestantes(3)
 	$"Sounds/LevelUpPickup(rpg)".play()
 	pass
 
 
 
-#region ALERTA DE SEÑALES
-func _on_timer_timeout() -> void:
-	body_collision.disabled = true
-	queue_free()
-	owner.get_tree().reload_current_scene()
-	pass 
+
+
 
 #region Timers
 func _on_cd_timeout() -> void:
 	cooldown_Rdamage = true
 	recibir_damage = false
 	velocity = Vector2.ZERO
+	pass 
+	
+
+func _on_timer_timeout() -> void:
+	body_collision.disabled = true
+	queue_free()
+	owner.get_tree().reload_current_scene()
 	pass 
 	
 #endregion
@@ -96,7 +101,7 @@ func _on_hit_box_body_entered(body: Node2D) -> void:
 
 #SEÑAL Principal de SALIDA  HITBOX PLAYER
 func _on_hit_box_body_exited(body: Node2D) -> void:
-	if body.name == "Skeleton":
+	if body is MobEnemy:
 		recibir_damage = false
 		cooldown_Rdamage = false 
 	pass 

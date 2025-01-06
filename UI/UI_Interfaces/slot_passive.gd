@@ -17,7 +17,7 @@ var item : Item:
 
 func _on_mouse_entered() -> void:
 	if item == null : 
-		owner.Default()
+		owner.Default_Description()
 	else : 
 		owner.set_description(item)
 	pass 
@@ -29,7 +29,7 @@ func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
 		if self.item != null:
 			$CenterContainer/Icon.texture = load("res://Assets/GUI/GUI/"+str(slot_type)+".png")
-			owner.Default()
+			owner.Default_Description()
 			Desasignar_Stats()
 			$Unquip.play()
 			owner.add_item(item)

@@ -12,7 +12,7 @@ func _ready() -> void:
 	
 
 func _physics_process(_delta: float) -> void:
-	if Input.is_action_just_pressed("Morir"):
+	if Input.is_action_just_pressed("Instantiation"):
 		enemy = load(ENEMYS[1])  
 		var ske = enemy.instantiate()
 		ske.global_position = Vector2(randf_range(50,400), randf_range(-50 , 50))

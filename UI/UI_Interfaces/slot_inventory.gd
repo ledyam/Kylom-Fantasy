@@ -21,7 +21,7 @@ var item : Item:
 
 func _on_mouse_entered() -> void:
 	if item == null :
-		owner.Default()
+		owner.Default_Description()
 	else :
 		owner.set_description(item)
 	pass
@@ -31,34 +31,37 @@ func _on_mouse_entered() -> void:
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
 		if self.item != null  and item.type == 8:
-			Item_Consumible()
+			Consumir_Item()
 		if  self.item != null and item.type != 8:
-			Item_Equipable()
+			Equipar_Item()
 		
 	pass # Replace with function body.
 
 func Asignar_Stats():
-	match item.type : 
-		"Wapon" : 
-			owner.owner.player.ATK += item.attribute_value
+	var player_reference = get_tree().current_scene.find_child("Marcus")
+	match item.attribute : 
+		"ATK" : 
+			player_reference.stats.ATK += item.attribute_value
+		"DEF" : 
+			player_reference.stats.DEF += item.attribute_value
 
 #region Uso de Item
 
-func Item_Consumible():
-	CentralSignal.UsarObjeto.emit(20)
+func Consumir_Item():
+	CentralSignal.UsarObjeto.emit(item.attribute_value)
 	cantidad -= 1
-	if item["Use_Type"] == 1:
+	if item.type == 9:
 		$Sounds/Tomar.play()
 	else : 
 		$Sounds/Comer.play()
 		
 	if cantidad == 0 :
-		self.item.clear()
+		self.item = null
 		is_vacio = true
 		$CenterContainer/Icon.texture = null
-		owner.Default()
+		owner.Default_Description()
 
-func Item_Equipable():
+func Equipar_Item():
 
 	var Equipables_SLot = owner.find_child("Equipable_Item").get_children()  
 	

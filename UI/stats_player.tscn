@@ -1,0 +1,186 @@
+[gd_scene load_steps=10 format=3 uid="uid://cam1nnkyg4n7r"]
+
+[ext_resource type="Texture2D" uid="uid://c75pdyh7y2c8" path="res://Assets/Tiles/GUI/GUI/GUI.png" id="1_7cgyj"]
+[ext_resource type="Theme" uid="uid://c3rsvmjm3n170" path="res://UI/UI_Interfaces/stats_player.tres" id="1_nmgvy"]
+[ext_resource type="Script" path="res://UI/stats_player.gd" id="2_fx7ds"]
+[ext_resource type="Texture2D" uid="uid://dap6v3bn0l4a0" path="res://Assets/Tiles/GUI/GUI/GUI_4x.png" id="2_ltxwk"]
+[ext_resource type="LabelSettings" uid="uid://t11kb1gp8t6f" path="res://Resources/UI_Themes/new_label_settings.tres" id="3_timon"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1tpth"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wjd8"]
+atlas = ExtResource("2_ltxwk")
+region = Rect2(0, 0, 99, 96)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sfvgs"]
+texture = SubResource("AtlasTexture_1wjd8")
+
+[sub_resource type="LabelSettings" id="LabelSettings_msm5t"]
+font_size = 8
+
+[node name="StatsPlayer" type="NinePatchRect"]
+anchors_preset = -1
+anchor_left = 0.0507692
+anchor_top = 0.0411765
+anchor_right = 0.543077
+anchor_bottom = 0.944118
+grow_vertical = 2
+texture = ExtResource("1_7cgyj")
+region_rect = Rect2(0, 32, 48, 47)
+patch_margin_left = 36
+patch_margin_top = 8
+patch_margin_right = 37
+patch_margin_bottom = 7
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("2_fx7ds")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -86.0
+offset_top = 16.0
+offset_right = 80.0
+offset_bottom = 32.0
+grow_horizontal = 2
+text = "Estadísiticas"
+label_settings = SubResource("LabelSettings_1tpth")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.941
+offset_top = -122.505
+offset_right = 133.059
+offset_bottom = 147.495
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_sfvgs")
+
+[node name="Atributos" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0772947
+anchor_top = 0.219178
+anchor_right = 0.439614
+anchor_bottom = 0.73516
+theme_override_constants/separation = 27
+metadata/_edit_use_anchors_ = true
+
+[node name="Fuerza" type="Label" parent="Panel/Atributos"]
+layout_mode = 2
+text = "Fuerza"
+label_settings = ExtResource("3_timon")
+
+[node name="Destreza" type="Label" parent="Panel/Atributos"]
+layout_mode = 2
+text = "Destreza"
+label_settings = ExtResource("3_timon")
+
+[node name="Inteligencia" type="Label" parent="Panel/Atributos"]
+layout_mode = 2
+text = "Inteligencia"
+label_settings = ExtResource("3_timon")
+
+[node name="Suerte" type="Label" parent="Panel/Atributos"]
+layout_mode = 2
+text = "Suerte"
+label_settings = ExtResource("3_timon")
+
+[node name="AtributosValues" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.695652
+anchor_top = 0.219178
+anchor_right = 0.729469
+anchor_bottom = 0.73516
+theme_override_constants/separation = 27
+metadata/_edit_use_anchors_ = true
+
+[node name="FuerzaValue" type="Label" parent="Panel/AtributosValues"]
+layout_mode = 2
+text = "5"
+label_settings = ExtResource("3_timon")
+
+[node name="DestrezaValue" type="Label" parent="Panel/AtributosValues"]
+layout_mode = 2
+text = "5"
+label_settings = ExtResource("3_timon")
+
+[node name="InteligenciaValue" type="Label" parent="Panel/AtributosValues"]
+layout_mode = 2
+text = "5"
+label_settings = ExtResource("3_timon")
+
+[node name="SuerteValue" type="Label" parent="Panel/AtributosValues"]
+layout_mode = 2
+text = "5"
+label_settings = ExtResource("3_timon")
+
+[node name="IncrementBottons" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.82109
+anchor_top = 0.210844
+anchor_right = 0.853464
+anchor_bottom = 0.297636
+offset_right = 9.0
+offset_bottom = 125.0
+theme = ExtResource("1_nmgvy")
+theme_override_constants/separation = 24
+alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="FuerzaButton" type="Button" parent="Panel/IncrementBottons"]
+layout_mode = 2
+text = "+"
+
+[node name="DestrezaButton" type="Button" parent="Panel/IncrementBottons"]
+layout_mode = 2
+text = "+"
+
+[node name="InteligenciaButton" type="Button" parent="Panel/IncrementBottons"]
+layout_mode = 2
+text = "+"
+
+[node name="SuerteButton" type="Button" parent="Panel/IncrementBottons"]
+layout_mode = 2
+text = "+"
+
+[node name="Puntos" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -108.0
+offset_top = 239.0
+offset_right = 11.0
+offset_bottom = 247.0
+grow_horizontal = 2
+text = "Puntos restantes : "
+label_settings = SubResource("LabelSettings_msm5t")
+
+[node name="PuntosValue" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 10.5568
+offset_top = 239.334
+offset_right = 17.5568
+offset_bottom = 247.334
+grow_horizontal = 2
+text = "0"
+label_settings = SubResource("LabelSettings_msm5t")
+
+[connection signal="pressed" from="Panel/IncrementBottons/FuerzaButton" to="." method="_on_fuerza_button_pressed"]
+[connection signal="pressed" from="Panel/IncrementBottons/DestrezaButton" to="." method="_on_destreza_button_pressed"]
+[connection signal="pressed" from="Panel/IncrementBottons/InteligenciaButton" to="." method="_on_inteligencia_button_pressed"]
+[connection signal="pressed" from="Panel/IncrementBottons/SuerteButton" to="." method="_on_suerte_button_pressed"]

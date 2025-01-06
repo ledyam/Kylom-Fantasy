@@ -6,10 +6,10 @@
 [resource]
 script = ExtResource("1_dn6g2")
 name = "Espada de Hierro"
-type = 0
+type = 3
 texture = ExtResource("2_ow8tf")
 rarity = "común"
 drop = 0.95
 description = "Una simple espada de hierro "
-attribute = ""
-attribute_value = 0.0
+attribute = "ATK"
+attribute_value = 20.0

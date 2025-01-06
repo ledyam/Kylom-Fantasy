@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://brhbdqmyil5lk"]
 
 [ext_resource type="PackedScene" uid="uid://6rpyx7ocac0d" path="res://UI/UI_Interfaces/slot.tscn" id="1_lq6ym"]
-[ext_resource type="Texture2D" uid="uid://nv8p8s2n3sc6" path="res://Assets/Mis Inventos/Incong.png" id="2_2upas"]
+[ext_resource type="Texture2D" uid="uid://54uyvgqof04p" path="res://Assets/Mis Inventos/Incong.png" id="2_2upas"]
 [ext_resource type="Script" path="res://UI/UI_Interfaces/slot_bestiary.gd" id="2_n23qi"]
 
 [node name="Slot" instance=ExtResource("1_lq6ym")]

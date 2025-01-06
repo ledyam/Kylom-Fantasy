@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://5jark5pkwsb"]
+[gd_scene load_steps=16 format=3 uid="uid://5jark5pkwsb"]
 
 [ext_resource type="Theme" uid="uid://e2ibn4lqfv0e" path="res://UI/UI_Interfaces/ui_menu_in_game.tres" id="1_lceqp"]
 [ext_resource type="Texture2D" uid="uid://c75pdyh7y2c8" path="res://Assets/Tiles/GUI/GUI/GUI.png" id="1_qa2pc"]
 [ext_resource type="Script" path="res://UI/UI_Interfaces/ui_menu_in_game.gd" id="3_v0vnf"]
 [ext_resource type="PackedScene" uid="uid://ckmhjkds58k4w" path="res://UI/inventario.tscn" id="5_tnsaa"]
 [ext_resource type="PackedScene" uid="uid://bweqc780t3ltc" path="res://Resources/Button/button_with_sound.tscn" id="5_vnmr3"]
+[ext_resource type="PackedScene" uid="uid://cam1nnkyg4n7r" path="res://UI/stats_player.tscn" id="7_hna5r"]
 [ext_resource type="PackedScene" uid="uid://q1cmeacruiwm" path="res://UI/bestiary.tscn" id="11_8o6i4"]
 
 [sub_resource type="Animation" id="Animation_oxfsh"]
@@ -236,18 +237,23 @@ libraries = {
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchor_left = -0.00153846
+anchor_right = 1.0
+anchor_bottom = 0.991176
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_lceqp")
+metadata/_edit_use_anchors_ = true
+
+[node name="StatsPlayer" parent="CanvasLayer/Control" instance=ExtResource("7_hna5r")]
+visible = false
+layout_mode = 1
+anchor_left = 0.0537634
+anchor_top = 0.0178042
+anchor_right = 0.537634
+anchor_bottom = 0.982196
+offset_right = -3.05176e-05
+grow_horizontal = 2
 
 [node name="Menu" type="NinePatchRect" parent="CanvasLayer/Control"]
 modulate = Color(1, 1, 1, 0)
@@ -333,3 +339,5 @@ label_settings = SubResource("LabelSettings_vcia5")
 [connection signal="pressed" from="CanvasLayer/Control/Menu/VBoxContainer/Guardar" to="." method="_on_guardar_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Menu/VBoxContainer/Cargar" to="." method="_on_cargar_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Menu/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
+
+[editable path="CanvasLayer/Control/StatsPlayer"]

@@ -6,7 +6,7 @@ extends NinePatchRect
 
 
 func _ready() -> void:
-	Default()
+	Default_Description()
 
 func _process(_delta: float) -> void:
 	if self.visible:
@@ -20,7 +20,6 @@ func add_item (item ) :
 		if !i.is_vacio and i.item == item and item.type == 8:
 			i.cantidad += 1
 			break
-		
 		
 		elif i.is_vacio and item.type != 8:
 			i.is_vacio = false
@@ -110,7 +109,7 @@ func set_description(item : Item):
 	
 	
 #Metodo por defecto para el Inventario General
-func Default ():
+func Default_Description ():
 	find_child("Name").text = ""
 	find_child("Icon").texture = null
 	find_child("Description").text = default_text

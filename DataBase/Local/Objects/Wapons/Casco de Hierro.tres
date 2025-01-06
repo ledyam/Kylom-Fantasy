@@ -11,6 +11,5 @@ texture = ExtResource("2_dnh1u")
 rarity = "común"
 drop = 0.9
 description = "Un simple casco de hierro "
-Estefula = 4
 attribute = "DEF"
 attribute_value = 20.0
