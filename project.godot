@@ -28,6 +28,7 @@ GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
 LocalDatabase="*res://DataBase/Local/Local_Database_Control.gd"
 SaveLoad="*res://Global/Save_Load.gd"
 QuestSystem="*res://addons/quest_system/quest_manager.gd"
+DatabaseReference="*res://DataBase/Local/database_references.gd"
 
 [debug]
 

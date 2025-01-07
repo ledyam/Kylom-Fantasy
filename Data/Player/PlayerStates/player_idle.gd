@@ -25,7 +25,7 @@ func physics_process(_delta: float):
 	if (player.stats.current_life<= 0):
 		player.can_attack = false
 		player.recibir_damage = false 
-		state_machine.change_to(player.states._dead)
+		state_machine.change_to(player.abreviate.states._dead)
 	else :
 		#Cambios de Direccion, Movimiento y Estado 
 		

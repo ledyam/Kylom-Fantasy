@@ -321,15 +321,14 @@ visible = false
 layout_mode = 1
 
 [node name="Saving_Alert" type="Label" parent="CanvasLayer/Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = -297.0
-offset_top = 138.0
-offset_right = -187.0
-offset_bottom = 146.0
+offset_left = 25.0
+offset_top = -12.0
+offset_right = 135.0
+offset_bottom = -4.0
 grow_vertical = 0
 text = "Juego Guardado..."
 label_settings = SubResource("LabelSettings_vcia5")
@@ -339,5 +338,3 @@ label_settings = SubResource("LabelSettings_vcia5")
 [connection signal="pressed" from="CanvasLayer/Control/Menu/VBoxContainer/Guardar" to="." method="_on_guardar_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Menu/VBoxContainer/Cargar" to="." method="_on_cargar_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Menu/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
-
-[editable path="CanvasLayer/Control/StatsPlayer"]

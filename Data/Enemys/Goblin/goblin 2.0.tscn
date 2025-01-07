@@ -926,7 +926,7 @@ size = Vector2(11, 6)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6d6x"]
 size = Vector2(12.8951, 2.26612)
 
-[node name="Mob_Enemy" node_paths=PackedStringArray("Patrullaje") instance=ExtResource("1_d8tvm")]
+[node name="Mob_Enemy" node_paths=PackedStringArray("Patrullaje") groups=["Enemy"] instance=ExtResource("1_d8tvm")]
 script = ExtResource("2_r5f78")
 Patrullaje = NodePath("Patrullaje")
 

@@ -2,7 +2,6 @@ extends Node
 
 
 var content : Dictionary
-var content1 : Dictionary
 func _ready() -> void:
 	#DataBase.connect("BDReady", DBReady)
 	#DataBase.connect("Data_Ready", Item)

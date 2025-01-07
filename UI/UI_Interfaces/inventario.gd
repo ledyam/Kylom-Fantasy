@@ -11,6 +11,10 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if self.visible:
 		player_in_inv.play("Inv")
+
+
+
+
 #Método para agregar items al inventario
 func add_item (item ) :
 	var index = self.find_child("GridContainer")
@@ -33,74 +37,6 @@ func add_item (item ) :
 
 			break
 
-#region Métodos de Abastecimiento de Inventario 
-func add_item_Inventory_free(item , cantidad ) :
-	
-	var index = self.find_child("GridContainer")
-	
-	for i in index.get_children():
-		if i.is_vacio:
-			i.item = item
-			i.is_vacio = false
-			i.cantidad = cantidad
-			break
-
-
-func add_item_Inventory_Equipable(item):
-
-	var index = self.find_child("Equipable_Item")
-	for i in index.get_children():
-		if item.slot_type == i.slot_type:
-			i.item = item
-
-
-#endregion
-#region Sistema de Save_Load del Inventario
-
-func GuardarInv():
-	var index = self.find_child("GridContainer")
-	
-	var Exterior_Inventario : Dictionary = {
-		 Inventario_free = {},
-	Inventario_Equipable = {}
-		
-	}
-	var j = 0 
-	for i in index.get_children():
-		if !i.item.is_empty() : 
-			var Interior_Inventario : Dictionary 
-			Interior_Inventario["item"] = i.item.duplicate(true)
-			Interior_Inventario.Cantidad = i.cantidad 
-			Exterior_Inventario.Inventario_free[str(j)] = Interior_Inventario
-			j += 1
-	j = 0 
-	index = self.find_child("Equipable_Item")
-	for i in index.get_children():
-		if !i.item.is_empty() : 
-			var Interior_Inventario : Dictionary
-			Interior_Inventario["item"] = i.item.duplicate(true)
-			Exterior_Inventario.Inventario_Equipable[str(j)] = Interior_Inventario
-			j += 1
-			
-			
-			
-			
-	return Exterior_Inventario
-func CargarInv(items : Dictionary):
-	var index = self.find_child("GridContainer")
-	for i in index.get_children():
-		i.item.clear()
-		i.is_vacio = true
-	for item in items.Inventario_free:
-		add_item_Inventory_free(items.Inventario_free[item].item ,              \
-		items.Inventario_free[item].Cantidad)
-		
-	for item in items.Inventario_Equipable:
-		add_item_Inventory_Equipable( items.Inventario_Equipable[str(item)].item)
-	
-#endregion
-
-#Muestra Descripción , textura y Título del Item
 func set_description(item : Item):
 	find_child("Name").text = item.name
 	find_child("Icon").texture = item.texture
@@ -114,3 +50,71 @@ func Default_Description ():
 	find_child("Icon").texture = null
 	find_child("Description").text = default_text
 	find_child("Stats").text = ""
+
+#Muestra Descripción , textura y Título del Item
+
+
+#region Métodos de Abastecimiento de Inventario 
+func add_item_Inventory_free(itemID , cantidad ) :
+	var Inventario = self.find_child("GridContainer")
+	
+	for slot in Inventario.get_children():
+		if slot.is_vacio:
+			slot.item = DatabaseReference.item_database[int(itemID)]
+			slot.is_vacio = false
+			slot.cantidad = int(cantidad)
+			break
+
+
+func add_item_Inventory_Equipable(itemID , type):
+
+	var Equipables = self.find_child("Equipable_Item")
+	
+	
+	for slot in Equipables.get_children():
+		if type == slot.slot_type:
+			slot.item = DatabaseReference.item_database[int(itemID)]
+
+
+#endregion
+#region Sistema de Save_Load del Inventario
+
+func GuardarInv():
+	var slots_inventario = self.find_child("GridContainer")
+	
+	var Inventario : Dictionary = {
+	 items_referencies = {},
+	equipable_items_referencies = {}
+	}
+	
+	
+	for slot in slots_inventario.get_children():
+		if slot.item != null:
+			Inventario.items_referencies[slot.item.ID] = slot.cantidad
+	
+
+
+	slots_inventario = self.find_child("Equipable_Item")
+	for slot in slots_inventario.get_children():
+		if slot.item != null: 
+			Inventario.equipable_items_referencies[slot.item.ID]= slot.item.type
+
+	return Inventario
+	
+	
+func CargarInv(inventario_cargado : Dictionary):
+	var Inventario = self.find_child("GridContainer")
+	
+	for slot in Inventario.get_children():
+		slot.item = null
+		slot.is_vacio = true
+	
+	for item in inventario_cargado.items_referencies:
+		add_item_Inventory_free(item,inventario_cargado.items_referencies[item] )
+
+		await get_tree().create_timer(5).timeout
+	for item in inventario_cargado.equipable_items_referencies:
+		add_item_Inventory_Equipable(item ,inventario_cargado.equipable_items_referencies[item] )
+	#
+	pass
+#endregion

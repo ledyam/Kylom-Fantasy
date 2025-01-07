@@ -4,22 +4,24 @@ const SAVE_PATH = "user://Guardado1.json"
 
 func Save (player : Player , inventario) -> void:
 	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	
 	var save_dict = {
+		
 		player = {
 			position = var_to_str(player.position),
-			current_life= var_to_str(player.current_life),
-			current_exp = var_to_str(player.current_exp),
-			max_life = var_to_str (player.max_life), 
-			max_exp =  var_to_str(player.max_exp),
-			current_level = var_to_str (player.current_level),
+			current_life= var_to_str(player.stats.current_life),
+			current_exp = var_to_str(player.stats.current_exp),
+			max_life = var_to_str (player.stats.max_life), 
+			max_exp =  var_to_str(player.stats.max_exp),
+			current_level = var_to_str (player.stats.current_level),
 			
-			player_reloj = {
-				month = var_to_str (player.player_ui.reloj.month_count),
-				day = var_to_str (player.player_ui.reloj.day),
-				hour = var_to_str (player.player_ui.reloj.hour),
-				minute =var_to_str (player.player_ui.reloj.minute),
-				week_day = var_to_str (player.player_ui.reloj.count_week_day)
-			},
+			#player_reloj = {
+				#month = var_to_str (player.player_ui.reloj.month_count),
+				#day = var_to_str (player.player_ui.reloj.day),
+				#hour = var_to_str (player.player_ui.reloj.hour),
+				#minute =var_to_str (player.player_ui.reloj.minute),
+				#week_day = var_to_str (player.player_ui.reloj.count_week_day)
+			#},
 		},
 		inventory = inventario,
 		enemies = []

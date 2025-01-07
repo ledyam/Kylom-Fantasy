@@ -3,7 +3,7 @@ extends Control
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var stats_player: NinePatchRect = $CanvasLayer/Control/StatsPlayer
 
-var player : Player
+var player : MainPlayer
 
 func _ready() -> void:
 	$CanvasLayer/Control/Menu.visible = false
@@ -49,7 +49,7 @@ func _on_bestiario_pressed() -> void:
 
 
 
-
+#region Seccion de Guardado y Cargado de Partida
 
 func _on_guardar_pressed() -> void:
 	SaveLoad.Save(player , inventario.GuardarInv())
@@ -63,11 +63,11 @@ func _on_cargar_pressed() -> void:
 	
 #region Estadisiticas del Player
 	player.position = str_to_var(data.player.position)
-	player.current_life = str_to_var(data.player.current_life)
-	player.current_exp = str_to_var(data.player.current_exp)
-	player.max_life =  str_to_var (data.player.max_life) 
-	player.max_exp =  str_to_var (data.player.max_exp)
-	player.current_level = str_to_var (data.player.current_level)
+	player.stats.current_life = str_to_var(data.player.current_life)
+	player.stats.current_exp = str_to_var(data.player.current_exp)
+	player.stats.max_life =  str_to_var (data.player.max_life) 
+	player.stats.max_exp =  str_to_var (data.player.max_exp)
+	player.stats.current_level = str_to_var (data.player.current_level)
 #endregion
 
 #region Inventario
@@ -75,11 +75,11 @@ func _on_cargar_pressed() -> void:
 #endregion
 	
 #region Datos del Tiempo
-	player.player_ui.reloj.minute = str_to_var(data.player.player_reloj.minute)
-	player.player_ui.reloj.hour = str_to_var(data.player.player_reloj.hour)
-	player.player_ui.reloj.day = str_to_var(data.player.player_reloj.day)
-	player.player_ui.reloj.count_week_day = str_to_var(data.player.player_reloj.week_day)
-	player.player_ui.reloj.month_count = str_to_var(data.player.player_reloj.month)
+	#player.player_ui.reloj.minute = str_to_var(data.player.player_reloj.minute)
+	#player.player_ui.reloj.hour = str_to_var(data.player.player_reloj.hour)
+	#player.player_ui.reloj.day = str_to_var(data.player.player_reloj.day)
+	#player.player_ui.reloj.count_week_day = str_to_var(data.player.player_reloj.week_day)
+	#player.player_ui.reloj.month_count = str_to_var(data.player.player_reloj.month)
 #endregion
 	
 #region Instanciación de Enemigos Guardados
@@ -87,8 +87,10 @@ func _on_cargar_pressed() -> void:
 	if !get_tree().get_nodes_in_group("Enemy").is_empty():
 		get_tree().call_group("Enemy", "queue_free")
 		for enemy_config in data.enemies:
-			var enemy = preload("res://Data/Enemys/Skeleton/skeleton.tscn").instantiate()
-			enemy.position = str_to_var(enemy_config.position)
+			var enemy = preload("res://Data/Enemys/Goblin/goblin 2.0.tscn").instantiate()
+			enemy.global_position = str_to_var(enemy_config.position)
 			get_tree().current_scene.add_child(enemy)
 	pass # Replace with function body.
+#endregion
+
 #endregion

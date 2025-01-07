@@ -15,7 +15,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 
 
-func _process(delta: float) -> void:
+func _process( _delta: float) -> void:
 	if on_area and Input.is_action_just_pressed("Atacar"):
 		if encendido :
 			$AnimatedSprite2D.play("ending")

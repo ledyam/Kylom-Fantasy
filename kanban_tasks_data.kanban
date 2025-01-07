@@ -51,7 +51,8 @@
 			"uuid": "59d6ca3d-b983-4f8a-b834-5052daff4f26",
 			"title": "En Progreso",
 			"tasks": [
-				"0b11db4b-3715-480f-bd42-97c7a55939cd"
+				"0b11db4b-3715-480f-bd42-97c7a55939cd",
+				"b8aafff3-4f1c-4e6f-b9b0-2945b70063ef"
 			]
 		},
 		{
@@ -93,6 +94,26 @@
 				},
 				{
 					"details": "Crear sistema Drag_and_Drop",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "b8aafff3-4f1c-4e6f-b9b0-2945b70063ef",
+			"title": "Arreglar Sistema de Guardado del Inventario",
+			"description": "Arreglar Sistema de Guardado",
+			"category": "52aa36b5-a120-4a5f-9c9b-b29ecccc73ec",
+			"steps": [
+				{
+					"details": "Arreglar sistema Principal",
+					"done": true
+				},
+				{
+					"details": "Resolver Conflicto de ID Unico",
+					"done": false
+				},
+				{
+					"details": "Refactorizar Codigo de SaveLoad",
 					"done": false
 				}
 			]

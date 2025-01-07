@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_w6kr6")
+ID = 3000
 name = "Manzana"
 type = 8
 texture = ExtResource("2_a2ky7")
