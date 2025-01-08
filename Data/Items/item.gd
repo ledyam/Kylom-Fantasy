@@ -12,10 +12,14 @@ var type : int
 @export var texture : Texture
 @export_enum("Común", "Épico","Legendario") var rarity : String
 @export var drop : float
-@export_multiline var description : String
 
 
 
 @export_category("Item Attribute")
 @export_enum("ATK","DEF","REG") var attribute : String
 @export var attribute_value : float
+
+
+@export_multiline var description : String :
+	get():
+		return attribute + ": %d" %attribute_value
