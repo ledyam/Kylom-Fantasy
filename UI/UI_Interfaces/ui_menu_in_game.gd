@@ -1,52 +1,57 @@
 extends Control
 @onready var inventario: NinePatchRect = $CanvasLayer/Control/Inventario
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var stats_player: NinePatchRect = $CanvasLayer/Control/StatsPlayer
+@onready var bestiary: NinePatchRect = $CanvasLayer/Control/Bestiary
+@onready var menu: NinePatchRect = $CanvasLayer/Control/Menu
+
 
 var player : MainPlayer
 
 func _ready() -> void:
-	$CanvasLayer/Control/Menu.visible = false
+	menu.visible = false
 	inventario.visible = false
 	$CanvasLayer/Control/Saving_Alert.visible = false 
 	player = self.owner
 	
 
 func _input(event: InputEvent) -> void:
+	
 	if event.is_action_pressed("Esc") :
-		if  $CanvasLayer/Control/Menu.visible : 
+		if  menu.visible : 
 			animation_player.play("Hide_menu")
-
-		elif !$CanvasLayer/Control/Menu.visible && $CanvasLayer/Control/Inventario.visible or $CanvasLayer/Control/Bestiary.visible: 
-			$CanvasLayer/Control/Inventario.visible = false 
+			get_tree().paused = false 
+			
+			
+		elif !menu.visible && inventario.visible or bestiary.visible: 
+			animation_player.play("Hide_inventory")
 			$CanvasLayer/Control/Bestiary.visible = false
-		elif !$CanvasLayer/Control/Menu.visible: 
+			get_tree().paused = false 
+		elif !menu.visible: 
 			animation_player.play("Show_menu")
-
+			get_tree().paused = true
+			
 	if event.is_action_pressed('Inventory'):
 		if inventario.visible:
 			animation_player.play("Hide_inventory")
+			get_tree().paused = false 
 		elif !$CanvasLayer/Control/Bestiary.visible :
 				animation_player.play("Show_inventory")
+				get_tree().paused = true
 
 
 func _on_salir_pressed() -> void:
 	get_tree().change_scene_to_file("res://UI/Menú Principal/principal_menu.tscn")
-	pass # Replace with function body.
-
 
 func _on_inventario_pressed() -> void:
 	animation_player.play("Hide_menu")
 	await animation_player.animation_finished
 	animation_player.play("Show_inventory")
-	
+
 
 func _on_bestiario_pressed() -> void:
 	animation_player.play("Hide_menu")
 	await animation_player.animation_finished
-	$CanvasLayer/Control/Bestiary.visible = true 
-	pass # Replace with function body.
-
+	bestiary.visible = true 
 
 
 #region Seccion de Guardado y Cargado de Partida
