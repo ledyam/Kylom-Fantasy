@@ -55,7 +55,7 @@ func LEVEL_UP ():
 	stats.current_level += 1
 	stats.max_life += 10
 	stats.current_life= stats.max_life
-	ui_menu_in_game.stats_player.IncrementarPuntosRestantes(3)
+	ui_menu_in_game.inventario.stats_player.IncrementarPuntosRestantes(3)
 	$"Sounds/LevelUpPickup(rpg)".play()
 	pass
 
