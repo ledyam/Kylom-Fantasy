@@ -26,7 +26,7 @@ func _on_mouse_entered() -> void:
 		owner.set_description(item)
 	pass
 
-	
+
 #Accion de usar objeto Consumible del Inventario 
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
@@ -35,15 +35,8 @@ func _on_gui_input(event: InputEvent) -> void:
 		if  self.item != null and item.type != 8:
 			Equipar_Item()
 		
-	pass # Replace with function body.
 
-func Asignar_Stats():
-	var player_reference = get_tree().current_scene.find_child("Marcus")
-	match item.attribute : 
-		"ATK" : 
-			player_reference.stats.ATK += item.attribute_value
-		"DEF" : 
-			player_reference.stats.DEF += item.attribute_value
+
 
 #region Uso de Item
 
@@ -74,3 +67,11 @@ func Equipar_Item():
 			is_vacio = true
 			break
 #endregion
+
+func Asignar_Stats():
+	
+	match item.attribute : 
+		"ATK" : 
+			owner.player_reference.stats.ATK += item.attribute_value
+		"DEF" : 
+			owner.player_reference.stats.DEF += item.attribute_value

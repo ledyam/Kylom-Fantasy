@@ -36,6 +36,6 @@ func _on_gui_input(event: InputEvent) -> void:
 			self.item = null
 
 func Desasignar_Stats():
+	
 	match item.type : 
-		"Wapon" : 
-			owner.owner.player.ATK -= item.attribute_value
+		3: owner.player_reference.stats.ATK -= item.attribute_value

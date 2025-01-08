@@ -1,11 +1,13 @@
 extends NinePatchRect
 @export_multiline var default_text : String
 @onready var coger_objeto: AudioStreamPlayer = $Sounds/CogerObjeto
-@onready var player_in_inv: AnimatedSprite2D = $PlayerInInv
-
+@onready var player_in_inv: AnimatedSprite2D =  $PlayerInInv
+var player_reference : MainPlayer
+@onready var stats_player: NinePatchRect = $Int_Inventario/PlayerSection/StatsPlayer
 
 
 func _ready() -> void:
+	player_reference = get_tree().current_scene.find_child("Marcus")
 	Default_Description()
 
 func _process(_delta: float) -> void:
@@ -41,7 +43,7 @@ func set_description(item : Item):
 	find_child("Name").text = item.name
 	find_child("Icon").texture = item.texture
 	find_child("Description").text = item.description
-	#find_child("Stats").text = str(item["Stats"]) + '\n\n '+item["Rarity"]
+
 	
 	
 #Metodo por defecto para el Inventario General
