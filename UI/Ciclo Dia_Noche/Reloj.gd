@@ -2,7 +2,7 @@ extends Control
 
 @onready var hour_label: Label = $Container/HBoxContainer/Hour
 @onready var minute_label: Label = $Container/HBoxContainer/Minute
-@onready var week_day: Label = $Container/VBoxContainer/Interface_Hour_Day/Week_day
+
 @onready var animation_reloj: AnimationPlayer =$Reloj_animation 
 
 

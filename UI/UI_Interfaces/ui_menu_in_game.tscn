@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://5jark5pkwsb"]
+[gd_scene load_steps=16 format=3 uid="uid://5jark5pkwsb"]
 
 [ext_resource type="Theme" uid="uid://e2ibn4lqfv0e" path="res://UI/UI_Interfaces/ui_menu_in_game.tres" id="1_lceqp"]
 [ext_resource type="Texture2D" uid="uid://c75pdyh7y2c8" path="res://Assets/Tiles/GUI/GUI/GUI.png" id="1_qa2pc"]
 [ext_resource type="Script" path="res://UI/UI_Interfaces/ui_menu_in_game.gd" id="3_v0vnf"]
 [ext_resource type="PackedScene" uid="uid://ckmhjkds58k4w" path="res://UI/inventario.tscn" id="5_tnsaa"]
 [ext_resource type="PackedScene" uid="uid://bweqc780t3ltc" path="res://Resources/Button/button_with_sound.tscn" id="5_vnmr3"]
+[ext_resource type="PackedScene" uid="uid://ewo22t74u83d" path="res://UI/Ciclo Dia_Noche/Reloj.tscn" id="7_ohdid"]
 [ext_resource type="PackedScene" uid="uid://q1cmeacruiwm" path="res://UI/bestiary.tscn" id="11_8o6i4"]
 
 [sub_resource type="Animation" id="Animation_oxfsh"]
@@ -331,6 +332,9 @@ offset_bottom = -4.0
 grow_vertical = 0
 text = "Juego Guardado..."
 label_settings = SubResource("LabelSettings_vcia5")
+
+[node name="Reloj" parent="CanvasLayer/Control" instance=ExtResource("7_ohdid")]
+layout_mode = 1
 
 [connection signal="pressed" from="CanvasLayer/Control/Menu/VBoxContainer/InventarioB" to="." method="_on_inventario_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Menu/VBoxContainer/Bestiario" to="." method="_on_bestiario_pressed"]

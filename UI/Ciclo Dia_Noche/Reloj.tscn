@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ewo22t74u83d"]
+[gd_scene load_steps=9 format=3 uid="uid://ewo22t74u83d"]
 
 [ext_resource type="Script" path="res://UI/Ciclo Dia_Noche/Reloj.gd" id="1_yrnus"]
 [ext_resource type="Texture2D" uid="uid://d2rr08uww1ivb" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Interfaces Bundle - Free version/Pack Content/DarkMode Interface/Player interface/Player Status/Player status bars frame for 9-slice/spr_timewallpaper_9slice.png" id="2_emoma"]
@@ -42,9 +42,6 @@ _data = {
 "RESET": SubResource("Animation_jryni")
 }
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1gski"]
-texture = ExtResource("2_emoma")
-
 [sub_resource type="LabelSettings" id="LabelSettings_s7glv"]
 font = ExtResource("3_jpjeb")
 font_size = 10
@@ -58,10 +55,10 @@ layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -132.0
-offset_top = 4.0
-offset_right = -132.0
-offset_bottom = 4.0
+offset_left = -122.0
+offset_top = 249.0
+offset_right = -122.0
+offset_bottom = 249.0
 grow_horizontal = 0
 script = ExtResource("1_yrnus")
 
@@ -70,21 +67,25 @@ libraries = {
 "": SubResource("AnimationLibrary_endmq")
 }
 
-[node name="Container" type="Panel" parent="."]
+[node name="Container" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -4.0
 offset_top = -3.0
 offset_right = 131.0
 offset_bottom = 84.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_1gski")
+rotation = -6.28319
+scale = Vector2(0.769726, 0.993045)
+pivot_offset = Vector2(67, 44)
+texture = ExtResource("2_emoma")
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Label" parent="Container"]
 visible = false
 layout_mode = 2
-anchor_left = 0.496296
-anchor_top = 0.402299
-anchor_right = 0.557737
-anchor_bottom = 0.548284
+anchor_left = 0.467426
+anchor_top = 0.447873
+anchor_right = 0.528867
+anchor_bottom = 0.593858
 offset_right = -0.294434
 offset_bottom = 0.299339
 scale = Vector2(1.00986, 0.7653)
@@ -100,10 +101,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.5
-offset_top = 32.0
-offset_right = 39.5
-offset_bottom = 54.0
+offset_left = -24.5
+offset_top = 36.0
+offset_right = 35.5
+offset_bottom = 58.0
 grow_horizontal = 2
 scale = Vector2(0.8, 0.76)
 theme_override_constants/separation = -14
