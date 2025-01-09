@@ -2,18 +2,20 @@ extends Node2D
 
 var ENEMYS : Dictionary = {
 	1 : "res://Data/Enemys/Goblin/goblin 2.0.tscn",
+	2 : "res://Data/Enemys/Slime/slime 2.0.tscn"
 }
 var enemy
 @onready var animation_world: AnimationPlayer = $Animation_World
 
 func _ready() -> void:
+	randomize()
 	animation_world.play("Fade_In_World")
 	
 	
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Instantiation"):
-		enemy = load(ENEMYS[1])  
+		enemy = load(ENEMYS[randi_range(1,2)])  
 		var ske = enemy.instantiate()
 		ske.global_position = Vector2(randf_range(50,400), randf_range(-50 , 50))
 		add_child(ske)

@@ -9,14 +9,12 @@ var player_reference : MainPlayer
 func _ready() -> void:
 	player_reference = get_tree().current_scene.find_child("Marcus")
 	Default_Description()
-
+	
 func _process(_delta: float) -> void:
 	if self.visible:
 		player_in_inv.play("Inv")
 
-
-
-
+	
 #Método para agregar items al inventario
 func add_item (item ) :
 	var index = self.find_child("GridContainer")
@@ -26,7 +24,7 @@ func add_item (item ) :
 		if !i.is_vacio and i.item == item and item.type == 8:
 			i.cantidad += 1
 			break
-		
+
 		elif i.is_vacio and item.type != 8:
 			i.is_vacio = false
 			i.item = item
@@ -57,14 +55,14 @@ func Default_Description ():
 
 
 #region Métodos de Abastecimiento de Inventario 
-func add_item_Inventory_free(itemID , cantidad ) :
+func add_item_Inventory_free( item : Array ) :
 	var Inventario = self.find_child("GridContainer")
 	
 	for slot in Inventario.get_children():
 		if slot.is_vacio:
-			slot.item = DatabaseReference.item_database[int(itemID)]
+			slot.item = DatabaseReference.item_database[int(item[0])]
 			slot.is_vacio = false
-			slot.cantidad = int(cantidad)
+			slot.cantidad = int(item[1])
 			break
 
 
@@ -89,11 +87,12 @@ func GuardarInv():
 	equipable_items_referencies = {}
 	}
 	
-	
-	for slot in slots_inventario.get_children():
+	var i = 0
+	for  slot in slots_inventario.get_children():
+		
 		if slot.item != null:
-			Inventario.items_referencies[slot.item.ID] = slot.cantidad
-	
+			Inventario.items_referencies[i] = [slot.item.ID, slot.cantidad]
+			i +=1 
 
 
 	slots_inventario = self.find_child("Equipable_Item")
@@ -112,9 +111,9 @@ func CargarInv(inventario_cargado : Dictionary):
 		slot.is_vacio = true
 	
 	for item in inventario_cargado.items_referencies:
-		add_item_Inventory_free(item,inventario_cargado.items_referencies[item] )
+		add_item_Inventory_free(inventario_cargado.items_referencies[item] )
 
-		await get_tree().create_timer(5).timeout
+
 	for item in inventario_cargado.equipable_items_referencies:
 		add_item_Inventory_Equipable(item ,inventario_cargado.equipable_items_referencies[item] )
 	#

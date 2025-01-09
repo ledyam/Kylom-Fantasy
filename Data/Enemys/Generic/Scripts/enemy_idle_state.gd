@@ -13,6 +13,7 @@ func physics_process(_delta: float) -> void:
 			state_machine.change_to("Walk")
 		else :
 			state_machine.change_to("Patrullaje")
-	
+	else : 
+		state_machine.change_to("Dead")
 
 	

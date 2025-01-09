@@ -11,6 +11,7 @@ func physics_process(_delta: float) -> void:
 				enemy.velocity = enemy.to_local(enemy.player.position).normalized() * 15
 			enemy.move_and_slide()
 		else : 
+			enemy.can_jump = true
 			state_machine.change_to("Attack")
 		
 	else: 

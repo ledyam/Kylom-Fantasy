@@ -7,7 +7,9 @@ func enter() -> void:
 	
 	
 func _dead() -> void:
-	var temporal_item = enemy.item.instantiate()
-	CentralSignal.Instantiate.emit(temporal_item , enemy.global_position,enemy.loot)
-	CentralSignal.Unlock_Bestiary.emit(enemy.NOMBRE)
+	if enemy.can_loot != 0 : 
+		var temporal_item = enemy.item.instantiate()
+		CentralSignal.Instantiate.emit(temporal_item , enemy.global_position,enemy.loot)
+		CentralSignal.Unlock_Bestiary.emit(enemy.NOMBRE)
 	enemy.queue_free()
+		

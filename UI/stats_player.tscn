@@ -83,18 +83,22 @@ offset_bottom = -10.1875
 theme_override_constants/separation = 10
 
 [node name="FuerzaValue" type="Label" parent="AtributosValues"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "5"
 
 [node name="DestrezaValue" type="Label" parent="AtributosValues"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "5"
 
 [node name="InteligenciaValue" type="Label" parent="AtributosValues"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "5"
 
 [node name="SuerteValue" type="Label" parent="AtributosValues"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "5"
 

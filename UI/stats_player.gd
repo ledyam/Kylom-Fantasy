@@ -41,7 +41,7 @@ func _on_fuerza_button_pressed() -> void:
 		DecrementarPuntosRestantes()
 		owner.player_reference.stats.ATK += 10
 	
-
+	
 
 func _on_destreza_button_pressed() -> void:
 	if PuedeIncrementar():

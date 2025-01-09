@@ -11,6 +11,6 @@ type = 0
 texture = ExtResource("2_2sbi4")
 rarity = "Común"
 drop = 0.9
-description = "Un simple casco de hierro "
 attribute = "DEF"
 attribute_value = 20.0
+description = "Un simple casco de hierro "

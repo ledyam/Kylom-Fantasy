@@ -10,7 +10,7 @@ var type : int
 
 
 @export var texture : Texture
-@export_enum("Común", "Épico","Legendario") var rarity : String
+@export_enum("Común","Poco Común", "Épico","Legendario") var rarity : String
 @export var drop : float
 
 

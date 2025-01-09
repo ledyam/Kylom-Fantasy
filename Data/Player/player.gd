@@ -113,3 +113,13 @@ func _on_damage_box_body_entered(body: Node2D) -> void:
 	pass 
 	
 #endregion
+
+
+func _on_hit_box_area_entered(area: Area2D) -> void:
+	if area.name == "Enemy_Attack_Area":
+		
+		knockback = (self.global_position - area.position).normalized() 
+		velocity = knockback * 20
+		Recibir_damage(area.owner.ATK) 
+		
+	pass # Replace with function body.

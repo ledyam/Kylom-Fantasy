@@ -18,7 +18,8 @@ var can_critic : bool = false
 var is_alive : bool = true
 var player = null # Referencia al Player
 var on_area : bool = false
-const MINIMUM_DISTANCE = 13 
+const MINIMUM_DISTANCE = 16
+var can_loot
 @export_range(0,1) var critic_chance : float
 
 
@@ -31,7 +32,9 @@ var  item : PackedScene = load("res://Data/Items/item.tscn")
 signal Take_Damage
 
 func _ready() -> void:
-	loot = GLOBAL.Asignar_Item()
+	can_loot = randi_range(0,1)
+	if can_loot == 1 :
+		loot = ITEM_LOOT.Asignar_Item()
 	
 
 func spawn_numero_flotante(damage ): 

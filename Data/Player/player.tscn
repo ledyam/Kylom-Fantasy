@@ -2502,5 +2502,6 @@ debug_color = Color(0.970136, 0.126886, 0.303562, 0.42)
 [connection signal="timeout" from="Timers/Tiempo_de_muerte" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timers/Finish_animation" to="StateMachine/Attack" method="_on_finish_animation_timeout"]
 [connection signal="body_entered" from="Damage_box" to="." method="_on_damage_box_body_entered"]
+[connection signal="area_entered" from="Hit_box" to="." method="_on_hit_box_area_entered"]
 [connection signal="body_entered" from="Hit_box" to="." method="_on_hit_box_body_entered"]
 [connection signal="body_exited" from="Hit_box" to="." method="_on_hit_box_body_exited"]

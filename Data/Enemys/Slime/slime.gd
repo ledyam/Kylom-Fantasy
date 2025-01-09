@@ -1,5 +1,5 @@
 
-class_name Trash extends "res://Data/Enemys/EnemyOrignal.gd"
+class_name Trash extends "res://Data/Enemys/Generic/mob_enemy.gd"
 
 @onready var anim_enemy: AnimationPlayer = $AnimationEnemy
 @export var Patrullaje : Node2D
@@ -15,10 +15,3 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(_body: Node2D) -> void:
 	on_area = false 
 	pass # Replace with function body.
-func _on_area_salto_body_entered(body: Node2D) -> void:
-	if body as MainPlayer:
-		can_jump = true
-func _on_area_salto_body_exited(body: Node2D) -> void:
-	if body as MainPlayer:
-		can_jump = false 
-		

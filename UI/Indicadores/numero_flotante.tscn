@@ -59,7 +59,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_f52ls"]
 resource_name = "critico"
-length = 1.2
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -67,7 +67,7 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.566667, 1.13333),
+"times": PackedFloat32Array(0, 0.933333, 1.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 0.118191, 0.222906, 1), Color(1, 0.07, 0.101, 1), Color(1, 1, 1, 0)]
@@ -79,7 +79,7 @@ tracks/1/path = NodePath(".:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.1, 0.233333, 0.4),
+"times": PackedFloat32Array(0.1, 0.4, 0.766667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1, 1)]
@@ -200,10 +200,10 @@ _data = {
 scale = Vector2(0.4, 0.4)
 
 [node name="Label" type="Label" parent="."]
-offset_left = -13.0
-offset_top = -5.0
-offset_right = 13.0
-offset_bottom = 3.0
+offset_left = -14.0
+offset_top = -19.0
+offset_right = 12.0
+offset_bottom = -11.0
 pivot_offset = Vector2(13, 5)
 text = "test"
 label_settings = SubResource("LabelSettings_ivmsg")
