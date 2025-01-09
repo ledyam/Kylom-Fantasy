@@ -110,7 +110,7 @@
 				},
 				{
 					"details": "Resolver Conflicto de ID Unico",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "Refactorizar Codigo de SaveLoad",
