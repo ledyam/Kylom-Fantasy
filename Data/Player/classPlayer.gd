@@ -22,7 +22,7 @@ var Agilidad: int = 5
 var Carisma : int = 5
 
 #PlUS
-var numero_flotante : PackedScene = load("res://UI/Indicadores/numero_flotante.tscn")
+var numero_flotante : PackedScene = load("res://UI/Indicators/numero_flotante.tscn")
 
 #region SEÑALES
 signal Hit_Damage

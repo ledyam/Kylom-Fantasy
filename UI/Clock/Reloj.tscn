@@ -1,0 +1,130 @@
+[gd_scene load_steps=9 format=3 uid="uid://ewo22t74u83d"]
+
+[ext_resource type="Script" path="res://UI/Clock/Reloj.gd" id="1_yrnus"]
+[ext_resource type="Texture2D" uid="uid://d2rr08uww1ivb" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Interfaces Bundle - Free version/Pack Content/DarkMode Interface/Player interface/Player Status/Player status bars frame for 9-slice/spr_timewallpaper_9slice.png" id="2_emoma"]
+[ext_resource type="FontFile" uid="uid://refuf5j5hr24" path="res://Assets/Fonts/PixelOperator8.ttf" id="3_jpjeb"]
+
+[sub_resource type="Animation" id="Animation_tw2rl"]
+resource_name = "Contador"
+length = 2.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container/Timer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.466667, 0.833333, 1.23333, 1.66667, 1.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_jryni"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container/Timer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_endmq"]
+_data = {
+"Contador": SubResource("Animation_tw2rl"),
+"RESET": SubResource("Animation_jryni")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_s7glv"]
+font = ExtResource("3_jpjeb")
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_jq5wu"]
+font = ExtResource("3_jpjeb")
+font_size = 10
+
+[node name="Reloj" type="Control"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -122.0
+offset_top = 249.0
+offset_right = -122.0
+offset_bottom = 249.0
+grow_horizontal = 0
+script = ExtResource("1_yrnus")
+
+[node name="Reloj_animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_endmq")
+}
+
+[node name="Container" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -3.0
+offset_right = 131.0
+offset_bottom = 84.0
+rotation = -6.28319
+scale = Vector2(0.769726, 0.993045)
+pivot_offset = Vector2(67, 44)
+texture = ExtResource("2_emoma")
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Label" parent="Container"]
+visible = false
+layout_mode = 2
+anchor_left = 0.467426
+anchor_top = 0.447873
+anchor_right = 0.528867
+anchor_bottom = 0.593858
+offset_right = -0.294434
+offset_bottom = 0.299339
+scale = Vector2(1.00986, 0.7653)
+size_flags_horizontal = 4
+text = ":"
+label_settings = SubResource("LabelSettings_s7glv")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container"]
+z_index = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.5
+offset_top = 36.0
+offset_right = 35.5
+offset_bottom = 58.0
+grow_horizontal = 2
+scale = Vector2(0.8, 0.76)
+theme_override_constants/separation = -14
+
+[node name="Hour" type="Label" parent="Container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "00"
+label_settings = SubResource("LabelSettings_s7glv")
+horizontal_alignment = 1
+
+[node name="Minute" type="Label" parent="Container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "00"
+label_settings = SubResource("LabelSettings_jq5wu")
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

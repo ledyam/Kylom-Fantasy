@@ -8,6 +8,7 @@ extends Node
 ## - Provides access to all the subsystems.[br]
 ## - Has methods to start/end timelines.[br]
 
+var is_active : bool
 
 ## States indicating different phases of dialog.
 enum States {
@@ -78,10 +79,10 @@ signal dialogic_resumed
 
 ## Emitted when the timeline ends.
 ## This can be a timeline ending or [method end_timeline] being called.
-signal timeline_ended
+signal timeline_ended 
 ## Emitted when a timeline starts by calling either [method start]
 ## or [method start_timeline].
-signal timeline_started
+signal timeline_started 
 ## Emitted when an event starts being executed.
 ## The event may not have finished executing yet.
 signal event_handled(resource: DialogicEvent)
@@ -166,6 +167,7 @@ func _ready() -> void:
 ## For argument info, checkout [method start_timeline].
 ## -> returns the layout node
 func start(timeline:Variant, label:Variant="") -> Node:
+	is_active = true
 	# If we don't have a style subsystem, default to just start_timeline()
 	if not has_subsystem('Styles'):
 		printerr("[Dialogic] You called Dialogic.start() but the Styles subsystem is missing!")
@@ -194,6 +196,7 @@ func start(timeline:Variant, label:Variant="") -> Node:
 ## @timeline can be either a loaded timeline resource or a path to a timeline file.
 ## @label_or_idx can be a label (string) or index (int) to skip to immediatly.
 func start_timeline(timeline:Variant, label_or_idx:Variant = "") -> void:
+	is_active = true
 	# load the resource if only the path is given
 	if typeof(timeline) == TYPE_STRING:
 		#check the lookup table if it's not a full file name
@@ -235,7 +238,7 @@ func preload_timeline(timeline_resource:Variant) -> Variant:
 		if timeline_resource == null:
 			printerr("[Dialogic] There was an error preloading this timeline. Check the filename, and the timeline for errors")
 			return null
-
+	
 	(timeline_resource as DialogicTimeline).process()
 
 	return timeline_resource
@@ -414,6 +417,7 @@ func add_subsystem(subsystem_name:String, script_path:String) -> DialogicSubsyst
 
 ## This handles the `Layout End Behaviour` setting that can be changed in the Dialogic settings.
 func _on_timeline_ended() -> void:
+	is_active = false
 	if self.Styles.has_active_layout_node() and self.Styles.get_layout_node().is_inside_tree():
 		match ProjectSettings.get_setting('dialogic/layout/end_behaviour', 0):
 			0:

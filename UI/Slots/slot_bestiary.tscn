@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://brhbdqmyil5lk"]
+
+[ext_resource type="PackedScene" uid="uid://6rpyx7ocac0d" path="res://UI/Slots/slot.tscn" id="1_lq6ym"]
+[ext_resource type="Texture2D" uid="uid://54uyvgqof04p" path="res://Assets/Mis Inventos/Incong.png" id="2_2upas"]
+[ext_resource type="Script" path="res://UI/Slots/slot_bestiary.gd" id="2_n23qi"]
+
+[node name="Slot" instance=ExtResource("1_lq6ym")]
+script = ExtResource("2_n23qi")
+
+[node name="CenterContainer" parent="." index="0"]
+offset_left = -22.5
+offset_top = -22.0
+offset_right = 22.5
+offset_bottom = 22.0
+
+[node name="BG" parent="CenterContainer" index="0"]
+stretch_mode = 3
+
+[node name="Icon" parent="CenterContainer" index="1"]
+texture = ExtResource("2_2upas")

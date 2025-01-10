@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Data/Enemys/Generic/Scripts/enemy_take_damage.gd" id="8_v2am3"]
 [ext_resource type="Script" path="res://Data/Enemys/Generic/Scripts/enemy_patrullaje_state.gd" id="9_twt11"]
 [ext_resource type="PackedScene" uid="uid://bcyomv3f2203e" path="res://Data/Enemys/Generic/patrol.tscn" id="10_01jtp"]
-[ext_resource type="PackedScene" uid="uid://dwptar7fbs25p" path="res://UI/Enemys/mob_enemy_health_bar.tscn" id="10_hjaus"]
+[ext_resource type="PackedScene" uid="uid://dwptar7fbs25p" path="res://UI/EnemysUI/mob_enemy_health_bar.tscn" id="10_hjaus"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_voxds"]
 radius = 4.0

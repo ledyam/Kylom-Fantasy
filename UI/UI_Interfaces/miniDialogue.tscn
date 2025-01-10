@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://do0x7xov4l6lq"]
+
+[ext_resource type="Script" path="res://UI/UI_Interfaces/mini_dialogue.gd" id="1_61fbe"]
+[ext_resource type="Texture2D" uid="uid://bwn7cl1ih14fl" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Interfaces Bundle - Free version/Pack Content/DarkMode Interface/Dialogue interfaces/spr_dialogue_box_9slice.png" id="1_h0g3g"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ys1sd"]
+texture = ExtResource("1_h0g3g")
+
+[node name="Control" type="Control"]
+process_mode = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_61fbe")
+
+[node name="SprDialogueBox9Slice" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.206067
+anchor_bottom = 0.36088
+offset_right = 96.0565
+offset_bottom = 116.301
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.565355, 0.513386)
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_ys1sd")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="mouse_entered" from="SprDialogueBox9Slice" to="." method="_on_spr_dialogue_box_9_slice_mouse_entered"]

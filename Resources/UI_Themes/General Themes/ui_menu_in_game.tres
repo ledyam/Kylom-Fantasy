@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dmxukrbns7myn"]
+
+[ext_resource type="StyleBox" uid="uid://drnarcmriti83" path="res://Resources/UI_Themes/hover.tres" id="1_eb76f"]
+[ext_resource type="StyleBox" uid="uid://b8aew3b4k2hy0" path="res://Resources/UI_Themes/normal.tres" id="2_cmoiw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qko2g"]
+
+[resource]
+Button/font_sizes/font_size = 8
+Button/styles/focus = SubResource("StyleBoxEmpty_qko2g")
+Button/styles/hover = ExtResource("1_eb76f")
+Button/styles/normal = ExtResource("2_cmoiw")
+ItemList/colors/font_color = Color(1, 1, 1, 1)
+ItemList/colors/guide_color = Color(0, 0, 0, 0.611765)
+ItemList/font_sizes/font_size = 8
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.611765)
+Label/font_sizes/font_size = 8
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0.494118)
+RichTextLabel/constants/line_separation = 2
+RichTextLabel/font_sizes/normal_font_size = 8

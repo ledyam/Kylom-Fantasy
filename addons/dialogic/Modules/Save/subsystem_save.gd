@@ -509,6 +509,7 @@ func _on_dialogic_event_handled(event: DialogicEvent) -> void:
 func _on_start_or_end_autosave() -> void:
 	if autosave_mode == AutoSaveMode.ON_TIMELINE_JUMPS:
 		perform_autosave()
+		
 
 
 ## Perform an autosave.

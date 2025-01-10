@@ -1,0 +1,5 @@
+join Marcus right
+Marcus: Quieres Comprar algo ?
+- Si
+- No
+[signal arg="Abrir_Inventario"]

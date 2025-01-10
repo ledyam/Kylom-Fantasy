@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Wikep Fantasy"
-run/main_scene="res://UI/Menú Principal/principal_menu.tscn"
+run/main_scene="res://UI/Principal Menu/principal_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,14 +21,14 @@ buses/default_bus_layout=""
 
 [autoload]
 
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 ITEM_LOOT="*res://Global/ITEM_LOOT.gd"
 CentralSignal="*res://Global/CentralSignal.gd"
 GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
 LocalDatabase="*res://DataBase/Local/Local_Database_Control.gd"
 SaveLoad="*res://Global/Save_Load.gd"
-QuestSystem="*res://addons/quest_system/quest_manager.gd"
 DatabaseReference="*res://DataBase/Local/database_references.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+PlayerMoney="*res://Global/PlayerMoney.gd"
 
 [debug]
 
@@ -37,17 +37,17 @@ gdscript/warnings/unused_signal=0
 [dialogic]
 
 directories/dch_directory={
-"Componentes/character": "res://Componentes/character.dch"
+"Marcus": "res://Dialogues/Dialogues/Marcus.dch",
+"Trader": "res://Dialogues/Dialogues/Trader.dch"
 }
 directories/dtl_directory={
-"timelineasd": "res://Componentes/timelineasd.dtl"
+"Compra_Venta": "res://Dialogues/Dialogues/Compra_Venta.dtl",
+"Test": "res://Dialogues/Dialogues/Test.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=[]
-layout/default_style=""
-variables={
-"MOVERSE": true
-}
+layout/style_list=["res://Dialogues/Styles/Default.tres"]
+layout/default_style="res://Dialogues/Styles/Default.tres"
+variables={}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.04
 text/initial_text_reveal_skippable=true

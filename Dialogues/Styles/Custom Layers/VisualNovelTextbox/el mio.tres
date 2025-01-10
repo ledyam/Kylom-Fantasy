@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bbkqy37agwegi"]
+
+[ext_resource type="Texture2D" uid="uid://7bf1efsps6k8" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Interfaces Bundle - Free version/Pack Content/DarkMode Interface/Dialogue interfaces/spr_dialogue_box_withoutstartingpoint_9slice.png" id="1_dxwi5"]
+
+[resource]
+texture = ExtResource("1_dxwi5")

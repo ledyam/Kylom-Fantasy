@@ -9,7 +9,7 @@ func _ready() -> void:
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body as MainPlayer :
-		body.ui_menu_in_game.inventario.add_item(item)
-		body.ui_menu_in_game.inventario.coger_objeto.play()
+		body.general_menu.inventario.add_item(item)
+		body.general_menu.inventario.coger_objeto.play()
 		queue_free()
 	pass # Replace with function body.

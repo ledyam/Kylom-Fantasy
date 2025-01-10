@@ -11,7 +11,7 @@ var abreviate = Abreviate.new()
 @onready var cd: Timer = $Timers/CD
 @onready var anim_movement: AnimationPlayer =$AnimationPlayerMovements
 @onready var player_ui: Control = $"Player_UI"
-@onready var ui_menu_in_game: Control = $UI_Menu_InGame
+@onready var general_menu: CanvasLayer = $UI_Menu_InGame
 @onready var body_collision: CollisionShape2D = $Body_Collision
 
 
@@ -23,7 +23,6 @@ var abreviate = Abreviate.new()
 func _ready() -> void:
 	stats.player = self 
 	CentralSignal.connect("UsarObjeto",on_RecibirVida)
-	
 	
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
@@ -55,7 +54,7 @@ func LEVEL_UP ():
 	stats.current_level += 1
 	stats.max_life += 10
 	stats.current_life= stats.max_life
-	ui_menu_in_game.inventario.stats_player.IncrementarPuntosRestantes(3)
+	general_menu.inventario.stats_player.IncrementarPuntosRestantes(3)
 	$"Sounds/LevelUpPickup(rpg)".play()
 	pass
 
@@ -122,4 +121,3 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 		velocity = knockback * 20
 		Recibir_damage(area.owner.ATK) 
 		
-	pass # Replace with function body.

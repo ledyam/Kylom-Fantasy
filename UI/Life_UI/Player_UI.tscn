@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://p0jmnaqahkh5"]
+[gd_scene load_steps=17 format=3 uid="uid://p0jmnaqahkh5"]
 
 [ext_resource type="Script" path="res://UI/Life_UI/Player_UI.gd" id="1_kf1g5"]
 [ext_resource type="Texture2D" uid="uid://73y7oc3x7fiw" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Interfaces Bundle - Free version/Pack Content/DarkMode Interface/Player interface/Player Status/Bars/spr_stamina_bar.png" id="2_qer4n"]
@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bae3n7oe5qvpc" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Interfaces Bundle - Free version/Pack Content/DarkMode Interface/Player interface/Player Status/single size player status/spr_player_status_version2.png" id="5_0m35y"]
 [ext_resource type="Texture2D" uid="uid://df271i02qvuex" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Interfaces Bundle - Free version/Pack Content/DarkMode Interface/Player interface/Player Status/single size player status/spr_player_status_staminahbar_bk.png" id="5_k1elt"]
 [ext_resource type="Texture2D" uid="uid://t8l1moviv8xk" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/spr_portrait_9frame.png" id="8_s2k4y"]
-[ext_resource type="PackedScene" uid="uid://btoj7kdyr3rcs" path="res://UI/Indicadores/current_zone.tscn" id="9_jcauq"]
+[ext_resource type="PackedScene" uid="uid://btoj7kdyr3rcs" path="res://UI/Indicators/current_zone.tscn" id="9_jcauq"]
+[ext_resource type="PackedScene" uid="uid://ewo22t74u83d" path="res://UI/Clock/Reloj.tscn" id="10_76px5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xla1b"]
 texture = ExtResource("3_lrv12")
@@ -77,6 +78,7 @@ offset_right = 42.5
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 text = "100|100"
 label_settings = SubResource("LabelSettings_satu6")
 horizontal_alignment = 1
@@ -108,6 +110,7 @@ offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.648306, 0.679999)
+mouse_filter = 0
 text = "0|50"
 label_settings = SubResource("LabelSettings_satu6")
 horizontal_alignment = 1
@@ -129,6 +132,7 @@ offset_left = 21.0
 offset_top = 24.0
 offset_right = 58.0
 offset_bottom = 58.0
+mouse_filter = 0
 texture = ExtResource("8_s2k4y")
 expand_mode = 3
 
@@ -141,4 +145,7 @@ offset_left = 0.0
 offset_top = -9.53674e-07
 offset_right = 0.0
 offset_bottom = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Reloj" parent="CanvasLayer" instance=ExtResource("10_76px5")]
 metadata/_edit_use_anchors_ = true

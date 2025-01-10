@@ -1,0 +1,42 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bk2v56adrfeik"]
+
+[ext_resource type="Texture2D" uid="uid://c75pdyh7y2c8" path="res://Assets/Tiles/GUI/GUI/GUI.png" id="1_w1x7o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0dgw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4pla"]
+atlas = ExtResource("1_w1x7o")
+region = Rect2(1, 80, 14, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nto7n"]
+texture = SubResource("AtlasTexture_s4pla")
+texture_margin_left = 1.0
+texture_margin_top = 2.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m17ox"]
+atlas = ExtResource("1_w1x7o")
+region = Rect2(32, 80, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uhlpl"]
+texture = SubResource("AtlasTexture_m17ox")
+texture_margin_top = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t337u"]
+bg_color = Color(0.359069, 0.359069, 0.359069, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[resource]
+Button/colors/icon_pressed_color = Color(1, 1, 1, 0)
+Button/font_sizes/font_size = 16
+Button/styles/focus = SubResource("StyleBoxFlat_q0dgw")
+Button/styles/hover = SubResource("StyleBoxTexture_nto7n")
+Button/styles/normal = SubResource("StyleBoxTexture_uhlpl")
+Button/styles/pressed = SubResource("StyleBoxFlat_t337u")

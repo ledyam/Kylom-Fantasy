@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bju0jv50ad4l6"]
+
+[ext_resource type="Texture2D" uid="uid://dwyre15dcxxxs" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - NPC/Walker_npc.png" id="1_h18ue"]
+[ext_resource type="Script" path="res://Data/Npc/npc.gd" id="1_r747g"]
+[ext_resource type="PackedScene" uid="uid://do0x7xov4l6lq" path="res://UI/UI_Interfaces/miniDialogue.tscn" id="3_doi8f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2hwg0"]
+radius = 8.34101
+
+[node name="Npc" type="CharacterBody2D"]
+process_mode = 1
+position = Vector2(116.112, 122.225)
+disable_mode = 2
+collision_mask = 15
+input_pickable = true
+script = ExtResource("1_r747g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+shape = SubResource("CircleShape2D_2hwg0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h18ue")
+
+[node name="Control" parent="Sprite2D" instance=ExtResource("3_doi8f")]
+offset_left = -7.70662
+offset_top = -79.035
+offset_right = -7.70662
+offset_bottom = -79.035

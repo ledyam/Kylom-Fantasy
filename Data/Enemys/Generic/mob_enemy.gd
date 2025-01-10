@@ -24,7 +24,7 @@ var can_loot
 
 
 #region VARIABLES Instancias 
-var  numero_flotante : PackedScene = load("res://UI/Indicadores/numero_flotante.tscn")
+var  numero_flotante : PackedScene = load("res://UI/Indicators/numero_flotante.tscn")
 var  item : PackedScene = load("res://Data/Items/item.tscn")
 
 

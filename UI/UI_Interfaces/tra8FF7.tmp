@@ -1,0 +1,426 @@
+[gd_scene load_steps=21 format=3 uid="uid://d3nxseup8uwqm"]
+
+[ext_resource type="Texture2D" uid="uid://c75pdyh7y2c8" path="res://Assets/Tiles/GUI/GUI/GUI.png" id="1_gv5et"]
+[ext_resource type="Texture2D" uid="uid://b35d0chk44pl8" path="res://Assets/Tiles/16x16 Item Pack/Item__08.png" id="2_4ow4h"]
+[ext_resource type="PackedScene" uid="uid://b4earws7layh2" path="res://UI/UI_Interfaces/slot_Inventory.tscn" id="2_vjt66"]
+[ext_resource type="Theme" uid="uid://e2ibn4lqfv0e" path="res://UI/UI_Interfaces/ui_menu_in_game.tres" id="3_njllo"]
+[ext_resource type="Texture2D" uid="uid://bgj7wvdu1ow44" path="res://Assets/Tiles/16x16 Item Pack/Item__05.png" id="3_ujhbl"]
+[ext_resource type="Script" path="res://UI/UI_Interfaces/productos.gd" id="4_3au62"]
+[ext_resource type="Texture2D" uid="uid://cpm7p6fde52ut" path="res://Assets/GUI/Free Paper UI System/Free Paper UI System/2 SpriteSheet/Png/Paper UI/Plain/1.png" id="4_g4tp0"]
+[ext_resource type="Texture2D" uid="uid://c7l6j5h131rg2" path="res://Assets/Tiles/GUI/Buttons/buttons_2x.png" id="6_2ngha"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7px68"]
+atlas = ExtResource("1_gv5et")
+region = Rect2(-0.141834, 95.8604, 48.1786, 32.2838)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljg22"]
+atlas = ExtResource("4_g4tp0")
+region = Rect2(2767, 3887, 98, 98)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eq40v"]
+texture = SubResource("AtlasTexture_ljg22")
+texture_margin_left = 7.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13frg"]
+atlas = ExtResource("6_2ngha")
+region = Rect2(114, 4, 44, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jo1en"]
+texture = SubResource("AtlasTexture_13frg")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bm0b0"]
+atlas = ExtResource("6_2ngha")
+region = Rect2(66, 2, 44, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7drip"]
+texture = SubResource("AtlasTexture_bm0b0")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6nfb"]
+atlas = ExtResource("6_2ngha")
+region = Rect2(114, 4, 44, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1bljo"]
+texture = SubResource("AtlasTexture_k6nfb")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6ss5"]
+atlas = ExtResource("6_2ngha")
+region = Rect2(66, 2, 44, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bteyi"]
+texture = SubResource("AtlasTexture_u6ss5")
+
+[sub_resource type="LabelSettings" id="LabelSettings_83yid"]
+font_size = 20
+
+[node name="Trade_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Mercado" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_7px68")
+region_rect = Rect2(0, 0.110081, 48.1474, 31.8899)
+patch_margin_left = 10
+patch_margin_top = 9
+patch_margin_right = 9
+patch_margin_bottom = 9
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Mercado"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = 48.0
+offset_right = -38.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 9
+
+[node name="Mercado" type="Panel" parent="Mercado/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Productos" type="ItemList" parent="Mercado/HBoxContainer/Mercado"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0377358
+anchor_top = 0.0392857
+anchor_right = 0.950943
+anchor_bottom = 0.896429
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/icon_margin = 25
+theme_override_constants/line_separation = 0
+theme_override_constants/outline_size = 0
+theme_override_constants/v_separation = 8
+theme_override_constants/h_separation = 25
+theme_override_font_sizes/font_size = 8
+allow_reselect = true
+auto_height = true
+text_overrun_behavior = 2
+item_count = 3
+fixed_column_width = 5
+icon_scale = 3.0
+item_0/text = "Espada de Madera"
+item_0/icon = ExtResource("2_4ow4h")
+item_0/disabled = true
+item_1/text = "Espada de Cobre"
+item_1/icon = ExtResource("3_ujhbl")
+script = ExtResource("4_3au62")
+metadata/_edit_use_anchors_ = true
+
+[node name="CoinsPanel" type="Panel" parent="Mercado/HBoxContainer/Mercado"]
+modulate = Color(0.956344, 0.907533, 0.814985, 1)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = -22.0
+offset_right = 89.0
+offset_bottom = -8.0
+grow_vertical = 0
+theme = ExtResource("3_njllo")
+theme_override_styles/panel = SubResource("StyleBoxTexture_eq40v")
+
+[node name="OroLabel" type="Label" parent="Mercado/HBoxContainer/Mercado/CoinsPanel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 58.0
+offset_bottom = 19.0
+text = "Oro:"
+
+[node name="Oro_Value" type="Label" parent="Mercado/HBoxContainer/Mercado/CoinsPanel"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 4.0
+offset_right = 48.0
+offset_bottom = 12.0
+text = "0"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Mercado/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = -206
+
+[node name="Comprar" type="Button" parent="Mercado/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jo1en")
+theme_override_styles/normal = SubResource("StyleBoxTexture_7drip")
+text = "-->"
+
+[node name="Vender" type="Button" parent="Mercado/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1bljo")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bteyi")
+text = "<--"
+
+[node name="Inventory_Frame" type="Panel" parent="Mercado/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Items" type="Panel" parent="Mercado/HBoxContainer/Inventory_Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="GridContainer" type="GridContainer" parent="Mercado/HBoxContainer/Inventory_Frame/Items"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -98.0
+offset_right = 153.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 33
+theme_override_constants/v_separation = 45
+columns = 8
+
+[node name="Slot" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot41" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot42" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot43" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot44" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot45" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot46" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot47" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot48" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot49" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot50" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot51" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot52" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot53" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot54" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot55" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot56" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot57" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot58" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot59" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot60" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot61" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot62" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot63" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot64" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot21" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot22" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot23" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot24" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot25" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot26" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot27" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot28" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot29" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot30" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot31" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot32" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot33" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot34" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot35" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot36" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot37" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot38" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot39" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot40" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot2" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot3" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot4" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot5" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot6" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot7" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot8" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot9" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot10" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot11" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="Slot12" parent="Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+layout_mode = 2
+
+[node name="CoinsPanel" type="Panel" parent="Mercado/HBoxContainer/Inventory_Frame/Items"]
+modulate = Color(0.956344, 0.907533, 0.814985, 1)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -81.0
+offset_top = -24.0
+offset_right = -14.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("3_njllo")
+theme_override_styles/panel = SubResource("StyleBoxTexture_eq40v")
+
+[node name="OroLabel" type="Label" parent="Mercado/HBoxContainer/Inventory_Frame/Items/CoinsPanel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 58.0
+offset_bottom = 19.0
+text = "Oro:"
+
+[node name="Oro_Value" type="Label" parent="Mercado/HBoxContainer/Inventory_Frame/Items/CoinsPanel"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 4.0
+offset_right = 48.0
+offset_bottom = 12.0
+text = "0"
+
+[node name="Inventory_label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -85.0
+offset_top = 15.0
+offset_right = 113.0
+offset_bottom = 39.0
+grow_horizontal = 2
+text = "#TipoDeMercado"
+label_settings = SubResource("LabelSettings_83yid")

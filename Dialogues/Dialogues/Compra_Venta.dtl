@@ -1,0 +1,5 @@
+Trader: Deseas ver ni tienda muchacho ?
+- Ver la tienda
+	[signal arg="Open Market"]
+- Irse
+	No me molestes entonces.
