@@ -1,0 +1,195 @@
+[gd_scene load_steps=12 format=3 uid="uid://du5sk44w66fm1"]
+
+[ext_resource type="Script" path="res://UI/COntroles/controles.gd" id="1_b02dr"]
+[ext_resource type="Texture2D" uid="uid://31k2ou5bu2pu" path="res://Assets/Tiles/GUI/GUI/pixel-ui.png" id="1_gs1gd"]
+[ext_resource type="Texture2D" uid="uid://c75pdyh7y2c8" path="res://Assets/Tiles/GUI/GUI/GUI.png" id="1_lfyfw"]
+[ext_resource type="LabelSettings" uid="uid://uj6qsw7gjnrl" path="res://Resources/Labels/PrincipalLabel.tres" id="4_n4ugh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhf0x"]
+atlas = ExtResource("1_gs1gd")
+region = Rect2(75, 195, 58, 10)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vw4pv"]
+texture = SubResource("AtlasTexture_hhf0x")
+
+[sub_resource type="Theme" id="Theme_yfsq1"]
+Label/styles/normal = null
+Panel/styles/panel = SubResource("StyleBoxTexture_vw4pv")
+
+[sub_resource type="Animation" id="Animation_vitjf"]
+resource_name = "Mostrar"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.36667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-6.73474, -345.718), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_4w83x"]
+resource_name = "Ocultar"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-6.73474, -343.473)]
+}
+
+[sub_resource type="Animation" id="Animation_d5k1w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-6.73474, -345.718)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2mkow"]
+_data = {
+"Mostrar": SubResource("Animation_vitjf"),
+"Ocultar": SubResource("Animation_4w83x"),
+"RESET": SubResource("Animation_d5k1w")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.73474
+offset_top = -345.718
+offset_right = -6.73474
+offset_bottom = -345.718
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_yfsq1")
+script = ExtResource("1_b02dr")
+
+[node name="Panel" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 647.0
+offset_bottom = 342.0
+texture = ExtResource("1_lfyfw")
+region_rect = Rect2(0, 96, 48, 32)
+patch_margin_left = 8
+patch_margin_top = 7
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Panel2" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -136.5
+offset_top = 16.0
+offset_right = 123.5
+offset_bottom = 56.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Panel/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -8.0
+offset_right = 60.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Controles"
+label_settings = ExtResource("4_n4ugh")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.5
+offset_top = -97.0
+offset_right = 296.5
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Presiona \"CLICK\" para Atacar
+
+
+Presiona la tecla \"I\" para ver el Inventario
+
+
+
+Presiona la tecla \"B\" para ver el Bestiario
+
+
+Presiona la tecla \"Esc\"  para ver el Menú de opciones
+
+Presiona la tecla \"Space\"  para ver el Saltar
+
+Presione Simultaneamente las teclas \"Shift + SPACE\" para dar una voltereta
+
+
+
+"
+tab_size = 6
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 609.523
+offset_top = 9.02298
+offset_right = 631.523
+offset_bottom = 33.023
+text = "X"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2mkow")
+}
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

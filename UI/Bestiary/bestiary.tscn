@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://q1cmeacruiwm"]
+[gd_scene load_steps=26 format=3 uid="uid://q1cmeacruiwm"]
 
 [ext_resource type="Texture2D" uid="uid://c75pdyh7y2c8" path="res://Assets/Tiles/GUI/GUI/GUI.png" id="1_aubuc"]
 [ext_resource type="Script" path="res://UI/Bestiary/bestiary.gd" id="1_wjln5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://re857e8v6ct8" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Enemy Pack/Goblin/spr_goblin_walk_right.png" id="4_8g4jc"]
 [ext_resource type="Texture2D" uid="uid://ttvu8o3yb8ki" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Enemy Pack/Slime/Blue Slime/spr_Blue_slime_walk.png" id="4_v23bt"]
 [ext_resource type="Texture2D" uid="uid://jl1tqhr7jy8u" path="res://Assets/Mis Inventos/2.png" id="5_l72g2"]
+[ext_resource type="Texture2D" uid="uid://31k2ou5bu2pu" path="res://Assets/Tiles/GUI/GUI/pixel-ui.png" id="7_mduu8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h80l1"]
 atlas = ExtResource("1_aubuc")
@@ -117,20 +118,24 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="LabelSettings" id="LabelSettings_u5o7g"]
-font_size = 20
+[sub_resource type="AtlasTexture" id="AtlasTexture_4luag"]
+atlas = ExtResource("7_mduu8")
+region = Rect2(75, 195, 58, 10)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_04sxw"]
+texture = SubResource("AtlasTexture_4luag")
+
+[sub_resource type="LabelSettings" id="LabelSettings_qr6p8"]
+font_size = 14
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(-1, 2)
 
 [node name="Bestiary" type="NinePatchRect"]
 z_index = 10
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -294.0
-offset_top = -145.0
-offset_right = 294.0
-offset_bottom = 145.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_h80l1")
@@ -168,76 +173,63 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -104.192
-offset_top = -89.5685
-offset_right = 100.808
-offset_bottom = 86.4315
+offset_left = -101.042
+offset_top = -115.397
+offset_right = 103.958
+offset_bottom = 60.6031
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
-theme_override_constants/h_separation = 41
-theme_override_constants/v_separation = 40
+theme_override_constants/h_separation = 6
 columns = 6
 
 [node name="Slot" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
 layout_mode = 2
+tooltip_text = "Vacío"
 
 [node name="Slot2" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
 layout_mode = 2
+tooltip_text = "Vacía"
 
 [node name="Slot3" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
 layout_mode = 2
+tooltip_text = "Vacía"
 
 [node name="Slot4" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
 layout_mode = 2
+tooltip_text = "Vacía"
 
 [node name="Slot5" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
 layout_mode = 2
+tooltip_text = "Vacía"
 
 [node name="Slot6" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
 layout_mode = 2
+tooltip_text = "Vacía"
 
 [node name="Slot7" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
 layout_mode = 2
+tooltip_text = "Vacía"
 
 [node name="Slot8" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
 layout_mode = 2
+tooltip_text = "Vacía"
 
 [node name="Slot9" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
 layout_mode = 2
+tooltip_text = "Vacía"
 
 [node name="Slot10" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
 layout_mode = 2
+tooltip_text = "Vacía"
 
 [node name="Slot11" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
 layout_mode = 2
+tooltip_text = "Vacía"
 
 [node name="Slot12" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
 layout_mode = 2
-
-[node name="Slot13" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
-layout_mode = 2
-
-[node name="Slot14" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
-layout_mode = 2
-
-[node name="Slot15" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
-layout_mode = 2
-
-[node name="Slot16" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
-layout_mode = 2
-
-[node name="Slot17" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
-layout_mode = 2
-
-[node name="Slot18" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
-layout_mode = 2
-
-[node name="Slot19" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
-layout_mode = 2
-
-[node name="Slot20" parent="Int_Bestiario/Mobs/Contenedor" instance=ExtResource("2_43n46")]
-layout_mode = 2
+tooltip_text = "Vacía"
 
 [node name="DescriptionPanel" type="Panel" parent="Int_Bestiario"]
 layout_mode = 2
@@ -317,15 +309,29 @@ grow_vertical = 2
 texture = ExtResource("5_l72g2")
 expand_mode = 3
 
-[node name="Label" type="Label" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -75.0
-offset_top = 15.0
-offset_right = 73.0
-offset_bottom = 39.0
+offset_left = -97.5
+offset_top = 10.0
+offset_right = 97.5
+offset_bottom = 40.0
 grow_horizontal = 2
-text = "BESTIARIO"
-label_settings = SubResource("LabelSettings_u5o7g")
+scale = Vector2(0.972682, 0.864212)
+theme_override_styles/panel = SubResource("StyleBoxTexture_04sxw")
+
+[node name="Inventory_label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.202564
+anchor_top = 0.254934
+anchor_right = 0.797436
+anchor_bottom = 0.8216
+grow_horizontal = 2
+grow_vertical = 2
+text = "BESTIARIO
+"
+label_settings = SubResource("LabelSettings_qr6p8")
+metadata/_edit_use_anchors_ = true

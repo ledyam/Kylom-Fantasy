@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://6rpyx7ocac0d"]
+
+[ext_resource type="Texture2D" uid="uid://31k2ou5bu2pu" path="res://Assets/Tiles/GUI/GUI/pixel-ui.png" id="1_7t3q1"]
+[ext_resource type="Script" path="res://UI/Slots/slot.gd" id="1_81nlu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dm3a"]
+atlas = ExtResource("1_7t3q1")
+region = Rect2(106, 122, 28, 28)
+
+[node name="Slot" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = -170.0
+offset_right = -297.0
+offset_bottom = -142.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_81nlu")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+offset_right = 28.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_5dm3a")
+
+[node name="Icon" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+localize_numeral_system = false
+stretch_mode = 5
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

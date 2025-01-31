@@ -2,7 +2,10 @@ extends EnemyState
 
 func physics_process(_delta: float) -> void:
 	if enemy.global_position.distance_to(enemy.player.position) <= enemy.MINIMUM_DISTANCE :
-		enemy.anim_enemy.play("Enemy_attack")
+		if enemy.player.global_position.x > enemy.position.x:
+			enemy.anim_enemy.play("Enemy_attack_right")
+		else :
+			enemy.anim_enemy.play("Enemy_attack")
 
 	else :
 		state_machine.change_to("Walk")

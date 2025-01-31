@@ -1,31 +1,57 @@
-[gd_scene load_steps=29 format=3 uid="uid://d3nxseup8uwqm"]
+[gd_scene load_steps=25 format=3 uid="uid://d3nxseup8uwqm"]
 
 [ext_resource type="Texture2D" uid="uid://c75pdyh7y2c8" path="res://Assets/Tiles/GUI/GUI/GUI.png" id="1_gv5et"]
 [ext_resource type="Script" path="res://UI/Trade/trade_ui.gd" id="1_nkpc3"]
-[ext_resource type="Texture2D" uid="uid://b35d0chk44pl8" path="res://Assets/Tiles/16x16 Item Pack/Item__08.png" id="2_4ow4h"]
-[ext_resource type="PackedScene" uid="uid://b4earws7layh2" path="res://UI/Slots/slot_Inventory.tscn" id="2_vjt66"]
 [ext_resource type="Theme" uid="uid://dmxukrbns7myn" path="res://Resources/UI_Themes/General Themes/ui_menu_in_game.tres" id="3_njllo"]
-[ext_resource type="Texture2D" uid="uid://bgj7wvdu1ow44" path="res://Assets/Tiles/16x16 Item Pack/Item__05.png" id="3_ujhbl"]
 [ext_resource type="Script" path="res://UI/Trade/productos.gd" id="4_3au62"]
-[ext_resource type="Texture2D" uid="uid://cpm7p6fde52ut" path="res://Assets/GUI/Free Paper UI System/Free Paper UI System/2 SpriteSheet/Png/Paper UI/Plain/1.png" id="4_g4tp0"]
+[ext_resource type="StyleBox" uid="uid://bfctpxba57jdp" path="res://Resources/Panel/LabelPanel.tres" id="4_gqhih"]
 [ext_resource type="Texture2D" uid="uid://c7l6j5h131rg2" path="res://Assets/Tiles/GUI/Buttons/buttons_2x.png" id="6_2ngha"]
-[ext_resource type="Texture2D" uid="uid://54nniqgkm453" path="res://Assets/Tiles/16x16 Item Pack/Item__01.png" id="6_dkkt5"]
-[ext_resource type="Script" path="res://UI/Slots/slot_inventory_market.gd" id="10_snv7y"]
+[ext_resource type="Script" path="res://UI/Trade/inventory_frame.gd" id="7_4o1ip"]
+[ext_resource type="AudioStream" uid="uid://cydoe4kgqoj3v" path="res://Assets/Sounds/10_UI_Menu_SFX/079_Buy_sell_01.wav" id="7_vrs2s"]
+[ext_resource type="PackedScene" uid="uid://cq5pfk8vflgft" path="res://UI/Slots/slot_InventoryShop.tscn" id="7_y3fgf"]
+[ext_resource type="Texture2D" uid="uid://31k2ou5bu2pu" path="res://Assets/Tiles/GUI/GUI/pixel-ui.png" id="11_pardb"]
+
+[sub_resource type="Animation" id="Animation_m3v88"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PrincipalFrame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.28735, -352.743), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vunav"]
+resource_name = "Show_Shop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PrincipalFrame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.28735, -352.743), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p3hdm"]
+_data = {
+"RESET": SubResource("Animation_m3v88"),
+"Show_Shop": SubResource("Animation_vunav")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7px68"]
 atlas = ExtResource("1_gv5et")
 region = Rect2(-0.141834, 95.8604, 48.1786, 32.2838)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wp5wc"]
-atlas = ExtResource("4_g4tp0")
-region = Rect2(2767, 3887, 98, 98)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eq40v"]
-texture = SubResource("AtlasTexture_wp5wc")
-texture_margin_left = 7.0
-texture_margin_top = 5.0
-texture_margin_right = 5.0
-texture_margin_bottom = 4.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_80cyl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4b0lu"]
 atlas = ExtResource("6_2ngha")
@@ -47,36 +73,26 @@ region = Rect2(66, 2, 44, 28)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7drip"]
 texture = SubResource("AtlasTexture_bm0b0")
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xkbq4"]
-atlas = ExtResource("6_2ngha")
-region = Rect2(66, 2, 44, 28)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcg5l"]
+atlas = ExtResource("11_pardb")
+region = Rect2(75, 195, 58, 10)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x21tn"]
-texture = SubResource("AtlasTexture_xkbq4")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0trou"]
+texture = SubResource("AtlasTexture_qcg5l")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k6nfb"]
-atlas = ExtResource("6_2ngha")
-region = Rect2(114, 4, 44, 26)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1bljo"]
-texture = SubResource("AtlasTexture_k6nfb")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u6ss5"]
-atlas = ExtResource("6_2ngha")
-region = Rect2(66, 2, 44, 28)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bteyi"]
-texture = SubResource("AtlasTexture_u6ss5")
-
-[sub_resource type="LabelSettings" id="LabelSettings_83yid"]
-font_size = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbjpo"]
-bg_color = Color(0.760387, 0.564779, 0, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_olk3r"]
+font_size = 14
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(-1, 2)
 
 [node name="Trade_UI" type="CanvasLayer"]
-process_mode = 2
+process_mode = 3
 script = ExtResource("1_nkpc3")
 
 [node name="PrincipalFrame" type="Control" parent="."]
@@ -84,12 +100,22 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.28735
+offset_top = -352.743
+offset_right = 1.28735
+offset_bottom = -352.743
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_njllo")
 metadata/_edit_use_anchors_ = true
 
-[node name="Mercado" type="NinePatchRect" parent="PrincipalFrame"]
+[node name="AnimationMarketFrame" type="AnimationPlayer" parent="PrincipalFrame"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_p3hdm")
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PrincipalFrame"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -106,7 +132,7 @@ patch_margin_top = 9
 patch_margin_right = 9
 patch_margin_bottom = 9
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PrincipalFrame/Mercado"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PrincipalFrame/NinePatchRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -119,42 +145,22 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 9
 
-[node name="Mercado" type="Panel" parent="PrincipalFrame/Mercado/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PrincipalFrame/NinePatchRect/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CoinsPanel" type="Panel" parent="PrincipalFrame/Mercado/HBoxContainer/Mercado"]
-modulate = Color(0.956344, 0.907533, 0.814985, 1)
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 22.0
-offset_top = -22.0
-offset_right = 89.0
-offset_bottom = -8.0
-grow_vertical = 0
-theme = ExtResource("3_njllo")
-theme_override_styles/panel = SubResource("StyleBoxTexture_eq40v")
+[node name="Mercado" type="NinePatchRect" parent="PrincipalFrame/NinePatchRect/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("11_pardb")
+region_rect = Rect2(158, 78, 20, 20)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
 
-[node name="TraderMoneyLabel" type="Label" parent="PrincipalFrame/Mercado/HBoxContainer/Mercado/CoinsPanel"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 3.0
-offset_right = 27.0
-offset_bottom = 11.0
-text = "$$$ :"
-
-[node name="TraderMoneyValue" type="Label" parent="PrincipalFrame/Mercado/HBoxContainer/Mercado/CoinsPanel"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 38.0
-offset_top = 3.0
-offset_right = 45.0
-offset_bottom = 11.0
-text = "0"
-
-[node name="ScrollContainer" type="ScrollContainer" parent="PrincipalFrame/Mercado/HBoxContainer/Mercado"]
+[node name="ScrollContainer" type="ScrollContainer" parent="PrincipalFrame/NinePatchRect/HBoxContainer/VBoxContainer/Mercado"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.00357143
@@ -166,64 +172,90 @@ follow_focus = true
 vertical_scroll_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Productos" type="ItemList" parent="PrincipalFrame/Mercado/HBoxContainer/Mercado/ScrollContainer"]
+[node name="Productos" type="ItemList" parent="PrincipalFrame/NinePatchRect/HBoxContainer/VBoxContainer/Mercado/ScrollContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 theme_override_constants/icon_margin = 25
+theme_override_constants/line_separation = 0
+theme_override_constants/outline_size = 2
 theme_override_constants/v_separation = 10
 theme_override_constants/h_separation = 34
 theme_override_font_sizes/font_size = 8
+theme_override_styles/panel = SubResource("StyleBoxTexture_80cyl")
 allow_reselect = true
 auto_height = true
 text_overrun_behavior = 2
-item_count = 3
-fixed_column_width = 5
+max_columns = 0
 icon_scale = 2.0
-item_0/text = "Espada de Madera"
-item_0/icon = ExtResource("2_4ow4h")
-item_1/text = "Espada de Cobre"
-item_1/icon = ExtResource("3_ujhbl")
-item_2/text = "asdasdasdasd"
-item_2/icon = ExtResource("6_dkkt5")
 script = ExtResource("4_3au62")
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PrincipalFrame/Mercado/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/separation = -206
+[node name="Buy_Sell" type="AudioStreamPlayer" parent="PrincipalFrame/NinePatchRect/HBoxContainer/VBoxContainer/Mercado/ScrollContainer/Productos"]
+stream = ExtResource("7_vrs2s")
 
-[node name="Comprar" type="Button" parent="PrincipalFrame/Mercado/HBoxContainer/VBoxContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="PrincipalFrame/NinePatchRect/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.12
+texture = ExtResource("11_pardb")
+region_rect = Rect2(158, 78, 20, 20)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="CoinsPanel" type="Panel" parent="PrincipalFrame/NinePatchRect/HBoxContainer/VBoxContainer/NinePatchRect"]
+layout_mode = 2
+offset_left = 12.681
+offset_top = 8.34726
+offset_right = 79.681
+offset_bottom = 22.3473
+grow_vertical = 0
+theme = ExtResource("3_njllo")
+theme_override_styles/panel = ExtResource("4_gqhih")
+
+[node name="TraderMoneyLabel" type="Label" parent="PrincipalFrame/NinePatchRect/HBoxContainer/VBoxContainer/NinePatchRect/CoinsPanel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 27.0
+offset_bottom = 11.0
+text = "$$$ :"
+
+[node name="TraderMoneyValue" type="Label" parent="PrincipalFrame/NinePatchRect/HBoxContainer/VBoxContainer/NinePatchRect/CoinsPanel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 40.0045
+offset_top = 3.0
+offset_right = 61.0045
+offset_bottom = 11.0
+text = "000"
+
+[node name="Comprar" type="Button" parent="PrincipalFrame/NinePatchRect/HBoxContainer/VBoxContainer/NinePatchRect"]
+layout_mode = 0
+offset_left = 210.582
+offset_top = 5.86144
+offset_right = 269.582
+offset_bottom = 24.8614
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
+theme_override_constants/outline_size = 3
 theme_override_constants/align_to_largest_stylebox = 1
 theme_override_styles/hover = SubResource("StyleBoxTexture_6tfuc")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jo1en")
 theme_override_styles/normal = SubResource("StyleBoxTexture_7drip")
-text = "-->"
+text = "Comprar"
 
-[node name="Vender" type="Button" parent="PrincipalFrame/Mercado/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_constants/align_to_largest_stylebox = 1
-theme_override_styles/hover = SubResource("StyleBoxTexture_x21tn")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_1bljo")
-theme_override_styles/normal = SubResource("StyleBoxTexture_bteyi")
-text = "<--"
-
-[node name="Inventory_Frame" type="Panel" parent="PrincipalFrame/Mercado/HBoxContainer"]
+[node name="Inventory_Frame" type="Panel" parent="PrincipalFrame/NinePatchRect/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+script = ExtResource("7_4o1ip")
 
-[node name="Items" type="Panel" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame"]
+[node name="Items" type="NinePatchRect" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -231,8 +263,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+texture = ExtResource("11_pardb")
+region_rect = Rect2(158, 78, 20, 20)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
 
-[node name="GridContainer" type="GridContainer" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items"]
+[node name="GridContainer" type="GridContainer" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -240,244 +278,410 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -78.0
-offset_top = -98.0
-offset_right = 153.0
-offset_bottom = 172.0
+offset_left = -122.481
+offset_top = -129.429
+offset_right = 129.519
+offset_bottom = 120.571
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.98, 0.98)
 size_flags_horizontal = 3
-theme_override_constants/h_separation = 33
-theme_override_constants/v_separation = 45
+theme_override_constants/v_separation = 9
 columns = 8
 
-[node name="Slot" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot41" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot2" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot42" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot3" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot43" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot4" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot44" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot5" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot45" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot6" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot46" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot7" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot47" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot8" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot48" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot9" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot49" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot10" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot50" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot11" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot51" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot12" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot52" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot13" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot53" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot14" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot54" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot15" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot55" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot16" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot56" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot17" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot57" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot18" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot58" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot19" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot59" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot20" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot60" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot21" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot61" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot22" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot62" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot23" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot63" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot24" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot64" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot25" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot21" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot26" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot22" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot27" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot23" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot28" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot24" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot29" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot25" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot30" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot26" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot31" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot27" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot32" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot28" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot33" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot29" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot34" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot30" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot35" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot31" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot36" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot32" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot37" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot33" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot38" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot34" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot39" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot35" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot40" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot36" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot41" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot37" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot42" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot38" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot43" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot39" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot44" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot40" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot45" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot2" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot46" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot3" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot47" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot4" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot48" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot5" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot49" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot6" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot50" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot7" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot51" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot8" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot52" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot9" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot53" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot10" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot54" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot11" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot55" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="Slot12" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("2_vjt66")]
+[node name="Slot56" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer" instance=ExtResource("7_y3fgf")]
+process_mode = 0
 layout_mode = 2
-script = ExtResource("10_snv7y")
+tooltip_text = "Vacía"
+mouse_default_cursor_shape = 0
+theme = null
 
-[node name="CoinsPanel" type="Panel" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items"]
-modulate = Color(0.956344, 0.907533, 0.814985, 1)
+[node name="CoinsPanel" type="Panel" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -488,9 +692,9 @@ offset_right = 255.0
 offset_bottom = -4.0
 grow_vertical = 0
 theme = ExtResource("3_njllo")
-theme_override_styles/panel = SubResource("StyleBoxTexture_eq40v")
+theme_override_styles/panel = ExtResource("4_gqhih")
 
-[node name="OroLabel" type="Label" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/CoinsPanel"]
+[node name="OroLabel" type="Label" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/CoinsPanel"]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 3.0
@@ -498,36 +702,151 @@ offset_right = 27.0
 offset_bottom = 11.0
 text = "$$$ :"
 
-[node name="PlayerMoneyValue" type="Label" parent="PrincipalFrame/Mercado/HBoxContainer/Inventory_Frame/Items/CoinsPanel"]
+[node name="PlayerMoneyValue" type="Label" parent="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/CoinsPanel"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 38.0
-offset_top = 3.0
-offset_right = 45.0
-offset_bottom = 11.0
-text = "0"
+offset_left = 40.1213
+offset_top = 3.17678
+offset_right = 61.1213
+offset_bottom = 11.1768
+text = "000"
 
-[node name="Inventory_label" type="Label" parent="PrincipalFrame"]
+[node name="Panel" type="Panel" parent="PrincipalFrame"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -85.0
-offset_top = 15.0
-offset_right = 113.0
-offset_bottom = 39.0
+offset_left = -93.5714
+offset_top = 11.6837
+offset_right = 101.429
+offset_bottom = 41.6837
 grow_horizontal = 2
-text = "#TipoDeMercado"
-label_settings = SubResource("LabelSettings_83yid")
+scale = Vector2(0.972682, 0.864212)
+theme_override_styles/panel = SubResource("StyleBoxTexture_0trou")
 
-[node name="Button" type="Button" parent="PrincipalFrame"]
-layout_mode = 0
-offset_left = 198.0
-offset_top = 307.0
-offset_right = 276.0
-offset_bottom = 323.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_bbjpo")
-text = "Insert"
+[node name="Inventory_label" type="Label" parent="PrincipalFrame/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.202564
+anchor_top = 0.254934
+anchor_right = 0.797436
+anchor_bottom = 0.8216
+grow_horizontal = 2
+grow_vertical = 2
+text = "#MERCADO"
+label_settings = SubResource("LabelSettings_olk3r")
+metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="PrincipalFrame/Mercado/HBoxContainer/VBoxContainer/Comprar" to="." method="_on_comprar_pressed"]
-[connection signal="pressed" from="PrincipalFrame/Mercado/HBoxContainer/VBoxContainer/Vender" to="." method="_on_vender_pressed"]
+[connection signal="pressed" from="PrincipalFrame/NinePatchRect/HBoxContainer/VBoxContainer/NinePatchRect/Comprar" to="." method="_on_comprar_pressed"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot2" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot2" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot3" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot3" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot4" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot4" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot5" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot5" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot6" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot6" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot6" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot7" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot7" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot7" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot8" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot8" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot8" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot9" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot9" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot9" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot10" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot10" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot10" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot10" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot11" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot11" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot11" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot11" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot12" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot12" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot12" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot12" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot13" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot13" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot13" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot13" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot14" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot14" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot14" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot14" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot15" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot15" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot15" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot15" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot16" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot16" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot16" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot16" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot17" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot17" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot17" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot17" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot18" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot18" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot18" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot18" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot19" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot19" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot19" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot19" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot20" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot20" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot20" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot20" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot21" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot21" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot21" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot21" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot22" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot22" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot22" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot22" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot23" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot23" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot23" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot23" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot24" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot24" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot24" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot24" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot25" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot25" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot25" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot25" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot26" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot26" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot26" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot26" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot27" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot27" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot27" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot27" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot28" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot28" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot28" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot28" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot29" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot29" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot29" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot29" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot30" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot30" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot30" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot30" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot31" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot31" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot31" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot31" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot32" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot32" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot32" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot32" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot33" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot33" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot33" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot33" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot34" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot34" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot34" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot34" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot35" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot35" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot35" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot35" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot36" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot36" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot36" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot36" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot37" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot37" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot37" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot37" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot38" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot38" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot38" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot38" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot39" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot39" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot39" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot39" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot40" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot40" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot40" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot40" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot41" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot41" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot41" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot41" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot42" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot42" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot42" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot42" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot43" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot43" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot43" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot43" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot44" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot44" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot44" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot44" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot45" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot45" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot45" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot45" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot46" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot46" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot46" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot46" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot47" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot47" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot47" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot47" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot48" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot48" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot48" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot48" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot49" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot49" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot49" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot49" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot50" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot50" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot50" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot50" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot51" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot51" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot51" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot51" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot52" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot52" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot52" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot52" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot53" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot53" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot53" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot53" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot54" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot54" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot54" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot54" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot55" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot55" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot55" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot55" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot56" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot56" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot56" to="PrincipalFrame/NinePatchRect/HBoxContainer/Inventory_Frame/Items/GridContainer/Slot56" method="_on_mouse_exited"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgmwfsxp2vlru"]
+
+[ext_resource type="Script" path="res://Resources/instantiation.gd" id="1_xkhro"]
+
+[node name="Instantiation" type="Marker2D"]
+script = ExtResource("1_xkhro")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true

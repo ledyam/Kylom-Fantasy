@@ -8,7 +8,7 @@ extends NinePatchRect
 @onready var puntos_restantes: Label = $PuntosValue
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if PuedeIncrementar():
 		$IncrementBottons.show()
 	else : $IncrementBottons.hide()

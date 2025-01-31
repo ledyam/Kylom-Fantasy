@@ -2,6 +2,7 @@ extends Resource
 class_name Item
 
 @export_category("Information")
+@export var is_unic : bool = false
 @export var ID : int
 @export var name : String
 @export_enum("Cabeza : 0" , "Pecho : 1", "Piernas : 2" ,  "Arma : 3" ,         \
@@ -20,6 +21,5 @@ var type : int
 @export var attribute_value : float
 
 
-@export_multiline var description : String :
-	get():
-		return attribute + ": %d" %attribute_value
+@export_multiline var description : String 
+@export var precio : int

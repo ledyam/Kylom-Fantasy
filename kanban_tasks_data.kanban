@@ -45,20 +45,25 @@
 		{
 			"uuid": "1319d7c3-95ea-403c-a443-986f772d3316",
 			"title": "Pendientes",
-			"tasks": []
+			"tasks": [
+				"cc1b277c-4ff8-44cf-a552-d4712c4b4e1e",
+				"b8aafff3-4f1c-4e6f-b9b0-2945b70063ef",
+				"b92f855e-229e-4458-a4fc-42ad62c94a52"
+			]
 		},
 		{
 			"uuid": "59d6ca3d-b983-4f8a-b834-5052daff4f26",
 			"title": "En Progreso",
 			"tasks": [
-				"0b11db4b-3715-480f-bd42-97c7a55939cd",
-				"b8aafff3-4f1c-4e6f-b9b0-2945b70063ef"
+				"956e5b00-57dc-4585-ac60-1b6fa4edaa39"
 			]
 		},
 		{
 			"uuid": "0d46dab2-a88a-4634-b92b-deadf4ef030b",
 			"title": "Completadas",
-			"tasks": []
+			"tasks": [
+				"0b11db4b-3715-480f-bd42-97c7a55939cd"
+			]
 		}
 	],
 	"tasks": [
@@ -94,7 +99,7 @@
 				},
 				{
 					"details": "Crear sistema Drag_and_Drop",
-					"done": false
+					"done": true
 				}
 			]
 		},
@@ -117,6 +122,44 @@
 					"done": false
 				}
 			]
+		},
+		{
+			"uuid": "cc1b277c-4ff8-44cf-a552-d4712c4b4e1e",
+			"title": "Agregar Sistema de Compras ",
+			"description": "",
+			"category": "b95c0d1e-4d1b-4138-937e-38529b8dc7ca",
+			"steps": [
+				{
+					"details": "Vincular al Sistema de Venta los Productos",
+					"done": true
+				},
+				{
+					"details": "Poder Hacer Compras",
+					"done": true
+				},
+				{
+					"details": "Poder tener diferentes tiendas con diferentes productos",
+					"done": false
+				},
+				{
+					"details": "Crear Sistema de Probabilidades para agregar Items aleatorios a los mercados",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "b92f855e-229e-4458-a4fc-42ad62c94a52",
+			"title": "Arreglar referencia de item en Drag and Drop",
+			"description": "",
+			"category": "52aa36b5-a120-4a5f-9c9b-b29ecccc73ec",
+			"steps": []
+		},
+		{
+			"uuid": "956e5b00-57dc-4585-ac60-1b6fa4edaa39",
+			"title": "Arreglar Script de Ataque que se sigue moviendo cuando ataca moviendose",
+			"description": "",
+			"category": "52aa36b5-a120-4a5f-9c9b-b29ecccc73ec",
+			"steps": []
 		}
 	],
 	"layout": {

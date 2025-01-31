@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbgrnbra8xf"]
+
+[ext_resource type="PackedScene" uid="uid://ig0vxckuynlg" path="res://UI/Slots/slot_market.tscn" id="1_yqgxr"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00153846
+anchor_top = -0.00882353
+anchor_right = 1.0
+anchor_bottom = 0.997059
+metadata/_edit_use_anchors_ = true
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot_Market" parent="ScrollContainer/GridContainer" instance=ExtResource("1_yqgxr")]
+layout_mode = 2
+
+[node name="Slot_Market2" parent="ScrollContainer/GridContainer" instance=ExtResource("1_yqgxr")]
+layout_mode = 2
+
+[node name="Slot_Market3" parent="ScrollContainer/GridContainer" instance=ExtResource("1_yqgxr")]
+layout_mode = 2
+
+[node name="Slot_Market4" parent="ScrollContainer/GridContainer" instance=ExtResource("1_yqgxr")]
+layout_mode = 2
+
+[node name="Slot_Market5" parent="ScrollContainer/GridContainer" instance=ExtResource("1_yqgxr")]
+layout_mode = 2
+
+[node name="Slot_Market6" parent="ScrollContainer/GridContainer" instance=ExtResource("1_yqgxr")]
+layout_mode = 2
+
+[node name="Slot_Market7" parent="ScrollContainer/GridContainer" instance=ExtResource("1_yqgxr")]
+layout_mode = 2
+
+[node name="Slot_Market8" parent="ScrollContainer/GridContainer" instance=ExtResource("1_yqgxr")]
+layout_mode = 2
+
+[node name="Slot_Market9" parent="ScrollContainer/GridContainer" instance=ExtResource("1_yqgxr")]
+layout_mode = 2
+
+[node name="Slot_Market10" parent="ScrollContainer/GridContainer" instance=ExtResource("1_yqgxr")]
+layout_mode = 2
+
+[editable path="ScrollContainer/GridContainer/Slot_Market"]
+[editable path="ScrollContainer/GridContainer/Slot_Market2"]

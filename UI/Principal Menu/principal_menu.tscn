@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://pbj8qfrtsi3o"]
+[gd_scene load_steps=18 format=3 uid="uid://pbj8qfrtsi3o"]
 
 [ext_resource type="StyleBox" uid="uid://drnarcmriti83" path="res://Resources/UI_Themes/hover.tres" id="1_v3ob4"]
 [ext_resource type="StyleBox" uid="uid://b8aew3b4k2hy0" path="res://Resources/UI_Themes/normal.tres" id="2_osdib"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://bwdvunglqc0ic" path="res://Assets/Sounds/Basic Rpg Intro Track (RPG).wav" id="4_f0nun"]
 [ext_resource type="Script" path="res://addons/simple-gui-transitions/transition.gd" id="4_ir1pv"]
 [ext_resource type="PackedScene" uid="uid://bweqc780t3ltc" path="res://Resources/Button/button_with_sound.tscn" id="6_lakr6"]
+[ext_resource type="PackedScene" uid="uid://du5sk44w66fm1" path="res://UI/COntroles/controles.tscn" id="8_5ttcd"]
+[ext_resource type="Texture2D" uid="uid://yw47balbo0qv" path="res://Tittle.png" id="9_ccmxl"]
 
 [sub_resource type="Theme" id="Theme_0mox5"]
 Button/font_sizes/font_size = 16
@@ -43,14 +45,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Game_Name:modulate")
+tracks/2/path = NodePath("Tittle:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.16667, 4.8),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 4.93333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(0.53, 0.53, 0.53, 0), Color(0.53, 0.53, 0.53, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_okmo0"]
@@ -110,14 +112,14 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Game_Name:modulate")
+tracks/3/path = NodePath("Tittle:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(0.53, 0.53, 0.53, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_08p2e"]
@@ -139,12 +141,6 @@ gradient = SubResource("Gradient_d0etx")
 fill = 1
 fill_from = Vector2(0.5, 0.471963)
 fill_to = Vector2(5, 0)
-
-[sub_resource type="LabelSettings" id="LabelSettings_pocjm"]
-line_spacing = 7.0
-font_size = 24
-outline_size = 35
-outline_color = Color(0.1845, 0.216743, 0.324219, 1)
 
 [node name="Principal_Menu" type="Control"]
 texture_filter = 1
@@ -197,10 +193,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -65.5
-offset_top = -28.0
-offset_right = 50.5
-offset_bottom = 50.0
+offset_left = -83.5135
+offset_top = 6.03842
+offset_right = 44.4865
+offset_bottom = 84.0384
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 6
@@ -210,9 +206,10 @@ alignment = 1
 layout_mode = 2
 text = "Iniciar"
 
-[node name="Opciones" parent="Panel/VBoxContainer" instance=ExtResource("6_lakr6")]
+[node name="Controles" parent="Panel/VBoxContainer" instance=ExtResource("6_lakr6")]
 layout_mode = 2
-text = "Opciones"
+text = "Controles
+"
 
 [node name="Salir" parent="Panel/VBoxContainer" instance=ExtResource("6_lakr6")]
 layout_mode = 2
@@ -228,20 +225,17 @@ stream = ExtResource("4_f0nun")
 volume_db = 3.852
 autoplay = true
 
-[node name="Game_Name" type="Label" parent="."]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -74.0
-offset_top = 43.0
-offset_right = 73.0
-offset_bottom = 98.0
-grow_horizontal = 2
-text = "WIKEP
-FANTASY"
-label_settings = SubResource("LabelSettings_pocjm")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("8_5ttcd")]
+
+[node name="Tittle" type="Sprite2D" parent="."]
+modulate = Color(0.53, 0.53, 0.53, 1)
+position = Vector2(306.111, 98.035)
+scale = Vector2(2.2448, 2.42895)
+texture = ExtResource("9_ccmxl")
 
 [connection signal="animation_finished" from="AnimationMenu" to="." method="_on_animation_menu_animation_finished"]
 [connection signal="pressed" from="Panel/VBoxContainer/Iniciar" to="." method="_on_button_with_sound_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Controles" to="." method="_on_controles_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Salir" to="." method="_on_salir_pressed"]

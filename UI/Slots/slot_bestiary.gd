@@ -1,8 +1,7 @@
 extends Control
 
 
-@onready var icon: TextureRect = $CenterContainer/Icon
-
+@onready var icon: TextureRect = $Icon
 var is_vacio : bool = true
 var mob_name : String
 
@@ -19,5 +18,9 @@ func _on_gui_input(event: InputEvent) -> void:
 			owner.find_child("Default").texture = null
 		
 		
-			
-			
+func _make_custom_tooltip(_for_text: String) -> Object:
+	var tooltip = preload("res://UI/Tooltip/tooltip.tscn").instantiate()
+	if !is_vacio :
+		tooltip.SetName(mob_name) 
+		return tooltip
+	else : return null 

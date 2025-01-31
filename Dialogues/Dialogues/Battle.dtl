@@ -1,0 +1,7 @@
+[signal arg="NO_MOVING"]
+join "Anciano Misterioso" center [animation="Fade In"]
+"Anciano Misterioso": "Has hecho bien, joven héroe. Pero tu tarea termina aquí."
+Marcus: "¿Qué estás diciendo? ¡Tenemos que liberar a la princesa!"
+"Anciano Misterioso": ¿Liberarla? No, no... Su poder será mío. Con ella, controlaré el bosque y lo consumiré todo para mi beneficio."
+Marcus: "¡Tú me usaste! ¡Esto no puede terminar así!"
+[signal arg="MOVING"]

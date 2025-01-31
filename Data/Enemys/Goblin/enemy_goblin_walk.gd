@@ -16,7 +16,7 @@ func physics_process(_delta: float) -> void:
 
 		enemy.move_and_slide()
 	else: 
-		enemy.Patrullaje._get_next_positions()
+		enemy.Patrullaje._get_next_position()
 		state_machine.change_to("Idle")
 		
 		

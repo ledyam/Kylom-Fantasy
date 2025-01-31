@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwmvx0yuckko8"]
+
+[ext_resource type="Script" path="res://UI/Tooltip/tooltip.gd" id="1_gf6os"]
+[ext_resource type="LabelSettings" uid="uid://bclrtootfoxtg" path="res://Resources/Labels/tooltip.tres" id="2_ee44k"]
+
+[node name="Tooltip" type="MarginContainer"]
+process_mode = 3
+z_index = 2
+anchors_preset = -1
+anchor_right = 0.166154
+anchor_bottom = 0.0235294
+size_flags_horizontal = 2
+size_flags_vertical = 2
+focus_mode = 1
+script = ExtResource("1_gf6os")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Name" type="Label" parent="VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+text = "Espada de Madera"
+label_settings = ExtResource("2_ee44k")
+metadata/_edit_use_anchors_ = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]

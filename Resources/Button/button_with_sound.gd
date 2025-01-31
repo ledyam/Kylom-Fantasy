@@ -10,4 +10,5 @@ func _on_mouse_entered() -> void:
 
 func _on_pressed() -> void:
 	$Sounds/Pressed.play()
+
 	pass # Replace with function body.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://bb1kv554uud8f"]
+[gd_scene load_steps=88 format=3 uid="uid://bb1kv554uud8f"]
 
 [ext_resource type="PackedScene" uid="uid://bnu237mwuff1a" path="res://Data/Enemys/Generic/mob_enemy.tscn" id="1_d8tvm"]
 [ext_resource type="Script" path="res://Data/Enemys/Goblin/goblin.gd" id="2_r5f78"]
@@ -47,10 +47,10 @@ tracks/2/path = NodePath("../Enemy_Attack_Area/CollisionShape2D:shape:size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.404668, 0.433333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(12.8951, 2.26612), Vector2(12.0191, 5.46209)]
+"values": [Vector2(14.8203, 8.1752)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -59,10 +59,10 @@ tracks/3/path = NodePath("../Enemy_Attack_Area/CollisionShape2D:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.404512, 0.434295),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(7.01646, 4.77198), Vector2(-9, 1)]
+"values": [Vector2(-8, 3)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -71,10 +71,10 @@ tracks/4/path = NodePath("../Enemy_Attack_Area/CollisionShape2D:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.404512, 0.433333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-1.08372, -1.57649]
+"values": [-2.03576]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -83,7 +83,7 @@ tracks/5/path = NodePath("../Enemy_Attack_Area/CollisionShape2D:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.395551, 0.543754),
+"times": PackedFloat32Array(0, 0.4, 0.733333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -145,26 +145,26 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Enemy_Attack_Area/CollisionShape2D:shape:size")
+tracks/2/path = NodePath("../Enemy_Attack_Area/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.401057, 0.41739),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(11.7669, 2.26435), Vector2(13.3058, 7.75885)]
+"times": PackedFloat32Array(0, 0.4, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../Enemy_Attack_Area/CollisionShape2D:disabled")
+tracks/3/path = NodePath("../Enemy_Attack_Area/CollisionShape2D:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.401057, 0.521435),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.982185]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -173,22 +173,22 @@ tracks/4/path = NodePath("../Enemy_Attack_Area/CollisionShape2D:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.401057, 0.41739),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-8.24054, 3.96059), Vector2(8.63451, 2.37918)]
+"values": [Vector2(8.54233, 4.02958)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../Enemy_Attack_Area/CollisionShape2D:rotation")
+tracks/5/path = NodePath("../Enemy_Attack_Area/CollisionShape2D:shape:size")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.401057, 0.41739),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-1.95215, -1.14408]
+"values": [Vector2(18.0959, 7.93955)]
 }
 
 [sub_resource type="Animation" id="Animation_qw85v"]
@@ -920,13 +920,10 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7px4"]
-size = Vector2(11, 6)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6d6x"]
 size = Vector2(12.8951, 2.26612)
 
-[node name="Mob_Enemy" node_paths=PackedStringArray("Patrullaje") groups=["Enemy"] instance=ExtResource("1_d8tvm")]
+[node name="Mob_Enemy" node_paths=PackedStringArray("Patrullaje") instance=ExtResource("1_d8tvm")]
 script = ExtResource("2_r5f78")
 Patrullaje = NodePath("Patrullaje")
 critic_chance = 0.383
@@ -950,14 +947,8 @@ initial_state = NodePath("Walk")
 [node name="Walk" parent="StateMachine" index="2"]
 script = ExtResource("10_l1peo")
 
-[node name="Area_loot" type="Area2D" parent="." index="6"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_loot" index="0"]
-position = Vector2(-0.5, 4)
-shape = SubResource("RectangleShape2D_x7px4")
-debug_color = Color(3.60981e-06, 0.635854, 0.412129, 0.42)
-
-[node name="Enemy_Attack_Area" type="Area2D" parent="." index="7"]
+[node name="Enemy_Attack_Area" type="Area2D" parent="." index="6"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Attack_Area" index="0"]
 position = Vector2(7.01646, 4.77198)
@@ -968,10 +959,9 @@ disabled = true
 [node name="Hit_Damage" parent="Sounds" index="0"]
 stream = ExtResource("11_dthhh")
 
-[node name="Patrullaje" parent="." index="10"]
+[node name="Patrullaje" parent="." index="9"]
 group_name = "FirstEnemy"
 
 [connection signal="Take_Damage" from="." to="StateMachine/Walk" method="_on_take_damage"]
 [connection signal="body_entered" from="Area_Vigilance" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area_Vigilance" to="." method="_on_area_2d_body_exited"]
-[connection signal="mouse_entered" from="Area_loot" to="." method="_on_area_loot_mouse_entered"]

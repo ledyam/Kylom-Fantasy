@@ -1,0 +1,5 @@
+join princesa center [animation="Fade In" length="0.3"]
+princesa: Tu valentía no solo me ha salvado  a mí, sino a todo lo que vive aquí. Gracias a ti, los árboles volverán a crecer, los ríos serán puros, y la vida regresará al bosque."
+"La princesa libera una energía verde que restaura el bosque. Los árboles florecen, los ríos se limpian, y los animales regresan".
+princesa: "Aunque el mal siempre puede regresar, mientras existan corazones puros como el tuyo, el bosque siempre tendrá esperanza."
+do Final.CREDITOS()

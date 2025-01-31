@@ -5,12 +5,14 @@
 
 [resource]
 script = ExtResource("1_w6kr6")
+is_unic = false
 ID = 3000
 name = "Manzana"
 type = 8
 texture = ExtResource("2_a2ky7")
 rarity = "Común"
-drop = 0.98
-description = "Una deliciosa manzana silvestre"
+drop = 0.94
 attribute = "REG"
 attribute_value = 40.0
+description = "Una deliciosa manzana silvestre"
+precio = 3

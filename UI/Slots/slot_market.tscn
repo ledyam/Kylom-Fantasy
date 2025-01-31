@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://ig0vxckuynlg"]
+
+[ext_resource type="Texture2D" uid="uid://dmrqe62576sov" path="res://Assets/Tiles/16x16 Item Pack/Item__03.png" id="1_wx2eb"]
+[ext_resource type="Script" path="res://UI/Slots/item_name.gd" id="2_xk1hn"]
+
+[node name="Slot_Market" type="PanelContainer"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.208824
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.38
+
+[node name="AspectRatioContainer" type="MarginContainer" parent="HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Item" type="TextureRect" parent="HBoxContainer/HBoxContainer/AspectRatioContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.98
+texture = ExtResource("1_wx2eb")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.72
+
+[node name="ItemName" type="Label" parent="HBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_stretch_ratio = 5.04
+text = "Nombre del Item asd asd asd asd asd asd as"
+script = ExtResource("2_xk1hn")
+
+[node name="Precio" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.5
+text = "00"

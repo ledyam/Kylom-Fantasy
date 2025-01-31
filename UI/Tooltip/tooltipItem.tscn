@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://bisecjj4juva8"]
+
+[ext_resource type="PackedScene" uid="uid://bwmvx0yuckko8" path="res://UI/Tooltip/tooltip.tscn" id="1_yxxey"]
+[ext_resource type="LabelSettings" uid="uid://bclrtootfoxtg" path="res://Resources/Labels/tooltip.tres" id="2_gah7a"]
+[ext_resource type="Script" path="res://UI/Tooltip/tooltip_item.gd" id="2_k3j82"]
+
+[node name="Tooltip" instance=ExtResource("1_yxxey")]
+script = ExtResource("2_k3j82")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer2" index="1"]
+layout_mode = 2
+
+[node name="VBoxContainer1" type="VBoxContainer" parent="VBoxContainer2" index="2"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/VBoxContainer1" index="0"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2/VBoxContainer1/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Level" type="Label" parent="VBoxContainer2/VBoxContainer1/VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Level"
+label_settings = ExtResource("2_gah7a")
+
+[node name="LevelValue" type="Label" parent="VBoxContainer2/VBoxContainer1/VBoxContainer/HBoxContainer" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
+text = "0"
+label_settings = ExtResource("2_gah7a")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer2/VBoxContainer1/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Attribute" type="Label" parent="VBoxContainer2/VBoxContainer1/VBoxContainer/HBoxContainer3" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Ataque"
+label_settings = ExtResource("2_gah7a")
+
+[node name="AttributeValue" type="Label" parent="VBoxContainer2/VBoxContainer1/VBoxContainer/HBoxContainer3" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
+text = "0"
+label_settings = ExtResource("2_gah7a")
+
+[node name="Rarity" type="RichTextLabel" parent="VBoxContainer2/VBoxContainer1/VBoxContainer" index="2"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "Rareza"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2

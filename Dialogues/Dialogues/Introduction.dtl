@@ -1,0 +1,13 @@
+join "Anciano Misterioso" right [animation="Slide In Down" length="1.2"]
+"Anciano Misterioso": "¡Ah, un viajero perdido! Pero espera... puedo sentir la pureza en tu corazón. Eres distinto a los demás."
+"Anciano Misterioso": "El bosque está muriendo, devastado por la codicia y la contaminación. Sin embargo, hay esperanza\: una princesa mágica duerme en el corazón del bosque, protegida en una burbuja de cristal. Sólo ella puede restaurar este lugar."
+"Anciano Misterioso": "Pero el camino no será fácil. Te enfrentarás a goblins que destruyen los árboles y slimes que envenenan los lagos. Si tu valor es tan puro como creo, podrás superar cualquier obstáculo."
+Deseas Salvar a la Princesa de Su burbuja de Cristal y restaurar la paz en el Bosque Burbuja ?
+join Marcus left
+- SI | [=""]
+	Marcus: Si puedo ayudar a salvar este bosque, haré lo que sea necesario. ¿Dónde debo ir?
+	"Anciano Misterioso": Dirígete hacia el norte, donde el aire huele a cenizas. Allí comenzará tu prueba. Si miras al suelo notarás burbujas de tierra , siguelas.
+	[signal arg="ActivarMision"]
+- No
+	"Anciano Misterioso": EMMMMMMM, Ok.
+	do Final.CREDITOS()

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://2iov2td80tf3"]
+
+[ext_resource type="Script" path="res://Data/Items/item.gd" id="1_oxvf1"]
+[ext_resource type="Texture2D" uid="uid://bji51t2lbgti2" path="res://Assets/Tiles/16x16 Item Pack/Item__02.png" id="2_plebc"]
+
+[resource]
+script = ExtResource("1_oxvf1")
+unic = true
+ID = 1000
+name = "Espada de Hierro"
+type = 3
+texture = ExtResource("2_plebc")
+rarity = "Común"
+drop = 0.7
+attribute = "ATK"
+attribute_value = 20.0
+description = "Una simple espada de hierro "
+precio = 20

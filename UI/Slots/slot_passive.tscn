@@ -6,10 +6,18 @@
 [ext_resource type="AudioStream" uid="uid://cwntjltnkph3j" path="res://Assets/Sounds/10_UI_Menu_SFX/071_Unequip_01.wav" id="4_7m7s5"]
 
 [node name="Slot" instance=ExtResource("1_6g0yn")]
+anchor_right = 0.0301538
+anchor_bottom = 0.0576471
+offset_right = 8.39998
+offset_bottom = 8.39998
+scale = Vector2(0.7, 0.7)
 script = ExtResource("2_6pr5k")
+slot_type = 0
 
 [node name="Equip" type="AudioStreamPlayer" parent="." index="1"]
 stream = ExtResource("3_a3ipx")
 
 [node name="Unquip" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource("4_7m7s5")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

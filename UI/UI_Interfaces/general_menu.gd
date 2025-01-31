@@ -51,7 +51,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_salir_pressed() -> void:
-	get_tree().change_scene_to_file("res://UI/Menú Principal/principal_menu.tscn")
+	get_tree().quit()
 
 func _on_inventario_pressed() -> void:
 	animation_player.play("Hide_menu")
@@ -110,3 +110,8 @@ func _on_cargar_pressed() -> void:
 #endregion
 
 #endregion
+
+
+func _on_controles_pressed() -> void:
+	$Control/Control.animation_player.play("Mostrar")
+	pass # Replace with function body.

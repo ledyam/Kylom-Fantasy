@@ -1,47 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://6rpyx7ocac0d"]
+[gd_scene load_steps=6 format=3 uid="uid://6rpyx7ocac0d"]
 
-[ext_resource type="Texture2D" uid="uid://c75pdyh7y2c8" path="res://Assets/Tiles/GUI/GUI/GUI.png" id="1_1ro5j"]
+[ext_resource type="Texture2D" uid="uid://31k2ou5bu2pu" path="res://Assets/Tiles/GUI/GUI/pixel-ui.png" id="1_7t3q1"]
+[ext_resource type="Script" path="res://UI/Slots/slot.gd" id="1_81nlu"]
+[ext_resource type="StyleBox" uid="uid://dky82e4oj2uai" path="res://Resources/popup/popup.tres" id="1_hnegv"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_je4qp"]
-atlas = ExtResource("1_1ro5j")
-region = Rect2(48, 96, 32, 32)
+[sub_resource type="Theme" id="Theme_lu0ye"]
+PopupPanel/styles/panel = ExtResource("1_hnegv")
 
-[node name="Slot" type="Control"]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -325.0
-offset_top = -170.0
-offset_right = -325.0
-offset_bottom = -170.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dm3a"]
+atlas = ExtResource("1_7t3q1")
+region = Rect2(106, 122, 28, 28)
+
+[node name="Slot" type="CenterContainer"]
+process_mode = 3
+anchors_preset = -1
+anchor_right = 0.0430769
+anchor_bottom = 0.0823529
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_lu0ye")
+script = ExtResource("1_81nlu")
+metadata/_edit_use_anchors_ = true
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 16.0
-offset_bottom = 16.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="BG" type="TextureRect" parent="CenterContainer"]
+[node name="BG" type="TextureRect" parent="."]
 layout_mode = 2
-texture = SubResource("AtlasTexture_je4qp")
+mouse_filter = 2
+texture = SubResource("AtlasTexture_5dm3a")
 
-[node name="Icon" type="TextureRect" parent="CenterContainer"]
+[node name="Icon" type="TextureRect" parent="."]
 layout_mode = 2
 localize_numeral_system = false
+mouse_filter = 2
 stretch_mode = 5
-
-[connection signal="gui_input" from="." to="." method="_on_gui_input"]
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

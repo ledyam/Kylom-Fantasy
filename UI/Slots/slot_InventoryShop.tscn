@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq5pfk8vflgft"]
+
+[ext_resource type="PackedScene" uid="uid://6rpyx7ocac0d" path="res://UI/Slots/slot.tscn" id="1_x510a"]
+[ext_resource type="Script" path="res://UI/Slots/slot_inventory_shop.gd" id="2_ver50"]
+[ext_resource type="LabelSettings" uid="uid://mwlvqios1hwe" path="res://Resources/Labels/slot_InventoryContador.tres" id="3_0k81t"]
+
+[node name="Slot" instance=ExtResource("1_x510a")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+script = ExtResource("2_ver50")
+
+[node name="Contador" type="Label" parent="BG" index="0"]
+layout_mode = 2
+offset_left = 10.0871
+offset_top = 22.363
+offset_right = 31.0871
+offset_bottom = 30.363
+label_settings = ExtResource("3_0k81t")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

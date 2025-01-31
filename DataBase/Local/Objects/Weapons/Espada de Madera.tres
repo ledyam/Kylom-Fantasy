@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://djffy3ywl4ncm"]
+
+[ext_resource type="Script" path="res://Data/Items/item.gd" id="1_18ijs"]
+[ext_resource type="Texture2D" uid="uid://dyt765vr50l0b" path="res://Assets/Tiles/16x16 Item Pack/sword_03a.png" id="2_i04wm"]
+
+[resource]
+script = ExtResource("1_18ijs")
+is_unic = true
+ID = 10001
+name = "Espada de Madera"
+type = 3
+texture = ExtResource("2_i04wm")
+rarity = "Común"
+drop = 0.99
+attribute = "ATK"
+attribute_value = 10.0
+description = ""
+precio = 20

@@ -1,7 +1,7 @@
 extends NinePatchRect
 @export_multiline var default_text : String
 @onready var coger_objeto: AudioStreamPlayer = $Sounds/CogerObjeto
-@onready var player_in_inv: AnimatedSprite2D =  $PlayerInInv
+@onready var player_in_inv: AnimatedSprite2D =  $Decoration/PlayerInInv
 var player_reference : MainPlayer
 @onready var stats_player: NinePatchRect = $Int_Inventario/PlayerSection/StatsPlayer
 
@@ -9,6 +9,11 @@ var player_reference : MainPlayer
 func _ready() -> void:
 	player_reference = get_tree().current_scene.find_child("Marcus")
 	Default_Description()
+	
+	add_item(load("res://DataBase/Local/Objects/Weapons/Espada de Madera.tres"))
+	
+	
+	
 	
 func _process(_delta: float) -> void:
 	if self.visible:
@@ -21,15 +26,11 @@ func add_item (item ) :
 	
 	for i in index.get_children():
 		
-		if !i.is_vacio and i.item == item and item.type == 8:
+		if IsConsumibleMax(i , item):
 			i.cantidad += 1
 			break
 
-		elif i.is_vacio and item.type != 8:
-			i.is_vacio = false
-			i.item = item
-			break
-			
+
 		elif i.is_vacio:
 			i.item = item
 			i.is_vacio = false
@@ -49,7 +50,6 @@ func Default_Description ():
 	find_child("Name").text = ""
 	find_child("Icon").texture = null
 	find_child("Description").text = default_text
-	find_child("Stats").text = ""
 
 #Muestra Descripción , textura y Título del Item
 
@@ -116,11 +116,14 @@ func CargarInv(inventario_cargado : Dictionary):
 
 	for item in inventario_cargado.equipable_items_referencies:
 		add_item_Inventory_Equipable(item ,inventario_cargado.equipable_items_referencies[item] )
-	#
+	
 	pass
 #endregion
 
-func SlotRellenados()  -> Array :
+#region Seccion de Inventario - Mercadeo
+
+
+func SlotDeReferenciaRellenados()  -> Array :
 	var slots = %GridContainer.get_children()
 	var slotsrellenos : Array
 	for slot in slots : 
@@ -130,6 +133,22 @@ func SlotRellenados()  -> Array :
 		
 	return slotsrellenos
 			
+func ActualizarDespuesDeMercadeo(slots : Array):
 
+	var slots_inventario = %GridContainer.get_children()
+	var i = 0  
+	
+	for slot in slots_inventario:
+		slot.item = slots[i].item
+		slot.cantidad = slots[i].cantidad
+		slot.is_vacio = slots[i].is_vacio
+		i+=1 
+	
 
+#endregion 
+
+func IsConsumibleMax(slot , item) -> bool : 
+	return !slot.is_vacio and slot.item == item and item.type == 8 \
+	and slot.CANTIDAD_MAX > slot.cantidad
+	
 	

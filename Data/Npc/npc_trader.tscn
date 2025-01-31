@@ -11,10 +11,10 @@ radius = 17.2685
 script = ExtResource("2_ob4y1")
 mercado = ExtResource("3_fw8ig")
 
-[node name="Area2D" type="Area2D" parent="." index="2"]
+[node name="Area2D2" type="Area2D" parent="." index="1"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" index="0"]
 shape = SubResource("CircleShape2D_hb22b")
 debug_color = Color(0.672401, 0.508012, 0, 0.42)
 
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_entered" from="Area2D2" to="." method="_on_area_2d_mouse_entered"]

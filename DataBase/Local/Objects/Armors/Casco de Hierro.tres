@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_jeppv")
+is_unic = false
 ID = 2000
 name = "Casco de Hierro"
 type = 0
@@ -13,4 +14,5 @@ rarity = "Común"
 drop = 0.9
 attribute = "DEF"
 attribute_value = 20.0
-description = "Un simple casco de hierro "
+description = "Casco de hierro imbuido el almas del bosque  "
+precio = 50

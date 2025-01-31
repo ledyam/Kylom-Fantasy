@@ -19,13 +19,17 @@ height = 10.0
 radius = 47.0
 
 [node name="Mob_Enemy" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
+collision_layer = 2
+collision_mask = 15
 script = ExtResource("1_3fx7q")
 
 [node name="mob_enemy_health_bar" parent="." instance=ExtResource("10_hjaus")]
 offset_left = -2.0
-offset_top = -13.0
+offset_top = -14.0
 offset_right = -2.0
-offset_bottom = -13.0
+offset_bottom = -14.0
 scale = Vector2(0.667848, 0.706732)
 
 [node name="Collision_Body" type="CollisionShape2D" parent="."]

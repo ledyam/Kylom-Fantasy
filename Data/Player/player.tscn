@@ -2404,7 +2404,7 @@ libraries = {
 y_sort_enabled = true
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_b1j8g")
-animation = &"Player_idle_jump_right"
+animation = &"Player_attack_down"
 autoplay = "Player_idle_down"
 
 [node name="Body_Collision" type="CollisionShape2D" parent="."]
@@ -2415,7 +2415,6 @@ shape = SubResource("CapsuleShape2D_656gv")
 position = Vector2(3, 0)
 zoom = Vector2(2, 2)
 limit_left = -2000
-limit_top = -1500
 limit_right = 2000
 limit_bottom = 0
 limit_smoothed = true
@@ -2451,7 +2450,7 @@ character = NodePath("..")
 [node name="Timers" type="Node" parent="."]
 
 [node name="CD" type="Timer" parent="Timers"]
-wait_time = 0.681
+wait_time = 1.005
 
 [node name="Tiempo_de_muerte" type="Timer" parent="Timers"]
 wait_time = 2.996
@@ -2493,6 +2492,7 @@ shape = SubResource("CircleShape2D_okugr")
 debug_color = Color(0.970136, 0.126886, 0.303562, 0.42)
 
 [connection signal="Hit_Damage" from="." to="StateMachine/Idle" method="_on_marcus_hit_damage"]
+[connection signal="animation_finished" from="AnimationPlayerMovements" to="StateMachine/Attack" method="_on_animation_player_movements_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayerMovements" to="StateMachine/Jump" method="_on_animation_player_movements_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/Attack" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timers/CD" to="." method="_on_cd_timeout"]
@@ -2500,5 +2500,6 @@ debug_color = Color(0.970136, 0.126886, 0.303562, 0.42)
 [connection signal="timeout" from="Timers/Finish_animation" to="StateMachine/Attack" method="_on_finish_animation_timeout"]
 [connection signal="body_entered" from="Damage_box" to="." method="_on_damage_box_body_entered"]
 [connection signal="area_entered" from="Hit_box" to="." method="_on_hit_box_area_entered"]
+[connection signal="area_exited" from="Hit_box" to="." method="_on_hit_box_area_exited"]
 [connection signal="body_entered" from="Hit_box" to="." method="_on_hit_box_body_entered"]
 [connection signal="body_exited" from="Hit_box" to="." method="_on_hit_box_body_exited"]

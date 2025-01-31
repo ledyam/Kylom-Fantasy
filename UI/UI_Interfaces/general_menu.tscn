@@ -1,11 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://5jark5pkwsb"]
+[gd_scene load_steps=18 format=3 uid="uid://5jark5pkwsb"]
 
 [ext_resource type="Script" path="res://UI/UI_Interfaces/general_menu.gd" id="1_l80n5"]
 [ext_resource type="Theme" uid="uid://dmxukrbns7myn" path="res://Resources/UI_Themes/General Themes/ui_menu_in_game.tres" id="2_4jd41"]
 [ext_resource type="Texture2D" uid="uid://c75pdyh7y2c8" path="res://Assets/Tiles/GUI/GUI/GUI.png" id="3_x7cla"]
 [ext_resource type="PackedScene" uid="uid://bweqc780t3ltc" path="res://Resources/Button/button_with_sound.tscn" id="4_q7tvu"]
 [ext_resource type="PackedScene" uid="uid://ckmhjkds58k4w" path="res://UI/Inventory/inventario.tscn" id="5_7dfb8"]
+[ext_resource type="AudioStream" uid="uid://ko8iiry15tys" path="res://Assets/Sounds/10_UI_Menu_SFX/092_Pause_04.wav" id="5_ocnke"]
 [ext_resource type="PackedScene" uid="uid://q1cmeacruiwm" path="res://UI/Bestiary/bestiary.tscn" id="6_3lav2"]
+[ext_resource type="AudioStream" uid="uid://bkww74op27cwf" path="res://Assets/Sounds/10_UI_Menu_SFX/098_Unpause_04.wav" id="6_7havn"]
+[ext_resource type="PackedScene" uid="uid://du5sk44w66fm1" path="res://UI/COntroles/controles.tscn" id="9_440qo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mfa16"]
 atlas = ExtResource("3_x7cla")
@@ -41,6 +44,20 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Inventario/Sounds/UiClose")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_2po5g"]
 resource_name = "Hide_menu"
@@ -72,11 +89,11 @@ tracks/1/keys = {
 tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Control/Inventario/Sounds/UiClose")
+tracks/2/path = NodePath("Control/Menu/Unpause")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.131524),
+"times": PackedFloat32Array(0.166667),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [0.0],
@@ -162,6 +179,20 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Inventario/Sounds/UiOpen")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_andki"]
 resource_name = "Show_menu"
@@ -193,11 +224,11 @@ tracks/1/keys = {
 tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Control/Inventario/Sounds/UiOpen")
+tracks/2/path = NodePath("Control/Menu/Pause")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.0657621),
+"times": PackedFloat32Array(0.166667),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [0.0],
@@ -231,11 +262,11 @@ theme = ExtResource("2_4jd41")
 [node name="Menu" type="NinePatchRect" parent="Control"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = -1
+anchor_left = 0.500769
+anchor_top = 0.441176
+anchor_right = 0.500769
+anchor_bottom = 0.502941
 offset_left = -60.5
 offset_top = -59.0
 offset_right = 61.5
@@ -275,6 +306,10 @@ text = "Inventario"
 layout_mode = 2
 text = "Bestiario"
 
+[node name="Controles" parent="Control/Menu/VBoxContainer" instance=ExtResource("4_q7tvu")]
+layout_mode = 2
+text = "Controles"
+
 [node name="Guardar" parent="Control/Menu/VBoxContainer" instance=ExtResource("4_q7tvu")]
 layout_mode = 2
 text = "Guardar"
@@ -287,27 +322,20 @@ text = "Cargar"
 layout_mode = 2
 text = "Salir"
 
+[node name="Pause" type="AudioStreamPlayer" parent="Control/Menu"]
+stream = ExtResource("5_ocnke")
+
+[node name="Unpause" type="AudioStreamPlayer" parent="Control/Menu"]
+stream = ExtResource("6_7havn")
+
 [node name="Inventario" parent="Control" instance=ExtResource("5_7dfb8")]
 modulate = Color(1, 1, 1, 0)
+clip_contents = false
 layout_mode = 1
-mouse_filter = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Description" parent="Control/Inventario/Int_Inventario/DescriptionPanel/DescriptionBackground" index="1"]
-offset_left = -78.0293
-offset_top = -13.147
-offset_right = 71.9707
-offset_bottom = 56.853
-text = "Poder de Ataque : 25
-
-Critico : 2%
-
-Común"
-
-[node name="CoinsPanel" parent="Control/Inventario/Int_Inventario/Items_Inventario" index="1"]
-theme = null
-
 [node name="Bestiary" parent="Control" instance=ExtResource("6_3lav2")]
+visible = false
 layout_mode = 1
 mouse_filter = 1
 
@@ -327,6 +355,19 @@ text = "Juego Guardado..."
 label_settings = SubResource("LabelSettings_vcia5")
 metadata/_edit_use_anchors_ = true
 
+[node name="Control" parent="Control" instance=ExtResource("9_440qo")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00769231
+anchor_top = -1.00588
+anchor_right = 1.02154
+anchor_bottom = -0.00588244
+offset_left = 0.0
+offset_top = 3.05176e-05
+offset_right = -6.10352e-05
+offset_bottom = 0.0
+metadata/_edit_use_anchors_ = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_2hsri")
@@ -334,8 +375,7 @@ libraries = {
 
 [connection signal="pressed" from="Control/Menu/VBoxContainer/InventarioB" to="." method="_on_inventario_pressed"]
 [connection signal="pressed" from="Control/Menu/VBoxContainer/Bestiario" to="." method="_on_bestiario_pressed"]
+[connection signal="pressed" from="Control/Menu/VBoxContainer/Controles" to="." method="_on_controles_pressed"]
 [connection signal="pressed" from="Control/Menu/VBoxContainer/Guardar" to="." method="_on_guardar_pressed"]
 [connection signal="pressed" from="Control/Menu/VBoxContainer/Cargar" to="." method="_on_cargar_pressed"]
 [connection signal="pressed" from="Control/Menu/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
-
-[editable path="Control/Inventario"]

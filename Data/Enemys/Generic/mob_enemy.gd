@@ -7,8 +7,8 @@ var life : float = 100 :
 		life = value
 		$mob_enemy_health_bar.find_child("ProgressBar").value = life
 var current_level : int = 1
-var ATK : float  = 20
-var  DEF : float = 20 
+@export var ATK : float  = 20
+@export  var  DEF : float = 20 
 
 var loot: Item
 
@@ -25,7 +25,7 @@ var can_loot
 
 #region VARIABLES Instancias 
 var  numero_flotante : PackedScene = load("res://UI/Indicators/numero_flotante.tscn")
-var  item : PackedScene = load("res://Data/Items/item.tscn")
+var  item : PackedScene = preload("res://Data/Items/item.tscn")
 
 
 
@@ -33,9 +33,6 @@ signal Take_Damage
 
 func _ready() -> void:
 	can_loot = randi_range(0,1)
-	if can_loot == 1 :
-		loot = ITEM_LOOT.Asignar_Item()
-	
 
 func spawn_numero_flotante(damage ): 
 	var number = numero_flotante.instantiate()

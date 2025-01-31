@@ -1,0 +1,14 @@
+[gd_resource type="StyleBoxTexture" load_steps=3 format=3 uid="uid://bfctpxba57jdp"]
+
+[ext_resource type="Texture2D" uid="uid://31k2ou5bu2pu" path="res://Assets/Tiles/GUI/GUI/pixel-ui.png" id="1_mwieg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5m2cp"]
+atlas = ExtResource("1_mwieg")
+region = Rect2(106, 122, 28, 28)
+
+[resource]
+texture = SubResource("AtlasTexture_5m2cp")
+texture_margin_left = 7.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 4.0

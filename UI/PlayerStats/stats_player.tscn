@@ -1,0 +1,163 @@
+[gd_scene load_steps=5 format=3 uid="uid://cam1nnkyg4n7r"]
+
+[ext_resource type="Theme" uid="uid://dmxukrbns7myn" path="res://Resources/UI_Themes/General Themes/ui_menu_in_game.tres" id="1_2u3ml"]
+[ext_resource type="Texture2D" uid="uid://31k2ou5bu2pu" path="res://Assets/Tiles/GUI/GUI/pixel-ui.png" id="2_ug630"]
+[ext_resource type="Script" path="res://UI/PlayerStats/stats_player.gd" id="3_1jobd"]
+[ext_resource type="Theme" uid="uid://bk2v56adrfeik" path="res://Resources/Button/StatsPlayerBottons.tres" id="4_ky6tj"]
+
+[node name="StatsPlayer" type="NinePatchRect"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -81.0
+offset_top = -152.0
+offset_right = 104.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_2u3ml")
+texture = ExtResource("2_ug630")
+region_rect = Rect2(106, 74, 28, 28)
+patch_margin_left = 24
+patch_margin_top = 5
+patch_margin_right = 24
+patch_margin_bottom = 5
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("3_1jobd")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -43.165
+offset_top = 7.0
+offset_right = 39.835
+offset_bottom = 15.0
+grow_horizontal = 2
+text = "Estadísiticas"
+
+[node name="Atributos" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0772947
+anchor_top = 0.219178
+anchor_right = 0.439614
+anchor_bottom = 0.73516
+offset_left = 0.463796
+offset_top = -0.465834
+offset_right = 2.63776
+offset_bottom = -13.1875
+theme_override_constants/separation = 9
+
+[node name="Fuerza" type="Label" parent="Atributos"]
+layout_mode = 2
+text = "Fuerza"
+
+[node name="Destreza" type="Label" parent="Atributos"]
+layout_mode = 2
+text = "Destreza"
+
+[node name="Inteligencia" type="Label" parent="Atributos"]
+layout_mode = 2
+text = "Inteligencia"
+
+[node name="Suerte" type="Label" parent="Atributos"]
+layout_mode = 2
+text = "Suerte"
+
+[node name="AtributosValues" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.695652
+anchor_top = 0.219178
+anchor_right = 0.729469
+anchor_bottom = 0.73516
+offset_left = 0.174225
+offset_top = -0.465834
+offset_right = 0.377014
+offset_bottom = -10.1875
+theme_override_constants/separation = 10
+
+[node name="FuerzaValue" type="Label" parent="AtributosValues"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "5"
+
+[node name="DestrezaValue" type="Label" parent="AtributosValues"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "5"
+
+[node name="InteligenciaValue" type="Label" parent="AtributosValues"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "5"
+
+[node name="SuerteValue" type="Label" parent="AtributosValues"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "5"
+
+[node name="IncrementBottons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.805635
+anchor_top = 0.203861
+anchor_right = 0.875287
+anchor_bottom = 0.703859
+offset_right = 6.0
+offset_bottom = 25.5
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("4_ky6tj")
+theme_override_constants/separation = 5
+alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="FuerzaButton" type="Button" parent="IncrementBottons"]
+layout_mode = 2
+text = "+"
+
+[node name="DestrezaButton" type="Button" parent="IncrementBottons"]
+layout_mode = 2
+text = "+"
+
+[node name="InteligenciaButton" type="Button" parent="IncrementBottons"]
+layout_mode = 2
+text = "+"
+
+[node name="SuerteButton" type="Button" parent="IncrementBottons"]
+layout_mode = 2
+text = "+"
+
+[node name="Puntos" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.6506
+offset_top = 113.375
+offset_right = 77.3494
+offset_bottom = 129.375
+grow_horizontal = 2
+text = "Puntos restantes : "
+
+[node name="PuntosValue" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 61.7381
+offset_top = 113.735
+offset_right = 68.7381
+offset_bottom = 121.735
+grow_horizontal = 2
+text = "0"
+
+[connection signal="pressed" from="IncrementBottons/FuerzaButton" to="." method="_on_fuerza_button_pressed"]
+[connection signal="pressed" from="IncrementBottons/DestrezaButton" to="." method="_on_destreza_button_pressed"]
+[connection signal="pressed" from="IncrementBottons/InteligenciaButton" to="." method="_on_inteligencia_button_pressed"]
+[connection signal="pressed" from="IncrementBottons/SuerteButton" to="." method="_on_suerte_button_pressed"]

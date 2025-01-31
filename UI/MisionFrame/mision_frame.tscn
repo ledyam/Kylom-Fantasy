@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbg1l3jmm4vk4"]
+
+[ext_resource type="Script" path="res://UI/MisionFrame/mision_frame.gd" id="1_j0rry"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_awq3c"]
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_60d8l"]
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_nwg3n"]
+font_size = 8
+
+[node name="MisionFrame" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j0rry")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -169.75
+offset_top = -162.0
+offset_right = -10.7501
+offset_bottom = -116.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Goblin"
+label_settings = SubResource("LabelSettings_awq3c")
+
+[node name="goblinValue" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 6
+text = "0/5"
+label_settings = SubResource("LabelSettings_awq3c")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Burbujas Diabólicas"
+label_settings = SubResource("LabelSettings_60d8l")
+
+[node name="SlimeValue" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 6
+text = "0/5"
+label_settings = SubResource("LabelSettings_60d8l")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 498.644
+offset_top = 26.2453
+offset_right = 614.644
+offset_bottom = 34.2453
+text = "MISION COMPLETADA"
+label_settings = SubResource("LabelSettings_nwg3n")

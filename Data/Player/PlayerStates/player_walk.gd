@@ -6,7 +6,11 @@ func enter():
 
 func physics_process(_delta):
 	if player.is_moving:
-		Mover()
+		if Input.is_action_pressed("Atacar"):
+			player.velocity = Vector2(0,0)
+			state_machine.change_to("Attack")
+		else:
+			Mover()
 	else :
 		state_machine.change_to(player.abreviate.states._idle)
 

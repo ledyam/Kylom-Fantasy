@@ -690,6 +690,7 @@ radius = 4.0
 [node name="Mob_Enemy" node_paths=PackedStringArray("Patrullaje") instance=ExtResource("1_4lpi1")]
 script = ExtResource("2_4lys3")
 Patrullaje = NodePath("Patrullaje")
+critic_chance = 0.179
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
 z_index = 1

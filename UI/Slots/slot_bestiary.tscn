@@ -7,14 +7,10 @@
 [node name="Slot" instance=ExtResource("1_lq6ym")]
 script = ExtResource("2_n23qi")
 
-[node name="CenterContainer" parent="." index="0"]
-offset_left = -22.5
-offset_top = -22.0
-offset_right = 22.5
-offset_bottom = 22.0
-
-[node name="BG" parent="CenterContainer" index="0"]
+[node name="BG" parent="." index="0"]
 stretch_mode = 3
 
-[node name="Icon" parent="CenterContainer" index="1"]
+[node name="Icon" parent="." index="1"]
 texture = ExtResource("2_2upas")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

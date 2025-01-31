@@ -23,11 +23,18 @@ var abreviate = Abreviate.new()
 func _ready() -> void:
 	stats.player = self 
 	CentralSignal.connect("UsarObjeto",on_RecibirVida)
+	Dialogic.connect("signal_event", MOVING)
+	Dialogic.connect("signal_event", NO_MOVING)
+func _physics_process(_delta: float) -> void: 
+		move_and_slide()
+
+func MOVING (ar):
+	if ar == "MOVING":
+		is_moving = true
 	
-func _physics_process(_delta: float) -> void:
-	move_and_slide()
-
-
+func NO_MOVING(ar):
+	if ar == "NO_MOVING":
+		is_moving = false
 #endregion
 
 #region MÉTODOS del Player
@@ -109,15 +116,27 @@ func _on_hit_box_body_exited(body: Node2D) -> void:
 func _on_damage_box_body_entered(body: Node2D) -> void:
 	if body as MobEnemy:
 		body.EffectiveDamage(stats.ATK)
+		
+	if body is NPC : 
+		body.EffectiveDamage(stats.ATK)
 	pass 
 	
 #endregion
 
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
-	if area.name == "Enemy_Attack_Area":
+	if area.name == "Enemy_Attack_Area" and stats.current_life > 0:
 		
-		knockback = (self.global_position - area.position).normalized() 
-		velocity = knockback * 20
+		recibir_damage = true
+		cooldown_Rdamage = true
+		knockback = (self.global_position + area.position).normalized() 
+		velocity = knockback * 40
 		Recibir_damage(area.owner.ATK) 
 		
+		
+
+
+func _on_hit_box_area_exited(_area: Area2D) -> void:
+	recibir_damage = true
+	cooldown_Rdamage = true
+	pass # Replace with function body.

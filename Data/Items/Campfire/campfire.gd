@@ -23,3 +23,8 @@ func _process( _delta: float) -> void:
 		else : 
 			$AnimatedSprite2D.play("starting")
 			encendido = true
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	on_area = false 
+	pass # Replace with function body.

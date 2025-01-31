@@ -17,7 +17,7 @@
 "portraits": {
 "Default": {
 "export_overrides": {
-"image": "\"res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/spr_portrait_9frame.png\""
+"image": "\"res://Assets/Mis Inventos/Main_Player.png\""
 },
 "ignore_char_scale": true,
 "mirror": false,

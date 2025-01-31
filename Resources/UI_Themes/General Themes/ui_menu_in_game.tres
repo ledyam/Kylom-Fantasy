@@ -1,9 +1,36 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dmxukrbns7myn"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dmxukrbns7myn"]
 
 [ext_resource type="StyleBox" uid="uid://drnarcmriti83" path="res://Resources/UI_Themes/hover.tres" id="1_eb76f"]
 [ext_resource type="StyleBox" uid="uid://b8aew3b4k2hy0" path="res://Resources/UI_Themes/normal.tres" id="2_cmoiw"]
+[ext_resource type="StyleBox" uid="uid://dky82e4oj2uai" path="res://Resources/popup/popup.tres" id="3_ek3fv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qko2g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1h3wj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svk7f"]
+bg_color = Color(0.79, 0.715345, 0.5767, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fuuj"]
+bg_color = Color(0.91, 0.824005, 0.6643, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3lk6f"]
+bg_color = Color(0.89, 0.805895, 0.6497, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4iug"]
+bg_color = Color(0.890196, 0.807843, 0.65098, 1)
 
 [resource]
 Button/font_sizes/font_size = 8
@@ -15,6 +42,12 @@ ItemList/colors/guide_color = Color(0, 0, 0, 0.611765)
 ItemList/font_sizes/font_size = 8
 Label/colors/font_shadow_color = Color(0, 0, 0, 0.611765)
 Label/font_sizes/font_size = 8
+PopupPanel/styles/panel = ExtResource("3_ek3fv")
 RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0.494118)
 RichTextLabel/constants/line_separation = 2
 RichTextLabel/font_sizes/normal_font_size = 8
+ScrollContainer/styles/panel = SubResource("StyleBoxEmpty_1h3wj")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_svk7f")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_3fuuj")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_3lk6f")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_o4iug")

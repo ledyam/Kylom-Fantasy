@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://p0jmnaqahkh5"]
+[gd_scene load_steps=18 format=3 uid="uid://p0jmnaqahkh5"]
 
 [ext_resource type="Script" path="res://UI/Life_UI/Player_UI.gd" id="1_kf1g5"]
+[ext_resource type="PackedScene" uid="uid://bbg1l3jmm4vk4" path="res://UI/MisionFrame/mision_frame.tscn" id="2_epg4e"]
 [ext_resource type="Texture2D" uid="uid://73y7oc3x7fiw" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Interfaces Bundle - Free version/Pack Content/DarkMode Interface/Player interface/Player Status/Bars/spr_stamina_bar.png" id="2_qer4n"]
 [ext_resource type="FontFile" uid="uid://refuf5j5hr24" path="res://Assets/Fonts/PixelOperator8.ttf" id="3_iu1j3"]
 [ext_resource type="Texture2D" uid="uid://ys1mqrjr7yiq" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Interfaces Bundle - Free version/Pack Content/DarkMode Interface/Player interface/Player Status/single size player status/spr_player_status_healthbar_bk.png" id="3_lrv12"]
@@ -46,6 +47,12 @@ size_flags_horizontal = 4
 script = ExtResource("1_kf1g5")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MisionFrame" parent="CanvasLayer" instance=ExtResource("2_epg4e")]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 3.0
+offset_bottom = 3.0
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
 anchors_preset = 8

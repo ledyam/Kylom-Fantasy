@@ -1,0 +1,636 @@
+[gd_scene load_steps=34 format=3 uid="uid://ckmhjkds58k4w"]
+
+[ext_resource type="Texture2D" uid="uid://c75pdyh7y2c8" path="res://Assets/Tiles/GUI/GUI/GUI.png" id="1_uk4u5"]
+[ext_resource type="Script" path="res://UI/Inventory/inventario.gd" id="2_f0txq"]
+[ext_resource type="Texture2D" uid="uid://dbresaw4l8rv0" path="res://Assets/Tiles/Pixelarium - GrassLands/Pixelarium - Playable Character/Pack Content/Shadowless animations/spr_player_front_idle_shadowless.png" id="3_5hhqw"]
+[ext_resource type="PackedScene" uid="uid://dknkcxjhftvvj" path="res://UI/Slots/slot_passive.tscn" id="3_aifig"]
+[ext_resource type="PackedScene" uid="uid://cam1nnkyg4n7r" path="res://UI/PlayerStats/stats_player.tscn" id="3_yohcm"]
+[ext_resource type="PackedScene" uid="uid://b4earws7layh2" path="res://UI/Slots/slot_Inventory.tscn" id="4_64eyj"]
+[ext_resource type="Texture2D" uid="uid://31k2ou5bu2pu" path="res://Assets/Tiles/GUI/GUI/pixel-ui.png" id="4_eqxdt"]
+[ext_resource type="Texture2D" uid="uid://xt5ldcxuiirl" path="res://Assets/GUI/Free Paper UI System/Free Paper UI System/1 Sprites/Paper UI Pack/Paper UI/Plain/1 Paper/32.png" id="4_nb08l"]
+[ext_resource type="Texture2D" uid="uid://dk1ni5bwgbjb7" path="res://Assets/Tiles/16x16 Item Pack/Item__04.png" id="4_odie5"]
+[ext_resource type="AudioStream" uid="uid://fgh5defjieg1" path="res://Assets/Sounds/level-up-3-199576.mp3" id="5_epkjq"]
+[ext_resource type="Texture2D" uid="uid://bwm3gsmagxl20" path="res://Assets/GUI/Free Paper UI System/Free Paper UI System/1 Sprites/Paper UI Pack/Paper UI/Plain/1 Paper/34.png" id="5_imad4"]
+[ext_resource type="AudioStream" uid="uid://d22avlb4mj8vn" path="res://Assets/Sounds/UI Close.wav" id="6_63ln4"]
+[ext_resource type="AudioStream" uid="uid://dtfmcs3815kah" path="res://Assets/Sounds/UI Open.wav" id="7_prce2"]
+[ext_resource type="Theme" uid="uid://dmxukrbns7myn" path="res://Resources/UI_Themes/General Themes/ui_menu_in_game.tres" id="10_npdyp"]
+[ext_resource type="StyleBox" uid="uid://bfctpxba57jdp" path="res://Resources/Panel/LabelPanel.tres" id="12_2c6kn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q31kf"]
+atlas = ExtResource("1_uk4u5")
+region = Rect2(0.117874, 95.0915, 48.5292, 34.4172)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ieykn"]
+atlas = ExtResource("3_5hhqw")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5128"]
+atlas = ExtResource("3_5hhqw")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbauk"]
+atlas = ExtResource("3_5hhqw")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8wev"]
+atlas = ExtResource("3_5hhqw")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afgmj"]
+atlas = ExtResource("3_5hhqw")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86gpw"]
+atlas = ExtResource("3_5hhqw")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rs1nl"]
+atlas = ExtResource("3_5hhqw")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akdh4"]
+atlas = ExtResource("3_5hhqw")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2gif"]
+atlas = ExtResource("3_5hhqw")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5jmg"]
+atlas = ExtResource("3_5hhqw")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sxcd"]
+atlas = ExtResource("3_5hhqw")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btnm5"]
+atlas = ExtResource("3_5hhqw")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bu4l2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ieykn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5128")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbauk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8wev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afgmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86gpw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rs1nl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akdh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2gif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5jmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sxcd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btnm5")
+}],
+"loop": true,
+"name": &"Inv",
+"speed": 17.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48vb2"]
+atlas = ExtResource("4_eqxdt")
+region = Rect2(96, 368, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4luag"]
+atlas = ExtResource("4_eqxdt")
+region = Rect2(75, 195, 58, 10)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_odfrb"]
+texture = SubResource("AtlasTexture_4luag")
+
+[sub_resource type="LabelSettings" id="LabelSettings_snxfw"]
+font_size = 14
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(-1, 2)
+
+[node name="Inventario" type="NinePatchRect"]
+z_index = 1
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "asdasdasd"
+mouse_filter = 1
+texture = SubResource("AtlasTexture_q31kf")
+patch_margin_left = 9
+patch_margin_top = 9
+patch_margin_right = 9
+patch_margin_bottom = 7
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("2_f0txq")
+default_text = "Selecciona cualquier item en el Inventario "
+
+[node name="Decoration" type="Control" parent="."]
+z_index = 1
+anchors_preset = 0
+
+[node name="PlayerInInv" type="AnimatedSprite2D" parent="Decoration"]
+position = Vector2(325, 103)
+scale = Vector2(1.51238, 1.48222)
+sprite_frames = SubResource("SpriteFrames_bu4l2")
+animation = &"Inv"
+frame_progress = 0.314713
+
+[node name="TextureRect" type="TextureRect" parent="Decoration/PlayerInInv"]
+show_behind_parent = true
+offset_left = -25.0669
+offset_top = -22.8595
+offset_right = 22.9331
+offset_bottom = 25.1405
+texture = SubResource("AtlasTexture_48vb2")
+
+[node name="Int_Inventario" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0292308
+anchor_top = 0.117647
+anchor_right = 0.967692
+anchor_bottom = 0.944118
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="DescriptionPanel" type="NinePatchRect" parent="Int_Inventario"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_eqxdt")
+region_rect = Rect2(158, 78, 20, 20)
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 2
+
+[node name="DescriptionBackground" type="NinePatchRect" parent="Int_Inventario/DescriptionPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -132.5
+offset_right = 91.0
+offset_bottom = 134.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_eqxdt")
+region_rect = Rect2(106, 74, 28, 28)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 5
+patch_margin_bottom = 4
+
+[node name="Description" type="RichTextLabel" parent="Int_Inventario/DescriptionPanel/DescriptionBackground"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -13.5
+offset_right = 82.0
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "#Descripcion"
+fit_content = true
+scroll_following = true
+
+[node name="Icon" type="TextureRect" parent="Int_Inventario/DescriptionPanel/DescriptionBackground"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.330618
+anchor_top = 0.134542
+anchor_right = 0.64001
+anchor_bottom = 0.339671
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_odie5")
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="Int_Inventario/DescriptionPanel/DescriptionBackground"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -79.8316
+offset_top = 9.40041
+offset_right = 78.1684
+offset_bottom = 25.4004
+grow_horizontal = 2
+text = "#NombreItem"
+horizontal_alignment = 1
+
+[node name="Decoracion" type="TextureRect" parent="Int_Inventario/DescriptionPanel"]
+modulate = Color(1, 0.529412, 0.592157, 1)
+layout_mode = 0
+offset_left = 130.0
+offset_top = 227.0
+offset_right = 208.0
+offset_bottom = 278.0
+texture = ExtResource("4_nb08l")
+
+[node name="Decoracion2" type="TextureRect" parent="Int_Inventario/DescriptionPanel"]
+modulate = Color(1, 0.53, 0.592667, 1)
+layout_mode = 0
+offset_left = 3.99998
+offset_top = 229.0
+offset_right = 82.0
+offset_bottom = 280.0
+texture = ExtResource("5_imad4")
+
+[node name="PlayerSection" type="VBoxContainer" parent="Int_Inventario"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.82
+alignment = 1
+
+[node name="Equipable_Item" type="NinePatchRect" parent="Int_Inventario/PlayerSection"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_eqxdt")
+region_rect = Rect2(158, 78, 20, 20)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Slot" parent="Int_Inventario/PlayerSection/Equipable_Item" instance=ExtResource("3_aifig")]
+layout_mode = 1
+anchor_left = 0.0542458
+anchor_top = 0.0906256
+anchor_right = 0.166889
+anchor_bottom = 0.232655
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Slot2" parent="Int_Inventario/PlayerSection/Equipable_Item" instance=ExtResource("3_aifig")]
+layout_mode = 1
+anchor_left = 0.0515335
+anchor_top = 0.309495
+anchor_right = 0.164177
+anchor_bottom = 0.451524
+grow_horizontal = 1
+grow_vertical = 1
+slot_type = 1
+
+[node name="Slot3" parent="Int_Inventario/PlayerSection/Equipable_Item" instance=ExtResource("3_aifig")]
+layout_mode = 1
+anchor_left = 0.0515335
+anchor_top = 0.51964
+anchor_right = 0.164177
+anchor_bottom = 0.661669
+grow_horizontal = 1
+grow_vertical = 1
+slot_type = 2
+
+[node name="Slot4" parent="Int_Inventario/PlayerSection/Equipable_Item" instance=ExtResource("3_aifig")]
+layout_mode = 1
+anchor_left = 0.827396
+anchor_top = 0.0921039
+anchor_right = 0.940039
+anchor_bottom = 0.234133
+grow_horizontal = 1
+grow_vertical = 1
+slot_type = 7
+
+[node name="Slot5" parent="Int_Inventario/PlayerSection/Equipable_Item" instance=ExtResource("3_aifig")]
+layout_mode = 1
+anchor_left = 0.827396
+anchor_top = 0.316742
+anchor_right = 0.940039
+anchor_bottom = 0.458771
+grow_horizontal = 1
+grow_vertical = 1
+slot_type = 6
+
+[node name="Slot6" parent="Int_Inventario/PlayerSection/Equipable_Item" instance=ExtResource("3_aifig")]
+layout_mode = 1
+anchor_left = 0.827396
+anchor_top = 0.555872
+anchor_right = 0.940039
+anchor_bottom = 0.697901
+grow_horizontal = 1
+grow_vertical = 1
+slot_type = 5
+
+[node name="Slot7" parent="Int_Inventario/PlayerSection/Equipable_Item" instance=ExtResource("3_aifig")]
+layout_mode = 1
+anchor_left = 0.317486
+anchor_top = 0.752513
+anchor_right = 0.43013
+anchor_bottom = 0.894542
+grow_horizontal = 1
+grow_vertical = 1
+slot_type = 3
+
+[node name="Slot8" parent="Int_Inventario/PlayerSection/Equipable_Item" instance=ExtResource("3_aifig")]
+layout_mode = 1
+anchor_left = 0.560638
+anchor_top = 0.753558
+anchor_right = 0.673282
+anchor_bottom = 0.895587
+grow_horizontal = 1
+grow_vertical = 1
+slot_type = 4
+
+[node name="StatsPlayer" parent="Int_Inventario/PlayerSection" instance=ExtResource("3_yohcm")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Items_Inventario" type="Panel" parent="Int_Inventario"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="NinePatchRect" parent="Int_Inventario/Items_Inventario"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture = ExtResource("4_eqxdt")
+region_rect = Rect2(158, 78, 20, 20)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="GridContainer" type="GridContainer" parent="Int_Inventario/Items_Inventario/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0473
+offset_top = 15.569
+offset_right = 52.0473
+offset_bottom = 2.56903
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.727461, 0.798691)
+size_flags_horizontal = 3
+theme_override_constants/v_separation = 12
+columns = 8
+
+[node name="Slot" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot2" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot3" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot4" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot5" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot6" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot7" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot8" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot9" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot10" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot11" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot12" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot13" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot14" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot15" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot16" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot17" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot18" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot19" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot20" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot21" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot22" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot23" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot24" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot25" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot26" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot27" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot28" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot29" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot30" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot31" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot32" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot33" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot34" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot35" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot36" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot37" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot38" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot39" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot40" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot41" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot42" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot43" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot44" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot45" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot46" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot47" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot48" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot49" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot50" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot51" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot52" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot53" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="Slot54" parent="Int_Inventario/Items_Inventario/Panel/GridContainer" instance=ExtResource("4_64eyj")]
+layout_mode = 2
+
+[node name="CoinsPanel" type="Panel" parent="Int_Inventario/Items_Inventario"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.517413
+anchor_top = 0.925267
+anchor_right = 0.935323
+anchor_bottom = 0.975089
+grow_vertical = 0
+theme = ExtResource("10_npdyp")
+theme_override_styles/panel = ExtResource("12_2c6kn")
+metadata/_edit_use_anchors_ = true
+
+[node name="OroLabel" type="Label" parent="Int_Inventario/Items_Inventario/CoinsPanel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 27.0
+offset_bottom = 11.0
+text = "$$$ :"
+
+[node name="Oro_Value" type="Label" parent="Int_Inventario/Items_Inventario/CoinsPanel"]
+layout_mode = 0
+offset_left = 55.9797
+offset_top = 3.18732
+offset_right = 76.9797
+offset_bottom = 11.1873
+text = "000"
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="UiClose" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("6_63ln4")
+
+[node name="UiOpen" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("7_prce2")
+
+[node name="CogerObjeto" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("5_epkjq")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -97.5
+offset_top = 10.0
+offset_right = 97.5
+offset_bottom = 40.0
+grow_horizontal = 2
+scale = Vector2(0.972682, 0.864212)
+theme_override_styles/panel = SubResource("StyleBoxTexture_odfrb")
+
+[node name="Inventory_label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.202564
+anchor_top = 0.254934
+anchor_right = 0.797436
+anchor_bottom = 0.8216
+grow_horizontal = 2
+grow_vertical = 2
+text = "INVENTARIO"
+label_settings = SubResource("LabelSettings_snxfw")
+metadata/_edit_use_anchors_ = true
